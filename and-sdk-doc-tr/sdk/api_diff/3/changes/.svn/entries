@@ -1,0 +1,1743 @@
+10
+
+dir
+0
+https://and-sdk-doc-tr.svn.sourceforge.net/svnroot/and-sdk-doc-tr/sdk/api_diff/3/changes
+https://and-sdk-doc-tr.svn.sourceforge.net/svnroot/and-sdk-doc-tr
+add
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+24301c66-6d43-40e4-a346-040bbf5395a3
+
+android.provider.Contacts.Intents.Insert.html
+file
+
+
+
+add
+
+android.app.LauncherActivity.html
+file
+
+
+
+add
+
+android.media.RingtoneManager.html
+file
+
+
+
+add
+
+dalvik.system.Zygote.html
+file
+
+
+
+add
+
+android.content.BroadcastReceiver.html
+file
+
+
+
+add
+
+android.provider.MediaStore.Audio.Media.html
+file
+
+
+
+add
+
+classes_index_additions.html
+file
+
+
+
+add
+
+android.text.style.StyleSpan.html
+file
+
+
+
+add
+
+pkg_android.database.html
+file
+
+
+
+add
+
+android.widget.ResourceCursorAdapter.html
+file
+
+
+
+add
+
+android.content.pm.PackageManager.html
+file
+
+
+
+add
+
+android.view.ViewConfiguration.html
+file
+
+
+
+add
+
+android.net.wifi.WifiManager.html
+file
+
+
+
+add
+
+android.view.ViewTreeObserver.html
+file
+
+
+
+add
+
+jdiff_help.html
+file
+
+
+
+add
+
+pkg_android.content.html
+file
+
+
+
+add
+
+android.text.Spanned.html
+file
+
+
+
+add
+
+fields_index_additions.html
+file
+
+
+
+add
+
+android.text.method.DateTimeKeyListener.html
+file
+
+
+
+add
+
+java.util.logging.LogManager.html
+file
+
+
+
+add
+
+android.widget.AbsListView.html
+file
+
+
+
+add
+
+android.graphics.drawable.RotateDrawable.html
+file
+
+
+
+add
+
+android.database.Cursor.html
+file
+
+
+
+add
+
+android.view.Window.html
+file
+
+
+
+add
+
+android.test.TouchUtils.html
+file
+
+
+
+add
+
+pkg_android.os.html
+file
+
+
+
+add
+
+android.app.Instrumentation.html
+file
+
+
+
+add
+
+android.widget.AutoCompleteTextView.html
+file
+
+
+
+add
+
+packages_index_additions.html
+file
+
+
+
+add
+
+changes-summary.html
+file
+
+
+
+add
+
+android.os.ParcelFileDescriptor.html
+file
+
+
+
+add
+
+android.provider.MediaStore.html
+file
+
+
+
+add
+
+android.content.res.TypedArray.html
+file
+
+
+
+add
+
+android.text.TextUtils.html
+file
+
+
+
+add
+
+android.provider.Settings.html
+file
+
+
+
+add
+
+android.test.ActivityInstrumentationTestCase.html
+file
+
+
+
+add
+
+android.view.WindowManager.LayoutParams.html
+file
+
+
+
+add
+
+java.util.jar.Pack200.Packer.html
+file
+
+
+
+add
+
+android.test.suitebuilder.TestMethod.html
+file
+
+
+
+add
+
+android.webkit.UrlInterceptRegistry.html
+file
+
+
+
+add
+
+android.widget.AbsoluteLayout.html
+file
+
+
+
+add
+
+android.text.AutoText.html
+file
+
+
+
+add
+
+android.widget.CursorAdapter.html
+file
+
+
+
+add
+
+android.widget.ArrayAdapter.html
+file
+
+
+
+add
+
+android.widget.TextView.html
+file
+
+
+
+add
+
+android.webkit.UrlInterceptHandler.html
+file
+
+
+
+add
+
+android.graphics.RectF.html
+file
+
+
+
+add
+
+methods_index_all.html
+file
+
+
+
+add
+
+pkg_android.graphics.drawable.shapes.html
+file
+
+
+
+add
+
+android.app.AlertDialog.html
+file
+
+
+
+add
+
+android.view.animation.Animation.html
+file
+
+
+
+add
+
+android.telephony.TelephonyManager.html
+file
+
+
+
+add
+
+android.text.style.TextAppearanceSpan.html
+file
+
+
+
+add
+
+constructors_index_changes.html
+file
+
+
+
+add
+
+methods_index_additions.html
+file
+
+
+
+add
+
+android.graphics.drawable.TransitionDrawable.html
+file
+
+
+
+add
+
+android.provider.Settings.System.html
+file
+
+
+
+add
+
+android.provider.Browser.html
+file
+
+
+
+add
+
+jdiff_statistics.html
+file
+
+
+
+add
+
+android.test.InstrumentationTestCase.html
+file
+
+
+
+add
+
+android.text.style.AbsoluteSizeSpan.html
+file
+
+
+
+add
+
+android.view.Menu.html
+file
+
+
+
+add
+
+android.widget.PopupWindow.html
+file
+
+
+
+add
+
+java.lang.Character.UnicodeBlock.html
+file
+
+
+
+add
+
+constructors_index_additions.html
+file
+
+
+
+add
+
+android.database.CursorWrapper.html
+file
+
+
+
+add
+
+pkg_android.app.html
+file
+
+
+
+add
+
+android.view.View.html
+file
+
+
+
+add
+
+alldiffs_index_all.html
+file
+
+
+
+add
+
+java.lang.Class.html
+file
+
+
+
+add
+
+android.database.DatabaseUtils.html
+file
+
+
+
+add
+
+pkg_android.view.animation.html
+file
+
+
+
+add
+
+pkg_android.provider.html
+file
+
+
+
+add
+
+android.util.TimeUtils.html
+file
+
+
+
+add
+
+android.webkit.WebView.html
+file
+
+
+
+add
+
+android.content.pm.ActivityInfo.html
+file
+
+
+
+add
+
+android.os.IBinder.html
+file
+
+
+
+add
+
+android.net.ConnectivityManager.html
+file
+
+
+
+add
+
+android.view.Gravity.html
+file
+
+
+
+add
+
+pkg_android.hardware.html
+file
+
+
+
+add
+
+java.util.jar.Pack200.Unpacker.html
+file
+
+
+
+add
+
+android.hardware.SensorManager.html
+file
+
+
+
+add
+
+android.media.SoundPool.html
+file
+
+
+
+add
+
+android.webkit.WebHistoryItem.html
+file
+
+
+
+add
+
+android.text.style.UpdateLayout.html
+file
+
+
+
+add
+
+android.text.method.TextKeyListener.html
+file
+
+
+
+add
+
+pkg_android.database.sqlite.html
+file
+
+
+
+add
+
+android.widget.Scroller.html
+file
+
+
+
+add
+
+android.content.res.Configuration.html
+file
+
+
+
+add
+
+android.location.LocationManager.html
+file
+
+
+
+add
+
+android.view.OrientationListener.html
+file
+
+
+
+add
+
+android.text.style.RelativeSizeSpan.html
+file
+
+
+
+add
+
+android.content.Intent.html
+file
+
+
+
+add
+
+android.text.method.ScrollingMovementMethod.html
+file
+
+
+
+add
+
+android.hardware.SensorListener.html
+file
+
+
+
+add
+
+android.view.KeyCharacterMap.html
+file
+
+
+
+add
+
+android.text.style.ClickableSpan.html
+file
+
+
+
+add
+
+android.content.res.AssetFileDescriptor.html
+file
+
+
+
+add
+
+pkg_android.preference.html
+file
+
+
+
+add
+
+android.text.style.BackgroundColorSpan.html
+file
+
+
+
+add
+
+pkg_android.opengl.html
+file
+
+
+
+add
+
+android.widget.RemoteViews.ActionException.html
+file
+
+
+
+add
+
+android.widget.ListView.html
+file
+
+
+
+add
+
+constructors_index_removals.html
+file
+
+
+
+add
+
+android.database.sqlite.SQLiteDatabase.html
+file
+
+
+
+add
+
+android.view.ViewDebug.html
+file
+
+
+
+add
+
+android.widget.PopupWindow.OnDismissListener.html
+file
+
+
+
+add
+
+android.content.pm.PackageInfo.html
+file
+
+
+
+add
+
+android.view.ViewParent.html
+file
+
+
+
+add
+
+android.os.Handler.html
+file
+
+
+
+add
+
+android.content.ContentProvider.html
+file
+
+
+
+add
+
+android.text.method.KeyListener.html
+file
+
+
+
+add
+
+methods_index_changes.html
+file
+
+
+
+add
+
+android.view.KeyEvent.html
+file
+
+
+
+add
+
+pkg_android.content.res.html
+file
+
+
+
+add
+
+android.text.style.LeadingMarginSpan.Standard.html
+file
+
+
+
+add
+
+android.text.style.TypefaceSpan.html
+file
+
+
+
+add
+
+android.content.ContentResolver.html
+file
+
+
+
+add
+
+constructors_index_all.html
+file
+
+
+
+add
+
+android.app.Activity.html
+file
+
+
+
+add
+
+pkg_dalvik.system.html
+file
+
+
+
+add
+
+android.location.Location.html
+file
+
+
+
+add
+
+android.text.method.DialerKeyListener.html
+file
+
+
+
+add
+
+android.text.method.ArrowKeyMovementMethod.html
+file
+
+
+
+add
+
+android.view.GestureDetector.html
+file
+
+
+
+add
+
+android.text.style.SubscriptSpan.html
+file
+
+
+
+add
+
+android.util.SparseIntArray.html
+file
+
+
+
+add
+
+android.text.method.Touch.html
+file
+
+
+
+add
+
+fields_index_removals.html
+file
+
+
+
+add
+
+android.content.DialogInterface.html
+file
+
+
+
+add
+
+pkg_java.util.jar.html
+file
+
+
+
+add
+
+android.text.style.BulletSpan.html
+file
+
+
+
+add
+
+android.widget.RemoteViews.html
+file
+
+
+
+add
+
+android.R.id.html
+file
+
+
+
+add
+
+android.text.Annotation.html
+file
+
+
+
+add
+
+android.Manifest.permission.html
+file
+
+
+
+add
+
+classes_index_all.html
+file
+
+
+
+add
+
+dalvik.system.DexFile.html
+file
+
+
+
+add
+
+packages_index_removals.html
+file
+
+
+
+add
+
+android.provider.MediaStore.Video.VideoColumns.html
+file
+
+
+
+add
+
+android.text.style.QuoteSpan.html
+file
+
+
+
+add
+
+android.text.SpanWatcher.html
+file
+
+
+
+add
+
+dalvik.system.VMDebug.html
+file
+
+
+
+add
+
+android.R.string.html
+file
+
+
+
+add
+
+fields_index_changes.html
+file
+
+
+
+add
+
+android.app.AlarmManager.html
+file
+
+
+
+add
+
+android.telephony.PhoneNumberUtils.html
+file
+
+
+
+add
+
+android.widget.SimpleCursorAdapter.html
+file
+
+
+
+add
+
+android.media.AudioManager.html
+file
+
+
+
+add
+
+android.graphics.Canvas.html
+file
+
+
+
+add
+
+android.preference.DialogPreference.html
+file
+
+
+
+add
+
+android.content.res.Resources.html
+file
+
+
+
+add
+
+android.graphics.Bitmap.html
+file
+
+
+
+add
+
+classes_index_removals.html
+file
+
+
+
+add
+
+packages_index_changes.html
+file
+
+
+
+add
+
+pkg_android.util.html
+file
+
+
+
+add
+
+android.text.method.MetaKeyKeyListener.html
+file
+
+
+
+add
+
+android.os.Looper.html
+file
+
+
+
+add
+
+pkg_android.media.html
+file
+
+
+
+add
+
+android.media.MediaRecorder.html
+file
+
+
+
+add
+
+android.webkit.URLUtil.html
+file
+
+
+
+add
+
+android.text.TextWatcher.html
+file
+
+
+
+add
+
+android.os.Parcel.html
+file
+
+
+
+add
+
+pkg_android.content.pm.html
+file
+
+
+
+add
+
+android.text.style.SuperscriptSpan.html
+file
+
+
+
+add
+
+android.graphics.Rect.html
+file
+
+
+
+add
+
+android.text.method.MovementMethod.html
+file
+
+
+
+add
+
+android.text.method.DateKeyListener.html
+file
+
+
+
+add
+
+android.R.style.html
+file
+
+
+
+add
+
+android.widget.GridView.html
+file
+
+
+
+add
+
+alldiffs_index_removals.html
+file
+
+
+
+add
+
+pkg_android.text.method.html
+file
+
+
+
+add
+
+android.os.Debug.html
+file
+
+
+
+add
+
+android.text.style.StrikethroughSpan.html
+file
+
+
+
+add
+
+android.text.style.URLSpan.html
+file
+
+
+
+add
+
+android.provider.MediaStore.Images.Media.html
+file
+
+
+
+add
+
+java.util.logging.Level.html
+file
+
+
+
+add
+
+android.R.attr.html
+file
+
+
+
+add
+
+android.view.GestureDetector.SimpleOnGestureListener.html
+file
+
+
+
+add
+
+android.text.method.QwertyKeyListener.html
+file
+
+
+
+add
+
+pkg_android.test.suitebuilder.html
+file
+
+
+
+add
+
+android.text.method.MultiTapKeyListener.html
+file
+
+
+
+add
+
+android.R.drawable.html
+file
+
+
+
+add
+
+android.webkit.WebSettings.html
+file
+
+
+
+add
+
+android.os.Binder.html
+file
+
+
+
+add
+
+pkg_java.lang.html
+file
+
+
+
+add
+
+android.widget.AbsSeekBar.html
+file
+
+
+
+add
+
+pkg_android.text.style.html
+file
+
+
+
+add
+
+android.app.PendingIntent.html
+file
+
+
+
+add
+
+pkg_android.text.html
+file
+
+
+
+add
+
+android.media.MediaRecorder.OutputFormat.html
+file
+
+
+
+add
+
+android.text.method.BaseKeyListener.html
+file
+
+
+
+add
+
+classes_index_changes.html
+file
+
+
+
+add
+
+android.text.style.RasterizerSpan.html
+file
+
+
+
+add
+
+android.graphics.drawable.Drawable.html
+file
+
+
+
+add
+
+android.graphics.drawable.shapes.Shape.html
+file
+
+
+
+add
+
+pkg_java.util.logging.html
+file
+
+
+
+add
+
+android.text.style.MaskFilterSpan.html
+file
+
+
+
+add
+
+android.app.ActivityManager.html
+file
+
+
+
+add
+
+fields_index_all.html
+file
+
+
+
+add
+
+android.graphics.drawable.ScaleDrawable.html
+file
+
+
+
+add
+
+pkg_android.test.mock.html
+file
+
+
+
+add
+
+pkg_android.location.html
+file
+
+
+
+add
+
+android.widget.ProgressBar.html
+file
+
+
+
+add
+
+pkg_android.view.html
+file
+
+
+
+add
+
+android.text.style.ForegroundColorSpan.html
+file
+
+
+
+add
+
+packages_index_all.html
+file
+
+
+
+add
+
+android.text.method.TimeKeyListener.html
+file
+
+
+
+add
+
+android.view.MotionEvent.html
+file
+
+
+
+add
+
+android.text.style.AlignmentSpan.Standard.html
+file
+
+
+
+add
+
+android.text.style.ScaleXSpan.html
+file
+
+
+
+add
+
+android.hardware.Camera.html
+file
+
+
+
+add
+
+pkg_android.net.wifi.html
+file
+
+
+
+add
+
+pkg_android.widget.html
+file
+
+
+
+add
+
+android.provider.MediaStore.Audio.AlbumColumns.html
+file
+
+
+
+add
+
+android.text.style.ImageSpan.html
+file
+
+
+
+add
+
+pkg_android.webkit.html
+file
+
+
+
+add
+
+pkg_android.net.html
+file
+
+
+
+add
+
+android.text.style.UnderlineSpan.html
+file
+
+
+
+add
+
+android.net.NetworkInfo.html
+file
+
+
+
+add
+
+android.provider.MediaStore.Video.html
+file
+
+
+
+add
+
+android.provider.Contacts.PeopleColumns.html
+file
+
+
+
+add
+
+android.view.animation.Transformation.html
+file
+
+
+
+add
+
+android.content.Context.html
+file
+
+
+
+add
+
+pkg_android.telephony.gsm.html
+file
+
+
+
+add
+
+android.view.ViewGroup.html
+file
+
+
+
+add
+
+pkg_android.graphics.html
+file
+
+
+
+add
+
+android.telephony.gsm.SmsMessage.html
+file
+
+
+
+add
+
+pkg_android.html
+file
+
+
+
+add
+
+android.test.ProviderTestCase.html
+file
+
+
+
+add
+
+android.text.method.DigitsKeyListener.html
+file
+
+
+
+add
+
+android.test.mock.MockPackageManager.html
+file
+
+
+
+add
+
+android.widget.Chronometer.html
+file
+
+
+
+add
+
+pkg_android.telephony.html
+file
+
+
+
+add
+
+android.media.MediaPlayer.html
+file
+
+
+
+add
+
+jdiff_topleftframe.html
+file
+
+
+
+add
+
+android.os.Build.html
+file
+
+
+
+add
+
+pkg_android.test.html
+file
+
+
+
+add
+
+pkg_android.graphics.drawable.html
+file
+
+
+
+add
+
+methods_index_removals.html
+file
+
+
+
+add
+
+alldiffs_index_changes.html
+file
+
+
+
+add
+
+android.os.Environment.html
+file
+
+
+
+add
+
+android.provider.Contacts.Intents.html
+file
+
+
+
+add
+
+alldiffs_index_additions.html
+file
+
+
+
+add
+
+android.text.style.DynamicDrawableSpan.html
+file
+
+
+
+add
+

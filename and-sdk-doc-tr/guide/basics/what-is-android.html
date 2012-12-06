@@ -1,0 +1,919 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="shortcut icon" type="image/x-icon" href="../../favicon.ico"><title>What is Android? | Android Developers</title>
+
+<link href="../../assets/android-developer-docs-devguide.css" rel="stylesheet" type="text/css">
+<script src="../../assets/search_autocomplete.js" type="text/javascript"></script>
+<script src="../../assets/jquery-resizable.min.js" type="text/javascript"></script>
+<script src="../../assets/android-developer-docs.js" type="text/javascript"></script>
+<script type="text/javascript">
+  setToRoot("../../");
+</script>
+
+  <style type="text/css">
+    html,body{overflow:auto;}
+    #body-content{position:relative; top:0;}
+    #doc-content{overflow:visible;border-left:3px solid #666;}
+    #side-nav{padding:0;}
+    #side-nav .toggle-list ul {display:block;}
+    #resize-packages-nav{border-bottom:3px solid #666;}
+  </style></head><noscript></noscript><body class="gc-documentation">
+
+  <div id="header">
+      <div id="headerLeft">
+          <a href="../../index.html" tabindex="-1"><img src="../../assets/images/bg_logo.png" alt="Android Developers"></a>
+          <ul id="header-tabs" class="guide">
+    
+	<li id="home-link"><a href="../../offline.html">
+	
+		<span class="en">Home</span>
+		<span style="display: none;" class="de">Startseite</span>
+		<span style="display: none;" class="es"></span>
+		<span style="display: none;" class="fr"></span>
+		<span style="display: none;" class="it"></span>
+    <span style="display: none;" class="ja">ホーム</span>
+		<span style="display: none;" class="zh-CN">主页</span>
+		<span style="display: none;" class="zh-TW">首頁</span>
+	
+	</a></li>
+	<li id="sdk-link"><a href="../../sdk/index.html">
+		<span class="en">SDK</span>
+	</a></li>
+	<li id="guide-link"><a href="../../guide/index.html" onclick="return loadLast('guide')">
+	
+		<span class="en">Dev Guide</span>
+		<span style="display: none;" class="de">Handbuch</span>
+		<span style="display: none;" class="es">Guía</span>
+		<span style="display: none;" class="fr">Guide</span>
+		<span style="display: none;" class="it">Guida</span>
+    <span style="display: none;" class="ja">開発ガイド</span>
+		<span style="display: none;" class="zh-CN">开发人员指南</span>
+		<span style="display: none;" class="zh-TW">開發指南</span>
+	
+	</a></li>
+	<li id="reference-link"><a href="../../reference/packages.html" onclick="return loadLast('reference')">
+	
+		<span class="en">Reference</span>
+		<span style="display: none;" class="de">Referenz</span>
+		<span style="display: none;" class="es">Referencia</span>
+		<span style="display: none;" class="fr">Référence</span>
+		<span style="display: none;" class="it">Riferimento</span>
+    <span style="display: none;" class="ja">リファレンス</span>
+		<span style="display: none;" class="zh-CN">参考</span>
+		<span style="display: none;" class="zh-TW">參考資料</span>
+	
+	</a></li>
+	<li><a href="http://android-developers.blogspot.com" onclick="return requestAppendHL(this.href)">
+	
+		<span class="en">Blog</span>
+		<span style="display: none;" class="de"></span>
+		<span style="display: none;" class="es"></span>
+		<span style="display: none;" class="fr"></span>
+		<span style="display: none;" class="it"></span>
+    <span style="display: none;" class="ja">ブログ</span>
+		<span style="display: none;" class="zh-CN">博客</span>
+		<span style="display: none;" class="zh-TW">網誌</span>
+	
+	</a></li>
+	<li id="videos-link"><a href="../../videos/index.html" onclick="return loadLast('videos')">
+	
+		<span class="en">Videos</span>
+		<span style="display: none;" class="de"></span>
+		<span style="display: none;" class="es"></span>
+		<span style="display: none;" class="fr"></span>
+		<span style="display: none;" class="it"></span>
+    <span style="display: none;" class="ja">ビデオ</span>
+		<span style="display: none;" class="zh-CN"></span>
+		<span style="display: none;" class="zh-TW"></span>
+	
+	</a></li>
+	<li id="community-link"><a href="../../community/index.html">
+	
+		<span class="en">Community</span>
+		<span style="display: none;" class="de"></span>
+		<span style="display: none;" class="es">Comunidad</span>
+		<span style="display: none;" class="fr">Communauté</span>
+		<span style="display: none;" class="it"></span>
+    <span style="display: none;" class="ja">コミュニティ</span>
+		<span style="display: none;" class="zh-CN">社区</span>
+		<span style="display: none;" class="zh-TW">社群</span>
+	
+	</a></li>
+     
+</ul>
+     
+      </div>
+      <div id="headerRight">
+          <div id="headerLinks">
+          
+          <a href="http://www.android.com">Android.com</a>
+          </div>
+  <div id="search">
+      <div id="searchForm">
+          <form accept-charset="utf-8" class="gsc-search-box" onsubmit="return submit_search()">
+            <table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody>
+                <tr>
+                  <td class="gsc-input">
+                    <input id="search_autocomplete" class="gsc-input" size="33" autocomplete="off" title="search developer docs" name="q" value="search developer docs" onfocus="search_focus_changed(this, true)" onblur="search_focus_changed(this, false)" onkeydown="return search_changed(event, true, '../../')" onkeyup="return search_changed(event, false, '../../')" type="text">
+                  <div id="search_filtered_div" class="no-display">
+                      <table id="search_filtered" cellspacing="0">
+                      </table>
+                  </div>
+                  </td>
+                  <td class="gsc-search-button">
+                    <input value="Search" title="search" id="search-button" class="gsc-search-button" type="submit">
+                  </td>
+                  <td class="gsc-clear-button">
+                    <div title="clear results" class="gsc-clear-button">&nbsp;</div>
+                  <br>
+</td>
+                </tr></tbody>
+              </table>
+          </form>
+      </div><!-- searchForm -->
+  </div><!-- search -->
+      </div><!-- headerRight -->
+      <script type="text/javascript">
+        <!--  
+        changeTabLang(getLangPref());
+        //-->
+      </script>
+  </div><!-- header -->
+
+  <div class="g-section g-tpl-240" id="body-content">
+    <div class="g-unit g-first side-nav-resizable" id="side-nav">
+      <div id="devdoc-nav">
+<ul>
+
+  <li>
+    <h2><span class="en">Android Basics</span>
+        <span class="de" style="display: none;">Einführung in Android</span>
+        <span class="es" style="display: none;">Información básica sobre Android</span>
+        <span class="fr" style="display: none;">Présentation d'Android</span>
+        <span class="it" style="display: none;">Nozioni di base su Android</span>
+        <span class="ja" style="display: none;">Android の基本</span>
+        <span class="zh-CN" style="display: none;">Android 基础知识</span>
+        <span class="zh-TW" style="display: none;">Android 簡介</span>
+    </h2>
+    <ul>
+      <li><a href="../../guide/basics/what-is-android.html">
+        <span class="en">What Is Android?</span>
+        <span class="de" style="display: none;">Was ist Android?</span>
+        <span class="es" style="display: none;">¿Qué es Android?</span>
+        <span class="fr" style="display: none;">Qu'est-ce qu'Android&nbsp;?</span>
+        <span class="it" style="display: none;">Che cos'è Android?</span>
+        <span class="ja" style="display: none;">Android とは</span>
+        <span class="zh-CN" style="display: none;">Android 是什么？</span>
+        <span class="zh-TW" style="display: none;">什麼是 Android？</span>
+          </a></li>
+
+  <!--  <li><a style="color:gray;">The Android SDK</a></li> -->
+  <!--  <li><a style="color:gray;">Walkthrough for Developers</a></li> -->
+      <!-- quick overview of what it's like to develop on Android -->
+    </ul>
+  </li>
+  
+  <li>
+    <h2>
+      <span class="en">Framework Topics</span>
+      <span class="de" style="display: none;">Framework-Themen</span>
+      <span class="es" style="display: none;">Temas sobre el framework</span>
+      <span class="fr" style="display: none;">Thèmes relatifs au framework</span>
+      <span class="it" style="display: none;">Argomenti relativi al framework</span>
+      <span class="ja" style="display: none;">フレームワーク トピック</span>
+      <span class="zh-CN" style="display: none;">框架主题</span>
+      <span class="zh-TW" style="display: none;">架構主題</span>
+    </h2>
+    <ul>
+      <li><a href="../../guide/topics/fundamentals.html">
+            <span class="en">Application Fundamentals</span>
+            <span class="de" style="display: none;">Anwendungsgrundlagen</span>
+            <span class="es" style="display: none;">Fundamentos de las aplicaciones</span>
+            <span class="fr" style="display: none;">Principes de base des applications</span>
+            <span class="it" style="display: none;">Concetti fondamentali sulle applicazioni</span>
+            <span class="ja" style="display: none;">開発の基礎</span>
+            <span class="zh-CN" style="display: none;">应用程序基础</span>
+            <span class="zh-TW" style="display: none;">應用程式基本原理</span>
+
+          </a></li>
+    </ul>
+    <ul>
+      <li class="toggle-list">
+        <div><a href="../../guide/topics/ui/index.html">
+               <span class="en">User Interface</span>
+             </a></div>
+        <ul>
+          <li><a href="../../guide/topics/ui/declaring-layout.html">
+               <span class="en">Declaring Layout</span> 
+              </a></li>
+          <li><a href="../../guide/topics/ui/menus.html">
+               <span class="en">Creating Menus</span> 
+              </a></li>
+          <li><a href="../../guide/topics/ui/dialogs.html">
+                <span class="en">Creating Dialogs</span> 
+              </a></li>
+          <li><a href="../../guide/topics/ui/ui-events.html">
+                <span class="en">Handling UI Events</span> 
+              </a></li>
+          <li><a href="../../guide/topics/ui/notifiers/index.html">
+                <span class="en">Notifying the User</span> 
+              </a></li>
+          <li><a href="../../guide/topics/ui/themes.html">
+                <span class="en">Applying Styles and Themes</span> 
+              </a></li>
+          <li><a href="../../guide/topics/ui/custom-components.html">
+                <span class="en">Building Custom Components</span> 
+              </a></li>
+          <li><a href="../../guide/topics/ui/binding.html">
+                <span class="en">Binding to Data with AdapterView</span> 
+              </a></li>
+          <li><a href="../../guide/topics/ui/layout-objects.html">
+                <span class="en">Common Layout Objects</span> 
+              </a></li>
+          <li><a href="../../guide/topics/ui/how-android-draws.html">
+                <span class="en">How Android Draws Views</span> 
+              </a></li>
+        </ul>
+      </li>
+      <li class="toggle-list">
+        <div><a href="../../guide/topics/resources/index.html">
+               <span class="en">Resources and Assets</span> 
+             </a></div>
+        <ul>
+          <li><a href="../../guide/topics/resources/resources-i18n.html">
+                <span class="en">Resources and I18n</span>
+              </a></li>
+          <li><a href="../../guide/topics/resources/available-resources.html">
+                <span class="en">Available Resource Types</span>
+              </a></li>
+          <li><a href="../../guide/topics/resources/localization.html">
+                <span class="en">Localization</span>
+              </a></li>
+        </ul>
+      </li>
+      <li><a href="../../guide/topics/intents/intents-filters.html">
+            <span class="en">Intents and Intent Filters</span>
+          </a></li>
+      <li><a href="../../guide/topics/data/data-storage.html">
+            <span class="en">Data Storage</span>
+          </a></li>
+      <li><a href="../../guide/topics/providers/content-providers.html">
+            <span class="en">Content Providers</span>
+          </a></li>
+      <li><a href="../../guide/topics/security/security.html">
+            <span class="en">Security and Permissions</span>
+          </a></li>
+  <!--  <li><a style="color:gray;">Processes and Threads</a></li> -->
+  <!--  <li><a style="color:gray;">Interprocess Communication</a></li> -->
+      <li class="toggle-list">
+        <div><a href="../../guide/topics/manifest/manifest-intro.html">
+               <span class="en">The AndroidManifest.xml File</span>
+             </a></div>
+        <ul>
+          <li><a href="../../guide/topics/manifest/action-element.html">&lt;action&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/activity-element.html">&lt;activity&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/activity-alias-element.html">&lt;activity-alias&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/application-element.html">&lt;application&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/category-element.html">&lt;category&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/data-element.html">&lt;data&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/grant-uri-permission-element.html">&lt;grant-uri-permission&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/instrumentation-element.html">&lt;instrumentation&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/intent-filter-element.html">&lt;intent-filter&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/manifest-element.html">&lt;manifest&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/meta-data-element.html">&lt;meta-data&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/path-permission-element.html">&lt;path-permission&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/permission-element.html">&lt;permission&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/permission-group-element.html">&lt;permission-group&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/permission-tree-element.html">&lt;permission-tree&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/provider-element.html">&lt;provider&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/receiver-element.html">&lt;receiver&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/service-element.html">&lt;service&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/supports-screens-element.html">&lt;supports-screens&gt;</a></li>  <!-- ##api level 4## -->
+          <li><a href="../../guide/topics/manifest/uses-configuration-element.html">&lt;uses-configuration&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/uses-feature-element.html">&lt;uses-feature&gt;</a></li> <!-- ##api level 4## -->
+          <li><a href="../../guide/topics/manifest/uses-library-element.html">&lt;uses-library&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/uses-permission-element.html">&lt;uses-permission&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/uses-sdk-element.html">&lt;uses-sdk&gt;</a></li>
+        </ul>
+      </li>
+    </ul>
+    <ul>
+      <li class="toggle-list">
+        <div><a href="../../guide/topics/graphics/index.html">
+               <span class="en">Graphics</span>
+             </a></div>
+        <ul>
+          <li><a href="../../guide/topics/graphics/2d-graphics.html">
+                <span class="en">2D Graphics</span>
+              </a></li>
+          <li><a href="../../guide/topics/graphics/opengl.html">
+                <span class="en">3D with OpenGL</span>
+              </a></li>
+        </ul>
+      </li>
+      <li><a href="../../guide/topics/media/index.html">
+            <span class="en">Audio and Video</span>
+          </a></li>
+  <!--<li class="toggle-list">
+        <div><a style="color:gray;">Sensors</a></div>
+          <ul>
+            <li><a style="color:gray;">Camera</a></li>
+            <li><a style="color:gray;">Compass</a></li>
+            <li><a style="color:gray;">Accelerometer</a></li>
+          </ul>
+      </li> -->
+      <li><a href="../../guide/topics/location/index.html">
+            <span class="en">Location and Maps</span>
+          </a></li>
+  <!--<li class="toggle-list">
+        <div><a style="color:gray;">Wireless Controls</a></div>
+          <ul>
+            <li><a style="color:gray;">Wi-Fi</a></li>
+            <li><a style="color:gray;">Bluetooth</a></li>
+          </ul>
+      </li> -->
+  <!--<li><a style="color:gray;">Localization</a></li>  -->
+      <li><a href="../../guide/topics/appwidgets/index.html">
+            <span class="en">App Widgets</span>
+          </a></li>
+    </ul>
+  </li>
+  
+  <li>
+    <h2><span class="en">Developing</span>
+               <span class="de" style="display: none;">Entwicklung</span>
+               <span class="es" style="display: none;">Desarrollo</span>
+               <span class="fr" style="display: none;">Développement</span>
+               <span class="it" style="display: none;">Sviluppo</span>
+               <span class="ja" style="display: none;">開発</span>
+               <span class="zh-CN" style="display: none;">开发</span>
+               <span class="zh-TW" style="display: none;">開發</span>
+    </h2>
+    <ul>
+  <!--<li><a href="">Developing for Android</a></li>
+      signing, upgrading, selecting a package name, select device profile, touch, trackball, dpad available, etc. -->
+      <li><a href="../../guide/developing/eclipse-adt.html">
+            <span class="en">In Eclipse, with ADT</span> 
+            <span class="de" style="display: none;">In Eclipse, mit ADT</span>
+            <span class="es" style="display: none;">En Eclipse, con ADT</span>
+            <span class="fr" style="display: none;">Sous Eclipse, à l'aide du plugin ADT</span>
+            <span class="it" style="display: none;">In Eclipse, con ADT</span>
+            <span class="ja" style="display: none;">Eclipse 内で ADT を使用</span>
+            <span class="zh-CN" style="display: none;">利用 ADT 在 Eclipse 中开发</span>
+            <span class="zh-TW" style="display: none;">在加裝 ADT 工具的 Eclipse 環境中</span>
+          </a></li>
+      <li><a href="../../guide/developing/other-ide.html">
+            <span class="en">In Other IDEs</span>
+            <span class="de" style="display: none;">In anderen IDEs</span>
+            <span class="es" style="display: none;">En otros entornos</span>
+            <span class="fr" style="display: none;">Sous d'autres environnements</span>
+            <span class="it" style="display: none;">In altri IDE</span>
+            <span class="ja" style="display: none;">その他の統合開発環境</span>
+            <span class="zh-CN" style="display: none;">在其他 IDE 中开发</span>
+            <span class="zh-TW" style="display: none;">在其他開發環境中</span>
+          </a></li>
+      <li><a href="../../guide/developing/device.html">
+            <span class="en">On a Device</span>
+          </a></li>
+      <li><a href="../../guide/developing/debug-tasks.html">
+            <span class="en">Debugging Tasks</span>
+          </a></li>
+      <li class="toggle-list">
+        <div><a href="../../guide/developing/tools/index.html">
+            <span class="en">Tools</span>
+          </a></div>
+        <ul>
+      		<li><a href="../../guide/developing/tools/aapt.html">aapt</a></li>
+      		<li><a href="../../guide/developing/tools/adb.html">adb</a></li>
+      		<li><a href="../../guide/developing/tools/othertools.html#android">android</a></li>
+      <!--<li><a href="../../guide/developing/tools/adt.html">ADT Plugin</a></li>-->
+      		<li><a href="../../guide/developing/tools/aidl.html">aidl</a></li>
+      		<li><a href="../../guide/developing/tools/avd.html">AVDs</a></li>
+      		<li><a href="../../guide/developing/tools/ddms.html">ddms</a></li>
+      		<li><a href="../../guide/developing/tools/othertools.html#dx">dx</a></li>
+      		<li><a href="../../guide/developing/tools/draw9patch.html">Draw 9-Patch</a></li>
+      		<li><a href="../../guide/developing/tools/emulator.html">Emulator</a></li>
+      		<li><a href="../../guide/developing/tools/hierarchy-viewer.html">Hierarchy Viewer</a></li>
+      		<li><a href="../../guide/developing/tools/layoutopt.html">layoutopt</a></li>
+      		<li><a href="../../guide/developing/tools/othertools.html#mksdcard">mksdcard</a></li>
+      		<li><a href="../../guide/developing/tools/monkey.html">Monkey</a></li>
+      		<li><a href="../../guide/developing/tools/adb.html#sqlite">sqlite3</a></li>
+      		<li><a href="../../guide/developing/tools/traceview.html">Traceview</a></li>
+      		<li><a href="../../guide/developing/tools/zipalign.html">zipalign</a></li>
+    	  </ul>
+  	  </li>
+  <!--<li><a href="../../guide/developing/instrumentation/index.html">Instrumentation</a></li>
+      <li><a style="color:gray;">JUnit</a></li> -->
+    </ul>
+  </li>
+  
+  <li>
+    <h2><span class="en">Publishing</span>
+        <span class="de" style="display: none;">Veröffentlichung</span>
+        <span class="es" style="display: none;">Publicación</span>
+        <span class="fr" style="display: none;">Publication</span>
+        <span class="it" style="display: none;">Pubblicazione</span>
+        <span class="ja" style="display: none;">公開</span>
+        <span class="zh-CN" style="display: none;">发布</span>
+        <span class="zh-TW" style="display: none;">發佈</span>
+    </h2>
+    <ul>
+      <li><a href="../../guide/publishing/app-signing.html">
+            <span class="en">Signing Your Applications</span>
+            <span class="de" style="display: none;">Signieren Ihrer Anwendungen</span>
+            <span class="es" style="display: none;">Firma de aplicaciones</span>
+            <span class="fr" style="display: none;">Attribution de votre signature <br>à vos applications</span>
+            <span class="it" style="display: none;">Firma delle applicazioni</span>
+            <span class="ja" style="display: none;">アプリケーションへの署名</span>
+            <span class="zh-CN" style="display: none;">应用程序签名</span>
+            <span class="zh-TW" style="display: none;">簽署應用程式</span>
+          </a></li>
+      <li><a href="../../guide/publishing/versioning.html">
+            <span class="en">Versioning Your Applications</span>
+            <span class="de" style="display: none;">Versionsverwaltung für Ihre <br>Anwendungen</span>
+            <span class="es" style="display: none;">Versiones de las aplicaciones</span>
+            <span class="fr" style="display: none;">Attribution d'une version à vos applications</span>
+            <span class="it" style="display: none;">Controllo versioni delle applicazioni</span>
+            <span class="ja" style="display: none;">アプリケーションのバージョニング</span>
+            <span class="zh-CN" style="display: none;">应用程序版本控制</span>
+            <span class="zh-TW" style="display: none;">應用程式版本設定</span>
+          </a></li>
+      <li><a href="../../guide/publishing/preparing.html">
+            <span class="en">Preparing to Publish</span>
+            <span class="de" style="display: none;">Vorbereitung auf die Veröffentlichung</span>
+            <span class="es" style="display: none;">Publicación de aplicaciones</span>
+            <span class="fr" style="display: none;">Préparation à la publication</span>
+            <span class="it" style="display: none;">Preparativi per la pubblicazione</span>
+            <span class="ja" style="display: none;">公開の準備</span>
+            <span class="zh-CN" style="display: none;">准备发布</span>
+            <span class="zh-TW" style="display: none;">準備發佈</span>
+          </a></li>
+      <li><a href="../../guide/publishing/publishing.html">
+            <span class="en">Publishing Your Applications</span>
+          </a></li>
+    </ul>
+  </li>
+  
+  <li>
+    <h2><span class="en">Best Practices</span>
+               <span class="de" style="display: none;">Bewährte Verfahren</span>
+               <span class="es" style="display: none;">Prácticas recomendadas</span>
+               <span class="fr" style="display: none;">Meilleures pratiques</span>
+               <span class="it" style="display: none;">Best practice</span>
+               <span class="ja" style="display: none;">ベスト プラクティス</span>
+               <span class="zh-CN" style="display: none;">最佳实践</span>
+               <span class="zh-TW" style="display: none;">最佳實務</span>
+    </h2>
+    <ul>
+      <li><a href="../../guide/practices/screens_support.html">
+            <span class="en">Supporting Multiple Screens</span>
+          </a></li>
+      <li class="toggle-list">
+        <div><a href="../../guide/practices/ui_guidelines/index.html">
+               <span class="en">UI Guidelines</span>
+             </a></div>
+        <ul>
+          <li><a href="../../guide/practices/ui_guidelines/icon_design.html">
+                <span class="en">Icon Design</span>
+              </a></li>
+          <li><a href="../../guide/practices/ui_guidelines/widget_design.html">
+                <span class="en">App Widget Design</span>
+              </a></li>
+          <li><a href="../../guide/practices/ui_guidelines/activity_task_design.html">
+                <span class="en">Activity and Task Design</span>
+              </a></li>
+          <li><a href="../../guide/practices/ui_guidelines/menu_design.html">
+                <span class="en">Menu Design</span>
+              </a></li>
+        </ul>
+      </li>
+      </ul>
+      <ul>
+      <li><a href="../../guide/practices/design/performance.html">
+            <span class="en">Designing for Performance</span>
+          </a></li>
+      <li><a href="../../guide/practices/design/responsiveness.html">
+            <span class="en">Designing for Responsiveness</span>
+          </a></li>
+      <li><a href="../../guide/practices/design/seamlessness.html">
+            <span class="en">Designing for Seamlessness</span>
+          </a></li>
+    </ul>
+  </li>
+  
+  <li>
+    <h2><span class="en">Tutorials and Sample Code</span>
+               <span class="de" style="display: none;">Lernprogramme und Beispielcode</span>
+               <span class="es" style="display: none;">Tutoriales y código de ejemplo</span>
+               <span class="fr" style="display: none;">Didacticiels et exemple de code</span>
+               <span class="it" style="display: none;">Esercitazioni e codice di esempio</span>
+               <span class="ja" style="display: none;">チュートリアルとサンプル コード</span>
+               <span class="zh-CN" style="display: none;">辅导手册和示例代码</span>
+               <span class="zh-TW" style="display: none;">教學課程與程式碼範例</span>
+    </h2>
+    <ul>
+      <li><a href="../../guide/tutorials/hello-world.html">
+            <span class="en">Hello World</span>
+          </a></li>
+      <li><a href="../../guide/tutorials/views/index.html">
+            <span class="en">Hello Views</span>
+          </a></li>
+      <li><a href="../../guide/tutorials/localization/index.html">
+            <span class="en">Hello Localization</span>
+          </a></li>
+      <li><a href="../../guide/tutorials/notepad/index.html">
+            <span class="en">Notepad Tutorial</span>
+          </a></li>
+    </ul>
+    <ul>
+      <li class="toggle-list">
+        <div><a href="../../guide/samples/index.html">
+               <span class="en">Sample Code</span>
+             </a></div>
+        <ul>
+          <li><a href="../../guide/samples/ApiDemos/index.html">
+                <span class="en">API Demos</span>
+              </a></li>
+          <li><a href="../../guide/samples/Home/index.html">
+                <span class="en">Home</span>
+              </a></li>
+          <li><a href="../../guide/samples/JetBoy/index.html">
+                <span class="en">JetBoy</span>
+              </a></li>
+          <li><a href="../../guide/samples/LunarLander/index.html">
+                <span class="en">Lunar Lander</span>
+              </a></li>
+          <li><a href="../../guide/samples/NotePad/index.html">
+                <span class="en">Note Pad</span>
+              </a></li>
+          <li><a href="../../guide/samples/SearchableDictionary/index.html">
+                <span class="en">Searchable Dictionary</span>
+              </a></li>
+          <li><a href="../../guide/samples/Snake/index.html">
+                <span class="en">Snake</span>
+              </a></li>
+          <li><a href="../../guide/samples/SoftKeyboard/index.html">
+                <span class="en">Soft Keyboard</span>
+              </a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  
+
+  <li>
+    <h2><span class="en">Appendix</span>
+               <span class="de" style="display: none;">Anhang</span>
+               <span class="es" style="display: none;">Apéndice</span>
+               <span class="fr" style="display: none;">Annexes</span>
+               <span class="it" style="display: none;">Appendice</span>
+               <span class="ja" style="display: none;">付録</span>
+               <span class="zh-CN" style="display: none;">附录</span>
+               <span class="zh-TW" style="display: none;">附錄</span>
+    </h2>
+    <ul>
+      <li><a href="../../guide/appendix/api-levels.html">
+            <span class="en">Android API Levels</span>
+          </a></li>
+      <li><a href="../../guide/appendix/media-formats.html">
+            <span class="en">Supported Media Formats</span>
+          </a></li>
+      <li><a href="../../guide/appendix/g-app-intents.html">
+            <span class="en">Intents List: Google Apps</span>
+          </a></li>
+      <li><a href="../../guide/appendix/glossary.html">
+            <span class="en">Glossary</span>
+          </a></li>
+      <li><a href="../../guide/appendix/faq/index.html">
+            <span class="en">FAQ</span>
+          </a></li>
+    </ul>
+  </li>
+
+</ul>
+
+<script type="text/javascript">
+<!--
+    buildToggleLists();
+    changeNavLang(getLangPref());
+//-->
+</script>
+
+      </div>
+    </div> <!-- end side-nav -->
+    <script>
+      addLoadEvent(function() {
+        scrollIntoView("devdoc-nav");
+        });
+    </script>
+
+
+
+
+<div class="g-unit" id="doc-content"><a name="top"></a>
+
+<div id="jd-header" class="guide-header">
+  <span class="crumb">
+    &nbsp;
+    
+  </span>
+<h1>What is Android?——什么是Android？</h1>
+</div>
+
+  <div id="jd-content">
+
+
+    <div class="jd-descr">
+    
+<p>Android is a software stack for mobile devices that includes an operating
+system, middleware and key applications. The <a href="http://developer.android.com/sdk/index.html">Android SDK</a>
+provides the tools and APIs necessary to begin developing applications on the
+Android platform using the Java programming language.<br>
+Android是一个针对移动设备的程序集, 其中包括一个操作系统, 一个中间件和一些关键性应用. <a class="external text" title="http://code.google.com/android/download.html" href="http://code.google.com/android/download.html" rel="nofollow">Android 
+SDK</a>提供了工具和APIs, 当您在使用Java语言来开发Android平台的应用时您会用到它们. </p>
+
+
+<h2>Features——功能，特性</h2>
+
+<ul>
+    <li><strong>Application framework</strong> enabling reuse and replacement
+    of components&nbsp;&nbsp;&nbsp;&nbsp; <b>程序程序框架</b> 允许组件的重用和重写</li>
+    <li><strong>Dalvik virtual machine</strong> optimized for mobile
+        devices&nbsp;&nbsp;&nbsp;&nbsp; <b>Dalvik虚拟机</b> 专为移动设备优化<span style="font-weight: bold;"></span><b><br>
+    </b></li>
+    <li><strong>Integrated browser</strong> based on the open source <a href="http://webkit.org/">WebKit</a> engine&nbsp;&nbsp;&nbsp;&nbsp; <b>整合的浏览器</b> 基于开源的<a href="http://webkit.org/">WebKit</a>引擎<br>
+ </li>
+    <li><strong>Optimized graphics</strong> powered by a custom 2D graphics library; 3D
+    graphics based on the OpenGL ES 1.0 specification (hardware acceleration
+    optional)&nbsp;&nbsp;&nbsp;&nbsp; <strong>优化的图形系统</strong> 采用一个定制的2D图形库；基于OpenGL ES 1.0规范（可选的硬件加速）的3D图像系统。</li>
+    <li><strong>SQLite</strong> for structured data storage&nbsp;&nbsp;&nbsp;&nbsp; <strong>SQLite</strong> 用以实现结构化的数据存储<br>
+</li>
+    <li><strong>Media support</strong> for common audio, video, and still
+    image formats (MPEG4, H.264, MP3, AAC, AMR, JPG, PNG,
+    GIF)&nbsp;&nbsp;&nbsp;&nbsp; 1<strong>媒体支持</strong>2 支持常见的音频和视频，当然还有多种格式的图像（MPEG4, H.264, MP3, AAC, AMR, JPG, PNG,
+    GIF）<br>
+</li>
+    <li><strong>GSM Telephony</strong> (hardware dependent)&nbsp;&nbsp;&nbsp;&nbsp; <strong>GSM电话功能</strong> （依赖于硬件）<br>
+</li>
+    <li><strong>Bluetooth, EDGE, 3G, and WiFi</strong> (hardware dependent)&nbsp;&nbsp;&nbsp;&nbsp; <strong>Bluetooth, EDGE, 3G, 和 WiFi</strong> （依赖于硬件）<br>
+</li>
+    <li><strong>Camera, GPS, compass, and accelerometer</strong> (hardware dependent)&nbsp;&nbsp;&nbsp; <strong>照相机，</strong><strong>GPS，指南针，和重力感应</strong> （依赖于硬件）<br>
+</li>
+    <li><strong>Rich development environment</strong> including a device
+    emulator, tools for debugging, memory and performance profiling, and a plugin for the Eclipse IDE&nbsp;&nbsp;&nbsp;&nbsp; <strong>丰富的开发环境</strong> 包括一个设备模拟器，调试工具，内存和性能分析工具，Eclipse的插件</li>
+</ul>
+
+<a name="os_architecture" id="os_architecture"></a>
+<h2>Android Architecture——Android 架构<br>
+</h2> 
+
+<p>The following diagram shows the major components of the Android operating
+system. Each section is described in more detail below.<br>
+下面的图标显示了Android操作系统的主要部件。每一部分都在下面章节中有详细叙述。<br>
+</p>
+
+<p><img src="../../images/system-architecture.jpg" alt="Android System Architecture" height="512" width="713"></p>
+
+<a name="applications" id="applications"></a>
+<h2>Applications——应用程序</h2>
+
+<p>Android will ship with a set of core applications including an email
+client, SMS program, calendar, maps, browser, contacts, and
+others. All applications are written using the Java programming language.<br>
+Android会附带一些核心的应用程序, 包括一个email客户端, 短信程序, 日历, 地图, 浏览器, 通讯录等等. 
+所有的应用程序都是由Java语言完成的. <br>
+</p>
+
+<a name="application_framework" id="application_framework"></a>
+<h2>Application Framework——应用程序框架</h2>
+
+<p>By providing an open development platform, Android
+offers developers the ability to build extremely rich and innovative
+applications. Developers are free to take advantage of the
+device hardware, access location information, run background services, set alarms,
+add notifications to the status bar, and much, much more.<br>
+通过提供一个开放的开发平台，Android为开发者提供了开发极为丰富创新的应用程序的能力。开发者可以随意的利用硬件、获取本地信息、启动后台服务、设置闹钟、在状态条上显示通知等等等等。<br>
+ </p>
+
+<p>Developers have full access to the same framework APIs used by the core
+applications. The application architecture is designed to simplify the reuse
+of components; any application can publish its capabilities and any other
+application may then make use of those capabilities (subject to security
+constraints enforced by the framework). This same mechanism allows components
+to be replaced by the user.<br>
+开发人员可以跟那些核心应用一样, 拥有访问框架APIs的全部权限. 应用的系结构设计简化了各组件之间的重用；任何应用都可以分发自己的组件, 
+任何应用也可以使用这些分发的组件（应用的使用方法需遵循框架的安全性约束）。这个机制对用户来说同样适用, 他们也可以替换组件. </p>
+
+
+<p>Underlying all applications is a set of services and systems, including:<br>
+隐藏在每个应用后面的是一套服务和系统, 其中包括: </p>
+<ul>
+    <li>A rich and extensible set of <a href="../../guide/tutorials/views/index.html">Views</a> that can be used to
+    build an application, including lists, grids, text boxes, buttons, and even
+    an embeddable web browser&nbsp;&nbsp;&nbsp;&nbsp; 一套表现丰富,扩展性很强的<a href="../tutorials/views/index.html">Views</a>, 通过这些View您可以创建包括列表, 栅格, 文本框, 按钮, 
+甚至一个嵌入浏览器的应用</li>
+    <li><a href="../../guide/topics/providers/content-providers.html">Content
+    Providers</a> that enable applications to access data from other
+    applications (such as Contacts), or to share their own data&nbsp;&nbsp;&nbsp;&nbsp; <a href="../topics/providers/content-providers.html">Content
+    Providers</a>&nbsp;&nbsp; 通过它可以在某个应用内访问其他应用的数据(例如通讯录), 或者共享自己的数据</li> <li>A <a href="../../guide/topics/resources/resources-i18n.html">Resource
+    Manager</a>, providing access to non-code resources such as localized
+    strings, graphics, and layout files&nbsp;&nbsp;&nbsp;&nbsp; 提供对非代码资源的访问能力, 例如本地化字符串、图像和布局文件 </li>
+    <li>A <code><a href="../../reference/android/app/NotificationManager.html">Notification Manager</a></code> that enables
+    all applications to display custom alerts in the status bar&nbsp;&nbsp;&nbsp; <code></code><a href="../../reference/android/app/NotificationManager.html">Notification Manager</a> 使所有的应用程序都可以在状态条上显示自己的通知或告警。<br>
+</li>
+    <li>An <code><a href="../../reference/android/app/Activity.html">Activity Manager</a></code> that manages the
+    lifecycle of applications and provides a common navigation backstack&nbsp;&nbsp;&nbsp;&nbsp; 管理应用的生命周期, 并且提供恢复压入历史的应用程序的功能 </li>
+</ul>
+
+<p>For more details and a walkthrough of an application, see the <a href="../../guide/tutorials/notepad/index.html">Notepad Tutorial</a>.<br>
+更多详细信息和应用程序的概览，请参见<a href="../tutorials/notepad/index.html">Notepad Tutorial</a>。<br>
+</p>
+    
+<a name="libraries" id="libraries"></a>
+<h2>Libraries——库</h2>
+
+<p>Android includes a set of C/C++ libraries used by various components of the
+Android system. These capabilities are exposed to developers through the
+Android application framework. Some of the core libraries are listed below:<br>
+Android 包含一套C/C++库, 被用于Android 系统中的各种组件中. 这些功能通过Android 应用框架展现给开发人员. 
+下面列出一些核心库:</p>
+<ul>
+    <li><strong>System C library</strong> - a BSD-derived implementation of
+    the standard C system library (libc), tuned for embedded Linux-based
+    devices&nbsp;&nbsp;&nbsp;&nbsp; 一个源于BSD的标准 C 系统库（libc）的实现，专为嵌入式Linux设备设计<br>
+</li>
+    <li><strong>Media Libraries</strong> - based on PacketVideo's OpenCORE;
+    the libraries support playback and recording of many popular audio and video
+    formats, as well as static image files, including MPEG4, H.264, MP3, AAC,
+    AMR, JPG, and PNG&nbsp;&nbsp;&nbsp;&nbsp; 基于PacketVideo's OpenCORE；这个库支持流行的音视频格式的录制和回放，同时也支持静态图像文件，支持格式包括MPEG4, H.264, MP3, AAC,
+    AMR, JPG, 和 PNG</li>
+    <li><strong>Surface Manager</strong> - manages access to the display
+    subsystem and seamlessly composites 2D and 3D graphic layers from multiple
+    applications&nbsp;&nbsp;&nbsp;&nbsp; 用于管理不同应用对图形显示子系统和精确2D和3D图形层混合的访问</li>
+    <li><strong>LibWebCore</strong> - a modern web browser engine which
+    powers both the Android browser and an embeddable web view&nbsp;&nbsp;&nbsp;&nbsp; 一个时尚的web浏览器引擎, 为Android浏览器和内嵌的web view提供支持</li>
+    <li><strong>SGL</strong> - the underlying 2D graphics
+    engine&nbsp;&nbsp;&nbsp;&nbsp; 底层2D图像引擎<br>
+</li>
+    <li><strong>3D libraries</strong> - an implementation based on
+    OpenGL ES 1.0 APIs; the libraries use either hardware 3D acceleration
+    (where available) or the included, highly optimized 3D software
+    rasterizer&nbsp;&nbsp;&nbsp;&nbsp; 基于OpenGL ES 1.0 APIs实现的库；它即可使用硬件3D加速（如果有的话）又可以使用包含的高度优化的软3D光栅器</li>
+    <li><strong>FreeType</strong> - bitmap and vector font rendering&nbsp;&nbsp;&nbsp;&nbsp; 位图和向量字体的绘制</li>
+    <li><strong>SQLite</strong> - a powerful and lightweight relational
+    database engine available to all applications&nbsp;&nbsp;&nbsp;&nbsp; 一个强大的, 轻量的关系型数据库引擎, 可被用于所有的应用 </li>
+</ul>
+
+<a name="runtime" id="runtime"></a>
+
+<h2>Android Runtime——Android运行时库</h2>
+
+<p>Android includes a set of core libraries that provides most of
+the functionality available in the core libraries of the Java programming
+language.<br>
+Android包含了一系列的核心库，这些库提供了大部分Java编程语言核心库提供的功能。<br>
+</p>
+
+<p>Every Android application runs in its own process, with its own instance of
+the Dalvik virtual machine. Dalvik has been written so that a device can run
+multiple VMs efficiently. The Dalvik VM executes files in the Dalvik
+Executable (.dex) format which is optimized for minimal memory
+footprint. The VM is register-based, and runs classes
+compiled by a Java language compiler that have been transformed into the .dex
+format by the included "dx" tool.<br>
+每个Android程序运行在自己的进程中，在Dalvik虚拟机中拥有自己的实例。Dalvik虚拟机被设计成一个设备可以高效的运行多个虚拟机实例。
+Dalvik虚拟机为小内存设备优化，运行 Dalvik可运行（.dex）格式的文件。这个虚拟机是基于寄存器的，运行&nbsp;&nbsp;
+Java语言编译器编译好并使用自带的“dx”工具转换为.dex格式的&nbsp;&nbsp; 类。<br>
+</p>
+
+<p>The Dalvik VM relies on the Linux kernel for underlying functionality such
+as threading and low-level memory management.<br>
+Dalvik虚拟机依赖Linux内核实现线程和底层内存的管理。<br>
+</p>
+
+<a name="kernel" id="kernel"></a>
+
+<h2>Linux Kernel——Linux核心</h2>
+
+<p>Android relies on Linux version 2.6 for core system services such as
+security, memory management, process management, network stack, and driver
+model. The kernel also acts as an abstraction layer between the hardware and
+the rest of the software stack.</p>
+<p>Android的核心系统服务，例如安全、内存管理、进程管理、网络协议栈和驱动模块等，依赖于Linux 2.6 。Linux核心还扮演一个硬件和其他软件栈的中间抽象层的角色。<br>
+</p>
+
+
+    </div>
+
+  <a href="#top" style="float: right;">↑ Go to top</a>
+  
+  </div>
+
+<div id="footer">
+
+
+  <div id="copyright">
+    
+  Except as noted, this content is licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0</a>. 
+  For details and restrictions, see the <a href="../../license.html">
+  Content License</a>.
+  </div>
+  <div id="build_info">
+    
+  Android 2.0.1&nbsp;r1 - 24 Nov 2009 18:21
+
+  </div>
+
+  <div id="footerlinks">
+    
+  <p>
+    <a href="http://www.android.com/terms.html">Site Terms of Service</a> -
+    <a href="http://www.android.com/privacy.html">Privacy Policy</a> -
+    <a href="http://www.android.com/branding.html">Brand Guidelines</a>
+  </p>
+  </div>
+
+</div> <!-- end footer -->
+
+</div><!-- end doc-content -->
+
+</div> <!-- end body-content --> 
+
+<script type="text/javascript">
+init(); /* initialize android-developer-docs.js */
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-5831155-1");
+pageTracker._trackPageview();
+</script>
+
+</body></html>

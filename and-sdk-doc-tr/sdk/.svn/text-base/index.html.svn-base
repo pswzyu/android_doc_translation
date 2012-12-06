@@ -1,0 +1,419 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+
+
+
+
+  
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  
+  <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico"><title>Android SDK | Android Developers</title>
+
+  
+  
+  
+  <link href="../assets/android-developer-docs-devguide.css" rel="stylesheet" type="text/css">
+
+  
+  <script src="../assets/search_autocomplete.js" type="text/javascript"></script>
+  
+  <script src="../assets/jquery-resizable.min.js" type="text/javascript"></script>
+  
+  <script src="../assets/android-developer-docs.js" type="text/javascript"></script>
+  
+  <script type="text/javascript">
+  setToRoot("../");
+  </script>
+ <style type="text/css"> html,body{overflow:auto;}
+#body-content{position:relative; top:0;}
+#doc-content{overflow:visible;border-left:3px solid #666;}
+#side-nav{padding:0;} #side-nav .toggle-list ul {display:block;}
+#resize-packages-nav{border-bottom:3px solid #666;} </style></head><noscript></noscript><body class="gc-documentation">
+
+<a name="top"></a>
+<div id="header">
+<div id="headerLeft"> <a href="../index.html" tabindex="0"><img src="../assets/images/bg_logo.png" alt="Android Developers"></a>
+<ul id="header-tabs" class="sdk">
+
+  <li id="home-link"><a href="../offline.html"> <span class="en">Home</span>
+    <span style="display: none;" class="de">Startseite</span> <span style="display: none;" class="es"></span> <span style="display: none;" class="fr"></span> <span style="display: none;" class="it"></span> <span style="display: none;" class="ja">ホーム</span> <span style="display: none;" class="zh-CN">主页</span> <span style="display: none;" class="zh-TW">首頁</span> </a></li>
+
+  <li id="sdk-link"><a href="../sdk/index.html"> <span class="en">SDK</span>
+    </a></li>
+
+  <li id="guide-link"><a href="../guide/index.html" onclick="return loadLast('guide')"> <span class="en">Dev Guide</span>
+    <span style="display: none;" class="de">Handbuch</span> <span style="display: none;" class="es">Guía</span> <span style="display: none;" class="fr">Guide</span> <span style="display: none;" class="it">Guida</span> <span style="display: none;" class="ja">開発ガイド</span> <span style="display: none;" class="zh-CN">开发人员指南</span> <span style="display: none;" class="zh-TW">開發指南</span> </a></li>
+
+  <li id="reference-link"><a href="../reference/packages.html" onclick="return loadLast('reference')"> <span class="en">Reference</span>
+    <span style="display: none;" class="de">Referenz</span> <span style="display: none;" class="es">Referencia</span> <span style="display: none;" class="fr">Référence</span> <span style="display: none;" class="it">Riferimento</span> <span style="display: none;" class="ja">リファレンス</span> <span style="display: none;" class="zh-CN">参考</span> <span style="display: none;" class="zh-TW">參考資料</span> </a></li>
+
+  <li><a href="http://android-developers.blogspot.com" onclick="return requestAppendHL(this.href)"> <span class="en">Blog</span>
+    <span style="display: none;" class="de"></span> <span style="display: none;" class="es"></span> <span style="display: none;" class="fr"></span> <span style="display: none;" class="it"></span> <span style="display: none;" class="ja">ブログ</span> <span style="display: none;" class="zh-CN">博客</span> <span style="display: none;" class="zh-TW">網誌</span> </a></li>
+
+  <li id="videos-link"><a href="../videos/index.html" onclick="return loadLast('videos')"> <span class="en">Videos</span> <span style="display: none;" class="de"></span> <span style="display: none;" class="es"></span> <span style="display: none;" class="fr"></span> <span style="display: none;" class="it"></span> <span style="display: none;" class="ja">ビデオ</span> <span style="display: none;" class="zh-CN"></span>
+    <span style="display: none;" class="zh-TW"></span> </a></li>
+
+  <li id="community-link"><a href="../community/index.html"> <span class="en">Community</span> <span style="display: none;" class="de"></span>
+    <span style="display: none;" class="es">Comunidad</span> <span style="display: none;" class="fr">Communauté</span> <span style="display: none;" class="it"></span> <span style="display: none;" class="ja">コミュニティ</span> <span style="display: none;" class="zh-CN">社区</span>
+    <span style="display: none;" class="zh-TW">社群</span> </a></li>
+
+</ul>
+
+</div>
+
+<div id="headerRight">
+<div id="headerLinks"> <a href="http://www.android.com">Android.com</a>
+</div>
+
+<div id="search">
+<div id="searchForm">
+<form accept-charset="utf-8" class="gsc-search-box" onsubmit="return submit_search()">
+  
+  <table class="gsc-search-box" cellpadding="0" cellspacing="0">
+
+    <tbody>
+
+      <tr>
+
+        <td class="gsc-input"> <input id="search_autocomplete" class="gsc-input" size="33" autocomplete="off" title="search developer docs" name="q" value="search developer docs" onfocus="search_focus_changed(this, true)" onblur="search_focus_changed(this, false)" onkeydown="return search_changed(event, true, '../')" onkeyup="return search_changed(event, false, '../')" type="text">
+        
+        <div id="search_filtered_div" class="no-display">
+        
+        <table id="search_filtered" cellspacing="0">
+
+        
+        </table>
+
+        </div>
+
+        </td>
+
+        <td class="gsc-search-button"> <input value="Search" title="search" id="search-button" class="gsc-search-button" type="submit"> </td>
+
+        <td class="gsc-clear-button">
+        
+        <div title="clear results" class="gsc-clear-button">&nbsp;</div>
+
+        <br>
+        <br>
+</td>
+
+      </tr>
+
+    
+    </tbody>
+  
+  </table>
+
+</form>
+
+</div>
+
+<!-- searchForm --> </div>
+
+<!-- search --> </div>
+
+<!-- headerRight -->
+<script type="text/javascript">
+        <!--  
+        changeTabLang(getLangPref());
+        //-->
+      </script>
+</div>
+
+<!-- header -->
+<div class="g-section g-tpl-240" id="body-content">
+<div class="g-unit g-first not-resizable" id="side-nav">
+<div id="devdoc-nav">
+<ul>
+
+  <li>
+    
+    <h2> <span class="en">Downloadable SDK
+Components——可下载的SDK组件</span> <span style="display: none;" class="de"></span> <span style="display: none;" class="es"></span> <span style="display: none;" class="fr"></span> <span style="display: none;" class="it"></span> <span style="display: none;" class="ja"></span> <span style="display: none;" class="zh-CN"></span> <span style="display: none;" class="zh-TW"></span> </h2>
+
+    
+    <ul>
+
+      <li><a href="../sdk/adding-components.html"> <span class="en">Adding
+SDK Components——添加SDK组件</span> <span style="display: none;" class="de"></span> <span style="display: none;" class="es"></span> <span style="display: none;" class="fr"></span> <span style="display: none;" class="it"></span> <span style="display: none;" class="ja"></span> <span style="display: none;" class="zh-CN"></span> <span style="display: none;" class="zh-TW"></span></a> </li>
+
+    
+    </ul>
+
+    
+    <ul>
+
+      <li><a href="../sdk/android-2.0.1.html">Android 2.0.1
+Platform——Android 2.0.1平台</a> <span class="new">new!</span>
+      </li>
+
+      <li><a href="../sdk/android-1.6.html">Android 1.6
+Platform——Android 1.6平台</a> <span class="new">new!</span></li>
+
+      <li><a href="../sdk/android-1.5.html">Android 1.5
+Platform——Android 1.5平台</a></li>
+
+      <li class="toggle-list">
+        
+        <div><a href="#" onclick="toggle(this.parentNode.parentNode,true); return false;">Older
+Platforms——历史版本</a></div>
+
+        
+        <ul>
+
+          <li><a href="../sdk/android-2.0.html">Android 2.0 Platform</a>
+          </li>
+
+          <li><a href="../sdk/android-1.1.html">Android 1.1 Platform</a>
+          </li>
+
+        
+        </ul>
+
+      </li>
+
+    
+    </ul>
+
+    
+    <ul>
+
+      <li><a href="../sdk/tools-notes.html">SDK Tools,
+r4——SDK工具，第四版</a> <span class="new">new!</span> </li>
+
+      <li><a href="../sdk/win-usb.html">USB Driver for
+Windows, r2——Windows平台的USB驱动，第二版</a> </li>
+
+    
+    </ul>
+
+  </li>
+
+  <li>
+    
+    <h2> <span class="en">ADT Plugin for
+Eclipse——Eclipse的ADT插件</span> <span style="display: none;" class="de"></span> <span style="display: none;" class="es"></span> <span style="display: none;" class="fr"></span> <span style="display: none;" class="it"></span> <span style="display: none;" class="ja"></span> <span style="display: none;" class="zh-CN"></span> <span style="display: none;" class="zh-TW"></span> </h2>
+
+    
+    <ul>
+
+      <li><a href="../sdk/eclipse-adt.html">Installing and
+Updating——安装和升级 <span style="display: none;" class="de"></span>
+        <span style="display: none;" class="es"></span> <span style="display: none;" class="fr"></span> <span style="display: none;" class="it"></span> <span style="display: none;" class="ja"></span> <span style="display: none;" class="zh-CN"></span> <span style="display: none;" class="zh-TW"></span></a> </li>
+
+      <li><a href="../sdk/adt-notes.html">ADT 0.9.5 <span class="new">new!</span></a>
+      </li>
+
+    
+    </ul>
+
+  </li>
+
+  <li>
+    
+    <h2><span class="en">Native Development Tools——原生开发工具</span>
+    <span style="display: none;" class="de"></span> <span style="display: none;" class="es"></span> <span style="display: none;" class="fr"></span> <span style="display: none;" class="it"></span> <span style="display: none;" class="ja"></span> <span style="display: none;" class="zh-CN"></span> <span style="display: none;" class="zh-TW"></span>
+    </h2>
+
+    
+    <ul>
+
+      <li><a href="../sdk/ndk/1.6_r1/index.html">Android 1.6 NDK,
+r1——Android 1.6 NDK，第一版</a></li>
+
+    
+    </ul>
+
+  </li>
+
+  <li>
+    
+    <h2> <span class="en">More Information——更多信息</span> <span style="display: none;" class="de"></span> <span style="display: none;" class="es"></span> <span style="display: none;" class="fr"></span> <span style="display: none;" class="it"></span> <span style="display: none;" class="ja"></span> <span style="display: none;" class="zh-CN"></span>
+    <span style="display: none;" class="zh-TW"></span> </h2>
+
+    
+    <ul>
+
+      <li><a href="../sdk/requirements.html">SDK System
+Requirements——SDK系统要求</a></li>
+
+      <li><a href="../sdk/terms.html">SDK Terms and
+Conditions——SDK的条款和条件</a></li>
+
+      <li><a href="../sdk/RELEASENOTES.html">SDK Release
+Notes——SDK版本信息</a></li>
+
+      <li><a href="../sdk/older_releases.html">SDK
+Archives——SDK存档</a></li>
+
+    
+    </ul>
+
+  </li>
+
+</ul>
+
+<script type="text/javascript">
+<!--
+    buildToggleLists();
+    changeNavLang(getLangPref());
+//-->
+</script> </div>
+
+</div>
+
+<!-- end side-nav -->
+<div class="g-unit" id="doc-content">
+<div id="jd-header" class="guide-header"> <span class="crumb">&nbsp;</span>
+<h1>Android SDK</h1>
+
+</div>
+
+<div id="jd-content"><!-- <p>The sections below provide an overview of how to install the SDK package. </p> -->
+<h2 id="quickstart">Quick Start——快速开始</h2>
+
+<p>The steps below provide an overview of how to get started with the
+Android
+SDK. For detailed instructions, start with the <a href="../sdk/installing.html">Installing</a> guide.</p>
+
+<p>下面的步骤大概讲述了如何开始使用Android SDK。更加详细的信息请转到 &nbsp;<a href="../sdk/installing.html">Installing</a>向导。 </p>
+
+<p><strong>0. Prepare your development computer——准备您的开发用计算机</strong></p>
+
+<p>Read the <a href="../sdk/requirements.html">System Requirements</a>
+document and make sure that your development computer meets the
+hardware and
+software requirements for the Android SDK. Install any additional
+software
+needed before downloading the Android SDK. In particular, if you plan
+to develop
+Android applications in the Eclipse IDE using the ADT Plugin (see
+below), make
+sure that you have the correct version of Eclipse installed.</p>
+
+<p>请您阅读文档确认您的开发用计算机符合文档中的软硬件要求。在下载Android SDK之前安装缺少的软件。特别的，如果您计划使用Eclipse集成开发环境进行Android应用程序的开发，请确保您安装的的正确的版本的Eclipse。 </p>
+
+<p><strong>1. Download and install the SDK starter package——下载并安装SDK起始包</strong></p>
+
+<p>Select a starter package from the table at the top of this page and
+download
+it to your development computer. To install the SDK, simply unpack the
+starter
+package to a safe location and then add the location to your PATH.</p>
+<p>从此页顶部的表格中选择合适的SDK起始包并下载到您的计算机中。您只要将其解压到一个安全的地方，然后将路径添加到您的环境变量中。 </p>
+
+<p><strong>2. Install the ADT Plugin for Eclipse——安装Eclipse的ADT插件</strong></p>
+
+<p>If you are developing in Eclipse, set up a remote update site and
+install the
+Android Development Tools (ADT) plugin. For detailed instructions, see <a href="../sdk/eclipse-adt.html">Installing and Updating ADT</a>.</p>
+<p>如果您正使用Eclipse进行开发，设置一个远程更新站点来安装ADT插件。详细介绍请参见 <a href="../sdk/eclipse-adt.html">Installing and Updating ADT</a> 。</p>
+
+<p><strong>3. Add Android platforms to your SDK——向您的SDK中添加Android平台</strong></p>
+
+<p>Use the Android SDK and AVD Manager, included in the SDK starter
+package, to
+add one or more Android platforms (for example, Android 1.6 or Android
+2.0) to
+your SDK. In most cases, you will want to download multiple platforms,
+so that
+you can build your application on the lowest version you want to
+support, but
+test against higher versions that you intend the application to run on.
+Information about each platform is available at left, under
+"Downloadable SDK
+Components."<br>
+您可以使用包含在SDK起始包中的Android SDK and AVD
+Manager来向您的SDK中添加一个或多个Android平台（例如，Android 1.6或Android
+2.0）。大部分情况下，您可能会下载多个平台，您可以在您想支持的最低平台上进行开发，然后在您期望他运行的较高版本上进行测试。每个平台的详细信息可
+在左侧“可供下载的SDK组件”下边的文章中找到。</p>
+<p></p>
+
+<p>To launch the Android SDK and AVD Manager on Windows, execute <code>SDK
+Setup.exe</code>, at the root of the SDK directory. On Mac OS X or
+Linux,
+execute the <code>android</code> tool in the <code>&lt;sdk&gt;/tools/</code>
+folder. For more information about how to add platforms and other
+components,
+see <a href="../sdk/adding-components.html">Adding SDK Components</a>.<br>
+在Windows中运行Android SDK 和AVD 管理工具，只需运行SDK目录下<code>SDK
+Setup.exe</code>的即可。在Mac OS X 或
+Linux上，运行<code>&lt;sdk&gt;/tools/</code>目录下的<code>android</code>工具。有关添加平台和其他组件的信息，请转到<a href="adding-components.html">Adding SDK Components</a>。
+
+</p>
+
+<p><strong>4. Get the latest documentation——获得最新版本的文档</strong></p>
+
+<p>If you develop while offline, use the Android SDK and AVD Manager to
+download
+the latest documentation package. The documentation covers all versions
+of the
+API and lets you filter out those versions that your application won't
+support.
+Once installed, the documentation is also available to you directly
+from the
+Eclipse IDE.<br>
+您可以在在线时使用Android SDK and AVD Manager下载最新的文档包，然后在离线时进行开发。文档包括了全部版本的API，并且会为您筛选出您的应用程序支持的API。安装后，您也可以在Eclipse集成开发环境中查看它。 </p>
+
+<p><strong>5. Download other SDK components——下载其他SDK组件</strong></p>
+
+<p>You can use the Android SDK and AVD Manager to download other SDK
+components,
+such as the SDK add-ons. An SDK add-on provides a development
+environment for an
+Android external library or a customized Android system image. For
+example, the
+Google APIs Add-On lets you develop an application that takes advantage
+of the
+Google Maps external library.<br>
+您可以使用Android SDK and AVD
+Manager下载其他SDK组件，例如SDK附加部分。SDK附加部分提供了Android扩展库或Android定制系统镜像的开发环境。例如，
+Google APIs 附加部分可以让您开发使用Google地图扩展库功能的应用程序。 </p>
+
+<p><strong>6. Get started with an application project——开始一个应用程序项目</strong></p>
+
+<p>Once you've set up your SDK, the next step is to start a new
+application
+project or move existing applications into the new SDK.<br>
+安装好您的SDk后，下一步是在您的SDK中新建一个应用程序项目或导入一个已有的项目。<br>
+</p>
+
+<p>If you are new to Android, you can use the <a href="../guide/tutorials/hello-world.html">Hello World</a> tutorial to
+get started quickly. <a href="../sdk/installing.html#NextSteps">Next
+Steps</a> offers other suggestions of how to begin. Welcome!<br>
+如果您是Android新手，您可以从<a href="../guide/tutorials/hello-world.html">Hello World</a>指南开始。<a href="installing.html#NextSteps">Next
+Steps</a>提供了其他的如何开始学习的建议。欢迎您来到Android!<br>
+</p>
+
+</div>
+
+<!-- end jd-content -->
+<div id="footer">
+<div id="copyright"> Except as noted, this content is licensed under <a href="http://creativecommons.org/licenses/by/2.5/"> Creative Commons
+Attribution 2.5</a>. For details and restrictions, see the <a href="../license.html">Content License</a>. </div>
+
+<div id="footerlinks">
+<p> <a href="http://www.android.com/terms.html">Site Terms of Service</a>
+- <a href="http://www.android.com/privacy.html">Privacy Policy</a> - <a href="http://www.android.com/branding.html">Brand Guidelines</a> </p>
+
+</div>
+
+</div>
+
+<!-- end footer --></div>
+
+<!-- end doc-content --></div>
+
+<!-- end body-content -->
+<script type="text/javascript">
+init(); /* initialize android-developer-docs.js */
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-5831155-1");
+pageTracker._trackPageview();
+</script>
+</body></html>

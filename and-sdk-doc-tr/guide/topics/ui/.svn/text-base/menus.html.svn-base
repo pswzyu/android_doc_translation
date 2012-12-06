@@ -1,0 +1,1258 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="shortcut icon" type="image/x-icon" href="../../../favicon.ico"><title>Creating Menus | Android Developers</title>
+
+<link href="../../../assets/android-developer-docs-devguide.css" rel="stylesheet" type="text/css">
+<script src="../../../assets/search_autocomplete.js" type="text/javascript"></script>
+<script src="../../../assets/jquery-resizable.min.js" type="text/javascript"></script>
+<script src="../../../assets/android-developer-docs.js" type="text/javascript"></script>
+<script type="text/javascript">
+  setToRoot("../../../");
+</script>
+
+  <style type="text/css">
+    html,body{overflow:auto;}
+    #body-content{position:relative; top:0;}
+    #doc-content{overflow:visible;border-left:3px solid #666;}
+    #side-nav{padding:0;}
+    #side-nav .toggle-list ul {display:block;}
+    #resize-packages-nav{border-bottom:3px solid #666;}
+  .style1 {
+	font-weight: normal;
+}
+.style2 {
+	font-family: Arial;
+}
+.style3 {
+	font-style: normal;
+}
+  </style></head><noscript></noscript><body class="gc-documentation">
+
+  <div id="header">
+      <div id="headerLeft">
+          <a href="../../../index.html" tabindex="-1"><img src="../../../assets/images/bg_logo.png" alt="Android Developers"></a>
+          <ul id="header-tabs" class="guide">
+    
+	<li id="home-link"><a href="../../../offline.html">
+	
+		<span class="en">Home</span>
+		<span style="display: none;" class="de">Startseite</span>
+		<span style="display: none;" class="es"></span>
+		<span style="display: none;" class="fr"></span>
+		<span style="display: none;" class="it"></span>
+    <span style="display: none;" class="ja">ホーム</span>
+		<span style="display: none;" class="zh-CN">主页</span>
+		<span style="display: none;" class="zh-TW">首頁</span>
+	
+	</a></li>
+	<li id="sdk-link"><a href="../../../sdk/index.html">
+		<span class="en">SDK</span>
+	</a></li>
+	<li id="guide-link"><a href="../../../guide/index.html" onclick="return loadLast('guide')">
+	
+		<span class="en">Dev Guide</span>
+		<span style="display: none;" class="de">Handbuch</span>
+		<span style="display: none;" class="es">Guía</span>
+		<span style="display: none;" class="fr">Guide</span>
+		<span style="display: none;" class="it">Guida</span>
+    <span style="display: none;" class="ja">開発ガイド</span>
+		<span style="display: none;" class="zh-CN">开发人员指南</span>
+		<span style="display: none;" class="zh-TW">開發指南</span>
+	
+	</a></li>
+	<li id="reference-link"><a href="../../../reference/packages.html" onclick="return loadLast('reference')">
+	
+		<span class="en">Reference</span>
+		<span style="display: none;" class="de">Referenz</span>
+		<span style="display: none;" class="es">Referencia</span>
+		<span style="display: none;" class="fr">Référence</span>
+		<span style="display: none;" class="it">Riferimento</span>
+    <span style="display: none;" class="ja">リファレンス</span>
+		<span style="display: none;" class="zh-CN">参考</span>
+		<span style="display: none;" class="zh-TW">參考資料</span>
+	
+	</a></li>
+	<li><a href="http://android-developers.blogspot.com" onclick="return requestAppendHL(this.href)">
+	
+		<span class="en">Blog</span>
+		<span style="display: none;" class="de"></span>
+		<span style="display: none;" class="es"></span>
+		<span style="display: none;" class="fr"></span>
+		<span style="display: none;" class="it"></span>
+    <span style="display: none;" class="ja">ブログ</span>
+		<span style="display: none;" class="zh-CN">博客</span>
+		<span style="display: none;" class="zh-TW">網誌</span>
+	
+	</a></li>
+	<li id="videos-link"><a href="../../../videos/index.html" onclick="return loadLast('videos')">
+	
+		<span class="en">Videos</span>
+		<span style="display: none;" class="de"></span>
+		<span style="display: none;" class="es"></span>
+		<span style="display: none;" class="fr"></span>
+		<span style="display: none;" class="it"></span>
+    <span style="display: none;" class="ja">ビデオ</span>
+		<span style="display: none;" class="zh-CN"></span>
+		<span style="display: none;" class="zh-TW"></span>
+	
+	</a></li>
+	<li id="community-link"><a href="../../../community/index.html">
+	
+		<span class="en">Community</span>
+		<span style="display: none;" class="de"></span>
+		<span style="display: none;" class="es">Comunidad</span>
+		<span style="display: none;" class="fr">Communauté</span>
+		<span style="display: none;" class="it"></span>
+    <span style="display: none;" class="ja">コミュニティ</span>
+		<span style="display: none;" class="zh-CN">社区</span>
+		<span style="display: none;" class="zh-TW">社群</span>
+	
+	</a></li>
+     
+</ul>
+     
+      </div>
+      <div id="headerRight">
+          <div id="headerLinks">
+          
+          <a href="http://www.android.com">Android.com</a>
+          </div>
+  <div id="search">
+      <div id="searchForm">
+          <form accept-charset="utf-8" class="gsc-search-box" onsubmit="return submit_search()">
+            <table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody>
+                <tr>
+                  <td class="gsc-input">
+                    <input id="search_autocomplete" class="gsc-input" size="33" autocomplete="off" title="search developer docs" name="q" value="search developer docs" onfocus="search_focus_changed(this, true)" onblur="search_focus_changed(this, false)" onkeydown="return search_changed(event, true, '../../../')" onkeyup="return search_changed(event, false, '../../../')" type="text">
+                  <div id="search_filtered_div" class="no-display">
+                      <table id="search_filtered" cellspacing="0">
+                      </table>
+                  </div>
+                  </td>
+                  <td class="gsc-search-button">
+                    <input value="Search" title="search" id="search-button" class="gsc-search-button" type="submit">
+                  </td>
+                  <td class="gsc-clear-button">
+                    <div title="clear results" class="gsc-clear-button">&nbsp;</div>
+                  <br>
+</td>
+                </tr></tbody>
+              </table>
+          </form>
+      </div><!-- searchForm -->
+  </div><!-- search -->
+      </div><!-- headerRight -->
+      <script type="text/javascript">
+        <!--  
+        changeTabLang(getLangPref());
+        //-->
+      </script>
+  </div><!-- header -->
+
+  <div class="g-section g-tpl-240" id="body-content">
+    <div class="g-unit g-first side-nav-resizable" id="side-nav">
+      <div id="devdoc-nav">
+<ul>
+
+  <li>
+    <h2><span class="en">Android Basics</span>
+        <span class="de" style="display: none;">Einführung in Android</span>
+        <span class="es" style="display: none;">Información básica sobre Android</span>
+        <span class="fr" style="display: none;">Présentation d'Android</span>
+        <span class="it" style="display: none;">Nozioni di base su Android</span>
+        <span class="ja" style="display: none;">Android の基本</span>
+        <span class="zh-CN" style="display: none;">Android 基础知识</span>
+        <span class="zh-TW" style="display: none;">Android 簡介</span>
+    </h2>
+    <ul>
+      <li><a href="../../../guide/basics/what-is-android.html">
+        <span class="en">What Is Android?</span>
+        <span class="de" style="display: none;">Was ist Android?</span>
+        <span class="es" style="display: none;">¿Qué es Android?</span>
+        <span class="fr" style="display: none;">Qu'est-ce qu'Android&nbsp;?</span>
+        <span class="it" style="display: none;">Che cos'è Android?</span>
+        <span class="ja" style="display: none;">Android とは</span>
+        <span class="zh-CN" style="display: none;">Android 是什么？</span>
+        <span class="zh-TW" style="display: none;">什麼是 Android？</span>
+          </a></li>
+
+  <!--  <li><a style="color:gray;">The Android SDK</a></li> -->
+  <!--  <li><a style="color:gray;">Walkthrough for Developers</a></li> -->
+      <!-- quick overview of what it's like to develop on Android -->
+    </ul>
+  </li>
+  
+  <li>
+    <h2>
+      <span class="en">Framework Topics</span>
+      <span class="de" style="display: none;">Framework-Themen</span>
+      <span class="es" style="display: none;">Temas sobre el framework</span>
+      <span class="fr" style="display: none;">Thèmes relatifs au framework</span>
+      <span class="it" style="display: none;">Argomenti relativi al framework</span>
+      <span class="ja" style="display: none;">フレームワーク トピック</span>
+      <span class="zh-CN" style="display: none;">框架主题</span>
+      <span class="zh-TW" style="display: none;">架構主題</span>
+    </h2>
+    <ul>
+      <li><a href="../../../guide/topics/fundamentals.html">
+            <span class="en">Application Fundamentals</span>
+            <span class="de" style="display: none;">Anwendungsgrundlagen</span>
+            <span class="es" style="display: none;">Fundamentos de las aplicaciones</span>
+            <span class="fr" style="display: none;">Principes de base des applications</span>
+            <span class="it" style="display: none;">Concetti fondamentali sulle applicazioni</span>
+            <span class="ja" style="display: none;">開発の基礎</span>
+            <span class="zh-CN" style="display: none;">应用程序基础</span>
+            <span class="zh-TW" style="display: none;">應用程式基本原理</span>
+
+          </a></li>
+    </ul>
+    <ul>
+      <li class="toggle-list">
+        <div><a href="../../../guide/topics/ui/index.html">
+               <span class="en">User Interface</span>
+             </a></div>
+        <ul>
+          <li><a href="../../../guide/topics/ui/declaring-layout.html">
+               <span class="en">Declaring Layout</span> 
+              </a></li>
+          <li><a href="../../../guide/topics/ui/menus.html">
+               <span class="en">Creating Menus</span> 
+              </a></li>
+          <li><a href="../../../guide/topics/ui/dialogs.html">
+                <span class="en">Creating Dialogs</span> 
+              </a></li>
+          <li><a href="../../../guide/topics/ui/ui-events.html">
+                <span class="en">Handling UI Events</span> 
+              </a></li>
+          <li><a href="../../../guide/topics/ui/notifiers/index.html">
+                <span class="en">Notifying the User</span> 
+              </a></li>
+          <li><a href="../../../guide/topics/ui/themes.html">
+                <span class="en">Applying Styles and Themes</span> 
+              </a></li>
+          <li><a href="../../../guide/topics/ui/custom-components.html">
+                <span class="en">Building Custom Components</span> 
+              </a></li>
+          <li><a href="../../../guide/topics/ui/binding.html">
+                <span class="en">Binding to Data with AdapterView</span> 
+              </a></li>
+          <li><a href="../../../guide/topics/ui/layout-objects.html">
+                <span class="en">Common Layout Objects</span> 
+              </a></li>
+          <li><a href="../../../guide/topics/ui/how-android-draws.html">
+                <span class="en">How Android Draws Views</span> 
+              </a></li>
+        </ul>
+      </li>
+      <li class="toggle-list">
+        <div><a href="../../../guide/topics/resources/index.html">
+               <span class="en">Resources and Assets</span> 
+             </a></div>
+        <ul>
+          <li><a href="../../../guide/topics/resources/resources-i18n.html">
+                <span class="en">Resources and I18n</span>
+              </a></li>
+          <li><a href="../../../guide/topics/resources/available-resources.html">
+                <span class="en">Available Resource Types</span>
+              </a></li>
+          <li><a href="../../../guide/topics/resources/localization.html">
+                <span class="en">Localization</span>
+              </a></li>
+        </ul>
+      </li>
+      <li><a href="../../../guide/topics/intents/intents-filters.html">
+            <span class="en">Intents and Intent Filters</span>
+          </a></li>
+      <li><a href="../../../guide/topics/data/data-storage.html">
+            <span class="en">Data Storage</span>
+          </a></li>
+      <li><a href="../../../guide/topics/providers/content-providers.html">
+            <span class="en">Content Providers</span>
+          </a></li>
+      <li><a href="../../../guide/topics/security/security.html">
+            <span class="en">Security and Permissions</span>
+          </a></li>
+  <!--  <li><a style="color:gray;">Processes and Threads</a></li> -->
+  <!--  <li><a style="color:gray;">Interprocess Communication</a></li> -->
+      <li class="toggle-list">
+        <div><a href="../../../guide/topics/manifest/manifest-intro.html">
+               <span class="en">The AndroidManifest.xml File</span>
+             </a></div>
+        <ul>
+          <li><a href="../../../guide/topics/manifest/action-element.html">&lt;action&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/activity-element.html">&lt;activity&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/activity-alias-element.html">&lt;activity-alias&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/application-element.html">&lt;application&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/category-element.html">&lt;category&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/data-element.html">&lt;data&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/grant-uri-permission-element.html">&lt;grant-uri-permission&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/instrumentation-element.html">&lt;instrumentation&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/intent-filter-element.html">&lt;intent-filter&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/manifest-element.html">&lt;manifest&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/meta-data-element.html">&lt;meta-data&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/path-permission-element.html">&lt;path-permission&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/permission-element.html">&lt;permission&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/permission-group-element.html">&lt;permission-group&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/permission-tree-element.html">&lt;permission-tree&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/provider-element.html">&lt;provider&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/receiver-element.html">&lt;receiver&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/service-element.html">&lt;service&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/supports-screens-element.html">&lt;supports-screens&gt;</a></li>  <!-- ##api level 4## -->
+          <li><a href="../../../guide/topics/manifest/uses-configuration-element.html">&lt;uses-configuration&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/uses-feature-element.html">&lt;uses-feature&gt;</a></li> <!-- ##api level 4## -->
+          <li><a href="../../../guide/topics/manifest/uses-library-element.html">&lt;uses-library&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/uses-permission-element.html">&lt;uses-permission&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/uses-sdk-element.html">&lt;uses-sdk&gt;</a></li>
+        </ul>
+      </li>
+    </ul>
+    <ul>
+      <li class="toggle-list">
+        <div><a href="../../../guide/topics/graphics/index.html">
+               <span class="en">Graphics</span>
+             </a></div>
+        <ul>
+          <li><a href="../../../guide/topics/graphics/2d-graphics.html">
+                <span class="en">2D Graphics</span>
+              </a></li>
+          <li><a href="../../../guide/topics/graphics/opengl.html">
+                <span class="en">3D with OpenGL</span>
+              </a></li>
+        </ul>
+      </li>
+      <li><a href="../../../guide/topics/media/index.html">
+            <span class="en">Audio and Video</span>
+          </a></li>
+  <!--<li class="toggle-list">
+        <div><a style="color:gray;">Sensors</a></div>
+          <ul>
+            <li><a style="color:gray;">Camera</a></li>
+            <li><a style="color:gray;">Compass</a></li>
+            <li><a style="color:gray;">Accelerometer</a></li>
+          </ul>
+      </li> -->
+      <li><a href="../../../guide/topics/location/index.html">
+            <span class="en">Location and Maps</span>
+          </a></li>
+  <!--<li class="toggle-list">
+        <div><a style="color:gray;">Wireless Controls</a></div>
+          <ul>
+            <li><a style="color:gray;">Wi-Fi</a></li>
+            <li><a style="color:gray;">Bluetooth</a></li>
+          </ul>
+      </li> -->
+  <!--<li><a style="color:gray;">Localization</a></li>  -->
+      <li><a href="../../../guide/topics/appwidgets/index.html">
+            <span class="en">App Widgets</span>
+          </a></li>
+    </ul>
+  </li>
+  
+  <li>
+    <h2><span class="en">Developing</span>
+               <span class="de" style="display: none;">Entwicklung</span>
+               <span class="es" style="display: none;">Desarrollo</span>
+               <span class="fr" style="display: none;">Développement</span>
+               <span class="it" style="display: none;">Sviluppo</span>
+               <span class="ja" style="display: none;">開発</span>
+               <span class="zh-CN" style="display: none;">开发</span>
+               <span class="zh-TW" style="display: none;">開發</span>
+    </h2>
+    <ul>
+  <!--<li><a href="">Developing for Android</a></li>
+      signing, upgrading, selecting a package name, select device profile, touch, trackball, dpad available, etc. -->
+      <li><a href="../../../guide/developing/eclipse-adt.html">
+            <span class="en">In Eclipse, with ADT</span> 
+            <span class="de" style="display: none;">In Eclipse, mit ADT</span>
+            <span class="es" style="display: none;">En Eclipse, con ADT</span>
+            <span class="fr" style="display: none;">Sous Eclipse, à l'aide du plugin ADT</span>
+            <span class="it" style="display: none;">In Eclipse, con ADT</span>
+            <span class="ja" style="display: none;">Eclipse 内で ADT を使用</span>
+            <span class="zh-CN" style="display: none;">利用 ADT 在 Eclipse 中开发</span>
+            <span class="zh-TW" style="display: none;">在加裝 ADT 工具的 Eclipse 環境中</span>
+          </a></li>
+      <li><a href="../../../guide/developing/other-ide.html">
+            <span class="en">In Other IDEs</span>
+            <span class="de" style="display: none;">In anderen IDEs</span>
+            <span class="es" style="display: none;">En otros entornos</span>
+            <span class="fr" style="display: none;">Sous d'autres environnements</span>
+            <span class="it" style="display: none;">In altri IDE</span>
+            <span class="ja" style="display: none;">その他の統合開発環境</span>
+            <span class="zh-CN" style="display: none;">在其他 IDE 中开发</span>
+            <span class="zh-TW" style="display: none;">在其他開發環境中</span>
+          </a></li>
+      <li><a href="../../../guide/developing/device.html">
+            <span class="en">On a Device</span>
+          </a></li>
+      <li><a href="../../../guide/developing/debug-tasks.html">
+            <span class="en">Debugging Tasks</span>
+          </a></li>
+      <li class="toggle-list">
+        <div><a href="../../../guide/developing/tools/index.html">
+            <span class="en">Tools</span>
+          </a></div>
+        <ul>
+      		<li><a href="../../../guide/developing/tools/aapt.html">aapt</a></li>
+      		<li><a href="../../../guide/developing/tools/adb.html">adb</a></li>
+      		<li><a href="../../../guide/developing/tools/othertools.html#android">android</a></li>
+      <!--<li><a href="../../../guide/developing/tools/adt.html">ADT Plugin</a></li>-->
+      		<li><a href="../../../guide/developing/tools/aidl.html">aidl</a></li>
+      		<li><a href="../../../guide/developing/tools/avd.html">AVDs</a></li>
+      		<li><a href="../../../guide/developing/tools/ddms.html">ddms</a></li>
+      		<li><a href="../../../guide/developing/tools/othertools.html#dx">dx</a></li>
+      		<li><a href="../../../guide/developing/tools/draw9patch.html">Draw 9-Patch</a></li>
+      		<li><a href="../../../guide/developing/tools/emulator.html">Emulator</a></li>
+      		<li><a href="../../../guide/developing/tools/hierarchy-viewer.html">Hierarchy Viewer</a></li>
+      		<li><a href="../../../guide/developing/tools/layoutopt.html">layoutopt</a></li>
+      		<li><a href="../../../guide/developing/tools/othertools.html#mksdcard">mksdcard</a></li>
+      		<li><a href="../../../guide/developing/tools/monkey.html">Monkey</a></li>
+      		<li><a href="../../../guide/developing/tools/adb.html#sqlite">sqlite3</a></li>
+      		<li><a href="../../../guide/developing/tools/traceview.html">Traceview</a></li>
+      		<li><a href="../../../guide/developing/tools/zipalign.html">zipalign</a></li>
+    	  </ul>
+  	  </li>
+  <!--<li><a href="../../../guide/developing/instrumentation/index.html">Instrumentation</a></li>
+      <li><a style="color:gray;">JUnit</a></li> -->
+    </ul>
+  </li>
+  
+  <li>
+    <h2><span class="en">Publishing</span>
+        <span class="de" style="display: none;">Veröffentlichung</span>
+        <span class="es" style="display: none;">Publicación</span>
+        <span class="fr" style="display: none;">Publication</span>
+        <span class="it" style="display: none;">Pubblicazione</span>
+        <span class="ja" style="display: none;">公開</span>
+        <span class="zh-CN" style="display: none;">发布</span>
+        <span class="zh-TW" style="display: none;">發佈</span>
+    </h2>
+    <ul>
+      <li><a href="../../../guide/publishing/app-signing.html">
+            <span class="en">Signing Your Applications</span>
+            <span class="de" style="display: none;">Signieren Ihrer Anwendungen</span>
+            <span class="es" style="display: none;">Firma de aplicaciones</span>
+            <span class="fr" style="display: none;">Attribution de votre signature <br>à vos applications</span>
+            <span class="it" style="display: none;">Firma delle applicazioni</span>
+            <span class="ja" style="display: none;">アプリケーションへの署名</span>
+            <span class="zh-CN" style="display: none;">应用程序签名</span>
+            <span class="zh-TW" style="display: none;">簽署應用程式</span>
+          </a></li>
+      <li><a href="../../../guide/publishing/versioning.html">
+            <span class="en">Versioning Your Applications</span>
+            <span class="de" style="display: none;">Versionsverwaltung für Ihre <br>Anwendungen</span>
+            <span class="es" style="display: none;">Versiones de las aplicaciones</span>
+            <span class="fr" style="display: none;">Attribution d'une version à vos applications</span>
+            <span class="it" style="display: none;">Controllo versioni delle applicazioni</span>
+            <span class="ja" style="display: none;">アプリケーションのバージョニング</span>
+            <span class="zh-CN" style="display: none;">应用程序版本控制</span>
+            <span class="zh-TW" style="display: none;">應用程式版本設定</span>
+          </a></li>
+      <li><a href="../../../guide/publishing/preparing.html">
+            <span class="en">Preparing to Publish</span>
+            <span class="de" style="display: none;">Vorbereitung auf die Veröffentlichung</span>
+            <span class="es" style="display: none;">Publicación de aplicaciones</span>
+            <span class="fr" style="display: none;">Préparation à la publication</span>
+            <span class="it" style="display: none;">Preparativi per la pubblicazione</span>
+            <span class="ja" style="display: none;">公開の準備</span>
+            <span class="zh-CN" style="display: none;">准备发布</span>
+            <span class="zh-TW" style="display: none;">準備發佈</span>
+          </a></li>
+      <li><a href="../../../guide/publishing/publishing.html">
+            <span class="en">Publishing Your Applications</span>
+          </a></li>
+    </ul>
+  </li>
+  
+  <li>
+    <h2><span class="en">Best Practices</span>
+               <span class="de" style="display: none;">Bewährte Verfahren</span>
+               <span class="es" style="display: none;">Prácticas recomendadas</span>
+               <span class="fr" style="display: none;">Meilleures pratiques</span>
+               <span class="it" style="display: none;">Best practice</span>
+               <span class="ja" style="display: none;">ベスト プラクティス</span>
+               <span class="zh-CN" style="display: none;">最佳实践</span>
+               <span class="zh-TW" style="display: none;">最佳實務</span>
+    </h2>
+    <ul>
+      <li><a href="../../../guide/practices/screens_support.html">
+            <span class="en">Supporting Multiple Screens</span>
+          </a></li>
+      <li class="toggle-list">
+        <div><a href="../../../guide/practices/ui_guidelines/index.html">
+               <span class="en">UI Guidelines</span>
+             </a></div>
+        <ul>
+          <li><a href="../../../guide/practices/ui_guidelines/icon_design.html">
+                <span class="en">Icon Design</span>
+              </a></li>
+          <li><a href="../../../guide/practices/ui_guidelines/widget_design.html">
+                <span class="en">App Widget Design</span>
+              </a></li>
+          <li><a href="../../../guide/practices/ui_guidelines/activity_task_design.html">
+                <span class="en">Activity and Task Design</span>
+              </a></li>
+          <li><a href="../../../guide/practices/ui_guidelines/menu_design.html">
+                <span class="en">Menu Design</span>
+              </a></li>
+        </ul>
+      </li>
+      </ul>
+      <ul>
+      <li><a href="../../../guide/practices/design/performance.html">
+            <span class="en">Designing for Performance</span>
+          </a></li>
+      <li><a href="../../../guide/practices/design/responsiveness.html">
+            <span class="en">Designing for Responsiveness</span>
+          </a></li>
+      <li><a href="../../../guide/practices/design/seamlessness.html">
+            <span class="en">Designing for Seamlessness</span>
+          </a></li>
+    </ul>
+  </li>
+  
+  <li>
+    <h2><span class="en">Tutorials and Sample Code</span>
+               <span class="de" style="display: none;">Lernprogramme und Beispielcode</span>
+               <span class="es" style="display: none;">Tutoriales y código de ejemplo</span>
+               <span class="fr" style="display: none;">Didacticiels et exemple de code</span>
+               <span class="it" style="display: none;">Esercitazioni e codice di esempio</span>
+               <span class="ja" style="display: none;">チュートリアルとサンプル コード</span>
+               <span class="zh-CN" style="display: none;">辅导手册和示例代码</span>
+               <span class="zh-TW" style="display: none;">教學課程與程式碼範例</span>
+    </h2>
+    <ul>
+      <li><a href="../../../guide/tutorials/hello-world.html">
+            <span class="en">Hello World</span>
+          </a></li>
+      <li><a href="../../../guide/tutorials/views/index.html">
+            <span class="en">Hello Views</span>
+          </a></li>
+      <li><a href="../../../guide/tutorials/localization/index.html">
+            <span class="en">Hello Localization</span>
+          </a></li>
+      <li><a href="../../../guide/tutorials/notepad/index.html">
+            <span class="en">Notepad Tutorial</span>
+          </a></li>
+    </ul>
+    <ul>
+      <li class="toggle-list">
+        <div><a href="../../../guide/samples/index.html">
+               <span class="en">Sample Code</span>
+             </a></div>
+        <ul>
+          <li><a href="../../../guide/samples/ApiDemos/index.html">
+                <span class="en">API Demos</span>
+              </a></li>
+          <li><a href="../../../guide/samples/Home/index.html">
+                <span class="en">Home</span>
+              </a></li>
+          <li><a href="../../../guide/samples/JetBoy/index.html">
+                <span class="en">JetBoy</span>
+              </a></li>
+          <li><a href="../../../guide/samples/LunarLander/index.html">
+                <span class="en">Lunar Lander</span>
+              </a></li>
+          <li><a href="../../../guide/samples/NotePad/index.html">
+                <span class="en">Note Pad</span>
+              </a></li>
+          <li><a href="../../../guide/samples/SearchableDictionary/index.html">
+                <span class="en">Searchable Dictionary</span>
+              </a></li>
+          <li><a href="../../../guide/samples/Snake/index.html">
+                <span class="en">Snake</span>
+              </a></li>
+          <li><a href="../../../guide/samples/SoftKeyboard/index.html">
+                <span class="en">Soft Keyboard</span>
+              </a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  
+
+  <li>
+    <h2><span class="en">Appendix</span>
+               <span class="de" style="display: none;">Anhang</span>
+               <span class="es" style="display: none;">Apéndice</span>
+               <span class="fr" style="display: none;">Annexes</span>
+               <span class="it" style="display: none;">Appendice</span>
+               <span class="ja" style="display: none;">付録</span>
+               <span class="zh-CN" style="display: none;">附录</span>
+               <span class="zh-TW" style="display: none;">附錄</span>
+    </h2>
+    <ul>
+      <li><a href="../../../guide/appendix/api-levels.html">
+            <span class="en">Android API Levels</span>
+          </a></li>
+      <li><a href="../../../guide/appendix/media-formats.html">
+            <span class="en">Supported Media Formats</span>
+          </a></li>
+      <li><a href="../../../guide/appendix/g-app-intents.html">
+            <span class="en">Intents List: Google Apps</span>
+          </a></li>
+      <li><a href="../../../guide/appendix/glossary.html">
+            <span class="en">Glossary</span>
+          </a></li>
+      <li><a href="../../../guide/appendix/faq/index.html">
+            <span class="en">FAQ</span>
+          </a></li>
+    </ul>
+  </li>
+
+</ul>
+
+<script type="text/javascript">
+<!--
+    buildToggleLists();
+    changeNavLang(getLangPref());
+//-->
+</script>
+
+      </div>
+    </div> <!-- end side-nav -->
+    <script>
+      addLoadEvent(function() {
+        scrollIntoView("devdoc-nav");
+        });
+    </script>
+
+
+
+
+<div class="g-unit" id="doc-content"><a name="top"></a>
+
+<div id="jd-header" class="guide-header">
+  <span class="crumb">
+    
+      <a href="index.html">User Interface</a> &gt;
+    
+  </span>
+<h1>Creating Menus——创建菜单</h1>
+</div>
+
+  <div id="jd-content">
+
+
+    <div class="jd-descr">
+    <div id="qv-wrapper">
+<div id="qv">
+  <h2>Key classes——关键类</h2>
+  <ol>
+    <li><code><a href="../../../reference/android/view/Menu.html">Menu</a></code></li>
+    <li><code><a href="../../../reference/android/view/ContextMenu.html">ContextMenu</a></code></li>
+    <li><code><a href="../../../reference/android/view/SubMenu.html">SubMenu</a></code></li>
+  </ol>
+  <h2>In this document——在这篇文档中</h2>
+  <ol>
+    <li><a href="#options-menu">Options Menu</a>——选项菜单</li>
+    <li><a href="#context-menu">Context Menu</a>——情境菜单</li>
+    <li><a href="#submenu">Submenu</a>——子菜单</li>
+    <li><a href="#xml">Define Menus in XML</a>——在XML中定义菜单</li>
+    <li><a href="#features">Menu Features</a>
+      ——菜单功能<ol>
+        <li><a href="#groups">Menu groups</a>——菜单项组</li>
+        <li><a href="#checkable">Checkable menu items</a>——可以进行多选的菜单项</li>
+        <li><a href="#shortcuts">Shortcut keys</a>——快捷键</li>
+        <li><a href="#intents">Menu item intents</a>——菜单项意图</li>
+      </ol>
+    </li>
+  </ol>
+</div>
+</div>
+
+<p>Menus are an important part of any application. They provide familiar interfaces
+that reveal application functions and settings. Android offers an easy programming interface
+for developers to provide standardized application menus for various situations.<br>
+菜单在任何应用程序中都是重要的一部分。他提供我们熟悉的界面，显示出应用程序的功能和设置。＊为开发者提供了在不同情况下的显示标准应用程序菜单的易用的编程接口。<br>
+</p>
+
+<p>Android offers three fundamental types of application menus:<br>
+Android提供了三种基本的应用程序菜单类型：<br>
+</p>
+<dl>
+  <dt><strong>Options Menu——选项菜单</strong></dt>
+    <dd>This is the primary set of menu items for an Activity. It is revealed by pressing 
+    the device MENU key. Within the Options Menu are two groups of menu items:
+      <br>
+	<span>这是活动的菜单项的默认类型。当用户按下设备上的MENU键后，菜单显示在屏幕底部。在选项菜单中有两种菜单项：</span><dl style="margin-top: 1em;">
+		<dt><em>Icon Menu——图标菜单</em></dt>
+		<dd>This is the collection of items initially visible at the bottom of the screen 
+          at the press of the MENU key. It supports a maximum of six menu items.
+          These are the only menu items that support icons and the only menu items that 
+		<em>do not</em> support
+          checkboxes or radio buttons.<br>
+		<span>
+		当按下MENU键后，在屏幕底部显示一系列可见的项目。他支持最多六个菜单项。只有这种菜单项支持图标的显示，也只有这种菜单项不支持多项选择列表或单选按钮。</span></dd>
+		<dt><em>Expanded Menu——扩充的菜单</em></dt>
+		<dd>This is a vertical list of items exposed by the "More" menu item from the Icon Menu.
+          It exists only when the Icon Menu becomes over-loaded and is comprised of the sixth 
+          Option Menu item and the rest.<br>
+		<span>
+		这是从图标菜单的“More”选项显示的子菜单，是一个垂直的可选项列表。只有当图标菜单放不下的情况下才会出现扩充的菜单，即菜单包括了作为图标菜单显示放不下的其余项目。</span></dd>
+	</dl>
+    </dd>
+  <dt><strong>Context Menu——情境菜单</strong></dt>
+    <dd>This is a floating list of menu items that may appear when you perform a long-press on a View 
+    (such as a list item). <br>
+	<span>这种菜单一般是您长按View（例如选项列表）的某个菜单项后浮在上边的菜单。</span></dd>
+  <dt><strong>Submenu——子菜单</strong></dt>
+    <dd>This is a floating list of menu items that is revealed by an item in the Options Menu
+    or a Context Menu. A Submenu item cannot support nested Submenus. <br>
+	<span>子菜单是点选 选项菜单或情境菜单 某项后显示的浮在上边的可选项列表。子菜单不支持嵌套。</span></dd>
+</dl>
+
+
+<h2 id="options-menu">Options Menu——选项菜单</h2>
+<img src="../../../images/options_menu.png" align="right">
+<p>The Options Menu is opened by pressing the device MENU key.
+When opened, the Icon Menu is displayed, which holds the first six menu items.
+If more than six items are added to the Options Menu, then those that can't fit
+in the Icon Menu are revealed in the Expanded Menu, via the "More" menu item. The Expanded Menu
+is automatically added when there are more than six items.<br>
+<span>选项菜单在用户按下MENU键之后打开。打开后，显示的是一个图标菜单，显示的是列表的前六</span><span lang="EN-US">/</span><span>五项。如果您的菜单中项目多余六个，那么多出来的就会显示在“More”项中，作为扩充的菜单。扩充菜单在菜单项多于六个时自动添加。</span></p>
+
+<p>The Options Menu is where you should include basic application functions
+and any necessary navigation items (e.g., to a home screen or application settings).
+You can also add <a href="#submenu">Submenus</a> for organizing topics 
+and including extra menu functionality.<br>
+<span>
+选项菜单是您添加基本应用程序功能和必要的导航项目（例如，回到主活动或转到设置活动）的地方。您也可以向某个项目中添加子菜单，来显示一些功能关联的相近的项目，或者显示额外的功能。</span></p>
+
+<p>When this menu is opened for the first time, 
+the Android system will call the Activity <code><code><a href="../../../reference/android/app/Activity.html#onCreateOptionsMenu%28android.view.Menu%29">onCreateOptionsMenu()</a></code></code> callback method. Override this method in your Activity
+and populate the <code><a href="../../../reference/android/view/Menu.html">Menu</a></code> object given to you. You can populate the menu by
+inflating a menu resource that was <a href="#xml">defined in XML</a>, or by calling 
+<code><code><a href="../../../reference/android/view/Menu.html#add%28java.lang.CharSequence%29">add()</a></code></code>
+for each item you'd like in the menu. This method adds a <code><a href="../../../reference/android/view/MenuItem.html">MenuItem</a></code>, and returns the
+newly created object to you. You can use the returned MenuItem to set additional properties like 
+an icon, a keyboard shortcut, an intent, and other settings for the item.<br>
+<span>当菜单第一次打开时，Android系统会调用活动的</span><code><a href="../../../reference/android/app/Activity.html#onCreateOptionsMenu%28android.view.Menu%29">onCreateOptionsMenu()</a></code><span>回调方法。在活动中重写这个方法然后向系统给您的</span> <code><a href="../../../reference/android/view/Menu.html">Menu</a></code><span>对象中填充菜单项。您可以通过扩充<a href="#xml">定义在</a></span><a href="#xml">XML</a><span>中的菜单部分，或者为每个您想要添加到菜单中的项目调用</span><code><a href="../../../reference/android/view/Menu.html#add%28java.lang.CharSequence%29">add()</a></code><span>，来向菜单中添加您的菜单项。这个方法向菜单中添加一个</span><code><a href="../../../reference/android/view/MenuItem.html">MenuItem</a></code><span>，然后返回新创建的对象返回。您可以使用返回的MenuItem来为此项目设定额外的属性，比如图标，键盘快捷键，意图，或其他设置。</span></p>
+
+<p>There are multiple <code><code><a href="../../../reference/android/view/Menu.html#add%28java.lang.CharSequence%29">add()</a></code></code> methods.
+Usually, you'll want to use one that accepts an <var>itemId</var> argument. 
+This is a unique integer that allows you to identify the item during a callback.<br>
+<span>有多种</span><code><a href="../../../reference/android/view/Menu.html#add%28java.lang.CharSequence%29">add()</a></code><span>方法。通常情况下，您会使用接收</span><var>itemId</var><span>参数的那个。</span><var>itemId</var><span>参数是一个特殊的整数，允许您在回调方法中识别您的菜单项。</span></p>
+
+<p>When a menu item is selected from the Options Menu, you will recieve a callback to the
+<code><code><a href="../../../reference/android/app/Activity.html#onOptionsItemSelected%28android.view.MenuItem%29">onOptionsItemSelected()</a></code></code> 
+method of your Activity. This callback passes you the 
+<code>MenuItem</code> that has been selected. You can identify the item by requesting the 
+<var>itemId</var>, with <code><code><a href="../../../reference/android/view/MenuItem.html#getItemId%28%29">getItemId()</a></code></code>,
+which returns the integer that was assigned with the <code>add()</code> method. Once you identify
+the menu item, you can take the appropriate action.<br>
+<span>当选项菜单中某项被选择时，您的活动会收到</span><code><a href="../../../reference/android/app/Activity.html#onOptionsItemSelected%28android.view.MenuItem%29">onOptionsItemSelected()</a></code><span>方法的调用。这个方法传收到被选择的</span><code>MenuItem</code><span>。您可以通过调用</span><code><a href="../../../reference/android/view/MenuItem.html#getItemId%28%29">getItemId()</a></code><span>来请求项目的</span><var>itemId</var><span>，（</span><code><a href="../../../reference/android/view/MenuItem.html#getItemId%28%29">getItemId()</a></code><span>方法返回使用</span><code>add()</code><span>方法分配给项目的整数ID值），来对项目进行识别，然后您就可以采取相应的动作。</span></p>
+
+<p>Here's an example of this procedure, inside an Activity, wherein we create an 
+Options Menu and handle item selections:<br>
+<span>下面是这个过程的一个例子，在活动中，我们创建一个选项菜单然后处理项目的选择：</span></p>
+
+<pre>/* Creates the menu items ——创建菜单项*/<br>public boolean onCreateOptionsMenu(Menu menu) {<br>    menu.add(0, MENU_NEW_GAME, 0, "New Game");<br>    menu.add(0, MENU_QUIT, 0, "Quit");<br>    return true;<br>}<br><br>/* Handles item selections ——处理项目的选择*/<br>public boolean onOptionsItemSelected(MenuItem item) {<br>    switch (item.getItemId()) {<br>    case MENU_NEW_GAME:<br>        newGame();<br>        return true;<br>    case MENU_QUIT:<br>        quit();<br>        return true;<br>    }<br>    return false;<br>}<br></pre>
+
+<p>The <code>add()</code> method used in this sample takes four arguments: 
+<var>groupId</var>, <var>itemId</var>, <var>order</var>, and <var>title</var>.
+The <var>groupId</var> allows you to associate this menu item with a group of other items
+(more about <a href="#groups">Menu groups</a>, below) — in 
+this example, we ignore it. <var>itemId</var> is a unique integer that we give the 
+MenuItem so that can identify it in the next callback. <var>order</var> allows us to 
+define the display order of the item — by default, they are displayed by the
+order in which we add them. <var>title</var> is, of course, the name that goes on the 
+menu item (this can also be a 
+<a href="../../../guide/topics/resources/available-resources.html#stringresources">string resource</a>, 
+and we recommend you do it that way for easier localization).<br>
+<span>在这个例子中使用的</span><code>add()</code><span>方法需要四个参数：</span><var>groupId</var>, <var>itemId</var>, <var>order </var>
+和 <var>title</var><span>。</span><var>groupId</var><span>允</span><span>许您将这个菜单项和其它一组菜单项联合在一起</span><span lang="EN-US">(</span><span>下边有更多关于菜单项组</span><span lang="EN-US">)——</span><span>在这个例子中，我们忽略了这个参数。</span><var>itemId</var><span>是我们为了在后边的回调方法中识别菜单项而设给菜单的一个独特的整数。</span><var>order </var>
+<span>允许我们定义菜单项的显示顺序</span><span lang="EN-US">——</span><span>默认的他们是按照我们添加他们的顺序显示的。</span><var>title </var>
+<span>当然就是在菜单项上显示的名称</span><span lang="EN-US">(</span><span>名称也可以是一个字符串资源，我们建议您这样使用，因为这样更容易本地化</span><span lang="EN-US">)</span><span>。</span></p>
+
+<p class="note"><strong>Tip:</strong>
+If you have several menu items that can be grouped together with a title, 
+consider organizing them into a <a href="#submenu">Submenu</a>.<br>
+<strong>小贴士：</strong><span>如果您有几个菜单项，可以使用一个标题组成一组，您可以考虑将他们放进一个</span><a href="#submenu">Submenu</a><span>。</span></p>
+
+<h3>Adding icons——添加图标</h3>
+<p>Icons can also be added to items that appears in the Icon Menu with
+<code><code><a href="../../../reference/android/view/MenuItem.html#setIcon%28android.graphics.drawable.Drawable%29">setIcon()</a></code></code>. For example:<br>
+<span>图标可使用</span><code><a href="../../../reference/android/view/MenuItem.html#setIcon%28android.graphics.drawable.Drawable%29">setIcon()</a></code><span>添加到项目中，显示的就是图标菜单。例如：</span></p>
+<pre>menu.add(0, MENU_QUIT, 0, "Quit")<br>    .setIcon(R.drawable.menu_quit_icon);</pre>
+
+<h3>Modifying the menu——修改菜单</h3>
+<p>If you want to sometimes re-write the Options Menu as it is opened, override the 
+<code><code><a href="../../../reference/android/app/Activity.html#onPrepareOptionsMenu%28android.view.Menu%29">onPrepareOptionsMenu()</a></code></code> method, which is
+called each time the menu is opened. This will pass you the Menu object, just like the 
+<code>onCreateOptionsMenu()</code> callback. This is useful if you'd like to add or remove
+menu options depending on the current state of an application or game.<br>
+<span>如果您想有时在选项菜单被打开时进行菜单项的修改，重写</span><code><a href="../../../reference/android/app/Activity.html#onPrepareOptionsMenu%28android.view.Menu%29">onPrepareOptionsMenu()</a></code><span>方法，这个方法每次菜单被打开时都会被调用。他会返回Menu对象，就像</span><code>onCreateOptionsMenu()</code><span>方法。如果您想根据应用程序或游戏的当前状态增减菜单项，这就很有用了。</span></p>
+
+<p class="note"><strong>Note:</strong> 
+When changing items in the menu, it's bad practice to do so based on the currently selected item.
+Keep in mind that, when in touch mode, there will not be a selected (or focused) item. Instead, you
+should use a <a href="#context-menu">Context Menu</a> for such behaviors, when you want to provide 
+functionality based on a particular item in the UI.<br>
+<strong>注意：</strong><span>在修改菜单项时，不要修改高亮状态的项目。在触控模式下，不会有高亮（或焦点）项。当您想要提供某些基于特定UI项目的功能，您应该为这个动作使用</span><a href="#context-menu">Context Menu</a><span>。</span></p>
+
+
+<h2 id="context-menu">Context Menu——情境菜单</h2>
+<p>The Android context menu is similar, in concept, to the menu revealed with a "right-click" on a PC. 
+When a view is registered to a context menu, 
+performing a "long-press" (press and hold for about two seconds) on the object
+will reveal a floating menu that provides functions relating to that item. 
+Context menus can be registered to any View object,
+however, they are most often used for items in a 
+<code><a href="../../../reference/android/widget/ListView.html">ListView</a></code>, which helpfully indicates the presence of the context menu
+by transforming the background color of the ListView item when pressed.
+(The items in the phone's contact list offer an example of this feature.)
+<br>
+Android<span> 的情境菜单在概念上同PC上</span><span lang="EN-US">“</span><span>单击右键</span><span lang="EN-US">“</span><span>显示的菜单很相似。当一个情境菜单注册到一个可视窗后，</span><span lang="EN-US">“</span><span>长按</span><span lang="EN-US">“</span><span>（按住约两秒钟）对象会显示一个浮在上方的的提供与当前选中项目有关的功能的菜单。情境菜单能注册到任何可视窗，但是，常用的的注册到</span><code><a href="../../../reference/android/widget/ListView.html">ListView</a></code><span>中的项目上，这个项目会在长按时改变其项目的高亮背景，以表明将要显示一个情境菜单。（就像电话的联系人列表的功能）</span></p>
+
+<p class="note"><strong>Note:</strong> Context menu items do not support icons or shortcut keys.<br>
+<strong>注意：</strong>情境菜单不支持图标和快捷键。</p>
+
+<p>To create a context menu, you must override the Activity's context menu callback methods:
+<code><code><a href="../../../reference/android/app/Activity.html#onCreateContextMenu%28android.view.ContextMenu,%20android.view.View,%20android.view.ContextMenu.ContextMenuInfo%29">onCreateContextMenu()</a></code></code> and 
+<code><code><a href="../../../reference/android/app/Activity.html#onContextItemSelected%28android.view.MenuItem%29">onContextItemSelected()</a></code></code>.
+Inside the <code>onCreateContextMenu()</code> callback method, you can add menu items using one of the 
+<code><code><a href="../../../reference/android/view/Menu.html#add%28java.lang.CharSequence%29">add()</a></code></code> methods, or by 
+inflating a menu resource that was <a href="#xml">defined in XML</a>.
+Then, register a <code><a href="../../../reference/android/view/ContextMenu.html">ContextMenu</a></code> for the View, with 
+<code><code><a href="../../../reference/android/app/Activity.html#registerForContextMenu%28android.view.View%29">registerForContextMenu()</a></code></code>.<br>
+<span>创建情境菜单，您需要重写活动的情境菜单回调方法：</span><code><a href="../../../reference/android/app/Activity.html#onCreateContextMenu%28android.view.ContextMenu,%20android.view.View,%20android.view.ContextMenu.ContextMenuInfo%29">onCreateContextMenu()</a></code><span>和</span><code><a href="../../../reference/android/app/Activity.html#onContextItemSelected%28android.view.MenuItem%29">onContextItemSelected()</a></code><span>。在</span><code>onCreateContextMenu()</code><span>回调方法中，您可以使用 
+</span><code><a href="../../../reference/android/view/Menu.html#add%28java.lang.CharSequence%29">add()</a></code>
+<span>方法向情境菜单中一个添加菜单项，或者扩充</span><a href="#xml">defined in XML</a><span>中的菜单资源。然后，使用</span><code><a href="../../../reference/android/app/Activity.html#registerForContextMenu%28android.view.View%29">registerForContextMenu()</a></code><span>向View注册</span><code><a href="../../../reference/android/view/ContextMenu.html">ContextMenu</a></code><span>。</span></p>
+
+<p>For example, here is some code that can be used with the 
+<a href="../../../guide/tutorials/notepad/index.html">Notepad application</a>
+to add a context menu for each note in the list:<br>
+<span>例如，下面是一些可用于</span><a href="../../../guide/tutorials/notepad/index.html">Notepad application</a><span>应用程序的代码，实现了向列表中每个记事添加情境菜单：</span></p>
+<pre>public void onCreateContextMenu(ContextMenu menu, View v,<br>                                ContextMenuInfo menuInfo) {<br>  super.onCreateContextMenu(menu, v, menuInfo);<br>  menu.add(0, EDIT_ID, 0, "Edit");<br>  menu.add(0, DELETE_ID, 0,  "Delete");<br>}<br><br>public boolean onContextItemSelected(MenuItem item) {<br>  AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();<br>  switch (item.getItemId()) {<br>  case EDIT_ID:<br>    editNote(info.id);<br>    return true;<br>  case DELETE_ID:<br>    deleteNote(info.id);<br>    return true;<br>  default:<br>    return super.onContextItemSelected(item);<br>  }<br>}<br></pre>
+
+<p>In <code>onCreateContextMenu()</code>, we are given not only the ContextMenu to
+which we will add <code><a href="../../../reference/android/view/MenuItem.html">MenuItem</a></code>s, but also the <code><a href="../../../reference/android/view/View.html">View</a></code>
+that was selected and a <code><a href="../../../reference/android/view/ContextMenu.ContextMenuInfo.html">ContextMenuInfo</a></code> object,
+which provides additional information about the object that was selected. 
+In this example, nothing special is done in <code>onCreateContextMenu()</code> — just
+a couple items are added as usual. In the <code>onContextItemSelected()</code>
+callback, we request the <code><a href="../../../reference/android/widget/AdapterView.AdapterContextMenuInfo.html">AdapterContextMenuInfo</a></code> 
+from the <code>MenuItem</code>, which provides information about the currently selected item. 
+All we need from
+this is the list ID for the selected item, so whether editing a note or deleting it, 
+we find the ID with the <code>AdapterContextMenuInfo.info</code> field of the object. This ID
+is passed to the <code>editNote()</code> and <code>deleteNote()</code> methods to perfrom
+the respective action.<br>
+<span>在</span><code>onCreateContextMenu()</code><span>中，参数不仅包括要添加</span><code><a href="../../../reference/android/view/MenuItem.html">MenuItem</a></code>s<span>的</span>ContextMenu<span>，还包括要注册到的</span><code><a href="../../../reference/android/view/View.html">View</a></code><span>，还有提供被选项额外信息的</span><code><a href="../../../reference/android/view/ContextMenu.ContextMenuInfo.html">ContextMenuInfo</a></code><span>对象。在这个例子中，</span><code>onCreateContextMenu()</code><span>中没做什么特别的事</span><span lang="EN-US">——</span><span>只是添加了两个平常的项目。在</span><code>onContextItemSelected()</code><span>回调中，我们从</span><code>MenuItem</code><span>中请求提供目前高亮的项目信息的</span><code><a href="../../../reference/android/widget/AdapterView.AdapterContextMenuInfo.html">AdapterContextMenuInfo</a></code><span>。我们要做的只是从中找到选中项目的ID，因此，无论修改或是删除项目，我们在被选项</span><code>对象</code><span>的</span><code>AdapterContextMenuInfo.info</code><span>一栏找到对象的ID。ID被传到</span><code>editNote()</code><span>或</span><code>deleteNote()</code><span>方法来采取对应的动作。</span></p>
+
+<p>Now, to register this context menu for all the items in a <code><a href="../../../reference/android/widget/ListView.html">ListView</a></code>,
+we pass the entire <code>ListView</code> to the 
+<code><code><a href="../../../reference/android/app/Activity.html#registerForContextMenu%28android.view.View%29">registerForContextMenu(View)</a></code></code> method:<br>
+现在，为了向<code><a href="../../../reference/android/widget/ListView.html">ListView</a> </code>
+中所有选项注册&nbsp;&nbsp; 情境菜单，我们将整个<code>ListView</code>传给<code><a href="../../../reference/android/app/Activity.html#registerForContextMenu%28android.view.View%29">registerForContextMenu(View)</a></code> 
+方法：</p>
+
+<pre>registerForContextMenu(getListView());</pre>
+<p>Remember, you can pass any View object to register a context menu. Here,
+<code><code><a href="../../../reference/android/app/ListActivity.html#getListView%28%29">getListView()</a></code></code> returns the ListView
+object used in the Notepad application's <code><a href="../../../reference/android/app/ListActivity.html">ListActivity</a></code>. As such, each item 
+in the list is registered to this context menu.<br>
+记住，您可以向<code><a href="../../../reference/android/app/Activity.html#registerForContextMenu%28android.view.View%29">registerForContextMenu(View)</a></code> 
+方法中传递任何View对象来进行注册。这里，<code><a href="../../../reference/android/app/ListActivity.html#getListView%28%29">getListView()</a></code>返回在Notepad应用程序的<code><a href="../../../reference/android/app/ListActivity.html">ListActivity</a></code>中使用的ListView对象。这样一来，列表中每个项目都与情境菜单关联了。</p>
+
+
+
+<h2 id="submenu">Submenus——子菜单</h2>
+<p>A sub menu can be added within any menu, except another sub menu.
+These are very useful when your application has a lot of functions that may be
+organized in topics, like the items in a PC application's menu bar (File, Edit, View, etc.).<br>
+子菜单可以添加到除了另一个子菜单的&nbsp; 
+任何菜单中。当您的应用程序有大量功能要组织在一个标题下时，这就很有用了，就像PC上应用程序的菜单栏（文件、编辑、视图、等等）中的项目。</p>
+
+<p>A sub menu is created by adding it to an existing <code><a href="../../../reference/android/view/Menu.html">Menu</a></code>
+with <code><code><a href="../../../reference/android/view/Menu.html#addSubMenu%28java.lang.CharSequence%29">addSubMenu()</a></code></code>. 
+This returns a <code><a href="../../../reference/android/view/SubMenu.html">SubMenu</a></code> object (an extension of <code><a href="../../../reference/android/view/Menu.html">Menu</a></code>). 
+You can then add additional items to this menu, with the normal routine, using
+the <code><code><a href="../../../reference/android/view/Menu.html#add%28java.lang.CharSequence%29">add()</a></code></code> methods. For example:<br>
+子菜单通过&nbsp;&nbsp;&nbsp; 使用<code><a href="../../../reference/android/view/Menu.html#addSubMenu%28java.lang.CharSequence%29">addSubMenu()</a></code>将其添加到一个已经存在的<code><a href="../../../reference/android/view/Menu.html">Menu</a>&nbsp;&nbsp; </code>
+来创建。这个方法返回一个<code><a href="../../../reference/android/view/SubMenu.html">SubMenu</a></code> 
+对象（<code><a href="../../../reference/android/view/Menu.html">Menu</a></code>的扩展类）。然后您可以向这个菜单中添加其他的项目，很普通的步骤，使用<code><a href="../../../reference/android/view/Menu.html#add%28java.lang.CharSequence%29">add()</a></code>方法。例如：</p>
+
+<pre>public boolean onCreateOptionsMenu(Menu menu) {<br>  boolean result = super.onCreateOptionsMenu(menu);<br><br>  SubMenu fileMenu = menu.addSubMenu("File");<br>  SubMenu editMenu = menu.addSubMenu("Edit");<br>  fileMenu.add("new");<br>  fileMenu.add("open");<br>  fileMenu.add("save");<br>  editMenu.add("undo");<br>  editMenu.add("redo");<br><br>  return result;<br>}<br></pre>
+<p>Callbacks for items selected in a sub menu are made to the parent menu's callback method. 
+For the example above, selections in the sub menu will be handled by the 
+<code>onOptionsItemSelected()</code> callback.<br>
+子菜单中项目选中后的回调方法 创建在其父菜单的回调中。就如上边的例子，子菜单的项目选择由<code>onOptionsItemSelected()</code>回调处理。</p>
+<p>You can also add Submenus when you <a href="#xml">define the parent menu in XML</a>.<br>
+您也可以在<a href="#xml">define the parent menu in XML</a>时，定义子菜单。<br>
+	</p>
+
+
+<h2 id="xml">Define Menus in XML——在XML中定义菜单</h2>
+<p>Just like Android UI layouts, you can define application menus in XML, then inflate them 
+in your menu's <code>onCreate...()</code> callback method. This makes your application code cleaner and
+separates more interface design into XML, which is easier to visualize.<br>
+<span>正如Android 的 UI 布局一样，您也可以在XML中定义应用程序菜单，然后在您的菜单的</span><code>onCreate...()</code><span>这样的回调方法中扩充他们。这样可以使您的应用程序代码更简洁，将用户界面的设计放入XML也可以使设计更加可视化。</span></p>
+
+<p>To start, create a new folder in your project <code>res/</code> directory called <code>menu</code>.
+This is where you should keep all XML files that define your application menus.<br>
+<span>先在您的项目的</span><code>res/</code> directory <span>位置新建一个名为</span><code>menu</code><span>的文件夹。在这里存放所有定义应用程序菜单的</span>XML
+<span>文件。</span></p>
+
+<p>In a menu XML layout, there are
+three valid elements: <code>&lt;menu&gt;</code>, <code>&lt;group&gt;</code> and <code>&lt;item&gt;</code>. The
+<code>item</code> and <code>group</code> elements must be children of a <code>menu</code>, but <code>item</code>
+elements may also be the children of a <code>group</code>, and another <code>menu</code> element may be the child
+of an <code>item</code> (to create a Submenu). Of course, the root node of any file
+must be a <code>menu</code> element.<br>
+<span>在一个菜单的XML布局文件中，有三个可用的元素：</span><code>&lt;menu&gt;</code>, <code>&lt;group&gt;</code><span>和</span><code>&lt;item&gt;</code><span>。</span><code>item</code><span>和</span><code>group</code><span>元素必须是</span><code>menu</code><span>的子级，但是</span><code>item</code><span>元素也可以是</span><code>group</code><span>的子一级，另一个</span><code>menu</code> 
+<span>元素也可是这个</span><code>item</code><span>的子一级（这样可以创建子菜单）。当然，任何菜单布局的跟节点必须是</span><code>menu</code><span>元素。</span></p>
+
+<p>As an example, we'll define the same menu created in the <a href="#options-menu">Options Menu</a> section, 
+above. We start with an XML file named <code>options_menu.xml</code> inside the <code>res/menu/</code> folder:<br>
+<span>举个例子，这里我们要定义一个和上边选项菜单中相同的菜单。我们先在</span><code>res/menu/</code><span>目录新建一个名为</span><code>options_menu.xml</code><span>的XML文件：</span></p>
+<pre>&lt;menu xmlns:android="http://schemas.android.com/apk/res/android"&gt;<br>    &lt;item android:id="@+id/new_game"<br>          android:title="New Game" /&gt;<br>    &lt;item android:id="@+id/quit"<br>          android:title="Quit" /&gt;<br>&lt;/menu&gt;<br></pre>
+
+<p>Then, in the <code>onCreateOptionsMenu()</code> method, we inflate this resource using
+<code><code><a href="../../../reference/android/view/MenuInflater.html#inflate%28int,%20android.view.Menu%29">MenuInflater.inflate()</a></code></code>:<br>
+<span>然后，在</span><code>onCreateOptionsMenu()</code><span>方法中，我们使用</span><code><a href="../../../reference/android/view/MenuInflater.html#inflate%28int,%20android.view.Menu%29">MenuInflater.inflate()</a></code><span>添加这个资源：</span></p>
+<pre>public boolean onCreateOptionsMenu(Menu menu) {<br>    MenuInflater inflater = getMenuInflater();<br>    inflater.inflate(R.menu.options_menu, menu);<br>    return true;<br>}<br></pre>
+
+<p>The <code><code><a href="../../../reference/android/app/Activity.html#getMenuInflater%28%29">getMenuInflater()</a></code></code> method returns the <code><a href="../../../reference/android/view/MenuInflater.html">MenuInflater</a></code>
+for our activity's context. We then call <code><code><a href="../../../reference/android/view/MenuInflater.html#inflate%28int,%20android.view.Menu%29">inflate()</a></code></code>,
+passing it a pointer to our menu resource and the Menu object given by the callback.<br>
+&nbsp;<code><a href="../../../reference/android/app/Activity.html#getMenuInflater%28%29">getMenuInflater()</a></code>
+<span>方法返回我们活动上下文的</span><code><a href="../../../reference/android/view/MenuInflater.html">MenuInflater</a></code><span>。然后我们可以调用</span><code><a href="../../../reference/android/view/MenuInflater.html#inflate%28int,%20android.view.Menu%29">inflate()</a></code><span>，将指向我们的菜单资源的指针和系用调用是传入的</span>Menu<span>对象传给他。</span></p>
+
+<p>While this small sample may seem like more effort, compared to creating the menu items in the 
+<code>onCreateOptionsMenu()</code> method, this will save a lot of trouble when dealing with more items
+and it keeps your application code clean.<br>
+<span>虽然与</span><span lang="EN-US"> &nbsp;用代码</span><span>在</span><code>onCreateOptionsMenu()</code><span>方法内创建菜单项</span><span lang="EN-US"> 
+&nbsp;&nbsp;</span><span>相比，这个方法稍微费事点，但是当你有很多菜单项时，这个方法避免了很多麻烦，而且，这个方法使您的代码更简洁。</span></p>
+
+<p>You can define <a href="#groups">menu groups</a> by wrapping <code>item</code> elements in a <code>group</code>
+element, and create Submenus by nesting another <code>menu</code> inside an <code>item</code>.
+Each element also supports all the necessary attributes to control features like shortcut keys,
+checkboxes, icons, and more. To learn about these attributes and more about the XML syntax, see the Menus
+topic in the <a href="../../../guide/topics/resources/available-resources.html#menus">Available 
+Resource Types</a> document.<br>
+<span>您可以将</span><code>item</code><span>元素包进</span><code>group</code><span>元素中来定义一个</span><a href="#groups">menu 
+groups</a><span>（菜单项组），然后将另一个</span><code>menu</code><span>嵌套进菜单项组的一个</span><code>item</code><span>中 
+创建</span>Submenus<span>（子菜单）。每个元素依旧支持所有控制功能（比如快捷键）的必要属性，复选框，图标等。了解更多这些属性的知识和XML格式，参看</span><a href="../../../guide/topics/resources/available-resources.html#menus">Available 
+Resource Types</a><span>文档中的</span>Menus<span>话题。</span></p>
+
+<h2 id="features">Menu Features——菜单功能</h2>
+<p>Here are some other features that can be applied to most menu items.</p>
+	<p>下列这些功能<span>可以用到大多数菜单项。</span></p>
+
+<h3 id="groups">Menu groups——菜单项组</h3>
+<p>When adding new items to a menu, you can optionally include each item in a group.
+A menu group is a collection of menu items that can share certain traits, like
+whether they are visible, enabled, or checkable.<br>
+<span>
+当将一个新的项目添加到菜单时，您可以可选的将这个项目放进一个组中。菜单项组是一系列具有相同特性的项目的集合，所谓特性即比如是否可见，是否已开启/禁用，或是否可多选。</span></p>
+
+<p>A group is defined by an integer (or a resource id, in XML). A menu item is added to the group when it is
+added to the menu, using one of the <code>add()</code> methods that accepts a <var>groupId</var>
+as an argument, such as <code><code><a href="../../../reference/android/view/Menu.html#add%28int,%20int,%20int,%20int%29">add(int, int, int, int)</a></code></code>.<br>
+菜单项<span>组是用一个整数（或者XML中资源的 ID）定义的。使用一个接受</span><var>groupId</var><span>作参数的</span><code>add()</code><span>方法将菜单项添加到菜单项组，比如 
+</span><code><a href="../../../reference/android/view/Menu.html#add%28int,%20int,%20int,%20int%29">add(int, int, int, int)</a></code><span>。</span></p>
+
+<p>You can show or hide the entire group with 
+<code><code><a href="../../../reference/android/view/Menu.html#setGroupVisible%28int,%20boolean%29">setGroupVisible()</a></code></code>; 
+enable or disable the group with 
+<code><code><a href="../../../reference/android/view/Menu.html#setGroupEnabled%28int,%20boolean%29">setGroupEnabled()</a></code></code>;
+and set whether the items can be checkable with
+<code><code><a href="../../../reference/android/view/Menu.html#setGroupCheckable%28int,%20boolean,%20boolean%29">setGroupCheckable()</a></code></code>.
+<br>
+<span>您可以使用</span><code><a href="../../../reference/android/view/Menu.html#setGroupVisible%28int,%20boolean%29">setGroupVisible()</a></code><span>显示或隐藏整个组；使用</span><code><a href="../../../reference/android/view/Menu.html#setGroupEnabled%28int,%20boolean%29">setGroupEnabled()</a></code><span>开启或禁用组；使用</span><code><a href="../../../reference/android/view/Menu.html#setGroupCheckable%28int,%20boolean,%20boolean%29">setGroupCheckable()</a></code><span>设定项目是否带有复选框。</span></p>
+
+<h3 id="checkable">Checkable menu items——带有复选框的菜单项</h3>
+<img src="../../../images/radio_buttons.png" alt="" align="right">
+<p>Any menu item can be used as an interface for turning options on and off. This can
+be indicated with a checkbox for stand-alone options, or radio buttons for groups of
+mutually exlusive options (see the screenshot, to the right).<br>
+<span>任何菜单项都可以作为某项设置开关的接口。相互独立的设置由带复选框的菜单项表示，相互排斥的用带单选按钮的菜单项表示。（如右图所示）</span></p>
+
+<p class="note"><strong>Note:</strong> Menu items in the Icon Menu cannot
+display a checkbox or radio button. If you choose to make items in the Icon Menu checkable,
+then you must personally indicate the state by swapping the icon and/or text 
+each time the state changes between on and off.<br>
+<strong>注意：</strong><span>图标菜单的菜单项不能显示多选框或单选按钮。如果您想让图标菜单里的项目可多选，则您需要自己写代码，在每次菜单项被选上或取消时改变图标和</span><span lang="EN-US">/</span><span>或文字。</span></p>
+
+<p>To make a single item checkable, use the <code><code><a href="../../../reference/android/view/MenuItem.html#setCheckable%28boolean%29">setCheckable()</a></code></code> method, like so:<br>
+<span>想让一个项目带有复选框进行选择，您可使用</span><code><a href="../../../reference/android/view/MenuItem.html#setCheckable%28boolean%29">setCheckable()</a></code><span>方法，像这样∶</span></p>
+<pre>menu.add(0, VIBRATE_SETTING_ID, 0, "Vibrate")<br>    .setCheckable(true);<br></pre>
+<p>This will display a checkbox with the menu item (unless it's in the Icon Menu). When the item
+is selected, the <code>onOptionsItemSelected()</code> callback is called as usual. It is here that
+you must set the state of the checkbox. You can query the current state of the item with
+<code><code><a href="../../../reference/android/view/MenuItem.html#isChecked%28%29">isChecked()</a></code></code> and set the checked state with
+<code><code><a href="../../../reference/android/view/MenuItem.html#setChecked%28boolean%29">setChecked()</a></code></code>. 
+Here's what this looks like inside the 
+<code>onOptionsItemSelected()</code> callback:<br>
+<span>这样就会显示一个带复选框的菜单项〔除非是图标菜单〕。菜单项被选上时，</span><code>onOptionsItemSelected()</code><span>回调会被调用。在这个方法中，您必须设定选框的状态。您可以调用</span><code><a href="../../../reference/android/view/MenuItem.html#isChecked%28%29">isChecked()</a></code><span>获取选框当前状态，调用</span><code><a href="../../../reference/android/view/MenuItem.html#setChecked%28boolean%29">setChecked()</a></code><span>设定是否已选上。</span><code>onOptionsItemSelected()</code><span>回调中的代码应该像这样：</span></p>
+<pre>switch (item.getItemId()) {<br>case VIBRATE_SETTING_ID:<br>  if (item.isChecked()) item.setChecked(false);<br>  else item.setChecked(true);<br>  return true;<br>...<br>}<br></pre>
+
+<p>To make a group of mutually exclusive radio button items, simply 
+assign the same group ID to each menu item 
+and call <code><code><a href="../../../reference/android/view/Menu.html#setGroupCheckable%28int,%20boolean,%20boolean%29">setGroupCheckable()</a></code></code>. In this case, you don't need to call <code>setCheckable()</code>
+on each menu items, because the group as a whole is set checkable. Here's an example of
+two mutually exclusive options in a Submenu:<br>
+<span>将相互间排斥的单选按钮项组成一组，您只需将这些项设为同一个&nbsp; 组</span>ID<span>，然后调用</span><code><a href="../../../reference/android/view/Menu.html#setGroupCheckable%28int,%20boolean,%20boolean%29">setGroupCheckable()</a></code><span>。这种情况下，您就不用再为每个项调用</span><code>setCheckable()</code><span>，因为组整个都被设为了可以选择的形式。下面是子菜单里两个相互排斥的选项的例子∶</span></p>
+<pre>SubMenu subMenu = menu.addSubMenu("Color");<br>subMenu.add(COLOR_MENU_GROUP, COLOR_RED_ID, 0, "Red");<br>subMenu.add(COLOR_MENU_GROUP, COLOR_BLUE_ID, 0, "Blue");<br>subMenu.setGroupCheckable(COLOR_MENU_GROUP, true, true);<br></pre>
+<p>In the <code>setGroupCheckable()</code> method, the first argument is the group ID
+that we want to set checkable. The second argument is whether we want the group items
+to be checkable. The last one is whether we want each item to be exclusively checkable 
+(if we set this <em>false</em>, then all the items will be checkboxes instead of radio buttons).
+When the group is set to be exclusive (radio buttons), each time a new item is selected, 
+all other are automatically de-selected.<br>
+<span>在</span><code>setGroupCheckable()</code><span>方法中，第一个参数是我们想设为可进行选择的菜单项的组的</span> 
+ID <span>。第二个参数是我们是否希望组项&nbsp; 成为可进行选择的形式。最后一个是我们是否希望每个项之间是排斥的〔如果设为</span><em>false</em><span>，菜单项都带有复选框可以进行多选，而不是单选按钮的形式〕。如果组项间被设为排斥的（就是单选按钮的形式），那么每次选一个项，其他项自动取消选择。</span></p>
+<p>
+
+</p><p class="note"><strong>Note:</strong>
+Checkable menu items are intended to be used only on a per-session basis and not saved to the device 
+(e.g., the <em>Map mode</em> setting in the Maps application is not saved — screenshot above).
+If there are application settings that you would like to save for the user,
+then you should store the data using <a href="#../../../guide/topics/data/data-storage.html#pref">Preferences</a>,
+and manage them with a <code><a href="../../../reference/android/preference/PreferenceActivity.html">PreferenceActivity</a></code>.<br>
+	<strong>注意：</strong>可选择的菜单项的设计初衷是对于当前会话的，而不是存储于设备（比如， 
+	Maps应用程序的地图模式设定——上边截图所示&nbsp; 不会被存储起来）。如果您想为用户保存应用程序的设定，那么您需要使用 <a href="#../../../guide/topics/data/data-storage.html#pref">Preferences</a>将数据存储起来，然后使用<code><a href="../../../reference/android/preference/PreferenceActivity.html">PreferenceActivity</a></code>管理。</p>
+
+
+<h3 id="shortcuts">Shortcut keys——快捷键</h3>
+<p>Quick access shortcut keys using letters and/or numbers can be added to menu items with
+<code>setAlphabeticShortcut(char)</code> (to set char shortcut), <code>setNumericShortcut(int)</code>
+(to set numeric shortcut),
+or <code>setShortcut(char,int)</code> (to set both). Case is <em>not</em> sensitive.
+
+For example:<br>
+连接到菜单项的 使用字母和/或数字的快捷键可以使用<code>setAlphabeticShortcut(char)</code>（设定字母快捷键），<code>setNumericShortcut(int)</code>（设定数字快捷键）或<code>setShortcut(char,int)</code>（同时设定数字和字母快捷键）设定。按键不区分大小写。例如：</p>
+<pre>menu.add(0, MENU_QUIT, 0, "Quit")<br>    .setAlphabeticShortcut('q');<br></pre>
+<p>Now, when the menu is open (or while holding the MENU key), pressing the &quot;q&quot; 
+key will select this item.<br>
+现在，当菜单打开时（或按下MENU键后），按下“Q”键就选择了这个项。</p>
+<p>This shortcut key will be displayed as a tip in the menu item, below the menu item name
+(except for items in the Icon Menu).<br>
+项目的快捷键会在项目名称下方提示出来（除了在图标菜单中的五/六 个）</p>
+<p class="note"><strong>Note:</strong> Shortcuts cannot be added to items in a Context Menu.<br>
+<strong>注意：</strong>情境菜单的项不能添加快捷键。</p>
+
+
+<h3 id="intents">Menu item intents——菜单项意图</h3>
+<p>If you've read the <a href="../../../guide/topics/fundamentals.html">Application
+Fundamentals</a>, then you're at least a little familiar
+with Android Intents. These allow applications to bind with each other, share information,
+and perform user tasks cooperatively. Just like your application might fire an Intent to launch a web browser,
+an email client, or another Activity in your application,
+you can perform such actions from within a menu.
+There are two ways to do this: define an Intent and assign it to a single menu item, or
+define an Intent and allow Android to search the device for activities and dynamically add a 
+menu item for each one that meets the Intent criteria.<br>
+如果您已经阅读了<a href="../../../guide/topics/fundamentals.html">Application
+Fundamentals</a>，那么您应该对Android的 意图 
+还有点印象。意图允许应用程序间相互绑定，共享信息，合作完成用户的任务，您也可以在菜单中完成上述过程。两种方法完成：定义一个 意图 
+，分配给一个菜单项目；或者定义一个 意图 ，然后允许Android在设备中寻找并动态为每个符合意图要求的&nbsp; 活动添加菜单项。</p>
+
+<p>For more information on creating Intents and providing your application's services to other applications, 
+read the <a href="/guide/topics/intents/intents-filters.html">Intents 
+and Intent Filters</a> document.<br>
+更多有关创建 意图 和向其他应用程序提供本应用程序功能的信息，请阅读<a href="/guide/topics/intents/intents-filters.html">Intents 
+and Intent Filters</a>文档。</p>
+
+<h4>Set an intent for a single menu item——为一个菜单项设定意图</h4>
+<p>If you want to offer a specific menu item that launches a new Activity, then you 
+can specifically define an Intent for the menu item with the
+<code><code><a href="../../../reference/android/view/MenuItem.html#setIntent%28android.content.Intent%29">setIntent()</a></code></code> method.<br>
+如果您想提供一个跳转到另一个活动的菜单项，那么您可以使用<code><a href="../../../reference/android/view/MenuItem.html#setIntent%28android.content.Intent%29">setIntent()</a></code>方法为菜单项目特别的定义一个意图。</p>
+
+<p>For example, inside the <code><code><a href="../../../reference/android/app/Activity.html#onCreateOptionsMenu%28android.view.Menu%29">onCreateOptionsMenu()</a></code></code> method, you can define a new menu item with an Intent like this:<br>
+例如，在<code><a href="../../../reference/android/app/Activity.html#onCreateOptionsMenu%28android.view.Menu%29">onCreateOptionsMenu()</a></code>方法里，您可以定义一个新的带有这样的意图的菜单项：</p>
+<pre>MenuItem menuItem = menu.add(0, PHOTO_PICKER_ID, 0, "Select Photo");<br>menuItem.setIntent(new Intent(this, PhotoPicker.class));<br></pre>
+<p>Android will automatically launch the Activity when the item is selected.<br>
+Android会在菜单项被选中时自动的加载活动。</p>
+
+<p class="note"><strong>Note:</strong> This will not return a result to your Activity.
+If you wish to be returned a result, then do not use <code>setIntent()</code>.
+Instead, handle the selection as usual in the <code>onOptionsMenuItemSelected()</code>
+or <code>onContextMenuItemSelected()</code> callback and call
+<code><code><a href="../../../reference/android/app/Activity.html#startActivityForResult%28android.content.Intent,%20int%29">startActivityForResult()</a></code></code>.
+<br>
+<strong>注意</strong>：<strong class="style1">用这种方法启动的活动不会向菜单所在活动返回结果。如果您想得到一个返回结果，那么不要使用</strong><code>setIntent()</code><strong class="style1">。作为替代，您可以像平常在</strong><code>onOptionsMenuItemSelected()</code><strong class="style1">或</strong><code>onContextMenuItemSelected()</code><strong class="style1">中一样响应选择动作，然后调用</strong><code><a href="../../../reference/android/app/Activity.html#startActivityForResult%28android.content.Intent,%20int%29">startActivityForResult()</a></code><strong class="style1">启动新活动。</strong></p>
+
+<h4>Dynamically add intents——动态的添加意图</h4>
+
+<p>If there are potentially multiple activities that are relevant to your current
+Activity or selected item, then the application can dynamically add menu items that execute other
+services.<br>
+如果与您的当前活动或选择了的菜单项&nbsp; 有联系的活动可能有多个，那么您可以让您的应用程序可以&nbsp;&nbsp; 动态的添加可以运行其他活动的&nbsp;&nbsp; 
+菜单项。</p>
+<p>During menu creation, define an Intent with the category <var>Intent.ALTERNATIVE_CATEGORY</var> and/or
+<var>Intent.SELECTED_ALTERNATIVE</var>, the MIME type currently selected (if any), and any other
+requirements, the same way as you would satisfy an intent filter to open a new
+Activity. Then call  
+<code><code><a href="../../../reference/android/view/Menu.html#addIntentOptions%28int,%20int,%20int,%20android.content.ComponentName,%20android.content.Intent%5B%5D,%20android.content.Intent,%20int,%20android.view.MenuItem%5B%5D%29">addIntentOptions()</a></code></code> to have Android search for any services meeting those requirements
+and add them to the menu for you. If there are no applications installed
+that satisfy the Intent, then no additional menu items are added.<br>
+在菜单创建过程中，定义一个带有<var> Intent.ALTERNATIVE_CATEGORY</var> 和/或
+<var>Intent.SELECTED_ALTERNATIVE&nbsp; </var><span class="style2">
+<var class="style3">类别的意图、当前选中（如果有的话）的MIME类型，还有其他请求， 和&nbsp;&nbsp; 
+您创造条件满足一个意图匹配器来开启新活动&nbsp;&nbsp; 是一样的方法。然后调用</var></span><code><a href="../../../reference/android/view/Menu.html#addIntentOptions%28int,%20int,%20int,%20android.content.ComponentName,%20android.content.Intent%5B%5D,%20android.content.Intent,%20int,%20android.view.MenuItem%5B%5D%29">addIntentOptions()</a></code><span class="style2"><var class="style3">让Android搜索符合要求的程序然后为您添加到菜单中。如果没有安装满足意图的应用程序，就不会添加菜单项。</var></span></p>
+
+<p class="note"><strong>Note:</strong>
+<var>SELECTED_ALTERNATIVE</var> is used to handle the currently selected element on the 
+screen. So, it should only be used when creating a Menu in <code>onCreateContextMenu()</code> or
+<code>onPrepareOptionsMenu()</code>, which is called every time the Options Menu is opened.<br>
+<strong>注意：</strong><var>SELECTED_ALTERNATIVE</var>用来响应屏幕上当前选中的项目。因此只有当在或中创建菜单——这两个回调在每次选项菜单打开时都会被调用——时才能使用。</p>
+
+<p>Here's an example demonstrating how an application would search for
+additional services to display on its menu.<br>
+下面是一个例子，演示应用程序如何寻找额外的应用程序然后显示到他的菜单中：</p>
+
+<pre>public boolean onCreateOptionsMenu(Menu menu){<br>    super.onCreateOptionsMenu(menu);<br><br>    // Create an Intent that describes the requirements to fulfill, to be included<br>    // in our menu. The offering app must include a category value of Intent.CATEGORY_ALTERNATIVE. <br>    //创建一个意图，描述要包含在菜单中的另一个活动要满足的条件。提供活动的应用程序必须包含一个Intent.CATEGORY_ALTERNATIVE的类别值。
+    
+    Intent intent = new Intent(null, getIntent().getData());<br>    intent.addCategory(Intent.CATEGORY_ALTERNATIVE);<br>        <br>    // Search for, and populate the menu with, acceptable offering applications.
+    //寻找，然后显示合适的提供活动的应用程序的菜单项<br>    
+    menu.addIntentOptions(<br>         thisClass.INTENT_OPTIONS,  // Menu group ——菜单项组<br>         0,      // Unique item ID (none)——唯一的项目ID<br>         0,      // Order for the items (none)——这个菜单项排的顺序<br>         this.getComponentName(),   // The current Activity name——当前活动的名字<br>         null,   // Specific items to place first (none)——指定排在第一个位置的项目<br>         intent, // Intent created above that describes our requirements——上边描述了我们的要求的意图<br>         0,      // Additional flags to control items (none)——额外的控制项目的控制标<br>         null);  // Array of MenuItems that corrolate to specific items (none)——与特定项目关联的MenuItems数组<br><br>    return true;<br>}</pre>
+
+<p>For each Activity found that provides an Intent Filter matching the Intent defined, a menu
+item will be added, using the <var>android:label</var> value of the intent filter as the text
+for the menu item. 
+The <code><code><a href="../../../reference/android/view/Menu.html#addIntentOptions%28int,%20int,%20int,%20android.content.ComponentName,%20android.content.Intent%5B%5D,%20android.content.Intent,%20int,%20android.view.MenuItem%5B%5D%29">addIntentOptions()</a></code></code> method will also return the number of menu items added.<br>
+对每个&nbsp;&nbsp; 意图匹配器符合我们定义的意图&nbsp;&nbsp; 的活动，都会添加一个菜单项，菜单项上的文字是意图匹配器的<var>android:label </var> 
+值 。 <code><a href="../../../reference/android/view/Menu.html#addIntentOptions%28int,%20int,%20int,%20android.content.ComponentName,%20android.content.Intent%5B%5D,%20android.content.Intent,%20int,%20android.view.MenuItem%5B%5D%29">addIntentOptions()</a></code>方法还会返回添加的菜单项的数量。</p>
+<p>Also be aware that, when <code>addIntentOptions()</code> is called, it will override any and all
+menu items in the menu group specified in the first argument.<br>
+您还要清楚一点，当 <code>addIntentOptions()</code>被调用时，他会覆盖&nbsp;&nbsp; 任何并且是所有&nbsp;&nbsp; 
+的作为其第一个参数的菜单项组中所有菜单项。</p>
+
+<p>If you wish to offer the services of your Activity to other application menus, then you 
+only need to define an intent filter as usual. Just be sure to include the <var>ALTERNATIVE</var> and/or
+<var>SELECTED_ALTERNATIVE</var> values in the <var>name</var> attribute of 
+a <code>&lt;category&gt;</code> element in the intent filter. For example:<br>
+如果您想让您的活动中某些功能能被其他应用程序的菜单利用，那么您只需要像平常一样定义意图匹配器。只是记住在意图匹配器中要将<var>ALTERNATIVE&nbsp; </var> 
+和/或<var> SELECTED_ALTERNATIVE</var> 值添加到<code>&lt;category&gt;</code>元素的 <var>name</var>属性。例如：</p>
+<pre>&lt;intent-filter label="Resize Image"&gt;<br>    ...<br>    &lt;category android:name="android.intent.category.ALTERNATIVE" /&gt;<br>    &lt;category android:name="android.intent.category.SELECTED_ALTERNATIVE" /&gt;<br>    ...<br>&lt;/intent-filter&gt;<br></pre>
+<p>read more about writing intent filters in the 
+<a href="/guide/topics/intents/intents-filters.html">Intents and Intent Filters</a> document.<br>
+在 
+<a href="/guide/topics/intents/intents-filters.html">Intents and Intent Filters</a>文档中获取更多有关如何编写意图匹配器。</p>
+
+<p>For a sample application using this technique, see the 
+<a href="../../../guide/samples/NotePad/index.html">Note Pad</a>
+sample code.<br>
+使用这个技术的示例应用程序，参看<a href="../../../guide/samples/NotePad/index.html">Note Pad</a>示例代码。</p>
+
+    </div>
+
+  <a href="#top" style="float: right;">↑ Go to top</a>
+  
+    <p><a href="index.html">← Back to User Interface</a><br>
+	回到用户界面</p>
+  
+  </div>
+
+<div id="footer">
+
+
+  <div id="copyright">
+    
+  Except as noted, this content is licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0</a>. 
+  For details and restrictions, see the <a href="../../../license.html">
+  Content License</a>.
+  </div>
+  <div id="build_info">
+    
+  Android 2.0.1&nbsp;r1 - 24 Nov 2009 18:21
+
+  </div>
+
+  <div id="footerlinks">
+    
+  <p>
+    <a href="http://www.android.com/terms.html">Site Terms of Service</a> -
+    <a href="http://www.android.com/privacy.html">Privacy Policy</a> -
+    <a href="http://www.android.com/branding.html">Brand Guidelines</a>
+  </p>
+  </div>
+
+</div> <!-- end footer -->
+
+</div><!-- end doc-content -->
+
+</div> <!-- end body-content --> 
+
+<script type="text/javascript">
+init(); /* initialize android-developer-docs.js */
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-5831155-1");
+pageTracker._trackPageview();
+</script>
+
+
+</body></html>

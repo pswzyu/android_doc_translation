@@ -1,0 +1,1330 @@
+10
+
+dir
+0
+https://and-sdk-doc-tr.svn.sourceforge.net/svnroot/and-sdk-doc-tr/sdk/api_diff/5/changes
+https://and-sdk-doc-tr.svn.sourceforge.net/svnroot/and-sdk-doc-tr
+add
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+24301c66-6d43-40e4-a346-040bbf5395a3
+
+android.app.LauncherActivity.html
+file
+
+
+
+add
+
+android.provider.Contacts.Intents.Insert.html
+file
+
+
+
+add
+
+dalvik.system.Zygote.html
+file
+
+
+
+add
+
+android.content.pm.ServiceInfo.html
+file
+
+
+
+add
+
+android.content.BroadcastReceiver.html
+file
+
+
+
+add
+
+android.provider.Contacts.PhonesColumns.html
+file
+
+
+
+add
+
+classes_index_additions.html
+file
+
+
+
+add
+
+pkg_android.database.html
+file
+
+
+
+add
+
+android.provider.Contacts.ExtensionsColumns.html
+file
+
+
+
+add
+
+android.provider.Contacts.SettingsColumns.html
+file
+
+
+
+add
+
+android.content.pm.PackageManager.html
+file
+
+
+
+add
+
+android.view.ViewConfiguration.html
+file
+
+
+
+add
+
+jdiff_help.html
+file
+
+
+
+add
+
+pkg_android.content.html
+file
+
+
+
+add
+
+fields_index_additions.html
+file
+
+
+
+add
+
+pkg_android.text.format.html
+file
+
+
+
+add
+
+android.provider.Contacts.GroupMembership.html
+file
+
+
+
+add
+
+pkg_android.os.html
+file
+
+
+
+add
+
+android.app.ActivityManager.RunningServiceInfo.html
+file
+
+
+
+add
+
+android.provider.Contacts.Photos.html
+file
+
+
+
+add
+
+android.webkit.CallbackProxy.html
+file
+
+
+
+add
+
+android.widget.AutoCompleteTextView.html
+file
+
+
+
+add
+
+android.widget.VideoView.html
+file
+
+
+
+add
+
+packages_index_additions.html
+file
+
+
+
+add
+
+android.text.InputType.html
+file
+
+
+
+add
+
+changes-summary.html
+file
+
+
+
+add
+
+android.os.HandlerThread.html
+file
+
+
+
+add
+
+android.provider.Contacts.GroupsColumns.html
+file
+
+
+
+add
+
+android.provider.Settings.html
+file
+
+
+
+add
+
+android.os.Debug.MemoryInfo.html
+file
+
+
+
+add
+
+android.provider.Contacts.People.html
+file
+
+
+
+add
+
+android.view.WindowManager.LayoutParams.html
+file
+
+
+
+add
+
+android.webkit.UrlInterceptRegistry.html
+file
+
+
+
+add
+
+android.view.KeyEvent.Callback.html
+file
+
+
+
+add
+
+android.provider.MediaStore.Images.Thumbnails.html
+file
+
+
+
+add
+
+android.inputmethodservice.InputMethodService.html
+file
+
+
+
+add
+
+android.webkit.UrlInterceptHandler.html
+file
+
+
+
+add
+
+methods_index_all.html
+file
+
+
+
+add
+
+android.view.animation.Animation.html
+file
+
+
+
+add
+
+android.provider.Contacts.Intents.UI.html
+file
+
+
+
+add
+
+android.telephony.TelephonyManager.html
+file
+
+
+
+add
+
+constructors_index_changes.html
+file
+
+
+
+add
+
+methods_index_additions.html
+file
+
+
+
+add
+
+android.provider.Contacts.PresenceColumns.html
+file
+
+
+
+add
+
+dalvik.system.AllocationLimitError.html
+file
+
+
+
+add
+
+android.provider.Settings.System.html
+file
+
+
+
+add
+
+android.test.InstrumentationTestCase.html
+file
+
+
+
+add
+
+android.text.style.AbsoluteSizeSpan.html
+file
+
+
+
+add
+
+jdiff_statistics.html
+file
+
+
+
+add
+
+constructors_index_additions.html
+file
+
+
+
+add
+
+android.content.pm.ResolveInfo.html
+file
+
+
+
+add
+
+android.os.Build.VERSION_CODES.html
+file
+
+
+
+add
+
+pkg_android.app.html
+file
+
+
+
+add
+
+android.view.View.html
+file
+
+
+
+add
+
+alldiffs_index_all.html
+file
+
+
+
+add
+
+android.database.DatabaseUtils.html
+file
+
+
+
+add
+
+android.graphics.drawable.Drawable.ConstantState.html
+file
+
+
+
+add
+
+pkg_android.view.animation.html
+file
+
+
+
+add
+
+android.widget.SimpleCursorTreeAdapter.html
+file
+
+
+
+add
+
+android.webkit.WebViewClient.html
+file
+
+
+
+add
+
+pkg_android.provider.html
+file
+
+
+
+add
+
+android.webkit.WebView.html
+file
+
+
+
+add
+
+android.content.pm.ActivityInfo.html
+file
+
+
+
+add
+
+android.webkit.WebChromeClient.html
+file
+
+
+
+add
+
+pkg_android.hardware.html
+file
+
+
+
+add
+
+dalvik.system.TouchDex.html
+file
+
+
+
+add
+
+android.view.Surface.html
+file
+
+
+
+add
+
+android.provider.Contacts.Phones.html
+file
+
+
+
+add
+
+pkg_android.database.sqlite.html
+file
+
+
+
+add
+
+android.content.res.Configuration.html
+file
+
+
+
+add
+
+android.provider.Contacts.People.ContactMethods.html
+file
+
+
+
+add
+
+android.content.Intent.html
+file
+
+
+
+add
+
+android.location.LocationManager.html
+file
+
+
+
+add
+
+android.telephony.NeighboringCellInfo.html
+file
+
+
+
+add
+
+android.app.SearchManager.html
+file
+
+
+
+add
+
+android.view.HapticFeedbackConstants.html
+file
+
+
+
+add
+
+pkg_android.opengl.html
+file
+
+
+
+add
+
+android.provider.Contacts.ContactMethodsColumns.html
+file
+
+
+
+add
+
+constructors_index_removals.html
+file
+
+
+
+add
+
+android.test.AndroidTestRunner.html
+file
+
+
+
+add
+
+android.media.AudioFormat.html
+file
+
+
+
+add
+
+android.database.sqlite.SQLiteDatabase.html
+file
+
+
+
+add
+
+android.graphics.PixelFormat.html
+file
+
+
+
+add
+
+android.media.ToneGenerator.html
+file
+
+
+
+add
+
+android.content.pm.PackageInfo.html
+file
+
+
+
+add
+
+android.view.SurfaceView.html
+file
+
+
+
+add
+
+android.graphics.drawable.BitmapDrawable.html
+file
+
+
+
+add
+
+android.content.ContextWrapper.html
+file
+
+
+
+add
+
+android.content.ContentProvider.html
+file
+
+
+
+add
+
+android.app.ActivityManager.RunningAppProcessInfo.html
+file
+
+
+
+add
+
+methods_index_changes.html
+file
+
+
+
+add
+
+android.view.KeyEvent.html
+file
+
+
+
+add
+
+dalvik.system.VMRuntime.html
+file
+
+
+
+add
+
+pkg_android.content.res.html
+file
+
+
+
+add
+
+android.test.mock.MockContext.html
+file
+
+
+
+add
+
+android.content.ContentResolver.html
+file
+
+
+
+add
+
+android.provider.Contacts.html
+file
+
+
+
+add
+
+constructors_index_all.html
+file
+
+
+
+add
+
+android.app.Activity.html
+file
+
+
+
+add
+
+android.view.Window.Callback.html
+file
+
+
+
+add
+
+pkg_dalvik.system.html
+file
+
+
+
+add
+
+pkg_android.inputmethodservice.html
+file
+
+
+
+add
+
+android.os.BatteryManager.html
+file
+
+
+
+add
+
+android.inputmethodservice.AbstractInputMethodService.html
+file
+
+
+
+add
+
+android.hardware.Camera.Parameters.html
+file
+
+
+
+add
+
+android.telephony.PhoneStateListener.html
+file
+
+
+
+add
+
+fields_index_removals.html
+file
+
+
+
+add
+
+android.provider.Contacts.People.Extensions.html
+file
+
+
+
+add
+
+android.Manifest.permission.html
+file
+
+
+
+add
+
+classes_index_all.html
+file
+
+
+
+add
+
+packages_index_removals.html
+file
+
+
+
+add
+
+android.text.TextPaint.html
+file
+
+
+
+add
+
+fields_index_changes.html
+file
+
+
+
+add
+
+dalvik.system.VMDebug.html
+file
+
+
+
+add
+
+android.database.CursorWindow.html
+file
+
+
+
+add
+
+android.telephony.PhoneNumberUtils.html
+file
+
+
+
+add
+
+android.media.AudioManager.html
+file
+
+
+
+add
+
+android.webkit.PluginData.html
+file
+
+
+
+add
+
+classes_index_removals.html
+file
+
+
+
+add
+
+pkg_android.util.html
+file
+
+
+
+add
+
+packages_index_changes.html
+file
+
+
+
+add
+
+pkg_android.media.html
+file
+
+
+
+add
+
+android.webkit.Plugin.html
+file
+
+
+
+add
+
+dalvik.system.StaleDexCacheError.html
+file
+
+
+
+add
+
+dalvik.system.VMStack.html
+file
+
+
+
+add
+
+android.provider.Contacts.People.Phones.html
+file
+
+
+
+add
+
+pkg_android.content.pm.html
+file
+
+
+
+add
+
+android.opengl.GLSurfaceView.html
+file
+
+
+
+add
+
+android.R.style.html
+file
+
+
+
+add
+
+alldiffs_index_removals.html
+file
+
+
+
+add
+
+android.provider.Contacts.Extensions.html
+file
+
+
+
+add
+
+android.database.AbstractWindowedCursor.html
+file
+
+
+
+add
+
+android.app.Notification.html
+file
+
+
+
+add
+
+android.R.attr.html
+file
+
+
+
+add
+
+dalvik.system.PotentialDeadlockError.html
+file
+
+
+
+add
+
+android.R.drawable.html
+file
+
+
+
+add
+
+android.webkit.WebSettings.html
+file
+
+
+
+add
+
+pkg_android.text.style.html
+file
+
+
+
+add
+
+android.provider.Contacts.Groups.html
+file
+
+
+
+add
+
+pkg_android.text.html
+file
+
+
+
+add
+
+android.content.pm.ProviderInfo.html
+file
+
+
+
+add
+
+classes_index_changes.html
+file
+
+
+
+add
+
+android.provider.Contacts.Organizations.html
+file
+
+
+
+add
+
+android.view.SurfaceHolder.html
+file
+
+
+
+add
+
+android.app.NotificationManager.html
+file
+
+
+
+add
+
+android.graphics.drawable.Drawable.html
+file
+
+
+
+add
+
+pkg_java.util.concurrent.html
+file
+
+
+
+add
+
+android.widget.MediaController.MediaPlayerControl.html
+file
+
+
+
+add
+
+android.provider.Contacts.Settings.html
+file
+
+
+
+add
+
+android.app.ActivityManager.html
+file
+
+
+
+add
+
+fields_index_all.html
+file
+
+
+
+add
+
+pkg_android.test.mock.html
+file
+
+
+
+add
+
+pkg_android.location.html
+file
+
+
+
+add
+
+pkg_java.util.concurrent.locks.html
+file
+
+
+
+add
+
+pkg_android.view.html
+file
+
+
+
+add
+
+android.text.format.Formatter.html
+file
+
+
+
+add
+
+android.webkit.PluginList.html
+file
+
+
+
+add
+
+packages_index_all.html
+file
+
+
+
+add
+
+android.app.Service.html
+file
+
+
+
+add
+
+android.view.MotionEvent.html
+file
+
+
+
+add
+
+android.provider.Contacts.PhotosColumns.html
+file
+
+
+
+add
+
+android.hardware.Camera.html
+file
+
+
+
+add
+
+dalvik.system.TemporaryDirectory.html
+file
+
+
+
+add
+
+pkg_android.widget.html
+file
+
+
+
+add
+
+pkg_android.webkit.html
+file
+
+
+
+add
+
+android.provider.Contacts.PeopleColumns.html
+file
+
+
+
+add
+
+java.util.concurrent.BlockingQueue.html
+file
+
+
+
+add
+
+android.content.Context.html
+file
+
+
+
+add
+
+android.view.ViewGroup.html
+file
+
+
+
+add
+
+android.app.IntentService.html
+file
+
+
+
+add
+
+pkg_android.graphics.html
+file
+
+
+
+add
+
+pkg_android.html
+file
+
+
+
+add
+
+android.test.mock.MockPackageManager.html
+file
+
+
+
+add
+
+android.text.format.DateUtils.html
+file
+
+
+
+add
+
+pkg_android.telephony.html
+file
+
+
+
+add
+
+android.media.MediaPlayer.html
+file
+
+
+
+add
+
+android.provider.Contacts.OrganizationColumns.html
+file
+
+
+
+add
+
+jdiff_topleftframe.html
+file
+
+
+
+add
+
+android.app.Dialog.html
+file
+
+
+
+add
+
+pkg_android.test.html
+file
+
+
+
+add
+
+pkg_android.graphics.drawable.html
+file
+
+
+
+add
+
+methods_index_removals.html
+file
+
+
+
+add
+
+alldiffs_index_changes.html
+file
+
+
+
+add
+
+android.provider.Contacts.ContactMethods.html
+file
+
+
+
+add
+
+alldiffs_index_additions.html
+file
+
+
+
+add
+
+android.provider.Contacts.Intents.html
+file
+
+
+
+add
+

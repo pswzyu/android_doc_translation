@@ -1,0 +1,223 @@
+android graphics
+Android图形
+
+
+> Hi All, 
+> I've been using SurfaceView and Surface for one of my graphics 
+> project. 
+> The problem keep bothering me is that the content in Surface's two 
+> graphic buffers does not synchronized so that when the "lockCanvas- 
+> drawCanvas-unlockCanvas" cycle is running, it shows different content 
+> and generate screen flicker. 
+
+》嗨，你们好，我在一个图形项目中使用了SurfaceView 和 Surface。现在困扰我的
+》问题是两个Surface缓存中的图像内容不是同步的，致使当“锁画布-绘制-解锁并显示”
+》这个循环过程进行时，屏幕交替显示不同的内容，并且造成了屏幕的闪烁。
+
+Here is some information on how the Android graphics system works: 
+
+下面是Android图形系统的工作方式：
+
+In Android, every window is implemented with an underlaying Surface 
+object. A Surface is an object that gets composited onto the 
+framebuffer by SurfaceFlinger, the system-wide screen composer. 
+Each Surface is double-buffered, it has a back buffer which is where 
+drawing takes place and a front buffer which is used for composition. 
+
+在Android系统中，每一个窗口都是通过一个底层的Surface对象实现的。Surface
+对象是由SurfaceFlinger在显示框缓存上进行构造的，SurfaceFlinger是一个系统级
+的屏幕显示构建器。每一个Surface都是双缓存设计的，一个后台缓存进行图形的绘制
+工作，一个前台缓存用来进行构建。
+
+When "unlockCanvas()" is called, the back buffer is "posted", which 
+means it's being displayed and  becomes available again. 
+
+当调用“unlockCanvas()”时，后台缓存被“提交”，意思是他将被显示而且变得
+可以使用。
+
+However, the *implementation* of this mechanism is done by swapping 
+the front and back buffers. The back buffer becomes the front buffer 
+and vice-versa. 
+
+但是，这个机制的*执行*是通过将前后台缓存进行交换来实现的。后台缓存变为前台
+缓存，前台缓存变为后台。
+
+This mechanism ensures that there is a minimal amount of buffer 
+copying (a post operation doesn't move any pixels around) and that 
+there is always a buffer for SurfaceFlinger to use for composition. 
+This last feature is very important because it ensures that the screen 
+never flickers and never shows any artifacts *and* that 
+SurfaceFlinger never has to wait for a Surface to be ready (its front 
+buffer is always ready by definition), this means that a badly written 
+application cannot slowdown or interfere with other application's 
+windows. 
+
+这个机制确保了使用最少的用作拷贝的缓存（提交的操作根本不需要进行像素的
+复制）来使SurfaceFlinger有可以用作构建的缓存。后边一项功能很重要，他确保了
+屏幕不会闪烁，不会显示绘制一半的图像，*而且*SurfaceFlinger不用等待Surface
+准备完毕（前缓存总是等待构建），就是说写的不好的应用程序不会减慢或阻碍
+其他应用程序的窗口显示。
+
+As a side note, it is worth noting that the main screen itself (the 
+frame buffer) is double-buffered as well and uses the same posting 
+mechanism than any regular surface. 
+顺便说一句，主屏幕自己（显示框缓存）没有必要进行双缓存设计或是使用和Surface
+类似的机制。
+
+It should appear now that because of this posting mechanism, 
+incremental updates are not supported; and this is /the/ key point. 
+正是因为如此，所以缓存不支持额外的更新操作，这就是问题的关键。
+
+
+Back to your question now: 
+现在回到你的问题：
+
+
+> After doing a bit research, I got my conclusion (not sure if it is 
+> correct though) here: 
+在网上找了些资料之后，我得出了我的结论（不能保证一定正确）：
+> 1. There are two separate buffers of each Surface object. According to 
+> SDK, they were called "front buffer" and "back buffer".
+1.每一个 Surface对象有两个独立的缓存。根据SDK中的描述，叫做“前台缓存”和
+“后台缓存”。
+
+> 2. Android's Surface does not behaves like regular "double-buffer" 
+> system, which means: draw everything in back buffer and then flip the 
+> back buffer into the front buffer. 
+> What Android Surface does seems to be: draw in buffer A and flip it on 
+> the screen, then in next cycle, draw buffer B and flip it on the 
+> screen. As the result, the content visible on the screen comes from 
+> buffer A, B, A, B, A, .... I'm using buffer "A" and "B" here instead 
+> of "front" and "back" because I think they have equal role in 
+> rendering cycle.
+ 
+2.Android的Surface的运行机制不同于常见的“双缓存”系统，他是：所有的绘图
+操作都在后台缓存上进行，然后将其作为前台进行显示。
+就是说Android的Surface好像是这样运作的：在缓存A上进行绘制然后将其显示在屏幕
+上，然后进行下一个循环，在缓存B上进行绘制然后将其显示在屏幕上。因此，在屏幕
+上见到的图像实际上是从缓存A,B,A,B,A,B,......交替而来的。我使用缓存“A”，
+“B”来代替SDK中所说的“前台缓存”和“后台缓存”是因为我认为他们在渲染的
+循环中扮演了相同的角色。
+
+> 3. The Surface buffer's alternate work style causes problem when I'm 
+> doing partial update (repaint only a portion of the Surface) for the 
+> performance purpose. Because one "lockCanvas-drawCanvas-unlockCanvas" 
+> cycle only update one buffer, the other one remains untouched, then 
+> when next "lockCanvas-drawCanvas-unlockCanvas" comes, it shows you an 
+> old content on the screen so that the flicker happens. 
+
+Surface两个缓存交替的运行方式会在为性能考虑进行部分更新时（只重新绘制
+Surface的一部分）造成问题。因为一个“锁画布-绘制-解锁”循环节只会更新
+一个缓存，另一个还保持着原来的状态，然后当下一个循环节进行时，系统会将
+旧的内容显示出来，就会造成屏幕的闪烁。
+
+You are correct in your analysis. Something that the documentation 
+doesn't emphasis clearly is that with such a mechanism, your *must* 
+draw every single pixel of the Surface's back buffer each-time. In 
+essence, the back buffer is not preserved in post. This is a common 
+behavior  of hardware-accelerated graphics systems. 
+
+你的分析是正确的。文档中没有强调清楚在这样一个机制下，你*必须*每次
+都在后台缓存上清空屏幕重绘。基本的，后台缓存是没有提交，可以进行更改的。
+这是硬件加速图形系统常见的行为。
+
+
+There is fact an API on the underlaying Surface object that allows to 
+update only a portion of the back buffer (but even then, every pixel 
+of that portion need to be redrawn). It is implemented by copying back 
+the former back buffer (now in the front) to the new back buffer 
+(formerly in the front). Unfortunately, this API is not exposed to 
+SurfaceView at the moment. I'm hoping to have this feature added 
+eventually. 
+
+但是底层的Surface对象确实提供了允许你在后台缓存进行部分更新的API（即便
+如此，你也要完全重绘那片区域）。这个API是通过将对现在缓存（更改完后就是
+前台缓存了）进行的更改复制到之后的一个缓存中（之前的前台缓存）。但是很
+不幸的是，当前这个API没有暴露在SurfaceView中。我希望最终会将这个功能
+添加进去。
+
+> 4. My work around (works but with tremendous performance penalty) 
+> When I'm doing partial Surface update, I do the following thing in 
+> each rendering cycle: 
+
+4.我的做法（但是十分影响性能）
+当我要进行部分更新时，我这样操作每个渲染循环节：
+
+The best solution available right now to solve this problem, is to do 
+all of your rendering into your own bitmap and simply copy it into the 
+back buffer: 
+
+当前最好的解决此问题的方案，是将所有修改都体现到一个你自己的bitmap中，
+然后将其复制到后台缓存中：
+
+- create a bitmap 创建一个bitmap
+- attach a canvas to it 向其添加一个画布
+- do the rendering into that canvas 在这个画布中进行所有的操作
+- lockCanvas 调用lockCanvas
+- draw your bitmap into the backbuffer 将你的bitmap复制到后台缓存
+- unlockAndPost 调用unlockCanvasAndPost
+
+Note that this method involves an extra copy of the whole buffer size, 
+but it is in fact not slower than what it would have been if the 
+posting mechanism worked as you expected/suggested. 
+
+注意这个方法会增加一个额外的缓存，大小同Surface缓存相同，但是如果提交过程
+工作正常，他不会慢多少。
+
+> 5. In order to improve my solution a bit, I try to use 
+> "s.unlockCanvas(b);" instead of "s.unlockCanvasAndPost(b);" because I 
+> really do not need to make the second buffer flipping, I just need to 
+> synchronize its content. However, unlockCanvas() generates a "Illegal 
+> argument" exception. I can not figure out the reason. 
+
+为了稍微提高我的解决方案的性能，我试着用“s.unlockCanvas(b);”代替
+“s.unlockCanvasAndPost(b);”，因为我只是想不让第二个缓存显示时屏幕闪，我
+只是需要同步两个缓存中的内容。但是，调用得到了一个异常，我想不明白为什么。
+
+I will investigate the error you are reporting. However, this solution 
+would not have worked because unlockCanvas() is essentially a no-op, 
+it doesn't post the back buffer, which means it won't make it visible. 
+It is only intended to be used in very special situations. 
+
+我会检查以下你报告的错误。但是，你的这个方案没有什么作用，因为unlockCanvas()
+本质上是不进行什么操作的，他不会提交后台缓存，后台缓存也就不会显示出来。
+这个方法只是在特殊的情况下才会使用。
+
+> I have noticed someone has met the similar SurfaceView problem, see 
+> the following topic:http://groups.google.com/group/android-developers/browse_thread/threa... 
+> I'm not sure if someone has any better solution than mine? 
+> Is there a way to notify Surface that I would like to use a fixed 
+> buffer as front buffer? 
+
+我注意到有些人遇到了类似的使用SurfaceView的问题，去看一下这个帖子吧：
+http://groups.google.com/group/android-developers/browse_thread/threa... 
+有没有人有比我这个更好的解决方法？有没有什么方法告诉Surface我只想使用一个缓存，
+并固定的将其作为前台缓存？
+
+There is no way to do that at the moment, but we might add this 
+functionality eventually. Note that in that case, your Surface will 
+suffer from tearing, so it won't be suited for Surfaces that do a lot 
+of animations
+
+目前还没有这样的方法，但是我们可能会添加这样一个方法。注意，那样的话
+你的Surface会出现显示不全的现象，所以这样的方法不适合有大量动画的Surface。
+
+
+
+
+
+现有的解决方案
+1.创建一个自己的位图，每次进行复制
+2.隔一次进行一次新的绘图，即有两次进行的绘制是一样的
+Boolean mBooleanDataUpdate = true;
+Boolean mBooleanFlag = true;
+while(mBooleanRunning)
+{	
+	doDraw();//更新图像
+	if (mBooleanDataUpdate)
+	{
+		updateData();//更新数据
+	}
+	^mBooleanDataUpdate;
+}
+3.第二次将第一次的图复制，在第一次进行更新

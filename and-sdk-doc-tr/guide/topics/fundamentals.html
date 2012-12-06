@@ -1,0 +1,2800 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="shortcut icon" type="image/x-icon" href="../../favicon.ico"><title>Application Fundamentals | Android Developers</title>
+
+<link href="../../assets/android-developer-docs-devguide.css" rel="stylesheet" type="text/css">
+<script src="../../assets/search_autocomplete.js" type="text/javascript"></script>
+<script src="../../assets/jquery-resizable.min.js" type="text/javascript"></script>
+<script src="../../assets/android-developer-docs.js" type="text/javascript"></script>
+<script type="text/javascript">
+  setToRoot("../../");
+</script>
+
+  <style type="text/css">
+    html,body{overflow:auto;}
+    #body-content{position:relative; top:0;}
+    #doc-content{overflow:visible;border-left:3px solid #666;}
+    #side-nav{padding:0;}
+    #side-nav .toggle-list ul {display:block;}
+    #resize-packages-nav{border-bottom:3px solid #666;}
+  </style></head><noscript></noscript><body class="gc-documentation">
+
+  <div id="header">
+      <div id="headerLeft">
+          <a href="../../index.html" tabindex="-1"><img src="../../assets/images/bg_logo.png" alt="Android Developers"></a>
+          <ul id="header-tabs" class="guide">
+    
+	<li id="home-link"><a href="../../offline.html">
+	
+		<span class="en">Home</span>
+		<span style="display: none;" class="de">Startseite</span>
+		<span style="display: none;" class="es"></span>
+		<span style="display: none;" class="fr"></span>
+		<span style="display: none;" class="it"></span>
+    <span style="display: none;" class="ja">ホーム</span>
+		<span style="display: none;" class="zh-CN">主页</span>
+		<span style="display: none;" class="zh-TW">首頁</span>
+	
+	</a></li>
+	<li id="sdk-link"><a href="../../sdk/index.html">
+		<span class="en">SDK</span>
+	</a></li>
+	<li id="guide-link"><a href="../../guide/index.html" onclick="return loadLast('guide')">
+	
+		<span class="en">Dev Guide</span>
+		<span style="display: none;" class="de">Handbuch</span>
+		<span style="display: none;" class="es">Guía</span>
+		<span style="display: none;" class="fr">Guide</span>
+		<span style="display: none;" class="it">Guida</span>
+    <span style="display: none;" class="ja">開発ガイド</span>
+		<span style="display: none;" class="zh-CN">开发人员指南</span>
+		<span style="display: none;" class="zh-TW">開發指南</span>
+	
+	</a></li>
+	<li id="reference-link"><a href="../../reference/packages.html" onclick="return loadLast('reference')">
+	
+		<span class="en">Reference</span>
+		<span style="display: none;" class="de">Referenz</span>
+		<span style="display: none;" class="es">Referencia</span>
+		<span style="display: none;" class="fr">Référence</span>
+		<span style="display: none;" class="it">Riferimento</span>
+    <span style="display: none;" class="ja">リファレンス</span>
+		<span style="display: none;" class="zh-CN">参考</span>
+		<span style="display: none;" class="zh-TW">參考資料</span>
+	
+	</a></li>
+	<li><a href="http://android-developers.blogspot.com" onclick="return requestAppendHL(this.href)">
+	
+		<span class="en">Blog</span>
+		<span style="display: none;" class="de"></span>
+		<span style="display: none;" class="es"></span>
+		<span style="display: none;" class="fr"></span>
+		<span style="display: none;" class="it"></span>
+    <span style="display: none;" class="ja">ブログ</span>
+		<span style="display: none;" class="zh-CN">博客</span>
+		<span style="display: none;" class="zh-TW">網誌</span>
+	
+	</a></li>
+	<li id="videos-link"><a href="../../videos/index.html" onclick="return loadLast('videos')">
+	
+		<span class="en">Videos</span>
+		<span style="display: none;" class="de"></span>
+		<span style="display: none;" class="es"></span>
+		<span style="display: none;" class="fr"></span>
+		<span style="display: none;" class="it"></span>
+    <span style="display: none;" class="ja">ビデオ</span>
+		<span style="display: none;" class="zh-CN"></span>
+		<span style="display: none;" class="zh-TW"></span>
+	
+	</a></li>
+	<li id="community-link"><a href="../../community/index.html">
+	
+		<span class="en">Community</span>
+		<span style="display: none;" class="de"></span>
+		<span style="display: none;" class="es">Comunidad</span>
+		<span style="display: none;" class="fr">Communauté</span>
+		<span style="display: none;" class="it"></span>
+    <span style="display: none;" class="ja">コミュニティ</span>
+		<span style="display: none;" class="zh-CN">社区</span>
+		<span style="display: none;" class="zh-TW">社群</span>
+	
+	</a></li>
+     
+</ul>
+     
+      </div>
+      <div id="headerRight">
+          <div id="headerLinks">
+          
+          <a href="http://www.android.com">Android.com</a>
+          </div>
+  <div id="search">
+      <div id="searchForm">
+          <form accept-charset="utf-8" class="gsc-search-box" onsubmit="return submit_search()">
+            <table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody>
+                <tr>
+                  <td class="gsc-input">
+                    <input id="search_autocomplete" class="gsc-input" size="33" autocomplete="off" title="search developer docs" name="q" value="search developer docs" onfocus="search_focus_changed(this, true)" onblur="search_focus_changed(this, false)" onkeydown="return search_changed(event, true, '../../')" onkeyup="return search_changed(event, false, '../../')" type="text">
+                  <div id="search_filtered_div" class="no-display">
+                      <table id="search_filtered" cellspacing="0">
+                      </table>
+                  </div>
+                  </td>
+                  <td class="gsc-search-button">
+                    <input value="Search" title="search" id="search-button" class="gsc-search-button" type="submit">
+                  </td>
+                  <td class="gsc-clear-button">
+                    <div title="clear results" class="gsc-clear-button">&nbsp;</div>
+                  <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+</td>
+                </tr></tbody>
+              </table>
+          </form>
+      </div><!-- searchForm -->
+  </div><!-- search -->
+      </div><!-- headerRight -->
+      <script type="text/javascript">
+        <!--  
+        changeTabLang(getLangPref());
+        //-->
+      </script>
+  </div><!-- header -->
+
+  <div class="g-section g-tpl-240" id="body-content">
+    <div class="g-unit g-first side-nav-resizable" id="side-nav">
+      <div id="devdoc-nav">
+<ul>
+
+  <li>
+    <h2><span class="en">Android Basics</span>
+        <span class="de" style="display: none;">Einführung in Android</span>
+        <span class="es" style="display: none;">Información básica sobre Android</span>
+        <span class="fr" style="display: none;">Présentation d'Android</span>
+        <span class="it" style="display: none;">Nozioni di base su Android</span>
+        <span class="ja" style="display: none;">Android の基本</span>
+        <span class="zh-CN" style="display: none;">Android 基础知识</span>
+        <span class="zh-TW" style="display: none;">Android 簡介</span>
+    </h2>
+    <ul>
+      <li><a href="../../guide/basics/what-is-android.html">
+        <span class="en">What Is Android?</span>
+        <span class="de" style="display: none;">Was ist Android?</span>
+        <span class="es" style="display: none;">¿Qué es Android?</span>
+        <span class="fr" style="display: none;">Qu'est-ce qu'Android&nbsp;?</span>
+        <span class="it" style="display: none;">Che cos'è Android?</span>
+        <span class="ja" style="display: none;">Android とは</span>
+        <span class="zh-CN" style="display: none;">Android 是什么？</span>
+        <span class="zh-TW" style="display: none;">什麼是 Android？</span>
+          </a></li>
+
+  <!--  <li><a style="color:gray;">The Android SDK</a></li> -->
+  <!--  <li><a style="color:gray;">Walkthrough for Developers</a></li> -->
+      <!-- quick overview of what it's like to develop on Android -->
+    </ul>
+  </li>
+  
+  <li>
+    <h2>
+      <span class="en">Framework Topics</span>
+      <span class="de" style="display: none;">Framework-Themen</span>
+      <span class="es" style="display: none;">Temas sobre el framework</span>
+      <span class="fr" style="display: none;">Thèmes relatifs au framework</span>
+      <span class="it" style="display: none;">Argomenti relativi al framework</span>
+      <span class="ja" style="display: none;">フレームワーク トピック</span>
+      <span class="zh-CN" style="display: none;">框架主题</span>
+      <span class="zh-TW" style="display: none;">架構主題</span>
+    </h2>
+    <ul>
+      <li><a href="../../guide/topics/fundamentals.html">
+            <span class="en">Application Fundamentals</span>
+            <span class="de" style="display: none;">Anwendungsgrundlagen</span>
+            <span class="es" style="display: none;">Fundamentos de las aplicaciones</span>
+            <span class="fr" style="display: none;">Principes de base des applications</span>
+            <span class="it" style="display: none;">Concetti fondamentali sulle applicazioni</span>
+            <span class="ja" style="display: none;">開発の基礎</span>
+            <span class="zh-CN" style="display: none;">应用程序基础</span>
+            <span class="zh-TW" style="display: none;">應用程式基本原理</span>
+
+          </a></li>
+    </ul>
+    <ul>
+      <li class="toggle-list">
+        <div><a href="../../guide/topics/ui/index.html">
+               <span class="en">User Interface</span>
+             </a></div>
+        <ul>
+          <li><a href="../../guide/topics/ui/declaring-layout.html">
+               <span class="en">Declaring Layout</span> 
+              </a></li>
+          <li><a href="../../guide/topics/ui/menus.html">
+               <span class="en">Creating Menus</span> 
+              </a></li>
+          <li><a href="../../guide/topics/ui/dialogs.html">
+                <span class="en">Creating Dialogs</span> 
+              </a></li>
+          <li><a href="../../guide/topics/ui/ui-events.html">
+                <span class="en">Handling UI Events</span> 
+              </a></li>
+          <li><a href="../../guide/topics/ui/notifiers/index.html">
+                <span class="en">Notifying the User</span> 
+              </a></li>
+          <li><a href="../../guide/topics/ui/themes.html">
+                <span class="en">Applying Styles and Themes</span> 
+              </a></li>
+          <li><a href="../../guide/topics/ui/custom-components.html">
+                <span class="en">Building Custom Components</span> 
+              </a></li>
+          <li><a href="../../guide/topics/ui/binding.html">
+                <span class="en">Binding to Data with AdapterView</span> 
+              </a></li>
+          <li><a href="../../guide/topics/ui/layout-objects.html">
+                <span class="en">Common Layout Objects</span> 
+              </a></li>
+          <li><a href="../../guide/topics/ui/how-android-draws.html">
+                <span class="en">How Android Draws Views</span> 
+              </a></li>
+        </ul>
+      </li>
+      <li class="toggle-list">
+        <div><a href="../../guide/topics/resources/index.html">
+               <span class="en">Resources and Assets</span> 
+             </a></div>
+        <ul>
+          <li><a href="../../guide/topics/resources/resources-i18n.html">
+                <span class="en">Resources and I18n</span>
+              </a></li>
+          <li><a href="../../guide/topics/resources/available-resources.html">
+                <span class="en">Available Resource Types</span>
+              </a></li>
+          <li><a href="../../guide/topics/resources/localization.html">
+                <span class="en">Localization</span>
+              </a></li>
+        </ul>
+      </li>
+      <li><a href="../../guide/topics/intents/intents-filters.html">
+            <span class="en">Intents and Intent Filters</span>
+          </a></li>
+      <li><a href="../../guide/topics/data/data-storage.html">
+            <span class="en">Data Storage</span>
+          </a></li>
+      <li><a href="../../guide/topics/providers/content-providers.html">
+            <span class="en">Content Providers</span>
+          </a></li>
+      <li><a href="../../guide/topics/security/security.html">
+            <span class="en">Security and Permissions</span>
+          </a></li>
+  <!--  <li><a style="color:gray;">Processes and Threads</a></li> -->
+  <!--  <li><a style="color:gray;">Interprocess Communication</a></li> -->
+      <li class="toggle-list">
+        <div><a href="../../guide/topics/manifest/manifest-intro.html">
+               <span class="en">The AndroidManifest.xml File</span>
+             </a></div>
+        <ul>
+          <li><a href="../../guide/topics/manifest/action-element.html">&lt;action&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/activity-element.html">&lt;activity&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/activity-alias-element.html">&lt;activity-alias&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/application-element.html">&lt;application&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/category-element.html">&lt;category&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/data-element.html">&lt;data&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/grant-uri-permission-element.html">&lt;grant-uri-permission&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/instrumentation-element.html">&lt;instrumentation&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/intent-filter-element.html">&lt;intent-filter&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/manifest-element.html">&lt;manifest&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/meta-data-element.html">&lt;meta-data&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/path-permission-element.html">&lt;path-permission&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/permission-element.html">&lt;permission&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/permission-group-element.html">&lt;permission-group&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/permission-tree-element.html">&lt;permission-tree&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/provider-element.html">&lt;provider&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/receiver-element.html">&lt;receiver&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/service-element.html">&lt;service&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/supports-screens-element.html">&lt;supports-screens&gt;</a></li>  <!-- ##api level 4## -->
+          <li><a href="../../guide/topics/manifest/uses-configuration-element.html">&lt;uses-configuration&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/uses-feature-element.html">&lt;uses-feature&gt;</a></li> <!-- ##api level 4## -->
+          <li><a href="../../guide/topics/manifest/uses-library-element.html">&lt;uses-library&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/uses-permission-element.html">&lt;uses-permission&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/uses-sdk-element.html">&lt;uses-sdk&gt;</a></li>
+        </ul>
+      </li>
+    </ul>
+    <ul>
+      <li class="toggle-list">
+        <div><a href="../../guide/topics/graphics/index.html">
+               <span class="en">Graphics</span>
+             </a></div>
+        <ul>
+          <li><a href="../../guide/topics/graphics/2d-graphics.html">
+                <span class="en">2D Graphics</span>
+              </a></li>
+          <li><a href="../../guide/topics/graphics/opengl.html">
+                <span class="en">3D with OpenGL</span>
+              </a></li>
+        </ul>
+      </li>
+      <li><a href="../../guide/topics/media/index.html">
+            <span class="en">Audio and Video</span>
+          </a></li>
+  <!--<li class="toggle-list">
+        <div><a style="color:gray;">Sensors</a></div>
+          <ul>
+            <li><a style="color:gray;">Camera</a></li>
+            <li><a style="color:gray;">Compass</a></li>
+            <li><a style="color:gray;">Accelerometer</a></li>
+          </ul>
+      </li> -->
+      <li><a href="../../guide/topics/location/index.html">
+            <span class="en">Location and Maps</span>
+          </a></li>
+  <!--<li class="toggle-list">
+        <div><a style="color:gray;">Wireless Controls</a></div>
+          <ul>
+            <li><a style="color:gray;">Wi-Fi</a></li>
+            <li><a style="color:gray;">Bluetooth</a></li>
+          </ul>
+      </li> -->
+  <!--<li><a style="color:gray;">Localization</a></li>  -->
+      <li><a href="../../guide/topics/appwidgets/index.html">
+            <span class="en">App Widgets</span>
+          </a></li>
+    </ul>
+  </li>
+  
+  <li>
+    <h2><span class="en">Developing</span>
+               <span class="de" style="display: none;">Entwicklung</span>
+               <span class="es" style="display: none;">Desarrollo</span>
+               <span class="fr" style="display: none;">Développement</span>
+               <span class="it" style="display: none;">Sviluppo</span>
+               <span class="ja" style="display: none;">開発</span>
+               <span class="zh-CN" style="display: none;">开发</span>
+               <span class="zh-TW" style="display: none;">開發</span>
+    </h2>
+    <ul>
+  <!--<li><a href="">Developing for Android</a></li>
+      signing, upgrading, selecting a package name, select device profile, touch, trackball, dpad available, etc. -->
+      <li><a href="../../guide/developing/eclipse-adt.html">
+            <span class="en">In Eclipse, with ADT</span> 
+            <span class="de" style="display: none;">In Eclipse, mit ADT</span>
+            <span class="es" style="display: none;">En Eclipse, con ADT</span>
+            <span class="fr" style="display: none;">Sous Eclipse, à l'aide du plugin ADT</span>
+            <span class="it" style="display: none;">In Eclipse, con ADT</span>
+            <span class="ja" style="display: none;">Eclipse 内で ADT を使用</span>
+            <span class="zh-CN" style="display: none;">利用 ADT 在 Eclipse 中开发</span>
+            <span class="zh-TW" style="display: none;">在加裝 ADT 工具的 Eclipse 環境中</span>
+          </a></li>
+      <li><a href="../../guide/developing/other-ide.html">
+            <span class="en">In Other IDEs</span>
+            <span class="de" style="display: none;">In anderen IDEs</span>
+            <span class="es" style="display: none;">En otros entornos</span>
+            <span class="fr" style="display: none;">Sous d'autres environnements</span>
+            <span class="it" style="display: none;">In altri IDE</span>
+            <span class="ja" style="display: none;">その他の統合開発環境</span>
+            <span class="zh-CN" style="display: none;">在其他 IDE 中开发</span>
+            <span class="zh-TW" style="display: none;">在其他開發環境中</span>
+          </a></li>
+      <li><a href="../../guide/developing/device.html">
+            <span class="en">On a Device</span>
+          </a></li>
+      <li><a href="../../guide/developing/debug-tasks.html">
+            <span class="en">Debugging Tasks</span>
+          </a></li>
+      <li class="toggle-list">
+        <div><a href="../../guide/developing/tools/index.html">
+            <span class="en">Tools</span>
+          </a></div>
+        <ul>
+      		<li><a href="../../guide/developing/tools/aapt.html">aapt</a></li>
+      		<li><a href="../../guide/developing/tools/adb.html">adb</a></li>
+      		<li><a href="../../guide/developing/tools/othertools.html#android">android</a></li>
+      <!--<li><a href="../../guide/developing/tools/adt.html">ADT Plugin</a></li>-->
+      		<li><a href="../../guide/developing/tools/aidl.html">aidl</a></li>
+      		<li><a href="../../guide/developing/tools/avd.html">AVDs</a></li>
+      		<li><a href="../../guide/developing/tools/ddms.html">ddms</a></li>
+      		<li><a href="../../guide/developing/tools/othertools.html#dx">dx</a></li>
+      		<li><a href="../../guide/developing/tools/draw9patch.html">Draw 9-Patch</a></li>
+      		<li><a href="../../guide/developing/tools/emulator.html">Emulator</a></li>
+      		<li><a href="../../guide/developing/tools/hierarchy-viewer.html">Hierarchy Viewer</a></li>
+      		<li><a href="../../guide/developing/tools/layoutopt.html">layoutopt</a></li>
+      		<li><a href="../../guide/developing/tools/othertools.html#mksdcard">mksdcard</a></li>
+      		<li><a href="../../guide/developing/tools/monkey.html">Monkey</a></li>
+      		<li><a href="../../guide/developing/tools/adb.html#sqlite">sqlite3</a></li>
+      		<li><a href="../../guide/developing/tools/traceview.html">Traceview</a></li>
+      		<li><a href="../../guide/developing/tools/zipalign.html">zipalign</a></li>
+    	  </ul>
+  	  </li>
+  <!--<li><a href="../../guide/developing/instrumentation/index.html">Instrumentation</a></li>
+      <li><a style="color:gray;">JUnit</a></li> -->
+    </ul>
+  </li>
+  
+  <li>
+    <h2><span class="en">Publishing</span>
+        <span class="de" style="display: none;">Veröffentlichung</span>
+        <span class="es" style="display: none;">Publicación</span>
+        <span class="fr" style="display: none;">Publication</span>
+        <span class="it" style="display: none;">Pubblicazione</span>
+        <span class="ja" style="display: none;">公開</span>
+        <span class="zh-CN" style="display: none;">发布</span>
+        <span class="zh-TW" style="display: none;">發佈</span>
+    </h2>
+    <ul>
+      <li><a href="../../guide/publishing/app-signing.html">
+            <span class="en">Signing Your Applications</span>
+            <span class="de" style="display: none;">Signieren Ihrer Anwendungen</span>
+            <span class="es" style="display: none;">Firma de aplicaciones</span>
+            <span class="fr" style="display: none;">Attribution de votre signature <br>à vos applications</span>
+            <span class="it" style="display: none;">Firma delle applicazioni</span>
+            <span class="ja" style="display: none;">アプリケーションへの署名</span>
+            <span class="zh-CN" style="display: none;">应用程序签名</span>
+            <span class="zh-TW" style="display: none;">簽署應用程式</span>
+          </a></li>
+      <li><a href="../../guide/publishing/versioning.html">
+            <span class="en">Versioning Your Applications</span>
+            <span class="de" style="display: none;">Versionsverwaltung für Ihre <br>Anwendungen</span>
+            <span class="es" style="display: none;">Versiones de las aplicaciones</span>
+            <span class="fr" style="display: none;">Attribution d'une version à vos applications</span>
+            <span class="it" style="display: none;">Controllo versioni delle applicazioni</span>
+            <span class="ja" style="display: none;">アプリケーションのバージョニング</span>
+            <span class="zh-CN" style="display: none;">应用程序版本控制</span>
+            <span class="zh-TW" style="display: none;">應用程式版本設定</span>
+          </a></li>
+      <li><a href="../../guide/publishing/preparing.html">
+            <span class="en">Preparing to Publish</span>
+            <span class="de" style="display: none;">Vorbereitung auf die Veröffentlichung</span>
+            <span class="es" style="display: none;">Publicación de aplicaciones</span>
+            <span class="fr" style="display: none;">Préparation à la publication</span>
+            <span class="it" style="display: none;">Preparativi per la pubblicazione</span>
+            <span class="ja" style="display: none;">公開の準備</span>
+            <span class="zh-CN" style="display: none;">准备发布</span>
+            <span class="zh-TW" style="display: none;">準備發佈</span>
+          </a></li>
+      <li><a href="../../guide/publishing/publishing.html">
+            <span class="en">Publishing Your Applications</span>
+          </a></li>
+    </ul>
+  </li>
+  
+  <li>
+    <h2><span class="en">Best Practices</span>
+               <span class="de" style="display: none;">Bewährte Verfahren</span>
+               <span class="es" style="display: none;">Prácticas recomendadas</span>
+               <span class="fr" style="display: none;">Meilleures pratiques</span>
+               <span class="it" style="display: none;">Best practice</span>
+               <span class="ja" style="display: none;">ベスト プラクティス</span>
+               <span class="zh-CN" style="display: none;">最佳实践</span>
+               <span class="zh-TW" style="display: none;">最佳實務</span>
+    </h2>
+    <ul>
+      <li><a href="../../guide/practices/screens_support.html">
+            <span class="en">Supporting Multiple Screens</span>
+          </a></li>
+      <li class="toggle-list">
+        <div><a href="../../guide/practices/ui_guidelines/index.html">
+               <span class="en">UI Guidelines</span>
+             </a></div>
+        <ul>
+          <li><a href="../../guide/practices/ui_guidelines/icon_design.html">
+                <span class="en">Icon Design</span>
+              </a></li>
+          <li><a href="../../guide/practices/ui_guidelines/widget_design.html">
+                <span class="en">App Widget Design</span>
+              </a></li>
+          <li><a href="../../guide/practices/ui_guidelines/activity_task_design.html">
+                <span class="en">Activity and Task Design</span>
+              </a></li>
+          <li><a href="../../guide/practices/ui_guidelines/menu_design.html">
+                <span class="en">Menu Design</span>
+              </a></li>
+        </ul>
+      </li>
+      </ul>
+      <ul>
+      <li><a href="../../guide/practices/design/performance.html">
+            <span class="en">Designing for Performance</span>
+          </a></li>
+      <li><a href="../../guide/practices/design/responsiveness.html">
+            <span class="en">Designing for Responsiveness</span>
+          </a></li>
+      <li><a href="../../guide/practices/design/seamlessness.html">
+            <span class="en">Designing for Seamlessness</span>
+          </a></li>
+    </ul>
+  </li>
+  
+  <li>
+    <h2><span class="en">Tutorials and Sample Code</span>
+               <span class="de" style="display: none;">Lernprogramme und Beispielcode</span>
+               <span class="es" style="display: none;">Tutoriales y código de ejemplo</span>
+               <span class="fr" style="display: none;">Didacticiels et exemple de code</span>
+               <span class="it" style="display: none;">Esercitazioni e codice di esempio</span>
+               <span class="ja" style="display: none;">チュートリアルとサンプル コード</span>
+               <span class="zh-CN" style="display: none;">辅导手册和示例代码</span>
+               <span class="zh-TW" style="display: none;">教學課程與程式碼範例</span>
+    </h2>
+    <ul>
+      <li><a href="../../guide/tutorials/hello-world.html">
+            <span class="en">Hello World</span>
+          </a></li>
+      <li><a href="../../guide/tutorials/views/index.html">
+            <span class="en">Hello Views</span>
+          </a></li>
+      <li><a href="../../guide/tutorials/localization/index.html">
+            <span class="en">Hello Localization</span>
+          </a></li>
+      <li><a href="../../guide/tutorials/notepad/index.html">
+            <span class="en">Notepad Tutorial</span>
+          </a></li>
+    </ul>
+    <ul>
+      <li class="toggle-list">
+        <div><a href="../../guide/samples/index.html">
+               <span class="en">Sample Code</span>
+             </a></div>
+        <ul>
+          <li><a href="../../guide/samples/ApiDemos/index.html">
+                <span class="en">API Demos</span>
+              </a></li>
+          <li><a href="../../guide/samples/Home/index.html">
+                <span class="en">Home</span>
+              </a></li>
+          <li><a href="../../guide/samples/JetBoy/index.html">
+                <span class="en">JetBoy</span>
+              </a></li>
+          <li><a href="../../guide/samples/LunarLander/index.html">
+                <span class="en">Lunar Lander</span>
+              </a></li>
+          <li><a href="../../guide/samples/NotePad/index.html">
+                <span class="en">Note Pad</span>
+              </a></li>
+          <li><a href="../../guide/samples/SearchableDictionary/index.html">
+                <span class="en">Searchable Dictionary</span>
+              </a></li>
+          <li><a href="../../guide/samples/Snake/index.html">
+                <span class="en">Snake</span>
+              </a></li>
+          <li><a href="../../guide/samples/SoftKeyboard/index.html">
+                <span class="en">Soft Keyboard</span>
+              </a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  
+
+  <li>
+    <h2><span class="en">Appendix</span>
+               <span class="de" style="display: none;">Anhang</span>
+               <span class="es" style="display: none;">Apéndice</span>
+               <span class="fr" style="display: none;">Annexes</span>
+               <span class="it" style="display: none;">Appendice</span>
+               <span class="ja" style="display: none;">付録</span>
+               <span class="zh-CN" style="display: none;">附录</span>
+               <span class="zh-TW" style="display: none;">附錄</span>
+    </h2>
+    <ul>
+      <li><a href="../../guide/appendix/api-levels.html">
+            <span class="en">Android API Levels</span>
+          </a></li>
+      <li><a href="../../guide/appendix/media-formats.html">
+            <span class="en">Supported Media Formats</span>
+          </a></li>
+      <li><a href="../../guide/appendix/g-app-intents.html">
+            <span class="en">Intents List: Google Apps</span>
+          </a></li>
+      <li><a href="../../guide/appendix/glossary.html">
+            <span class="en">Glossary</span>
+          </a></li>
+      <li><a href="../../guide/appendix/faq/index.html">
+            <span class="en">FAQ</span>
+          </a></li>
+    </ul>
+  </li>
+
+</ul>
+
+<script type="text/javascript">
+<!--
+    buildToggleLists();
+    changeNavLang(getLangPref());
+//-->
+</script>
+
+      </div>
+    </div> <!-- end side-nav -->
+    <script>
+      addLoadEvent(function() {
+        scrollIntoView("devdoc-nav");
+        });
+    </script>
+
+
+
+
+<div class="g-unit" id="doc-content"><a name="top"></a>
+
+<div id="jd-header" class="guide-header">
+  <span class="crumb">
+    &nbsp;
+    
+  </span>
+<h1 style="width: 703px">Application Fundamentals——应用程序基础知识</h1>
+</div>
+
+  <div id="jd-content">
+
+
+    <div class="jd-descr">
+    <div id="qv-wrapper">
+<div id="qv">
+<h2>Key classes——关键类</h2>
+<ol>
+<li><code><a href="../../reference/android/app/Activity.html">Activity</a></code></li>
+<li><code><a href="../../reference/android/app/Service.html">Service</a></code></li>
+<li><code><a href="../../reference/android/content/BroadcastReceiver.html">BroadcastReceiver</a></code></li>
+<li><code><a href="../../reference/android/content/ContentProvider.html">ContentProvider</a></code></li>
+<li><code><a href="../../reference/android/content/Intent.html">Intent</a></code></li>
+</ol>
+
+<h2>In this document——在这篇文章中</h2>
+<ol>
+<li><a href="#appcomp">Application Components——应用程序组件</a>
+  <ol>
+    <li><a href="#actcomp">Activating components: intents——激活组件：意图</a></li>
+    <li><a href="#endcomp">Shutting down components——关闭组件</a></li>
+    <li><a href="#manfile">The manifest file——清单文件</a></li>
+    <li><a href="#ifilters">Intent filters——意图匹配器</a></li>
+  </ol></li>
+<li><a href="#acttask">Activities and Tasks——活动和任务</a>
+  <ol>
+    <li><a href="#afftask">Affinities and new tasks——亲和力和新任务</a></li>
+    <li><a href="#lmodes">Launch modes——加载样式</a></li>
+    <li><a href="#clearstack">Clearing the stack——清除栈</a></li>
+    <li><a href="#starttask">Starting tasks——开始任务</a></li>
+  </ol></li>
+<li><a href="#procthread">Processes and Threads——进程和线程</a>
+  <ol>
+    <li><a href="#procs">Processes——进程</a></li>
+    <li><a href="#threads">Threads——线程</a></li>
+    <li><a href="#rpc">Remote procedure calls——远程过程调用</a></li>
+    <li><a href="#tsafe">Thread-safe methods——线程保险技术的方法</a></li>
+  </ol></li>
+<li><a href="#lcycles">Component Lifecycles——组件生命周期</a>
+  <ol>
+    <li><a href="#actlife">Activity lifecycle——活动生命周期</a></li>
+    <li><a href="#servlife">Service lifecycle——服务生命周期</a></li>
+    <li><a href="#broadlife">Broadcast receiver lifecycle——广播接收器生命周期</a></li>
+    <li><a href="#proclife">Processes and lifecycles——进程和生命周期</a></li>
+  </ol></li>
+</ol>
+</div>
+</div>
+
+<p style="width: 708px">
+Android applications are written in the Java programming language. 
+The compiled Java code — along with any data and resource 
+files required by the application — is bundled by the 
+<a href="../../guide/developing/tools/aapt.html"><code>aapt</code> 
+tool</a> into an <i>Android package</i>, an archive file 
+marked by an <code>.apk</code> suffix.  This file is the vehicle 
+for distributing the application and installing it on mobile devices; 
+it's the file users download to their devices.  All the code in a 
+single <code>.apk</code> file is considered to be one <i>application</i>.<br>
+<span class="long_text" id="result_box"><span onmouseover="this.style.backgroundColor='#ebeff9'" title="Android applications are written in the Java programming language." style="background-color: rgb(255, 255, 255);" onmouseout="this.style.backgroundColor='#fff'">Android应用程序是用Java编程语言编写的。</span><span onmouseover="this.style.backgroundColor='#ebeff9'" title="The compiled Java code — along with any data and resource files required by the application — is bundled by the aapt tool into an Android package, an archive file marked by an .apk suffix." style="background-color: rgb(235, 239, 249);" onmouseout="this.style.backgroundColor='#fff'"></span><span onmouseover="this.style.backgroundColor='#ebeff9'" title="This file is the vehicle for distributing the application and installing it on mobile devices; it's the file users download to their devices." style="background-color: rgb(255, 255, 255);" onmouseout="this.style.backgroundColor='#fff'">编译好的Java代码——随同所有应用程序要使用的数据和资源文件一起——使用</span></span><a href="../developing/tools/aapt.html"><code>aapt</code> 
+tool</a><span class="long_text" id="result_box"><span onmouseover="this.style.backgroundColor='#ebeff9'" title="This file is the vehicle for distributing the application and installing it on mobile devices; it's the file users download to their devices." style="background-color: rgb(255, 255, 255);" onmouseout="this.style.backgroundColor='#fff'">打包成一个Android包，即一个后缀为</span></span><code>.apk</code><span class="long_text" id="result_box"><span onmouseover="this.style.backgroundColor='#ebeff9'" title="This file is the vehicle for distributing the application and installing it on mobile devices; it's the file users download to their devices." style="background-color: rgb(255, 255, 255);" onmouseout="this.style.backgroundColor='#fff'">的归档文件。此文件是发布应用程序和在移动设备上安装应用程序的有媒介；它是用户下载到他们设备上的文件。</span><span onmouseover="this.style.backgroundColor='#ebeff9'" title="All the code in a single .apk file is considered to be one application." style="background-color: rgb(255, 255, 255);" onmouseout="this.style.backgroundColor='#fff'">在一个.apk文件中的所有代码被认为是一个应用程序。</span></span><br>
+
+</p>
+
+<p>
+In many ways, each Android application lives in its own world:<br>
+从很多方面来讲，每一个Android程序都运行在自己的空间里：<br>
+
+</p>
+
+<ul>
+<li style="width: 683px">By default, every application runs in its own Linux process.
+Android starts the process when any of the application's code needs to
+be executed, and shuts down the process when it's no longer needed and
+system resources are required by other
+applications.&nbsp;&nbsp;&nbsp;&nbsp;
+默认的，每一个程序运行在其自己的Linux进程中。Android在应用程序中某段代码需要被执行时启动一个进程，不再使用或系统资源被其他应用程序请
+求时关闭这个进程。<br>
+</li>
+
+<li style="width: 687px">Each process has its own Java virtual machine (VM), so application
+code runs in isolation from the code of all other
+applications.&nbsp;&nbsp;&nbsp;&nbsp;
+每一个进程都有自己的Java虚拟机（VM），一个应用程序代码运行时同其他程序代码分开，不受任何其他程序的代码的影响。<br>
+</li>
+
+<li style="width: 688px">By default, each application is assigned a unique Linux user ID.
+Permissions are set so that the application's files are visible only
+that user, only to the application itself — although there are ways to
+export them to other applications as well.&nbsp;&nbsp;&nbsp;&nbsp;
+默认的，每个应用程序享有一个独自的Linux用户ID。由于权限设定原因，一个应用程序的文件只有本用户（其自己）可见——当然，也有把他们导出给其他
+应用程序的机制。<br>
+</li>
+</ul>
+
+<p>
+It's possible to arrange for two applications to share the same user ID, 
+in which case they will be able to see each other's files.  To conserve 
+system resources, applications with the same ID can also arrange to run 
+in the same Linux process, sharing the same VM.<br>
+可以为两个应用程序安排为使用同一个用户ID，这样，他们的文件相互可见。为为了节省系统资源，拥有相同ID的程序可以作为一个Linux进程运行，分享同一个虚拟机。<br>
+
+</p>
+
+
+<h2 id="appcomp">Application Components——应用程序组件</h2>
+
+<p>
+A central feature of Android is that one application can make use of elements 
+of other applications (provided those applications permit it).  For example, 
+if your application needs to display a scrolling list of images and another 
+application has developed a suitable scroller and made it available to others, 
+you can call upon that scroller to do the work, rather than develop your own.  
+Your application doesn't incorporate the code of the other application or 
+link to it.  Rather, it simply starts up that piece of the other application 
+when the need arises.<br>
+Android的一个中心功能就是应用程序可以使用其他应用程序的元素（在提供元素的应用程序允许的情况下）。例如，如果您的应用程序想要显示一系列带有
+滑屏效果功能的图片，然后某个应用程序正巧开发出了合适的滑屏的模块，并且同意共享，您就可以调用哪个滑屏模块处理这些图片并显示出来，而不是您自己再去
+开发一个。您的应用程序并没有包含或链接到了其他的应用程序的代码。但是当请求发出后，您的应用程序确实可以简单的使用其他程序的部分功能。<br>
+
+</p>
+
+<p>
+For this to work, the system must be able to start an application process 
+when any part of it is needed, and instantiate the Java objects for that part.  
+Therefore, unlike applications on most other systems, Android applications don't 
+have a single entry point for everything in the application (no <code>main()</code> 
+function, for example).  Rather, they have essential <i>components</i> that 
+the system can instantiate and run as needed.  There are four types of components:<br>
+为了达成这个过程，系统必须可以再应用程序的某个部分被请求时启动这个程序的进程。然后为那个部分的Java对象创建实例。因此不像其他操作系统上的应用程序那样，Android程序没有一个单一的应用程序入口（例如没有<code>main()</code>函数）。然而他们含有当系统需要时创建实例的实质的组件。组件有四种：<br>
+
+</p>
+
+<dl>
+
+<dt><b>Activities——活动</b></dt>
+<dd>An <i>activity</i> presents a visual user interface for one focused endeavor 
+the user can undertake.  For example, an activity might present a list of 
+menu items users can choose from or it might display photographs along
+with their captions.  A text messaging application might have one activity 
+that shows a list of contacts to send messages to, a second activity to write 
+the message to the chosen contact, and other activities to review old messages 
+or change settings.  Though they work together to form a cohesive user interface, 
+each activity is independent of the others.  
+Each one is implemented as a subclass of the <code><a href="../../reference/android/app/Activity.html">Activity</a></code> base class.</dd><dt>活
+动为需要用户关注和确认的部分显示一个可见的用户界面。例如，活动会显示一个用户可选的菜单项的列表，或是显示带有标签的照片。一个文本信息应用程序可能
+有一个显示联系人列表来发送信息，又有一个为选定的联系人撰写信息的活动，还有其他回顾旧信息或改变设定的活动。虽然他们整体组成一个相互关联的用户界
+面，但是每一个活动都是相对独立的。每一个都作为<code></code><a href="../../reference/android/app/Activity.html">Activity</a>基类的一个子类来实现。<br>
+  </dt>
+  <dd>  
+
+<p>
+An application might consist of just one activity or, like the text messaging
+application just mentioned, it may contain several.  
+What the activities are, and how many there are depends, of course, on the 
+application and its design.  Typically, one of the activities is marked
+as the first one that should be presented to the user when the application is 
+launched.  Moving from one activity to another is accomplished by having the 
+current activity start the next one.</p></dd>
+  <dd>
+    <p>一个应用程序可能只含有一个活动，或者像上边提到的文本信息程序一样含有几个。有几个活动，这些活动是什么样的取决于您的应用程序是如何设
+计的。最典型的是将一个活动设计为第一个活动，应用程序被加载时呈现给用户。从一个活动转到另一个是通过在当前活动开始另一个来实现的。<br>
+  
+    </p>
+
+
+<p>
+Each activity is given a default window to draw in.  Typically, the window 
+fills the screen, but it might be smaller than the screen and float on top 
+of other windows.  An activity can also make use of additional windows — 
+for example, a pop-up dialog that calls for a user response in the midst of 
+the activity, or a window that presents users with vital information when they 
+select a particular item on-screen.</p></dd>
+  <dd>
+    <p>每一个活动提供了一个用以绘制的默认窗口。典型的，窗口填满整个屏幕，但是它覆盖在其他窗口上时，会变得略小一点。一个活动可以使用多个窗口——例如，在窗口中央显示一个需要用户回应的弹出窗口，或者在用户选择屏幕上一个特定项目是时为他显示重要信息的窗口。<br>
+
+    </p>
+
+
+<p>
+The visual content of the window is provided by a hierarchy of views — 
+objects derived from the base <code><a href="../../reference/android/view/View.html">View</a></code> class.  Each view 
+controls a particular rectangular space within the window.  Parent views 
+contain and organize the layout of their children.  Leaf views (those at the 
+bottom of the hierarchy) draw in the rectangles they control and respond to 
+user actions directed at that space.  Thus, views are where the activity's 
+interaction with the user takes place.  For example, a view might display 
+a small image and initiate an action when the user taps that image.  Android 
+has a number of ready-made views that you can use — including buttons, 
+text fields, scroll bars, menu items, check boxes, and more.</p></dd>
+  <dd>
+    <p>窗口的可见内容由一组view层提供——从<code></code><a href="../../reference/android/view/View.html">View</a>基
+类衍生出来的对象。每一个view控制窗口中的一块矩形区域。父view包含并组织子view的布局。页view（底层的view）绘制它们管理的矩形，
+并响应在“空白”的地方的动作。就是说，view就是活动和用户互动的地方。例如，一个view显示一个小图片，然后初始化用户点击这个小图片后的动作。
+Android有很多已做好的view供您选择——包括按钮，文本输入框，滚动条，菜单项，多选列表等。<br>
+
+    </p>
+
+
+<p>
+A view hierarchy is placed within an activity's window by the 
+<code><code><a href="../../reference/android/app/Activity.html#setContentView%28android.view.View%29">Activity.setContentView()</a></code></code> 
+method.  The <i>content view</i> is the View object at the root of the hierarchy.  
+(See the separate <a href="../../guide/topics/ui/index.html">User Interface</a> 
+document for more information on views and the hierarchy.)</p></dd>
+  <dt>通过使用<code><code></code></code><a href="../../reference/android/app/Activity.html#setContentView%28android.view.View%29">Activity.setContentView()</a>方法将一组view层放置在一个活动的窗口中。<i>content view</i>是在层的最底部的View对象。（参见独立<a href="ui/index.html">User Interface</a>的文档获取更多有关view和层的信息。）<br>
+  </dt>
+<dt><b>Services——服务</b></dt>
+<dd>A <i>service</i> doesn't have a visual user interface, but rather runs in 
+the background for an indefinite period of time.  For example, a service might 
+play background music as the user attends to other matters, or it might fetch 
+data over the network or calculate something and provide the result to activities 
+that need it.  Each service extends the <code><a href="../../reference/android/app/Service.html">Service</a></code> base class.</dd><dt>服务没有可见的用户界面，但是可以在后台运行任意长的时间。例如，一个服务可以在用户转向其他工作后仍在后台播放音乐，或从网上下载数据，或计算什么然后在活动需要的时候提供给活动。服务是从<code></code><a href="../../reference/android/app/Service.html">Service</a>基类继承来的。<br>
+  </dt>
+  <dd>
+
+<p>
+A prime example is a media player playing songs from a play list.  The player 
+application would probably have one or more activities that allow the user to 
+choose songs and start playing them.  However, the music playback itself would 
+not be handled by an activity because users will expect the music to keep 
+playing even after they leave the player and begin something different.  
+To keep the music going, the media player activity could start a service to run 
+in the background.  The system would then keep the music playback service running 
+even after the activity that started it leaves the screen.</p></dd>
+  <dd>
+    <p>一个主要的例子就是一个从列表中播放音乐的媒体播放器。播放器程序可能会有一个或几个允许用户选择希望播放的音乐然后显示播放的活动。但是
+音乐的回放过程本身不会使用一个活动因为用户希望在切出播放器界面做别的事时音乐也能一直放下去。为了保持播放继续，活动可以启动一个服务在后台运行。然
+后即使启动这个服务的活动退出，音乐播放服务也能继续运行。<br>
+
+    </p>
+
+
+<p> 
+It's possible to connect to (bind to) an ongoing service (and start the service 
+if it's not already running).  While connected, you can communicate with the 
+service through an interface that the service exposes.  For the music service, 
+this interface might allow users to pause, rewind, stop, and restart the playback.</p></dd>
+  <dd>
+    <p>您可以连接到（绑定到）一个正在运行的服务（若果服务没在运行，就会启动这个服务）。连接后，您就可以通过服务暴露出来的接口与其进行通信。对音乐播放服务，这个接口可能允许用户对播放进行暂停、回退、停止、重播等操作。<br>
+
+    </p>
+
+
+<p>
+Like activities and the other components, services run in the main thread of 
+the application process.  So that they won't block other components or the 
+user interface, they often spawn another thread for time-consuming tasks 
+(like music playback).  See <a href="#procthread">Processes and Threads</a>, later.</p></dd>
+  <dt>像活动和其他组件一样，服务运行在程序进程的主线程中。这样它们就不会阻碍其他组件或是用户界面，它们通常是运行一个子线程来进行实时的任务（例如音乐回放）。过后请参见<a href="fundamentals.html#procthread">Processes and Threads</a>。<br>
+  </dt>
+
+
+<dt><b>Broadcast receivers——广播接受器</b></dt>
+<dd>A <i>broadcast receiver</i> is a component that does nothing but 
+receive and react to broadcast announcements.  Many broadcasts originate in 
+system code — for example, announcements that the timezone has changed, 
+that the battery is low, that a picture has been taken, or that the user 
+changed a language preference.  Applications can also initiate broadcasts
+— for example, to let other applications know that some data has been
+downloaded to the device and is available for them to use.</dd><dt><i>broadcast receiver</i>只是接受并对广播信息做出反应。多数的广播是由系统代码发出的——例如，时区变化的通知、电量低的通知、照了一张照了一张照片 或者用户改变了语言设定。应用程序也可以初始化一条广播——例如让其他应用程序知道有些数据下载完成可以使用难过了。<br>
+  </dt>
+  <dd>
+
+<p>
+An application can have any number of broadcast receivers to respond to any 
+announcements it considers important.  All receivers extend the <code><a href="../../reference/android/content/BroadcastReceiver.html">BroadcastReceiver</a></code> base class.</p></dd>
+  <dd>
+    <p>应用程序可以含有任意数量的广播接收器对任意其认为重要的的广播进行响应。所有的广播接收器均由<code></code><a href="../../reference/android/content/BroadcastReceiver.html">BroadcastReceiver</a>基类衍生<br>
+
+    </p>
+
+
+<p>
+Broadcast receivers do not display a user interface.  However, they may start
+an activity in response to the information they receive, or they may use 
+the <a href="../../reference/android/app/NotificationManager.html"><code></code></a><a href="../../reference/android/content/BroadcastReceiver.html">BroadcastReceiver</a> to alert the user.  Notifications 
+can get the user's attention in various ways — flashing 
+the backlight, vibrating the device, playing a sound, and so on.  They 
+typically place a persistent icon in the status bar, which users can open to 
+get the message.</p></dd>
+  <dt>广播接收器不显示用户界面。但是它可以启动一个活动来对接收到的信息进行响应或者是使用一个<code></code><a href="../../reference/android/content/BroadcastReceiver.html">BroadcastReceiver</a>来通知警告用户。Notification（通知）可以一各种方式引起用户注意——使背景灯闪烁，使设备振动，播放声音等等。通常是在状态条上显示一个不会消失图标，用户可以拉下状态条获得通知。<br>
+  </dt>
+
+
+<dt><b>Content providers——内容提供者</b></dt>
+<dd>A <i>content provider</i> makes a specific set of the application's data 
+available to other applications. The data can be stored in the file system, 
+in an SQLite database, or in any other manner that makes sense.  
+The content provider extends the <code><a href="../../reference/android/content/ContentProvider.html">ContentProvider</a></code> base 
+class to implement a standard set of methods that enable other applications 
+to retrieve and store data of the type it controls.  However, applications 
+do not call these methods directly.  Rather they use a <code><a href="../../reference/android/content/ContentResolver.html">ContentResolver</a></code> object and call its methods instead.  
+A ContentResolver can talk to any content provider; it cooperates with the
+provider to manage any interprocess communication that's involved.</dd><dt><i>content provider</i> 使程序中特定的数据可被其他程序使用。共享的数据可以存储在文件系统中、SQLite数据库中或其他任何可用的介质。内容提供者由<code></code><a href="../../reference/android/content/ContentProvider.html">ContentProvider</a>基类派生，实现了一系列的&nbsp;&nbsp; 使其他程序获取和存储其支持的数据格式的&nbsp;&nbsp; 方法。但是应用程序不会直接调用这些方法。而是使用<code></code><a href="../../reference/android/content/ContentResolver.html">ContentResolver</a>对象，然后调用这个对象的方法。ContentResolver能与任何内容提供者对话，它与提供者合作来管理所有涉及到的进程间通信。</dt>
+  <dd> 
+
+<p>
+See the separate 
+<a href="../../guide/topics/providers/content-providers.html">Content 
+Providers</a> document for more information on using content providers.</p></dd><dt>获取更多使用内容提供者的详细信息请参见单独的文档——<a href="providers/content-providers.html">Content 
+Providers</a>。<br>
+  </dt>
+
+
+
+</dl>
+
+<p>
+Whenever there's a request that should be handled by a particular component, 
+Android makes sure that the application process of the component is running, 
+starting it if necessary, and that an appropriate instance of the component 
+is available, creating the instance if necessary.<br>
+当有应被特殊的组件操作的请求时，Android会确认这个组件是否正在运行，如果未在运行，则启动它，如果正在运行则检测需要的类是否实例化，如未实例化，则为类创建实例。<br>
+  
+</p>
+
+
+<h3 id="actcomp">Activating components: intents——激活别的组件的组件：意图</h3> 
+
+<p>
+Content providers are activated when they're targeted by a request from a 
+ContentResolver.  The other three components — activities, services, 
+and broadcast receivers — are activated by asynchronous messages 
+called <i>intents</i>.  An intent is an <code><a href="../../reference/android/content/Intent.html">Intent</a></code> 
+object that holds the content of the message.  For activities and services,
+it names the action being requested and specifies the URI of the data to 
+act on, among other things. For example, it might convey a request for 
+an activity to present an image to the user or let the user edit some
+text.  For broadcast receivers, the Intent object names the action being 
+announced.  For example, it might announce to interested parties that the 
+camera button has been pressed.<br>
+内容提供者获得ContentResolver请求的指向后，会被激活。另外的三种组件——活动，服务，广播接收器——是靠异一种叫做<i>intents（意图）</i>的异步消息激活的。意图是&nbsp;&nbsp; 承载了这种异步消息内容的&nbsp;&nbsp; <code><a href="../../reference/android/content/Intent.html">Intent</a></code>的对象。对于活动和服务，它主要是为被请求的动作命名，然后指定操作此数据的URI。例如，它可能携带让一个活动为用户展现一张图片或者让用户编辑文本的请求。对广播接收器，Intent对象为将要广播的内容命名。例如，它可能会向有兴趣的接收器发布照相键被按下的广播。
+</p>
+
+<p>
+There are separate methods for activiating each type of component:<br>
+激活不同的组件需使用不同的方法：<br>
+ 
+</p>
+
+<ul>
+
+  <li>An activity is launched (or given something new to do) by passing an 
+Intent object to <code><code><a href="../../reference/android/content/Context.html#startActivity%28android.content.Intent%29">Context.startActivity()</a></code></code> or <code><code><a href="../../reference/android/app/Activity.html#startActivityForResult%28android.content.Intent,%20int%29">Activity.startActivityForResult()</a></code></code>.  The responding activity can 
+look at the initial intent that caused it to be launched by calling its 
+<code><code><a href="../../reference/android/app/Activity.html#getIntent%28%29">getIntent()</a></code></code> method.  
+Android calls the activity's <code><code><a href="../../reference/android/app/Activity.html#onNewIntent%28android.content.Intent%29">onNewIntent()</a></code></code> method to pass 
+it any subsequent intents. &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; 向<code><code></code></code><a href="../../reference/android/content/Context.html#startActivity%28android.content.Intent%29">Context.startActivity()</a>或<code><code></code></code><a href="../../reference/android/app/Activity.html#startActivityForResult%28android.content.Intent,%20int%29">Activity.startActivityForResult()</a>传递Intent对象可以激活（或获得新的任务）一个活动。响应的活动可以通过调用<code><code></code></code><a href="../../reference/android/app/Activity.html#getIntent%28%29">getIntent()</a>方法查看导致自己被激活的最初的意图。Android调用活动的<code><code></code></code><a href="../../reference/android/app/Activity.html#onNewIntent%28android.content.Intent%29">onNewIntent()</a>方法来传递之后的意图。<br>
+<p>One activity often starts the next one.  If it expects a result back from 
+the activity it's starting, it calls <code>startActivityForResult()</code> 
+instead of <code>startActivity()</code>.  For example, if it starts an activity 
+that lets the user pick a photo, it might expect to be returned the chosen 
+photo.  The result is returned in an Intent object that's passed to the 
+calling activity's <code><code><a href="../../reference/android/app/Activity.html#onActivityResult%28int,%20int,%20android.content.Intent%29">onActivityResult()</a></code></code> method.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 一个活动通常会开启另一个活动。如果前一个活动希望从新启动的活动获得一个运行结果，可以调用<code>startActivityForResult()</code>方法来代替<code>startActivity()</code>方法。例如，如果一个老活动开启了一个让用户照相的新活动，又希望从新活动获得这张照片。新活动的运行结果是通过一个&nbsp;&nbsp; 传递给老活动的<code><code></code></code><a href="../../reference/android/app/Activity.html#onActivityResult%28int,%20int,%20android.content.Intent%29">onActivityResult()</a>方法的&nbsp;&nbsp; Intent对象传递的。
+</p>
+  </li>
+
+
+<li><p>A service is started (or new instructions are given to an ongoing 
+service) by passing an Intent object to <code><code><a href="../../reference/android/content/Context.html#startService%28android.content.Intent%29">Context.startService()</a></code></code>.  
+Android calls the service's <code><code><a href="../../reference/android/app/Service.html#onStart%28android.content.Intent,%20int%29">onStart()</a></code></code> method and passes it the Intent object.</p>
+
+<p>
+Similarly, an intent can be passed to <code><code><a href="../../reference/android/content/Context.html#bindService%28android.content.Intent,%20android.content.ServiceConnection,%20int%29">Context.bindService()</a></code></code> to 
+establish an ongoing connection between the calling component and a 
+target service.  The service receives the Intent object in
+an <code><code><a href="../../reference/android/app/Service.html#onBind%28android.content.Intent%29">onBind()</a></code></code> call.
+(If the service is not already running, <code>bindService()</code> can
+optionally start it.)  For example, an activity might establish a connection 
+with the music playback service mentioned earlier so that it can provide 
+the user with the means (a user interface) for controlling the playback.  
+The activity would call <code>bindService()</code> to set up that connection, 
+and then call methods defined by the service to affect the playback. &nbsp; &nbsp; &nbsp;&nbsp; 服务通过向<code><code></code></code><a href="../../reference/android/content/Context.html#startService%28android.content.Intent%29">Context.startService()</a>传递一个Intent对象启动（或给予新任务）Android调用服务的<code><code></code></code><a href="../../reference/android/app/Service.html#onStart%28android.content.Intent,%20int%29">onStart()</a>方法然后将Intent对象传递给服务。类似的，一个意图可以被传给<code><code></code></code><a href="../../reference/android/content/Context.html#bindService%28android.content.Intent,%20android.content.ServiceConnection,%20int%29">Context.bindService()</a>来建立呼叫组件和被叫组件的实时连接。调用服务的<code><code></code></code><a href="../../reference/android/app/Service.html#onBind%28android.content.Intent%29">onBind()</a>来使其接受Intent对象。（如果服务未在运行，您可以选择使用<code>bindService()</code>来启动它。）例如上面提到过的音乐播放服务，活动会希望建立一个与此服务的连接以向用户提供控制播放的功能（例如一个UI界面）。这时活动就会调用<code>bindService()</code>来建立连接，然后调用服务中定义的方法来控制播放。</p></li>
+  <li><p>
+A later section, <a href="#rpc">Remote procedure calls</a>, has more details 
+about binding to a service.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 之后的章节会讲到<a href="fundamentals.html#rpc">Remote procedure calls</a>，那有更详细的绑定服务的信息。<br>
+
+</p>
+  </li>
+
+
+<li><p>An application can initiate a broadcast by passing an Intent object to 
+methods like <code><code><a href="../../reference/android/content/Context.html#sendBroadcast%28android.content.Intent%29">Context.sendBroadcast()</a></code></code>, 
+<code><code><a href="../../reference/android/content/Context.html#sendOrderedBroadcast%28android.content.Intent,%20java.lang.String%29">Context.sendOrderedBroadcast()</a></code></code>, and <code><code><a href="../../reference/android/content/Context.html#sendStickyBroadcast%28android.content.Intent%29">Context.sendStickyBroadcast()</a></code></code>
+in any of their variations.  Android delivers the intent to all interested 
+broadcast receivers by calling their <code><code><a href="../../reference/android/content/BroadcastReceiver.html#onReceive%28android.content.Context,%20android.content.Intent%29">onReceive()</a></code></code> methods.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 程序可以通过向类似&nbsp;&nbsp; <code><code></code></code><a href="../../reference/android/content/Context.html#sendBroadcast%28android.content.Intent%29">Context.sendBroadcast()</a>，<code><code></code></code><a href="../../reference/android/content/Context.html#sendOrderedBroadcast%28android.content.Intent,%20java.lang.String%29">Context.sendOrderedBroadcast()</a>，<code><code></code></code><a href="../../reference/android/content/Context.html#sendStickyBroadcast%28android.content.Intent%29">Context.sendStickyBroadcast()</a>，及它们的变种&nbsp;&nbsp; 的方法传递一个Intent对象来初始化一条广播。<br>
+</p></li>
+
+</ul>
+
+<p>
+For more on intent messages, see the separate article, 
+<a href="../../guide/topics/intents/intents-filters.html">Intents 
+and Intent Filters</a>.<br>
+获得更多关于意图的信息，查看单独的章节<a href="intents/intents-filters.html">Intents 
+and Intent Filters</a>。<br>
+
+</p>
+
+
+<h3 id="endcomp">Shutting down components——关闭组件</h3>
+
+<p>
+A content provider is active only while it's responding to a request from 
+a ContentResolver.  And a broadcast receiver is active only while it's 
+responding to a broadcast message.  So there's no need to explicitly shut 
+down these components.
+</p>
+	<p>
+内容提供者只有在响应来自ContentResolver的请求时才会处于激活状态。广播接收器只有在响应广播信息时才处于激活状态。所以没有必要显式地关闭这些组件。</p>
+
+<p>
+Activities, on the other hand, provide the user interface.  They're 
+in a long-running conversation with the user and may remain active, 
+even when idle, as long as the conversation continues.  Similarly, services 
+may also remain running for a long time.  So Android has methods to shut 
+down activities and services in an orderly way:
+</p>
+	<p>
+活动，相反的，提供了用户界面。他们会与用户长时间地对话，而且可能在整个对话过程，即使处于空闲状态，都保持运行状态。同样的，服务也可能会运行很长时间。因此，Android提供了下列的关闭活动和服务的方法：</p>
+
+<ul>
+<li>An activity can be shut down by calling its
+<code><code><a href="../../reference/android/app/Activity.html#finish%28%29">finish()</a></code></code> method.  One activity can
+shut down another activity (one it started with <code>startActivityForResult()</code>) by 
+calling <code><code><a href="../../reference/android/app/Activity.html#finishActivity%28int%29">finishActivity()</a></code></code>.</li>
+</ul>
+	<p>活动可以通过调用他的<code><a href="../../reference/android/app/Activity.html#finish%28%29">finish()</a></code>方法进行关闭。一个活动也可以调用<code><a href="../../reference/android/app/Activity.html#finishActivity%28int%29">finishActivity()</a></code>关闭另一个活动（但只能是由他调用<code>startActivityForResult()</code>启动的）。</p>
+	<ul>
+
+<li>A service can be stopped by calling its
+<code><code><a href="../../reference/android/app/Service.html#stopSelf%28%29">stopSelf()</a></code></code> method, or by calling 
+<code><code><a href="../../reference/android/content/Context.html#stopService%28android.content.Intent%29">Context.stopService()</a></code></code>.</li>
+</ul>
+
+	<p>一个服务可以通过调用他的<code><a href="../../reference/android/app/Service.html#stopSelf%28%29">stopSelf()</a></code>方法关闭，或者调用<code><a href="../../reference/android/content/Context.html#stopService%28android.content.Intent%29">Context.stopService()</a></code>方法关闭。</p>
+
+<p>
+Components might also be shut down by the system when they are no longer being
+used or when Android must reclaim memory for more active components.  A later
+section, <a href="#lcycles">Component Lifecycles</a>, discusses this
+possibility and its ramifications in more detail.
+</p>
+	<p>
+当组件不会再被使用时，或Android必须回收内存以运行其他组件时，系统会自动关闭组件。后续的<a href="#lcycles">Component Lifecycles</a>章节中详细讨论了这种可能和其后果。</p>
+
+
+<h3 id="manfile">The manifest file——清单文件</h3>
+
+<p>
+Before Android can start an application component, it must learn that 
+the component exists.  Therefore, applications declare their components 
+in a manifest file that's bundled into the Android package, the <code>.apk</code> 
+file that also holds the application's code, files, and resources.  
+</p>
+	<p>
+Android启动一个新的应用程序组件之前，他必须知道这个组件确实存在。因此，应用程序在清单文件中声明了他的全部组件。清单文件随同应用程序的代码、文件、资源一同打包在了Android包中，即<code>.apk</code>文件中。</p>
+
+<p>
+The manifest is a structured XML file and is always named AndroidManifest.xml 
+for all applications.  It does a number of things in addition to declaring the 
+application's components, such as naming any libraries the application needs 
+to be linked against (besides the default Android library) and identifying 
+any permissions the application expects to be granted.
+</p>
+	<p>
+清单文件是一个结构化的XML文件，同时在所有的应用程序都被命名为AndroidManifest.xml。除了声明应用程序的组件他还有很多功用，例如为所有应用程序需要进行连接的库命名（除了默认的Android库）还有识别所有应用程序期望获得的权限。</p>
+
+<p>
+But the principal task of the manifest is to inform Android about the application's 
+components.  For example, an activity might be declared as follows:
+</p>
+	<p>
+但是清单文件的主要任务还是为Android提供应用程序的组件信息。例如，一个活动可能会像下面这样定义：</p>
+
+<pre>&lt;?xml version="1.0" encoding="utf-8"?&gt;<br>&lt;manifest . . . &gt;<br>    &lt;application . . . &gt;<br>        &lt;activity android:name="com.example.project.FreneticActivity"<br>                  android:icon="@drawable/small_pic.png"<br>                  android:label="@string/freneticLabel" <br>                  . . .  &gt;<br>        &lt;/activity&gt;<br>        . . .<br>    &lt;/application&gt;<br>&lt;/manifest&gt;</pre>
+
+<p>
+The <code>name</code> attribute of the 
+<code><a href="../../guide/topics/manifest/activity-element.html">&lt;activity&gt;</a></code>
+element names the <code><a href="../../reference/android/app/Activity.html">Activity</a></code> subclass that implements the 
+activity.  The <code>icon</code> and <code>label</code> attributes point to 
+resource files containing an icon and label that can be displayed 
+to users to represent the activity.
+</p>
+	<p>
+<code><a href="../../guide/topics/manifest/activity-element.html">&lt;activity&gt;</a></code>元素的<code>name</code>属性命名了实现了activity的<code><a href="../../reference/android/app/Activity.html">Activity</a></code>子类。<code>icon</code>和<code>label</code>属性指向了&nbsp;&nbsp; 
+包含被显示给用户来代表这个活动的图标和标题&nbsp;&nbsp; 的文件。</p>
+
+<p>
+The other components are declared in a similar way — 
+<code><a href="../../guide/topics/manifest/service-element.html">&lt;service&gt;</a></code>
+elements for services,
+<code><a href="../../guide/topics/manifest/receiver-element.html">&lt;receiver&gt;</a></code>
+elements for broadcast receivers, and 
+<code><a href="../../guide/topics/manifest/provider-element.html">&lt;provider&gt;</a></code>
+elements for content providers.  Activities, services, and content providers 
+that are not declared in the manifest are not visible to the system and are 
+consequently never run.  However, broadcast receivers can either be 
+declared in the manifest, or they can be created dynamically in code 
+(as <code><a href="../../reference/android/content/BroadcastReceiver.html">BroadcastReceiver</a></code> objects) 
+and registered with the system by calling 
+<code><code><a href="../../reference/android/content/Context.html#registerReceiver%28android.content.BroadcastReceiver,%20android.content.IntentFilter%29">Context.registerReceiver()</a></code></code>.<br>
+其他的组件的声明方式类似——声明服务用<code></code><a href="manifest/service-element.html">&lt;service&gt;</a>元素，使用<code></code><a href="manifest/receiver-element.html">&lt;receiver&gt;</a>声明广播接收器，使用<code><a href="manifest/provider-element.html">&lt;provider&gt;</a></code>声明内容提供者。没被声明的活动，服务，内容提供者对Android系统是不可见的，因此永远都不会被运行。但是广播接收器可以在清单文件中声明也可在代码中动态的创建（创建<code><a href="../../reference/android/content/BroadcastReceiver.html">BroadcastReceiver</a></code>对象），然后调用<code><code><a href="../../reference/android/content/Context.html#registerReceiver%28android.content.BroadcastReceiver,%20android.content.IntentFilter%29">Context.registerReceiver()</a></code></code>向系统注册。<span style="text-decoration: underline;"></span><code></code><code></code><span style="text-decoration: underline;"></span>
+</p>
+	
+
+<p>
+For more on how to structure a manifest file for your application, see 
+<a href="../../guide/topics/manifest/manifest-intro.html">The 
+AndroidManifest.xml File</a>.<br>
+更多有关如何为您的应用程序构造一个清单文件，请参见<a href="manifest/manifest-intro.html">The 
+AndroidManifest.xml File</a>。<br>
+
+</p>
+
+
+<h3 id="ifilters">Intent filters——意图匹配器</h3>
+
+<p>
+An Intent object can explicitly name a target component.  If it does,
+Android finds that component (based on the declarations in the manifest 
+file) and activates it.  But if a target is not explicitly named, 
+Android must locate the best component to respond to the intent.  
+It does so by comparing the Intent object to the <i>intent filters</i> 
+of potential targets.  A component's intent filters inform Android of 
+the kinds of intents the component is able to handle.  Like other 
+essential information about the component, they're declared in the 
+manifest file.  Here's an extension of the previous example that adds 
+two intent filters to the activity:<br>
+Intent对象会详细地指明一个目标组件。Android会找到那个组件（根据清单文件中的声明）然后激活它。但是如果目标没有被明确指出，
+Android就必须找到能响应这个意图的最佳组件。Android将Intent对象和可能的目标组件的意图匹配器进行比较来找出这个最佳组件。组件的
+意图匹配器告诉Android这个组件能操作什么样的意图。就像组件的其他重要信息一样，它们声明于清单文件中。这里是上边那个例子的增扩版，向活动中添
+加了两个意图匹配器。<br>
+
+</p>
+
+<pre>&lt;?xml version="1.0" encoding="utf-8"?&gt;<br>&lt;manifest . . . &gt;<br>    &lt;application . . . &gt;<br>        &lt;activity android:name="com.example.project.FreneticActivity"<br>                  android:icon="@drawable/small_pic.png"<br>                  android:label="@string/freneticLabel" <br>                  . . .  &gt;<br>            &lt;intent-filter . . . &gt;<br>                &lt;action android:name="android.intent.action.MAIN" /&gt;<br>                &lt;category android:name="android.intent.category.LAUNCHER" /&gt;<br>            &lt;/intent-filter&gt;<br>            &lt;intent-filter . . . &gt;<br>                &lt;action android:name="com.example.project.BOUNCE" /&gt;<br>                &lt;data android:mimeType="image/jpeg" /&gt;<br>                &lt;category android:name="android.intent.category.DEFAULT" /&gt;<br>            &lt;/intent-filter&gt;<br>        &lt;/activity&gt;<br>        . . .<br>    &lt;/application&gt;<br>&lt;/manifest&gt;</pre>
+
+<p>
+The first filter in the example — the combination of the action
+"<code>android.intent.action.MAIN</code>" and the category
+"<code>android.intent.category.LAUNCHER</code>" — is a common one.
+It marks the activity as one that should be represented in the
+application launcher, the screen listing applications users can launch 
+on the device.  In other words, the activity is the entry point for 
+the application, the initial one users would see when they choose 
+the application in the launcher.<br>
+例子中的第一个意图匹配器——"<code>android.intent.action.MAIN</code>"动作和"<code>android.intent.category.LAUNCHER</code>目录的结合——是常见的一种。它标明这个活动要在程序菜单上列出，就是要在列出设备上用户可用的应用程序的那一屏。换句话说，这个活动是这个应用程序的入口点，用户从菜单中选择运行这个程序后见到的初始的活动。<br>
+
+</p>
+
+<p>
+The second filter declares an action that the activity can perform on 
+a particular type of data.<br>
+第二个匹配器声明了这个活动能处理某种形式的数据。<br>
+
+</p>
+
+<p>
+A component can have any number of intent filters, each one declaring a 
+different set of capabilities.  If it doesn't have any filters, it can 
+be activated only by intents that explicitly name the component as the 
+target.<br>
+一个组件可以有任意多个意图匹配器，每一个声明这个组件的一种能力。如果一个组件没有任何意图匹配器，他就只能被明确的指明他作为目标组件的意图激活。<br>
+
+</p>
+
+<p>
+For a broadcast receiver that's created and registered in code, the
+intent filter is instantiated directly as an <code><a href="../../reference/android/content/IntentFilter.html">IntentFilter</a></code>
+object.  All other filters are set up in the manifest.<br>
+对在代码运行时创建并注册的广播接收器，意图匹配器被作为<code></code><a href="../../reference/android/content/IntentFilter.html">IntentFilter</a>对象直接实例化。<br>
+
+</p>
+
+<p>
+For more on intent filters, see a separate document, <a href="intents/intents-filters.html">Intents 
+and Intent Filters</a><a href="../../guide/topics/intents/intents-filters.html"></a>.<br>
+有关意图匹配器更多信息，参见单独的<a href="intents/intents-filters.html">Intents 
+and Intent Filters</a>文档。<br>
+
+</p>
+
+
+<h2 id="acttask">Activities and Tasks——活动和任务</h2>
+
+<p>
+As noted earlier,  one activity can start another, including one defined 
+in a different application.  Suppose, for example, that you'd like 
+to let users display a street map of some location.  There's already an 
+activity that can do that, so all your activity needs to do is put together 
+an Intent object with the required information and pass it to <code>startActivity()</code>.  The map viewer will display the map.  When the user 
+hits the BACK key, your activity will reappear on screen.<br>
+上边提到过，一个活动能启动另一个活动，甚至是在别的应用程序中定义的活动。设想，例如，您想让用户显示某地的街区地图。而且已经有了一个可以完成此事的活动，所以您的活动要做的仅仅是将请求信息放进一个Intent对象中，将这个Intent对象传递给<code>startActivity()</code>。地图查看器这个活动就会显示出地图。当用户点击BACK按钮之后，您的活动就会重新出现在屏幕上。<br>
+
+</p>
+
+<p>
+To the user, it will seem as if the map viewer is part of the same application 
+as your activity, even though it's defined in another application and runs in 
+that application's process.  Android maintains this user experience by keeping 
+both activities in the same <i>task</i>.  Simply put, a task is what the user 
+experiences as an "application."  It's a group of related activities, arranged 
+in a stack.  The root activity in the stack is the one that began the task 
+— typically, it's an activity the user selected in the application launcher.  
+The activity at the top of the stack is one that's currently running — 
+the one that is the focus for user actions.  When one activity starts another, 
+the new activity is pushed on the stack; it becomes the running activity.  
+The previous activity remains in the stack.  When the user presses the BACK key, 
+the current activity is popped from the stack, and the previous one resumes as 
+the running activity.<br>
+对用户来说这个地图查看器就好像您的应用程序中的活动一样，虽然这个地图查看器是定义在其他应用程序中而且运行在那个应用程序的进程中。Android将您的活动和那个借用的活动放在同一个<i>task</i>中，
+以维持用户体验。简单来讲任务就是用户觉得好像是一个“应用程序”的东西。任务就是以栈的形式组织起来起来的相互关联的一组活动。栈中最底部的是任务的起
+始活动——一般是用户在滑出的程序列表中选择启动的活动。最顶部的是正在运行的活动——用户正在关注操作的。当一个活动开启另一个时，新启动的活动被压入
+栈中；并且成为正在运行的活动。旧一个活动还在栈中。当用户按下BACK键后，正在运行的活动被弹出栈，旧一个恢复成为正在运行的活动。<br>
+  
+</p>
+
+<p>
+The stack contains objects, so if a task has more than one instance of the same 
+Activity subclass open — multiple map viewers, for example — the 
+stack has a separate entry for each instance.  Activities in the stack are never 
+rearranged, only pushed and popped.<br>
+栈中包含了对象，因此如果一个任务中开启了&nbsp;&nbsp; 同一个Activity子类的&nbsp;&nbsp; 多个对象——例如，多个地图浏览——则栈对每一个实例都有一个分开的入口。栈中的活动不会被重新排序，只会被压入、弹出。<br>
+
+</p>
+
+<p>
+A task is a stack of activities, not a class or an element in the manifest file. 
+So there's no way to set values for a task independently of its activities.  
+Values for the task as a whole are set in the root activity.  For example, the 
+next section will talk about the "affinity of a task"; that value is read from 
+the affinity set for the task's root activity.<br>
+任务是由栈中的活动组成的，而不是清单文件中声明的某个类或元素。所以无法单独为一个任务设定确定的活动的信息。任务的所有信息都是设定在根活动中的。例如，下一个章节会讲到“任务的亲和度”；亲和度信息就是从任务的根活动中获取的。<br>
+
+</p>
+
+<p>
+All the activities in a task move together as a unit.  The entire task (the entire 
+activity stack) can be brought to the foreground or sent to the background.  
+Suppose, for instance, that the current task has four activities in its stack 
+— three under the current activity.  The user presses the HOME key, goes 
+to the application launcher, and selects a new application (actually, a new <i>task</i>).  
+The current task goes into the background and the root activity for the new task is displayed.  
+Then, after a short period, the user goes back to the home screen and again selects 
+the previous application (the previous task).  That task, with all four 
+activities in the stack, comes forward.  When the user presses the BACK 
+key, the screen does not display the activity the user just left (the root
+activity of the previous task).  Rather, the activity on the top of the stack 
+is removed and the previous activity in the same task is displayed.<br>
+任务中的所有活动是作为一个整体运转的。整个任务（一个栈的所有活动）可以被送到前台或推到后台。假设，例如，现在有一个正在运行的任务，栈中有四个活动
+——正在运行的活动下边有三个，这是用户按下了HOME键，回到了应用程序的列表然后运行了一个新的应用程序（事实上，是一个新的任务）。则旧一个任务就
+被推到了后台，新一个任务的根活动被现实。一段时间过后用户回到了应用程序列表，又选择了旧一个应用程序（旧一个任务）。则旧一个任务的所有栈中的四个活
+动就都被送到了前台。这时用户如果按下BACK建屏幕不会回到用户刚离开的活动（就是新一个任务的跟活动）。而是旧一个任务的栈顶活动被弹出，下一个活动顶上，并被显示出来。</p>
+
+<p>
+The behavior just described is the default behavior for activities and tasks.  
+But there are ways to modify almost all aspects of it.  The association of 
+activities with tasks, and the behavior of an activity within a task, is 
+controlled by the interaction between flags set in the Intent object that
+started the activity and attributes set in the activity's 
+<code><a href="../../guide/topics/manifest/activity-element.html">&lt;activity&gt;</a></code>
+element in the manifest.  Both requester and respondent have a say in what happens.
+</p>
+	<p>
+上面描述的过程是活动和任务的默认动作流程。但是那个流程很多方面都是可修改的。活动和任务的组合还有任务中的活动是由&nbsp;&nbsp; 
+开启活动的Intent对象中设定的控制标 和 清单文件中活动的<code><a href="../../guide/topics/manifest/activity-element.html">&lt;activity&gt;</a></code>元素的属性&nbsp;&nbsp; 
+共同控制的。</p>
+
+<p>
+In this regard, the principal Intent flags are:
+
+</p>
+	<p>
+这种情况下，重要的Intent控制标有：</p><p style="margin-left: 2em;"><code>FLAG_ACTIVITY_NEW_TASK</code>
+<br><code>FLAG_ACTIVITY_CLEAR_TOP</code>
+<br><code>FLAG_ACTIVITY_RESET_TASK_IF_NEEDED</code>
+<br><code>FLAG_ACTIVITY_SINGLE_TOP</code></p>
+
+<p>
+The principal <code>&lt;activity&gt;</code> attributes are:
+  
+</p>
+	<p>
+重要的<code>&lt;activity&gt;</code>属性有：</p><p style="margin-left: 2em;"><code>taskAffinity</code>
+<br><code>launchMode</code>
+<br><code>allowTaskReparenting</code>
+<br><code>clearTaskOnLaunch</code>
+<br><code>alwaysRetainTaskState</code>
+<br><code>finishOnTaskLaunch</code></p>
+
+<p>
+The following sections describe what some of these flags and attributes do,
+how they interact, and what considerations should govern their use.
+</p>
+	<p>
+下面的章节描述了这些控制标和属性的作用，如何相连发生作用，在使用过程中的注意事项。</p>
+
+
+<h3 id="afftask">Affinities and new tasks——亲和度和新任务</h3>
+
+<p>
+By default, all the activities in an application have an <i>affinity</i> for each 
+other — that is, there's a preference for them all to belong to the 
+same task.  However, an individual affinity can be set for each activity 
+with the <code>taskAffinity</code> attribute of the <code>&lt;activity&gt;</code> element. 
+Activities defined in different applications can share an affinity, or activities 
+defined in the same application can be assigned different affinities.  
+The affinity comes into play in two circumstances:  When the Intent object 
+that launches an activity contains the <code>FLAG_ACTIVITY_NEW_TASK</code> flag, 
+and when an activity has its <code>allowTaskReparenting</code> attribute set 
+to "<code>true</code>". 
+</p>
+	<p>
+默认的，一个应用程序中的所有活动之间都互有&nbsp;&nbsp; 亲和度——就是他们属于一个任务的优先权。但是，您可以通过每个活动的<code>&lt;activity&gt;</code>元素的<code>taskAffinity</code>属相为某个活动设定单独的亲和度。不同程序中定义的活动可以共享一个亲和度，一个应用程序中的不同活动可以定义不同的亲和度。亲和度在两种情况下有用：一种情况是当激活活动的Intent对象包含了<code>FLAG_ACTIVITY_NEW_TASK</code>控制标，另一种情况是活动将<code>allowTaskReparenting</code>属性设置为了"<code>true</code>"。</p>
+
+<dl>
+<dt>The <code><code><a href="../../reference/android/content/Intent.html#FLAG_ACTIVITY_NEW_TASK">FLAG_ACTIVITY_NEW_TASK</a></code></code> flag——<code><a href="../../reference/android/content/Intent.html#FLAG_ACTIVITY_NEW_TASK">FLAG_ACTIVITY_NEW_TASK</a></code>控制标</dt>
+<dd>As described earlier, a new activity is, by default, launched into 
+the task of the activity that called <code>startActivity()</code>.  It's pushed
+ onto the same stack as the caller.  However, if the Intent object passed 
+to <code>startActivity()</code> contains the <code>FLAG_ACTIVITY_NEW_TASK</code> 
+flag, the system looks for a different task to house the new activity.  
+Often, as the name of the flag implies, it's a new task.  However, it 
+doesn't have to be.  If there's already an existing task with the same 
+affinity as the new activity, the activity is launched into that task.  If 
+not, it begins a new task.</dd>
+<dt>正如上边提到的，默认情况下，调用<code>startActivity()</code>向任务中添加一个活动。新添加的活动会压入添加他的活动所在栈。但是，如果传递给<code>startActivity()</code>的Intent对象中含有<code>FLAG_ACTIVITY_NEW_TASK</code>控制标，系统会将新活动压入别的栈。通常，就像控制标的字面意思一样，会是一个新的任务。但是，不是一定要压入新的栈。如果已经有了一个亲和度和新活动相同的任务，活动就被压入那个任务的栈中。如果没有，才会新建任务。</dt>
+
+<dt>The <code><a href="../../guide/topics/manifest/activity-element.html#reparent">allowTaskReparenting</a></code>
+attribute——<code><a href="../../guide/topics/manifest/activity-element.html#reparent">allowTaskReparenting</a></code>属性</dt>
+<dd>If an activity has its <code>allowTaskReparenting</code> attribute set 
+to "<code>true</code>", it can move from the task it starts in to the task 
+it has an affinity for when that task comes to the fore.  For example, 
+suppose that an activity that reports weather conditions in selected 
+cities is defined as part of a travel application.  It has the same
+affinity as other activities in the same application (the default 
+affinity) and it allows reparenting.  One of your activities 
+starts the weather reporter, so it initially belongs to the same task as 
+your activity.  However, when the travel application next comes forward, 
+the weather reporter will be reassigned to and displayed with that task.</dd>
+<dt>如果活动将<code>allowTaskReparenting</code>属性设为"<code>true</code>"，他可以
+&nbsp;&nbsp; 在具有亲和度的任务被送到前台时&nbsp;&nbsp;
+从开启他的任务移到亲和的任务中。例如，假设有一个已经做好的旅行的应用程序，定义了一个报告选择的城市的天气情况的活动。这个活动和这个应用程序中其他
+活动有相同亲和度（默认的亲和度），同时允许重定父级。您自己的一个应用程序中的一个活动开启了这个天气报告活动，他初始情况是处于您自己的应用程序的任
+务中。但是当这个旅行应用程序运行并被切换到前台后，天气报告活动就会被重新连接&nbsp;&nbsp;&nbsp;
+到旅行应用程序中，并在那个任务中显示。</dt>
+</dl>
+
+<p>
+If an <code>.apk</code> file contains more than one "application"
+from the user's point of view, you will probably want to assign different 
+affinities to the activities associated with each of them.
+</p>
+	<p>
+如果一个<code>.apk </code> 文件包含了多个用户看来的“应用程序”，您可能会为和每个“应用程序”相关的活动设定不同的亲和度。</p>
+
+
+<h3 id="lmodes">Launch modes——启动模式</h3>
+
+<p>
+There are four different launch modes that can be assigned to an <code>&lt;activity&gt;</code> element's 
+<code><a href="../../guide/topics/manifest/activity-element.html#lmode">launchMode</a></code> 
+attribute:
+</p>
+	<p>
+下面是可以被设为<code>&lt;activity&gt;</code>元素<code><a href="../../guide/topics/manifest/activity-element.html#lmode">launchMode</a></code>属性的四种启动模式：</p>
+
+<p style="margin-left: 2em;">"<code>standard</code>" (the default mode)
+——标准（默认的）<br>"<code>singleTop</code>"
+<br>"<code>singleTask</code>"
+<br>"<code>singleInstance</code>"</p>
+
+<p>
+The modes differ from each other on these four points:
+</p>
+	<p>
+每个任务都有以下四方面的特点：</p>
+
+<ul>
+
+<li><b>Which task will hold the activity that responds to the intent</b>.  
+For the "<code>standard</code>" and "<code>singleTop</code>" modes, it's the task that 
+originated the intent (and called 
+<code><code><a href="../../reference/android/content/Context.html#startActivity%28android.content.Intent%29">startActivity()</a></code></code>) 
+— unless the Intent object contains the 
+<code><code><a href="../../reference/android/content/Intent.html#FLAG_ACTIVITY_NEW_TASK">FLAG_ACTIVITY_NEW_TASK</a></code></code> flag.  
+In that case, a different task is chosen as described in the previous 
+section, <a href="#afftask">Affinities and new tasks</a>.  
+
+<br>
+<b>响应意图的活动会被装入哪个任务。</b>"<code>standard</code>"和"<code>singleTop</code>"模式，是装入发出意图（调用了<code><a href="../../reference/android/content/Context.html#startActivity%28android.content.Intent%29">startActivity()</a></code>）的任务——除非Intent对象含有<code><a href="../../reference/android/content/Intent.html#FLAG_ACTIVITY_NEW_TASK">FLAG_ACTIVITY_NEW_TASK</a></code>控制标。后种情况流程如前边<a href="#afftask">Affinities and new tasks</a>章节所述。<p>
+In contrast, the "<code>singleTask</code>" and "<code>singleInstance</code>" modes mark 
+activities that are always at the root of a task.  They define a task; they're
+never launched into another task.
+</p>
+<p>
+相反的，使用"<code>singleTask</code>"标记和"<code>singleInstance</code>"标记始终为根活动的活动。开启这样的活动会新建一个任务；而不是装入某个正在运行的任务。</p>  
+
+</li><li><p><b>Whether there can be multiple instances of the activity</b>.  
+A "<code>standard</code>" or "<code>singleTop</code>" activity can be instantiated
+many times.  They can belong to multiple tasks, and a given task can have 
+multiple instances of the same activity.</p>
+<b>是否允许产生多个活动实例。</b>2一个"<code>standard"</code>或"<code>singleTop</code>"活动可以被多次实例化。他们可以属于多个任务，同样的活动可以在一个确定的任务中有多个实例。<br>
+<p>In contrast, "<code>singleTask</code>" and "<code>singleInstance</code>" activities 
+are limited to just one instance.  Since these activities are at the root
+of a task, this limitation means that there is never more than a single
+instance of the task on the device at one time.</p>
+相反的，"<code>singleTask</code>和"<code>singleInstance</code>"的活动只能有一个实例。因为这些活动是任务的根活动，这种限制意味着一个任务在同一时间只能有一个。<br>
+</li>
+<li><p><b>Whether the instance can have other activities in its task</b>.  
+A "<code>singleInstance</code>" activity stands alone as the only activity in its 
+task.  If it starts another activity, that activity will be launched into a 
+different task regardless of its launch mode — as if <code>FLAG_ACTIVITY_NEW_TASK</code> was in the intent.  In all other respects, the 
+"<code>singleInstance</code>" mode is identical to "<code>singleTask</code>".</p>
+<p><b>所在任务中是否允许有其他活动。</b>"<code>singleInstance</code>"活动单独运行在一个任务中。如果他开启另一个活动，新一个活动不论启动模式都会运行在新任务中——就好像用带有<code>FLAG_ACTIVITY_NEW_TASK</code>控制标的Intent对象激活似的。其他方面"<code>singleInstance</code>"与"<code>singleTask</code>"相同。<br>
+</p>
+<p>The other three modes permit multiple activities to belong to the task.
+A "<code>singleTask</code>" activity will always be the root activity of the task, 
+but it can start other activities that will be assigned to its
+task.  Instances of "<code>standard</code>" and "<code>singleTop</code>"
+activities can appear anywhere in a stack.  
+</p>
+<p>另外三个模式允许任务中存在多个活动。"<code>singleTask</code>"活动将总是任务的根活动，但是由他启动的其他活动会被装入他所在的任务。"<code>standard</code>"和"<code>singleTop</code>"活动能在任务栈中任何任何位置出现。</p>
+</li>
+
+
+<li><b>Whether a new instance of the class will be launched 
+to handle a new intent</b>.  For the default "<code>standard</code>" mode, a 
+new instance is created to respond to every new intent.  Each instance 
+handles just one intent.  For the "<code>singleTop</code>" mode, an existing 
+instance of the class is re-used to handle a new intent if it resides 
+at the top of the activity stack of the target task.  If it does not 
+reside at the top, it is not re-used.  Instead, a new instance 
+is created for the new intent and pushed on the stack.
+
+<br>
+<b>获得新意图时是否使用新&nbsp;&nbsp; 类的&nbsp;&nbsp; 实例来操作。</b>对于默认"<code>standard</code>"的模式，每次获得新意图时都会用新的实例响应。每个实例响应一个意图。"<code>singleTop</code>"模式中，如果意图响应类实例存在且在&nbsp;&nbsp; 
+意图的目标任务&nbsp;&nbsp; 栈的栈顶，那么意图响应类实例将会被重用。如果存在但不再栈顶，则不会被重用。新实例被创建并压入栈顶。<p>
+For example, suppose a task's activity stack consists of root activity A with 
+activities B, C, and D on top in that order, so the stack is A-B-C-D.  An intent 
+arrives for an activity of type D.  If D has the default "<code>standard</code>" launch 
+mode, a new instance of the class is launched and the stack becomes A-B-C-D-D.  
+However, if D's launch mode is "<code>singleTop</code>", the existing instance is 
+expected to handle the new intent (since it's at the top of the stack) and the 
+stack remains A-B-C-D.</p>
+<p>
+例如，假设 一个任务的几个活动是&nbsp;&nbsp; 根活动A，活动B，C，D&nbsp;&nbsp; 
+的顺序，栈内就是A-B-C-D。这时收到一个类D进行响应的意图。如果D是"<code>standard</code>"启动模式，则将创建类的新实例，栈内变成A-B-C-D-D。但是如果D是"<code>singleTop</code>"启动模式，用以响应新意图的实例已经存在（而且已经在栈顶），栈保持A-B-C-D不变。</p>
+
+<p>
+If, on the other hand, the arriving intent is for an activity of type B, a new 
+instance of B would be launched no matter whether B's mode is "<code>standard</code>" 
+or "<code>singleTop</code>" (since B is not at the top of the stack), so the resulting 
+stack would be A-B-C-D-B.
+</p>
+<p>
+如果，另一种情况，收到一个类B响应的意图，不管B的启动类型是"<code>standard</code>"还是"<code>singleTop</code>"（因为B不在栈顶），新实例都会被创建，之后的栈会变成A-B-C-D-B。</p>
+
+<p>
+As noted above, there's never more than one instance of a "<code>singleTask</code>" 
+or "<code>singleInstance</code>" activity, so that instance is expected to handle
+all new intents.  A "<code>singleInstance</code>" activity is always at the top of 
+the stack (since it is the only activity in the task), so it is always in 
+position to handle the intent.  However, a "<code>singleTask</code>" activity may 
+or may not have other activities above it in the stack.  If it does, it is not 
+in position to handle the intent, and the intent is dropped.  (Even though the 
+intent is dropped, its arrival would have caused the task to come to the 
+foreground, where it would remain.)
+</p>
+<p>
+就像前面已经提到过的，"<code>singleTask</code>"和"<code>singleInstance</code>"活动的类永远不可能会出现多个实例。所以他们的类就会处理所有的收到的意图。"<code>singleInstance</code>"活动永远是任务的栈的最顶活动（因为他是任务中的唯一活动），因此他也总可以处理一个意图。但是在"<code>singleTask</code>"活动栈位之上可能也可能没有另外的活动。如果有，那么他就不能对新到的意图进行处理，这个意图就丢失了。（即使意图已经丢失，意图的收到也会出发任务使其被送到并保持在前台。）</p>
+</li>
+
+</ul>
+
+<p>
+When an existing activity is asked to handle a new intent, the Intent
+object is passed to the activity in an 
+<code><code><a href="../../reference/android/app/Activity.html#onNewIntent%28android.content.Intent%29">onNewIntent()</a></code></code> call.  
+(The intent object that originally started the activity can be retrieved by 
+calling <code><code><a href="../../reference/android/app/Activity.html#getIntent%28%29">getIntent()</a></code></code>.)
+</p>
+	<p>
+当一个已有的活动被请求去处理一个新的意图，Intent对象会通过<code><a href="../../reference/android/app/Activity.html#onNewIntent%28android.content.Intent%29">onNewIntent()</a></code>的调用传递给这个活动。（传递进来的原始的Intent对象可以通过调用<code><a href="../../reference/android/app/Activity.html#getIntent%28%29">getIntent()</a></code>获取。）</p>
+
+<p>
+Note that when a new instance of an Activity is created to handle a new
+intent, the user can always press the BACK key to return to the previous state
+(to the previous activity).  But when an existing instance of an 
+Activity handles a new intent, the user cannot press the BACK key to 
+return to what that instance was doing before the new intent arrived.
+</p>
+	<p>
+注意，当创建一个新的Activity类的实例来处理一个新收到的意图时，用户可以按BACK键回到上一个状态（上一个活动）。但是使用一个已有的Activity类实例操作新收到的意图时，用户不能通过按下BACK键回到这个实例在接受到新意图之前的状态。</p>
+
+<p>
+For more on launch modes, see the description of the 
+<code><a href="../../guide/topics/manifest/activity-element.html">&lt;activity&gt;</a></code>
+element. 
+</p>
+	<p>
+启动模式的更多信息，参见清单文件<code><a href="../../guide/topics/manifest/activity-element.html">&lt;activity&gt;</a></code>元素的描述。</p>
+
+
+<h3 id="clearstack">Clearing the stack——清理栈</h3>
+
+<p>
+If the user leaves a task for a long time, the system clears the task of all
+activities except the root activity.  When the user returns to the task again, 
+it's as the user left it, except that only the initial activity is present. 
+The idea is that, after
+a time, users will likely have abandoned what they were doing before and are
+returning to the task to begin something new.
+</p>
+	<p>如果用户长时间没有使用一个运行着的任务，系统会将任务和其中除根活动以外的所有活动清理掉。当用户再次使用这个任务时，也是用户当
+初离开的原因，希望只显示第一个活动，即初始状态。我们认为，用户很长时间不用这个任务，就是放弃了先前做出的修改，再次回到这个任务是要重新开始。</p>
+
+<p>
+That's the default.  There are some activity attributes that can be used to 
+control this behavior and modify it:
+</p>
+	<p>
+这是默认的情况，但是您可以更改下列的活动的属性来控制这个机制：</p>
+
+<dl>
+<dt>The <code><a href="../../guide/topics/manifest/activity-element.html#always">alwaysRetainTaskState</a></code>
+attribute——<code><a href="../../guide/topics/manifest/activity-element.html#always">alwaysRetainTaskState</a></code>属性</dt>
+<dd>If this attribute is set to "<code>true</code>" in the root activity of a 
+task, the default behavior just described does not happen. The task retains all 
+activities in its stack even after a long period.</dd>
+<dt>如果任务的根活动的此项属性设置成了"<code>true</code>"，上面描述的默认的流程就不会发生。任务会保持其栈中所有的活动，无论用户有多长时间没有使用。</dt>
+
+<dt>The <code><a href="../../guide/topics/manifest/activity-element.html#clear">clearTaskOnLaunch</a></code>
+attribute——<code><a href="../../guide/topics/manifest/activity-element.html#clear">clearTaskOnLaunch</a></code>属性</dt>
+<dd>If this attribute is set to "<code>true</code>" in the root activity of a task, 
+the stack is cleared down to the root activity whenever the user leaves the task 
+and returns to it.  In other words, it's the polar opposite of 
+<code>alwaysRetainTaskState</code>.  The user always returns to the task in its
+initial state, even after a momentary absence.</dd>
+<dt>如果任务的根活动的此项属性设置成了"<code>true</code>"，用户离开任务后一回来，系统就清除栈中除根活动外的所有活动。换句话说，这是<code>alwaysRetainTaskState</code>的极端反面情况。即使用户只是离开一会，任务也会变回初始的状态。</dt>
+
+<dt>The <code><a href="../../guide/topics/manifest/activity-element.html#finish">finishOnTaskLaunch</a></code>
+attribute——<code><a href="../../guide/topics/manifest/activity-element.html#finish">finishOnTaskLaunch</a></code>属性</dt>
+<dd>This attribute is like <code>clearTaskOnLaunch</code>, but it operates on a 
+single activity, not an entire task.  And it can cause any activity to go
+away, including the root activity.  When it's set to "<code>true</code>", the 
+activity remains part of the task only for the current session.  If the user 
+leaves and then returns to the task, it no longer is present.</dd>
+<dt>这个属性和很相像<code>clearTaskOnLaunch</code>，但是<code><a href="../../guide/topics/manifest/activity-element.html#finish">finishOnTaskLaunch</a></code>针对对单一活动，不是整个任务。而且他能关闭栈中任何活动，包括根活动。当他被设为"<code>true</code>"时，这个活动只是当前属于这个任务，用户离开，再回到这个任务，他就被关闭了。</dt>
+</dl>
+
+<p>
+There's another way to force activities to be removed from the stack.  
+If an Intent object includes the <code><code><a href="../../reference/android/content/Intent.html#FLAG_ACTIVITY_CLEAR_TOP">FLAG_ACTIVITY_CLEAR_TOP</a></code></code> 
+flag, and the target task already has an instance of the type of activity that 
+should handle the intent in its stack, all activities above that instance 
+are cleared away so that it stands at the top of the stack and can respond 
+to the intent. 
+If the launch mode of the designated activity is "<code>standard</code>", it too 
+will be removed from the stack, and a new instance will be launched to handle 
+the incoming intent.  That's because a new instance is always created for 
+a new intent when the launch mode is "<code>standard</code>".
+</p>
+	<p>
+还有一种方法能将活动从栈中强行移除。如果一个Intent对象包含有<code><a href="../../reference/android/content/Intent.html#FLAG_ACTIVITY_CLEAR_TOP">FLAG_ACTIVITY_CLEAR_TOP</a></code>控制标，而且目标任务中已经有一个处理此意图的活动的实例，则所有此活动栈位之上的所有活动实例都被移除，然后此活动可以对意图进行响应。如果此活动的启动模式是"<code>standard</code>"，那么他自己也会被移除，新活动被建立，启动，来响应这个意图。因为如果启动模式是"<code>standard</code>"，则每一个意图都会用一个新的实例进行处理。</p>
+
+<p>
+<code>FLAG_ACTIVITY_CLEAR_TOP</code> is most often used in conjunction
+with <code>FLAG_ACTIVITY_NEW_TASK</code>.  When used together, these flags are
+a way of locating an existing activity in another task and putting it in
+a position where it can respond to the intent.  
+</p>
+	<p>
+<code>FLAG_ACTIVITY_CLEAR_TOP</code>通常会和<code>FLAG_ACTIVITY_NEW_TASK</code>联合使用。一起使用时，这个组合是&nbsp;&nbsp; 
+找到另一个任务中的已有活动然后将它转入新的任务中以响应一个意图的&nbsp;&nbsp; 一种方法。</p>
+
+
+<h3 id="starttask">Starting tasks——启动任务</h3>
+
+<p>
+An activity is set up as the entry point for a task by giving it 
+an intent filter with "<code>android.intent.action.MAIN</code>" as the 
+specified action and "<code>android.intent.category.LAUNCHER</code>" as 
+the specified category.  (There's an example of this type of filter 
+in the earlier <a href="#ifilters">Intent Filters</a> section.)  
+A filter of this kind causes an icon and label for the activity to be 
+displayed in the application launcher, giving users a way both to 
+launch the task and to return to it at any time after it has been 
+launched.
+</p>
+	<p>
+您可以&nbsp;&nbsp; 通过给活动添加一个"<code>android.intent.action.MAIN</code>" 
+的意图匹配器来指定动作，一个"<code>android.intent.category.LAUNCHER</code>"来指定其显示在应用程序列表中&nbsp;&nbsp; 
+来将这个活动设置为任务的入口活动。（上边的<a href="#ifilters">Intent Filters</a>章节中有这两个类型的意图匹配器的例子。）这样的匹配器会使应用程序在应用程序列表中显示其图标和标题，使用户能运行他或在运行后的任何时候回到他。</p>
+
+<p>
+This second ability is important:  Users must be able to leave a task
+and then come back to it later.  For this reason, the two launch modes
+that mark activities as always initiating a task, "<code>singleTask</code>" 
+and "<code>singleInstance</code>", should be used only when the activity has 
+a <code>MAIN</code> and <code>LAUNCHER</code> filter.  
+Imagine, for example, what could happen if the filter is missing:
+An intent launches a "<code>singleTask</code>" activity, initiating a new task, 
+and the user spends some time working in that task.  The user then presses 
+the HOME key.  The task is now ordered behind and obscured by the home 
+screen.  And, because it is not represented in the application launcher, 
+the user has no way to return to it.
+</p>
+	<p>
+第二个功能很重要：用户必须能够在离开这个任务后能再回到当初的状态。由于这个原因，将活动设定为切回后初始化任务的"<code>singleTask</code>"和"<code>singleInstance</code>"启动模式只能用在有<code>MAIN</code>和<code>LAUNCHER</code>匹配器的活动里。设想，例如，如果用在没有这两个匹配器的活动中会出现什么现象：一个意图激活了一个"<code>singleTask</code>"活动，初始化了一个新的任务，用户在这个任务中做了点什么，然后用户按下HOME键。这个活动就被退到后台，并被桌面屏幕掩盖，然后，由于他不在应用程序列表中显示，用户没法再回到那个活动中去了。</p>
+
+<p>
+A similar difficulty attends the <code>FLAG_ACTIVITY_NEW_TASK</code> flag.
+If this flag causes an activity to
+begin a new task and the user presses the HOME key to leave it, there
+must be some way for the user to navigate back to it again.  Some 
+entities (such as the notification manager) always start activities 
+in an external task, never as part of their own, so they always put 
+<code>FLAG_ACTIVITY_NEW_TASK</code> in the intents they pass to 
+<code>startActivity()</code>.  If you have an activity that can be invoked 
+by an external entity that might use this flag, take care that the user 
+has a independent way to get back to the task that's started.
+</p>
+	<p>
+相似的难题在使用<code>FLAG_ACTIVITY_NEW_TASK</code>控制标时也会出现。如果这个控制标使活动开启了一个新的任务然后用户按下HOME键离开这个活动，他也没有办法再回来了。有些东西（例如通知管理器）总是在一个新的任务中打开活动，从来不在自己的任务中打开，所以他们总将包含<code>FLAG_ACTIVITY_NEW_TASK</code>的意图传递给<code>startActivity()</code>。所以如果您有一个会被其他东西以这个控制标调用的活动，请注意用户有独立的回到这个活动的方法。</p> 
+
+<p>
+For those cases where you don't want the user to be able to return
+to an activity, set the <code>&lt;activity&gt;</code> element's <code>finishOnTaskLaunch</code> to "<code>true</code>".  
+See <a href="#clearstack">Clearing the stack</a>, earlier.
+</p>
+	<p>
+如果您希望用户离开活动后就不能再回到这个活动，可以将<code>&lt;activity&gt;</code>元素的<code>finishOnTaskLaunch</code>设为"<code>true</code>"。查看上边提到过的<a href="#clearstack">Clearing the stack</a>。</p>
+
+
+<h2 id="procthread">Processes and Threads——进程和线程</h2>
+
+<p>
+When the first of an application's components needs to be run, Android 
+starts a Linux process for it with a single thread of execution.  By default, 
+all components of the application run in that process and thread.
+</p>
+	<p>
+当应用程序的第一个组件需要运行是，Android为其分配一个Linux进程，这个进程只有一个运行线程。默认的，这个应用程序的所有组件运行在那个进程的线程中。</p>
+
+<p>
+However, you can arrange for components to run in other processes, and you 
+can spawn additional threads for any process.
+</p>
+	<p>
+但是，您可以将一些组件安排在别的进程中，而且您可以为任何进程添加线程。</p>
+
+
+<h3 id="procs">Processes——进程</h3>
+
+<p>
+The process where a component runs is controlled by the manifest file.  
+The component elements — <code>&lt;activity&gt;</code>, 
+<code>&lt;service&gt;</code>, <code>&lt;receiver&gt;</code>, and <code>&lt;provider&gt;</code> 
+— each have a <code>process</code> attribute that can specify a process
+where that component should run.  These attributes can be set so that each 
+component runs in its own process, or so that some components share a process 
+while others do not.  They can also be set so that components of 
+different applications run in the same process — provided that the 
+applications share the same Linux user ID and are signed by the same authorities.
+The <code>&lt;application&gt;</code> element also has a <code>process</code> attribute,
+for setting a default value that applies to all components.
+</p>
+	<p>
+组件运行在那个进程中是由清单文件进行设定的。组件元素——<code>&lt;activity&gt;</code>， 
+<code>&lt;service&gt;</code>，<code>&lt;receiver&gt;</code>和<code>&lt;provider&gt;</code>——都有一个<code>process</code>属性来指定组件应该运行在哪个进程中。您可以设定这个属性，使每个组件运行在自己的进程中，或者让某些组件共享一个进程而其他的不。您甚至可以设定不同的应用程序的组件运行在同一个进程中——这两个不同的应用程序须是由同一作者签名，且分享同一个Linux 
+用户ID。<code>&lt;application&gt;</code>元素也有一个<code>process</code>属性，来设定对所有组件的默认设定。</p>
+
+<p>
+All components are instantiated in the main thread of the specified
+process, and system calls to the component are dispatched from that
+thread.  Separate threads are not created for each instance.  Consequently,
+methods that respond to those calls — methods like 
+<code><code><a href="../../reference/android/view/View.html#onKeyDown%28int,%20android.view.KeyEvent%29">View.onKeyDown()</a></code></code> that report
+user actions and the lifecycle notifications discussed later in the 
+<a href="#lcycles">Component Lifecycles</a> section — always run in the
+main thread of the process.  This means
+that no component should perform long or blocking operations (such as networking 
+operations or computation loops) when called by the system, since this will block
+any other components also in the process.  You can spawn separate threads for 
+long operations, as discussed under <a href="#threads">Threads</a>, next.
+</p>
+	<p>
+所有的组件都是在指定进程的主线程中实例化的，对组件的系统调用也是由主线线程发出的。系统不会为每个实例建立新的线程。所以，对系统调用进行响应的方法，那些像&nbsp;&nbsp; 
+报告用户操作的 <code><a href="../../reference/android/view/View.html#onKeyDown%28int,%20android.view.KeyEvent%29">View.onKeyDown()</a></code>和在后边<a href="#lcycles">Component Lifecycles</a>章节提到的指示生命周期&nbsp;&nbsp; 
+的方法总是运行在进程的主线程中。这就是说当系统对组件进行调用时，组件不应进行长时间的或等待性的操作（例如网络操作或循环运算），因为这样会使同在这个进程中的其他组件运行受阻。您可以像下边<a href="#threads">Threads</a>中讲的那样，为耗时的操作建立单独的进程。</p>
+
+<p>
+Android may decide to shut down a process at some point, when memory is 
+low and required by other processes that are more immediately serving 
+the user.  Application components running in the process are consequently 
+destroyed.  A process is restarted for those components when there's again
+work for them to do.
+</p>
+	<p>
+Android系统可能会在某些时候结束一个进程，当内存不足且被其他对用户来说更紧要的进程请求时。因此，在此进程中的Android组件会被销毁。当这些组件有新的事要做时，系统会为他们重启进程。</p>  
+
+<p>
+When deciding which processes to terminate, Android weighs their relative
+importance to the user.  For example, it more readily shuts down a process 
+with activities that are no longer visible on screen than a process with
+visible activities.
+The decision whether to terminate a process, therefore, depends on the state 
+of the components running in that process.  Those states are the subject of
+a later section, <a href="#lcycles">Component Lifecycles</a>.
+</p>
+	<p>
+Android权衡对用户的重要性关系来决定结束哪个进程。例如，一个不是正在显示的进程比正在显示的进程更容易被结束。是否要结束某个进程是由里边运行的组件的状态决定的。组建的状态是下边<a href="#lcycles">Component Lifecycles</a>章节的主题。</p>
+
+
+<h3 id="threads">Threads——线程</h3>
+
+<p>
+Even though you may confine your application to a single process, there will
+likely be times when you will need to spawn a thread to do some background 
+work.  Since the user interface must always be quick to respond to user actions, 
+the thread that hosts an activity should not also host time-consuming operations 
+like network downloads.  Anything that may not be completed quickly should be
+assigned to a different thread. 
+</p>
+	<p>
+即使您将您的应用程序限制在了一个进程中，那您也很可能有需要新建一个线程来进行后台工作的可能。因为用户界面必须总是能快速地响应用户的动作，承载着活动的线程不能同时还承载者像网络下载这种耗时的操作。所有不能立刻完成的操作都应为其单独建立线程。</p>
+
+<p>
+Threads are created in code using standard Java <code><a href="../../reference/java/lang/Thread.html">Thread</a></code>
+objects.  Android provides a number of convenience classes for managing 
+threads — <code><a href="../../reference/android/os/Looper.html">Looper</a></code> for running a message loop within 
+a thread, <code><a href="../../reference/android/os/Handler.html">Handler</a></code> for processing messages, and 
+<code><a href="../../reference/android/os/HandlerThread.html">HandlerThread</a></code> for setting up a thread with a message loop.
+</p>
+	<p>
+线程在代码中使用标准的Java <code><a href="../../reference/java/lang/Thread.html">Thread</a></code>对象建立。Android提供了很多方便的管理线程的类——使用一个线程运行消息循环可以使用<code><a href="../../reference/android/os/Looper.html">Looper</a></code>，<code><a href="../../reference/android/os/Handler.html">Handler</a></code>响应消息，<code><a href="../../reference/android/os/HandlerThread.html">HandlerThread</a></code> 
+创建带有消息循环的线程。</p>
+
+
+<h3 id="rpc">Remote procedure calls——远程过程调用</h3>
+
+<p>
+Android has a lightweight mechanism for remote procedure calls (RPCs) 
+— where a method is called locally, but executed remotely (in another
+process), with any result returned back to the caller.
+This entails decomposing the method call and all its attendant data to a 
+level the operating system can understand, transmitting it from the local 
+process and address space to the remote process and address space, and 
+reassembling and reenacting the call there.  Return values have to be 
+transmitted in the opposite direction.  Android provides all the code 
+to do that work, so that you can concentrate on defining and implementing 
+the RPC interface itself.
+</p>
+	<p>
+Android
+有一个轻量级的远程过程调用的机制（RPCs）——使得方法在本地调用，然后远程执行（在另一个进程中），并将所有结果返回本地。这需要将方法的调用和随
+之的数据解释成操作系统可以识别的级别，将其从本地进程和地址空间传送到远程端的进程和地址空间中，在远程端重新装配和组织。返回数据传递过程相反。
+Android提供了所有完成这些过程的代码，所以您可以将精力集中在RPC接口的定义和实现上。</p>
+
+<p>
+An RPC interface can include only methods.
+All methods are executed synchronously (the local method blocks until the 
+remote method finishes), even if there is no return value.
+</p>
+	<p>
+RPC接口可以只包含方法。所有的方法都是同步执行的（本地方法会等待远程方法），在没有返回值的情况下也是这样。</p>
+
+<p>
+In brief, the mechanism works as follows:  You'd begin by declaring the
+RPC interface you want to implement using a simple IDL (interface definition 
+language).  From that declaration, the 
+<code><a href="../../guide/developing/tools/aidl.html">aidl</a></code> 
+tool generates a Java interface definition that must be made available to 
+both the local and the remote process.  It contains two inner class, as shown 
+in the following diagram:
+</p>
+	<p>
+简单来讲，RPC机制是这样的流程：首先，您使用简单的IDL（接口定义语言）对您想要实现的RPC接口进行声明。在生声明中，您需要使用<code><a href="../../guide/developing/tools/aidl.html">aidl</a></code>工具生成一个本地和远程端进程都可以使用的Java接口定义。定义中含有两个内部类，下面图标显示了这个结构：</p>
+
+<p style="margin-left: 2em;">
+<img style="width: 472px; height: 365px;" src="../../images/binder_rpc.png" alt="RPC mechanism.">&nbsp;<img style="width: 472px; height: 365px;" alt="RPC机制" src="../../images/binder_rpcTr.png"></p>
+
+<p>
+The inner classes have all the code needed to administer remote procedure
+calls for the interface you declared with the IDL. 
+Both inner classes implement the <code><a href="../../reference/android/os/IBinder.html">IBinder</a></code>
+interface.  One of them is used locally and internally by the system;
+the code you write can ignore it.
+The other, called Stub, extends the <code><a href="../../reference/android/os/Binder.html">Binder</a></code>
+class.  In addition to internal code for effectuating the IPC calls, it 
+contains declarations for the methods in the RPC interface you declared.
+You would subclass Stub to implement those methods, as indicated in the 
+diagram.  
+</p>
+	<p>&nbsp; 内部类中含有所有&nbsp;&nbsp; 用以管理您使用IDL声明的接口的远程过程调用&nbsp;&nbsp; 的代码。两个内部类都实现了<code></code><a href="../../reference/android/os/IBinder.html">IBinder</a>接口。一个被系统本地地，内部地使用；您自己写的代码会忽略掉它们。另一个，叫做Stub，由<code><a href="../../reference/android/os/Binder.html">Binder</a></code>类派生。不仅含有执行IPC调用的代码，还含有您声明的RPC接口中方法的声明。就像图标中显示的，您应该继承Stub类来实现这些方法。<br>
+</p>
+
+<p>
+Typically, the remote process would be managed by a service (because a 
+service can inform the system about the process and its connections to 
+other processes).  It would have both the interface file generated by 
+the <code>aidl</code> tool and the Stub subclass implementing the 
+RPC methods.  Clients of the service would have only the interface file
+generated by the <code>aidl</code> tool.</p>
+<p>典型的情况是，远程端的进程是由一个服务进行管理的（因为服务能向系统告知&nbsp;&nbsp; 这个进程 还有 这个进程和其他进程间连接的&nbsp;&nbsp; 信息）。您应在<code>aidl</code>工具产生的接口文件和Stub子类中均实现RPC方法。服务器的客户端应该只有<code>aidl</code>工具生成的接口文件。<br>
+
+</p>
+
+
+<p>
+Here's how a connection between a service and its clients is set up:<br>
+这是服务器和其客户端建立连接的流程：<br>
+
+</p>
+
+<ul>
+<li>Clients of the service (on the local side) would implement 
+<code><code><a href="../../reference/android/content/ServiceConnection.html#onServiceConnected%28android.content.ComponentName,%20android.os.IBinder%29">onServiceConnected()</a></code></code> and 
+<code><code><a href="../../reference/android/content/ServiceConnection.html#onServiceDisconnected%28android.content.ComponentName%29">onServiceDisconnected()</a></code></code> methods so they can be notified 
+when a successful connection to the remote service is established, and 
+when it goes away.  They would then call
+<code><code><a href="../../reference/android/content/Context.html#bindService%28android.content.Intent,%20android.content.ServiceConnection,%20int%29">bindService()</a></code></code>
+to set up the connection.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 服务器的客户端（即本地端）会实现<code><code></code></code><a href="../../reference/android/content/ServiceConnection.html#onServiceConnected%28android.content.ComponentName,%20android.os.IBinder%29">onServiceConnected()</a>和<code><code></code></code><a href="../../reference/android/content/ServiceConnection.html#onServiceDisconnected%28android.content.ComponentName%29">onServiceDisconnected()</a>方法，然后客户端在在远程服务连接建立或丢失时得知这一信息。然后客户端会调用<code><code><a href="../../reference/android/content/Context.html#bindService%28android.content.Intent,%20android.content.ServiceConnection,%20int%29">bindService()</a></code></code>来对连接进行设定。<br>
+
+</li>  
+
+<li> 
+The service's <code><code><a href="../../reference/android/app/Service.html#onBind%28android.content.Intent%29">onBind()</a></code></code> 
+method would be implemented to either accept or reject the connection, 
+depending on the intent it receives (the intent passed to
+<code>bindService()</code>).  If the connection is accepted, it returns 
+an instance of the Stub subclass.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 根据接收的意图（意图被传递到<code>bindService()</code>）服务的<code><code></code></code><a href="../../reference/android/app/Service.html#onBind%28android.content.Intent%29">onBind()</a>方法会被实现于接受或拒绝连接。如果连接被接受，方法返回一个Stub子类的实例。<br>
+
+</li>
+
+<li>If the service accepts the connection, Android calls the 
+client's <code>onServiceConnected()</code> method and passes it an IBinder 
+object, a proxy for the Stub subclass managed by the service.  Through
+the proxy, the client can make calls on the remote service. &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; 如果服务接受了连接，Android调用客户端的<code>onServiceConnected()</code>方法并且传递给它一个IBinder对象，IBinder对象是由服务管理的Stub类的一个代理。通过这个代理，客户端可以调用远程端上的服务。  
+</li>
+</ul>
+
+<p>
+This brief description omits some details of the RPC mechanism.  For more 
+information, see 
+<a href="../../guide/developing/tools/aidl.html">Designing a Remote 
+Interface Using AIDL</a> and the <code><a href="../../reference/android/os/IBinder.html">IBinder</a></code> class 
+description.这个简要的RPC机制介绍省略了一些细节。更多信息请看<a href="../developing/tools/aidl.html">Interface Using AIDL</a>和<code><a href="../../reference/android/os/IBinder.html">IBinder</a></code>类的介绍。
+</p>  
+
+
+<h3 id="tsafe">Thread-safe methods——线程保险的方法</h3>
+
+<p>
+In a few contexts, the methods you implement may be called from more 
+than one thread, and therefore must be written to be thread-safe.<br>
+在某些情况下，您实现的方法可能会从多个线程进行调用，因此您的实现必须是线程上讲安全的。<br>
+
+</p>
+
+<p>
+This is primarily true for methods that can be called remotely —
+as in the RPC mechanism discussed in the previous section.
+When a call on a method implemented in an IBinder object originates
+in the same process as the IBinder, the method is executed in the
+caller's thread.  However, when the call originates in another process, 
+the method is executed in a thread chosen from a pool of threads that 
+Android maintains in the same process as the IBinder; it's not executed 
+in the main thread of the process.  For example, whereas a service's 
+<code>onBind()</code> method would be called from the main thread of the 
+service's process, methods implemented in the object that <code>onBind()</code> 
+returns (for example, a Stub subclass that implements RPC methods) would 
+be called from threads in the pool. 
+Since services can have more than one client, more than one pool thread
+can engage the same IBinder method at the same time.  IBinder methods
+must, therefore, be implemented to be thread-safe.<br>
+这种情况主要出现在能被远程调用的方法中——像在上边讨论的RPC机制。当一个对&nbsp; IBinder对象中实现的一个方法 &nbsp;
+进行的调用来自IBinder本身所在线程时，方法就运行在调用者所在线程中。但是，当调用来自另外一个进程时，方法会运行在从&nbsp;&nbsp;
+Android为IBinder进程保持的线程池&nbsp;&nbsp; 中选择的一个线程中，而不是运行在另外那个进程的主线程中。例如，服务的<code>onBind()</code>方法的的调用来自服务的进程的主线程，<code>onBind()</code>返回的对象的实现的方法（例如，Stub类实现的RPC方法）会被在池中的线程调用。因为服务可以有很多客户，因此在同一时间可能有多个池中的线程调用了IBinder方法。因此，IBinder的实现对多进程调用必须是安全的。<code> </code>
+</p>  
+
+<p>
+Similarly, a content provider can receive data requests that originate in 
+other processes.  Although the ContentResolver and ContentProvider classes 
+hide the details of how the interprocess communication is managed, 
+ContentProvider methods that respond to those requests — the methods
+<code><code><a href="../../reference/android/content/ContentProvider.html#query%28android.net.Uri,%20java.lang.String%5B%5D,%20java.lang.String,%20java.lang.String%5B%5D,%20java.lang.String%29">query()</a></code></code>, 
+<code><code><a href="../../reference/android/content/ContentProvider.html#insert%28android.net.Uri,%20android.content.ContentValues%29">insert()</a></code></code>, 
+<code><code><a href="../../reference/android/content/ContentProvider.html#delete%28android.net.Uri,%20java.lang.String,%20java.lang.String%5B%5D%29">delete()</a></code></code>, 
+<code><code><a href="../../reference/android/content/ContentProvider.html#update%28android.net.Uri,%20android.content.ContentValues,%20java.lang.String,%20java.lang.String%5B%5D%29">update()</a></code></code>, and
+<code><code><a href="../../reference/android/content/ContentProvider.html#getType%28android.net.Uri%29">getType()</a></code></code>
+— are called from a pool of threads in the content provider's
+process, not the main thread of the process.  Since these methods
+may be called from any number of threads at the same time, they too must
+be implemented to be thread-safe.<br>
+相似的，内容提供者可以接受来自其他进程的数据请求。尽管ContentResolver和ContentProvider类隐藏了实现管理进程间通信的方法的细节，可是响应这些请求的ContentProvider方法——<code><code><a href="../../reference/android/content/ContentProvider.html#query%28android.net.Uri,%20java.lang.String%5B%5D,%20java.lang.String,%20java.lang.String%5B%5D,%20java.lang.String%29">query()</a></code></code>，<code><code><a href="../../reference/android/content/ContentProvider.html#insert%28android.net.Uri,%20android.content.ContentValues%29">insert()</a></code></code>，<code><code><a href="../../reference/android/content/ContentProvider.html#delete%28android.net.Uri,%20java.lang.String,%20java.lang.String%5B%5D%29">delete()</a></code></code>，<code><code><a href="../../reference/android/content/ContentProvider.html#update%28android.net.Uri,%20android.content.ContentValues,%20java.lang.String,%20java.lang.String%5B%5D%29">update()</a></code></code>和<code><code><a href="../../reference/android/content/ContentProvider.html#getType%28android.net.Uri%29">getType()</a></code></code>方法——是从内容提供者进程的线程池中调用的，而不是主线程。因此，这些方法可能会在同一时间被多个线程调用，他们的实现对多进程调用也必须是安全的。
+</p> 
+
+
+<h2 id="lcycles">Component Lifecycles——组件生命周期</h2>
+
+<p>
+Application components have a lifecycle — a beginning when 
+Android instantiates them to respond to intents through to an end when 
+the instances are destroyed.  In between, they may sometimes be active 
+or inactive,or, in the case of activities, visible to the user or
+invisible.  This section discusses the lifecycles of activities,
+services, and broadcast receivers — including the states that they 
+can be in during their lifetimes, the methods that notify you of transitions
+between states, and the effect of those states on the possibility that
+the process hosting them might be terminated and the instances destroyed.<br>
+应用程序的组建有生命周期——从Android为其实例化以响应意图开始&nbsp;&nbsp; 到&nbsp;&nbsp;
+实例被销毁结束。中间这段时间，这些组件可能正在活动，也可能不在，或者对活动来讲是可见或不可见。这一节讨论了&nbsp;&nbsp;
+活动、服务、广播接收器的生命周期——包括他们在生命周期内可能的状态&nbsp;&nbsp; ，状态转换时的通知方式&nbsp;&nbsp;
+，和这些状态对承载组建的进程被结束（同时进程中的实例被销毁）的可能性的影响。<br>
+
+</p> 
+
+
+<h3 id="actlife">Activity lifecycle——活动的生命周期</h3>
+
+<p>An activity has essentially three states:<br>
+活动本质上有三个状态：<br>
+</p>
+
+<ul>
+<li> It is <em>active</em> or <em>running</em> when it is in the foreground of the 
+screen (at the top of the activity stack for the current task).  This is the
+activity that is the focus for the user's actions.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 当他在前台时（在当前任务的活动栈的栈顶）是<em>active</em>或<em>running</em>的（活动的或运行中的）。这种活动是正在关注用户动作的。<br>
+</li>
+
+<li><p>It is <em>paused</em> if it has lost focus but is still visible to the user.
+That is, another activity lies on top of it and that activity either is transparent
+or doesn't cover the full screen, so some of the paused activity can show through. 
+A paused activity is completely alive (it maintains all state and member information 
+and remains attached to the window manager), but can be killed by the system in 
+extreme low memory situations.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 失去用户关注，但是仍然是可见的&nbsp;&nbsp; 是<em>paused</em>（暂停）状态。就是说，另一个透明或不覆盖整个屏幕的活动覆盖在了这个活动之上，因此部分<em>paused</em>的活动的界面还是显示出来的。暂停的活动依然是存活的（他保持着所有的状态和成员信息并且保持着和窗口管理器的联系），但是会在系统运行内存极低的情况下被关闭。<span style="font-style: italic;"></span><em></em></p></li>
+
+<li><p>It is <em>stopped</em> if it is completely obscured by another activity.
+It still retains all state and member information.  However, it is no longer 
+visible to the user so its window is hidden and it will often be killed by the 
+system when memory is needed elsewhere.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 当一个活动被另一个活动完全覆盖时，就是<em>stopped</em>（停止）状态。停止的活动保留着所有的状态和成员信息。但是，因为他已经处于不可见状态，他的窗口就被隐藏了，而且通常系统会在内存需要用在别的地方时关闭停止的活动。<br>
+</p></li>
+</ul>
+
+<p>
+If an activity is paused or stopped, the system can drop it from memory either 
+by asking it to finish (calling its <code><a href="../../reference/android/app/Activity.html#finish%28%29">finish()</a></code>
+method), or simply killing its process.  When it is displayed again 
+to the user, it must be completely restarted and restored to its previous state.<br>
+如果一个活动处于暂停或停止状态，系统会通过&nbsp;&nbsp; 勒令其完成工作并推出（调用其<code></code><a href="../../reference/android/app/Activity.html#finish%28%29">finish()</a>方法）或简单的结束其所在进程&nbsp;&nbsp; 来将其从内存中清理掉。当他再次显示给用户是=时，他必须请完全的重新启动并恢复到之前的状态。<br>
+
+</p>
+
+<p>
+As an activity transitions from state to state, it is notified of the change 
+by calls to the following protected methods:<br>
+活动在上述几种状态间变动时，系统会调用下列的protected（受保护）的方法对其进行通知：<br>
+
+</p>
+
+<p style="margin-left: 2em;"><code>void onCreate(Bundle <i>savedInstanceState</i>)</code>
+<br><code>void onStart()</code>
+<br><code>void onRestart()</code>
+<br><code>void onResume()</code>
+<br><code>void onPause()</code>
+<br><code>void onStop()</code>
+<br><code>void onDestroy()</code></p>
+
+<p>
+All of these methods are hooks that you can override to do appropriate work 
+when the state changes.  All activities must implement 
+<code><code><a href="../../reference/android/app/Activity.html#onCreate%28android.os.Bundle%29">onCreate()</a></code></code> to do the 
+initial setup when the object is first instantiated.  
+Many will also implement <code><code><a href="../../reference/android/app/Activity.html#onPause%28%29">onPause()</a></code></code> 
+to commit data changes and otherwise prepare to stop interacting with the user.<br>
+<span class="medium_text" id="result_box"><span title="All of these methods are hooks that you can override to do appropriate work when the state changes." style="background-color: rgb(255, 255, 255);" closure_hashcode_6r95z8="24">所有这些方法都是挂钩，你可以重写状态变化时的动作。</span><span title="All activities must implement onCreate() to do the initial setup when the object is first instantiated." style="background-color: rgb(255, 255, 255);" closure_hashcode_6r95z8="25">所有活动都必须实现</span></span><a href="../../reference/android/app/Activity.html#onCreate%28android.os.Bundle%29">onCreate()</a><span class="medium_text" id="result_box"><span title="All activities must implement onCreate() to do the initial setup when the object is first instantiated." style="background-color: rgb(255, 255, 255);" closure_hashcode_6r95z8="25">，从而在对象第一次实例化后进行初始化设置。许多活动还要实现</span></span><code><code></code></code><a href="../../reference/android/app/Activity.html#onPause%28%29">onPause()</a><span class="medium_text" id="result_box"><span title="All activities must implement onCreate() to do the initial setup when the object is first instantiated." style="background-color: rgb(255, 255, 255);" closure_hashcode_6r95z8="25">来确认数据变化或者准备停止与用户的交互</span><span title="Many will also implement onPause() to commit data changes and otherwise prepare to stop interacting with the user." style="background-color: rgb(255, 255, 255);" closure_hashcode_6r95z8="26">。</span></span><br>
+
+</p>
+
+<div class="sidebox-wrapper">
+<div class="sidebox-inner">
+<h2>Calling into the superclass——调用父类方法</h2>
+<p>
+An implementation of any activity lifecycle method should always first 
+call the superclass version.  For example:<br>
+所有的活动的生命周期方法的实现都应首先调用父类的实现。例如：<br>
+
+</p>
+
+<pre>protected void onPause() {<br>    super.onPause();<br>    . . .<br>}</pre>
+</div>
+</div> 
+
+
+<p>
+Taken together, these seven methods define the entire lifecycle of an 
+activity.  There are three nested loops that you can monitor by
+implementing them:<br>
+<span class="short_text" id="result_box"><span title="Taken together, these seven methods define the entire lifecycle of an activity." style="background-color: rgb(255, 255, 255);" closure_hashcode_6r95z8="28">总的来说，这七种方法确定活动的整个生命周期。</span>实现生命周期后，您可以对生命周期的这几个嵌套循环进行监控：</span></p><ul><li>call
+to <code><code><a href="../../reference/android/app/Activity.html#onCreate%28android.os.Bundle%29">onCreate()</a></code></code> through to a 
+single final call to <code><code><a href="../../reference/android/app/Activity.html#onDestroy%28%29">onDestroy()</a></code></code>.  
+An activity does all its initial setup of "global" state in <code>onCreate()</code>, 
+and releases all remaining resources in <code>onDestroy()</code>.  For example, 
+if it has a thread running in the background to download data from the network, 
+it may create that thread in <code>onCreate()</code> and then stop the thread in 
+<code>onDestroy()</code>.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 从调用<code><code></code></code><a href="../../reference/android/app/Activity.html#onCreate%28android.os.Bundle%29">onCreate()</a>一直到结束性的<code><code></code></code><a href="../../reference/android/app/Activity.html#onDestroy%28%29">onDestroy()</a>的调用。活动在<code>onCreate()</code>中进行所有“全局”状态的初始化，后释放所有占用的资源例如，如果一个活动有一个后台的从网络上下载数据的线程，活动可能会使用<code>onCreate()</code>创建线程，使用<code>onDestroy()</code>停止线程。<br>
+</li>
+
+<li><p>The <b>visible lifetime</b> of an activity happens between a call to
+<code><code><a href="../../reference/android/app/Activity.html#onStart%28%29">onStart()</a></code></code> until a 
+corresponding call to <code><code><a href="../../reference/android/app/Activity.html#onStop%28%29">onStop()</a></code></code>.  
+During this time, the user can see the activity on-screen, though it may not 
+be in the foreground and interacting with the user.  Between these two methods, 
+you can maintain resources that are needed to show the activity to the user.  
+For example, you can register a <code><a href="../../reference/android/content/BroadcastReceiver.html">BroadcastReceiver</a></code> in 
+<code>onStart()</code> to monitor for changes that impact your UI, and unregister 
+it in <code>onStop()</code> when the user can no longer see what you are displaying.  
+The <code>onStart()</code> and <code>onStop()</code>
+methods can be called multiple times, as the activity alternates
+between being visible and hidden to the
+user.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 活动可见的时间是<code><code></code></code><a href="../../reference/android/app/Activity.html#onStart%28%29">onStart()</a>的调用到相应的<code><code></code></code><a href="../../reference/android/app/Activity.html#onStop%28%29">onStop()</a>的调用之间的时间。这段时间用户可以在屏幕上看到这个活动，即便这个活动可能不在前台，没在和用户进行交互。在这两个方法的调用之间的时间，您可以保持将活动展现给用户的资源。例如，您可以在<code>onStart()</code>中注册一个<code></code><a href="../../reference/android/content/BroadcastReceiver.html">BroadcastReceiver</a>来监控UI的变化，然后在用户不能再看到您要显示的后在<code>onStop()</code>中注销它。活动在可见和隐藏间切换过程中，<code>onStart()</code>和<code>onStop()</code>会被调用多次。<br>
+</p></li>
+
+<li><p>The <b>foreground lifetime</b> of an activity happens between a call 
+to <code><code><a href="../../reference/android/app/Activity.html#onResume%28%29">onResume()</a></code></code> until a 
+corresponding call to <code><code><a href="../../reference/android/app/Activity.html#onPause%28%29">onPause()</a></code></code>.  
+During this time, the activity is in front of all other activities on screen and 
+is interacting with the user.  An activity can frequently transition between the 
+resumed and paused states — for example, <code>onPause()</code> is called when 
+the device goes to sleep or when a new activity is started, <code>onResume()</code> 
+is called when an activity result or a new intent is delivered.  Therefore, the 
+code in these two methods should be fairly lightweight.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 活动的前台时间是<code><code><a href="../../reference/android/app/Activity.html#onResume%28%29">onResume()</a></code></code>和对应的<code><code></code></code><a href="../../reference/android/app/Activity.html#onPause%28%29">onPause()</a>的调用之间的时间。这段时间中，活动处在其他活动之上，并和用户进行交互。活动可以在暂停和继续之间多次切换——例如，当设备休眠或启动了新的活动，<code>onPause()</code>会被调用，收到新启动活动返回结果或旧活动收到新意图时，<code>onResume()</code>会被调用。所以这两个方法中的代码应绝对轻量。<br>
+</p></li>
+</ul>
+
+<p>
+The following diagram illustrates these loops and the paths an activity
+may take between states.  The colored ovals are major states the activity 
+can be in.  The square rectangles represent the callback methods you can implement 
+to perform operations when the activity transitions between states.<br>
+下面的图标演示了这三个循环还有活动在状态间转换的步骤。彩色的椭圆是活动可能处于的状态。直角矩形是您可以实现的&nbsp;&nbsp; 在状态改变时执行操作的 &nbsp; 回调方法。<br>
+
+</p><p>
+
+</p><p style="margin-left: 2em;"><img src="../../images/activity_lifecycle.png" alt="State diagram for an Android activity lifecycle."><img style="width: 545px; height: 711px;" alt="Android活动的生命周期的状态图表" src="../../images/activity_lifecycleTr.png"></p>  
+  
+<p>
+The following table describes each of these methods in more detail and 
+locates it within the activity's overall lifecycle:<br>
+下面的表格描述了这些方法的详情，和在整个活动生命周期中的位置：<br>
+
+</p>
+
+<table border="2" frame="hsides" rules="rows" width="85%">
+<colgroup span="3" align="left"></colgroup>
+<colgroup align="left"></colgroup>
+<colgroup align="center"></colgroup>
+<colgroup align="center"></colgroup>
+
+<thead>
+<tr><th colspan="3">Method——方法</th> <th>Description——详情</th> <th>Killable?——是否可结束？</th> <th>Next——下一步</th></tr>
+</thead>
+
+<tbody>
+<tr>
+  <td colspan="3" align="left"><code><code><a href="../../reference/android/app/Activity.html#onCreate%28android.os.Bundle%29">onCreate()</a></code></code></td>
+  <td>Called when the activity is first created.
+      This is where you should do all of your normal static set up —
+      create views, bind data to lists, and so on.  This method is passed
+      a Bundle object containing the activity's previous state, if that 
+      state was captured (see <a href="#actstate">Saving Activity State</a>, 
+      later).
+      <p>Always followed by <code>onStart()</code>.<br>
+活动启动时调用。在这个方法里您应完成所有静态的常规的设定——建立view、将数据绑定到列表等等。这个方法调用时如果有先前状态可用，会接受到一个包含这个活动之前的状态的Bundle对象。（参见后面的<a href="fundamentals.html#actstate">Saving Activity State</a>）。<br>
+下一步总是<code>onStart()</code>。<br>
+</p></td>
+  <td align="center">No<br>
+不可<br>
+</td>
+      <td align="center"><code>onStart()</code></td>
+</tr>
+
+<tr>
+   <td rowspan="5" style="border-left: medium none; border-right: medium none;">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+   <td colspan="2" align="left"><code><code><a href="../../reference/android/app/Activity.html#onRestart%28%29">onRestart()</a></code></code></td>
+   <td>Called after the activity has been stopped, just prior to it being
+       started again.<br>
+活动被停止之后，重新启动之前被调用。<br>
+
+       <p>Always followed by <code>onStart()<br>
+</code>下一步总是<code>onStart()</code></p></td>
+   <td align="center">No<br>
+不可<br>
+</td>
+   <td align="center"><code>onStart()</code></td>
+</tr>
+
+<tr>
+   <td colspan="2" align="left"><code><code><a href="../../reference/android/app/Activity.html#onStart%28%29">onStart()</a></code></code></td>
+   <td>Called just before the activity becomes visible to the user.
+       <p>Followed by <code>onResume()</code> if the activity comes
+       to the foreground, or <code>onStop()</code> if it becomes hidden.<br>
+活动对用户可见之前被调用。<br>
+如果活动切到前台，下一步是调用<code>onResume()</code>；如果活动被隐藏，下一步是调用<code>onStop()</code>。<br>
+</p></td>
+    <td align="center">No<br>
+不可<br>
+</td>
+    <td align="center"><code>onResume()</code> <br>or<br> <code>onStop()<br>
+      <br>
+</code><code>onResume()</code>或是<code>onStop()</code></td>
+</tr>
+
+<tr>
+   <td rowspan="2" style="border-left: medium none;">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+   <td align="left"><code><code><a href="../../reference/android/app/Activity.html#onResume%28%29">onResume()</a></code></code></td>
+   <td>Called just before the activity starts
+       interacting with the user.  At this point the activity is at
+       the top of the activity stack, with user input going to it.
+       <p>Always followed by <code>onPause()</code>.<br>
+在活动和用户交互之前被调用。这是活动在栈顶，响应用户的输入。<br>
+下一步总是 <code>onPause()</code>。<br>
+</p></td>
+   <td align="center">No<br>
+不可<br>
+</td>
+   <td align="center"><code>onPause()</code></td>
+</tr>
+
+<tr>
+   <td align="left"><code><code><a href="../../reference/android/app/Activity.html#onPause%28%29">onPause()</a></code></code></td>
+   <td>Called when the system is about to start resuming another
+       activity.  This method is typically used to commit unsaved changes to
+       persistent data, stop animations and other things that may be consuming
+       CPU, and so on.  It should do whatever it does very quickly, because
+       the next activity will not be resumed until it returns.<br>
+系统要开始继续其他活动时被调用。这个方法典型的用法是将为保存的数据存入稳定存储，停止动画或其他占用CPU的动作等等。这个方法中动作应尽快完成，因为完成后，下一个活动才会开始。<br>
+
+       <p>Followed either by <code>onResume()</code> if the activity
+       returns back to the front, or by <code>onStop()</code> if it becomes
+       invisible to the user.<br>
+如果活动之后回到前台，下一步是<code>onResume()</code>；如果他对用户不再可见，下一步是<code>onStop()</code>。<br>
+</p></td>
+   <td align="center"><strong style="color: rgb(128, 0, 0);">Yes<br>
+可以<br>
+</strong></td>
+   <td align="center"><code>onResume()</code> <br>or<br> <code>onStop()</code></td>
+</tr>
+
+<tr>
+   <td colspan="2" align="left"><code><code><a href="../../reference/android/app/Activity.html#onStop%28%29">onStop()</a></code></code></td>
+   <td>Called when the activity is no longer visible to the user.  This
+       may happen because it is being destroyed, or because another activity 
+       (either an existing one or a new one) has been resumed and is covering it.<br>
+活动对用户不再可见时被调用。这种情况一般发生在活动被销毁时或者另一个活动（已存在的或新启动的）被继续，并且覆盖了这个活动。<br>
+ 
+       <p>Followed either by <code>onRestart()</code> if
+       the activity is coming back to interact with the user, or by
+       <code>onDestroy()</code> if this activity is going away.<br>
+如果活动回到前台进行与用户的交互，下一步是<code>onRestart()</code>；如果活动将被销毁，下一步是<code>onDestroy()</code>。<br>
+</p></td>
+   <td align="center"><strong style="color: rgb(128, 0, 0);">Yes<br>
+可以<br>
+</strong></td>
+   <td align="center"><code>onRestart()</code> <br>or<br> <code>onDestroy()</code></td>
+</tr>
+
+<tr>
+   <td colspan="3" align="left"><code><code><a href="../../reference/android/app/Activity.html#onDestroy%28%29">onDestroy()</a></code></code></td>
+   <td>Called before the activity is destroyed.  This is the final call 
+       that the activity will receive.  It could be called either because the
+       activity is finishing (someone called <code><code><a href="../../reference/android/app/Activity.html#finish%28%29">finish()</a></code></code> on it), or because the system is temporarily destroying this
+       instance of the activity to save space.  You can distinguish
+       between these two scenarios with the <code><code><a href="../../reference/android/app/Activity.html#isFinishing%28%29">isFinishing()</a></code></code> method.<br>
+活动被销毁之前被调用。这是活动接到的最后一个调用。当活动完成之后（有些人调用<code><code></code></code><a href="../../reference/android/app/Activity.html#finish%28%29">finish()</a>）或系统为了节约空间将这个实例暂时销毁&nbsp;&nbsp; 时会被调用。您应该可以看出和调用<code><code><a href="../../reference/android/app/Activity.html#isFinishing%28%29">isFinishing()</a></code></code>方法之间的区别。<br>
+</td>
+   <td align="center"><strong style="color: rgb(128, 0, 0);">Yes<br>
+可以<br>
+</strong></td>
+   <td align="center"><em>nothing<br>
+无<br>
+</em></td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Note the <b>Killable</b> column in the table above.  It indicates
+whether or not the system can kill the process hosting the activity 
+<em>at any time after the method returns, without executing another
+line of the activity's code</em>.  Three methods (<code>onPause()</code>,
+<code>onStop()</code>, and <code>onDestroy()</code>) are marked "Yes."  Because
+<code>onPause()</code> is the first of the three, it's the only one that's
+guaranteed to be called before the process is killed — 
+<code>onStop()</code> and <code>onDestroy()</code> may not be.  Therefore, you 
+should use <code>onPause()</code> to write any persistent data (such as user 
+edits) to storage.<br>
+注意上边的表格中<b>Ki</b><span style="font-weight: bold;">llable？——是否可结束？</span>一栏。它表示了系统会不会&nbsp;&nbsp; 在方法动作结束后不再执行活动的代码就&nbsp;&nbsp; 结束承载着这个活动的进程。有三个方法（<code>onPause()</code>，<code>onStop()</code>和<code>onDestroy()</code>）标志着"Yes."。因为<code>onPause()</code>是这三个方法中第一个，所以他是唯一一个被允许在进程被结束之前调用的方法——<code>onStop()</code>和<code>onDestroy()</code>则可能不行。所以，将数据（例如用户修改信息）存入稳定存储的过程应在<code>onPause()</code>中完成。
+</p>
+
+<p>
+Methods that are marked "No" in the <b>Killable</b> column protect the
+process hosting the activity from being killed from the moment they are 
+called.  Thus an activity is in a killable state, for example, from the 
+time <code>onPause()</code> returns to the time <code>onResume()</code> is called.
+It will not again be killable until <code>onPause()</code> again returns.<br>
+<b>Ki</b><span style="font-weight: bold;">llable？——是否可结束？</span>一栏标注着“No”的方法保护了其所在进程在这个方法调用之时起不被结束。就是说，例如在<code>onPause()</code>方法完成之后到<code>onResume()</code>被调用之前这段时间之内，进程是可能被结束的。然后到下一次<code>onPause()</code>完成之前，进程是不可结束的。<br>
+
+</p>
+
+<p>
+As noted in a later section, <a href="#proclife">Processes and lifecycle</a>,
+an activity that's not technically "killable" by this definition might
+still be killed by the system — but that would happen only in
+extreme and dire circumstances when there is no other recourse.<br>
+像下边<a href="fundamentals.html#proclife">Processes and lifecycle</a>章节提到的，上边定义的技术上讲不会被结束的活动还是有可能被系统结束的——但只是在极端的没有一点其他资源时才会发生。<br>
+
+</p>
+
+
+<h4 id="actstate">Saving activity state——保存活动状态</h4>
+
+<p>
+When the system, rather than the user, shuts down an activity to conserve 
+memory, the user may expect to return to the activity and find it in its 
+previous state.<br>
+当系统，而不是用户，为了释放内存而关闭这个活动时，用户当然希望再次进入这个活动时状态还是之前的状态。<br>
+
+</p>
+
+<p>
+To capture that state before the activity is killed, you can implement
+an <code><code><a href="../../reference/android/app/Activity.html#onSaveInstanceState%28android.os.Bundle%29">onSaveInstanceState()</a></code></code> method for the activity.  Android calls this 
+method before making the activity vulnerable to being destroyed —
+that is, before <code>onPause()</code> is called.  It
+passes the method a <code><a href="../../reference/android/os/Bundle.html">Bundle</a></code> object where you can record 
+the dynamic state of the activity as name-value pairs.  When the activity is 
+again started, the Bundle is passed both to <code>onCreate()</code> and to a
+method that's called after <code>onStart()</code>, <code><code><a href="../../reference/android/app/Activity.html#onRestoreInstanceState%28android.os.Bundle%29">onRestoreInstanceState()</a></code></code>, 
+so that either or both of them can recreate the captured state.<br>
+截获活动被结束之前的状态，您需要实现活动的<code><code></code></code><a href="../../reference/android/app/Activity.html#onSaveInstanceState%28android.os.Bundle%29">onSaveInstanceState()</a>方法。Android会在使这个活动实例接近销毁条件之前调用这个方法——就是说，<code>onPause()</code>调用之前。Android传递给这个方法一个<code></code><a href="../../reference/android/os/Bundle.html">Bundle</a>对象，从而您可以以&nbsp; 名称-值&nbsp; 对的形式记录这个活动的动态状态。当这个活动再次开启之时，Bundle对象会传递给&nbsp;&nbsp; <code>onCreate()&nbsp; </code>和&nbsp; <code>onStart()</code>之后调用的一个方法——<code><code></code></code><a href="../../reference/android/app/Activity.html#onRestoreInstanceState%28android.os.Bundle%29">onRestoreInstanceState()</a>&nbsp; ，然后，您可以用这两个中任一个重建&nbsp;&nbsp; 处于截获的状态的&nbsp; 活动。 
+</p>
+
+<p>
+Unlike <code>onPause()</code> and the other methods discussed earlier, <code>onSaveInstanceState()</code> and <code>onRestoreInstanceState()</code> are
+not lifecycle methods.  They are not always called.  For example, Android
+calls <code>onSaveInstanceState()</code> before the activity becomes 
+vulnerable to being destroyed by the system, but does not bother
+calling it when the instance is actually being destroyed by a user action
+(such as pressing the BACK key).  In that case, the user won't expect to
+return to the activity, so there's no reason to save its state.<br>
+不像<code>onPause()</code>和前面讲的其他方法，<code>onSaveInstanceState()</code>和<code>onRestoreInstanceState()</code>不是生命周期方法。他们不是总会被调用。例如，Android在活动合乎有可能被系统销毁的条件的时候会调用<code>onSaveInstanceState()</code>，但是在用户发出动作（例如按下BACK键）将实例实际销毁时不会调用。但在这种情况下，用户也没有希望回到这个活动，因此也没有保存状态的必要。<br>
+
+</p>
+
+<p>
+Because <code>onSaveInstanceState()</code> is not always called, you should 
+use it only to record the transient state of the activity, not to store 
+persistent data.  Use <code>onPause()</code> for that purpose instead.
+</p>
+	<p>
+因为<code>onSaveInstanceState()</code>不是一定会被调用，因此您只能用它保存过渡状态，而不能用来保存稳定数据。如要保存稳定数据，请使用<code>onPause()</code>。</p>
+
+
+<h4 id="coordact">Coordinating activities——协调活动</h4>
+
+<p>
+When one activity starts another, they both experience lifecycle
+transitions.  One pauses and may stop, while the other starts up.
+On occasion, you may need to coordinate these activities, one with
+the other.
+</p>
+	<p>
+当一个活动开启了另一个活动时，这两个活动都经历了生命周期的变化。就一个活动暂停或停止，新一个活动开启。有些情况下，您可能需要协调这些活动。</p>
+
+<p>
+&nbsp;The order of lifecycle callbacks is well defined,
+particularly when the two activities are in the same process:
+</p>
+	<p>
+生命周期回调方法的顺序已经定义好，特别是当这两个活动在同一个进程中：</p>
+
+<ol>
+<li>The current activity's <code>onPause()</code> method is called.——当前的活动的<code>onPause()</code>方法被调用·。</li>
+
+<li>Next, the starting activity's <code>onCreate()</code>, <code>onStart()</code>,
+and <code>onResume()</code> methods are called in sequence.——然后，新一个活动的<code>onCreate()</code>、<code>onStart()</code>和<code>onResume()</code>方法依次被调用。</li>
+
+<li>Then, if the starting activity is no longer visible
+on screen, its <code>onStop()</code> method is called.——然后，如果旧一个活动在屏幕上不再可见，他的<code>onStop()</code>方法会被调用。</li>
+</ol>
+
+
+<h3 id="servlife">Service lifecycle——服务的生命周期</h3>
+
+<p>
+A service can be used in two ways:
+</p>
+	<p>
+服务可用于以下两种方式：</p>
+
+<ul>
+<li>It can be started and allowed to run until someone stops it or
+it stops itself.  In this mode, it's started by calling 
+<code><code><a href="../../reference/android/content/Context.html#startService%28android.content.Intent%29">Context.startService()</a></code></code>
+and stopped by calling 
+<code><code><a href="../../reference/android/content/Context.html#stopService%28android.content.Intent%29">Context.stopService()</a></code></code>.
+It can stop itself by calling 
+<code><code><a href="../../reference/android/app/Service.html#stopSelf%28%29">Service.stopSelf()</a></code></code> or
+<code><code><a href="../../reference/android/app/Service.html#stopSelfResult%28int%29">Service.stopSelfResult()</a></code></code>.  
+Only one <code>stopService()</code> call is needed to stop the service, no matter how 
+many times <code>startService()</code> was called.——他可以启动并运行指导什么将它停止或她自己停止。在这种模式中，他通过调用<code><a href="../../reference/android/content/Context.html#startService%28android.content.Intent%29">Context.startService()</a></code>开启，通过调用<code><a href="../../reference/android/content/Context.html#stopService%28android.content.Intent%29">Context.stopService()</a></code>停止。服务能通过调用<code><a href="../../reference/android/app/Service.html#stopSelf%28%29">Service.stopSelf()</a></code>或<code><a href="../../reference/android/app/Service.html#stopSelfResult%28int%29">Service.stopSelfResult()</a></code>停止自己。停止一个服务只需一个<code>stopService()</code>的调用，不管用了多少次<code>startService()</code>。</li>
+<li>
+<p>It can be operated programmatically using an interface that
+it defines and exports.  Clients establish a connection to the Service 
+object and use that connection to call into the service.  The connection is 
+established by calling  
+<code><code>
+<a href="../../reference/android/content/Context.html#bindService%28android.content.Intent,%20android.content.ServiceConnection,%20int%29">Context.bindService()</a></code></code>,
+and is closed by calling
+<code><code>
+<a href="../../reference/android/content/Context.html#unbindService%28android.content.ServiceConnection%29">Context.unbindService()</a></code></code>.
+Multiple clients can bind to the same service.
+If the service has not already been launched, <code>bindService()</code> can optionally
+launch it.
+——对服务可以使用他定义和导出的接口进行&nbsp; 编程性的操作。客户端建立一个到Service对象的连接，然后使用这个连接对服务进行请求。连接使用<code><a href="../../reference/android/content/Context.html#bindService%28android.content.Intent,%20android.content.ServiceConnection,%20int%29">Context.bindService()</a></code>建立，使用<code><a href="../../reference/android/content/Context.html#unbindService%28android.content.ServiceConnection%29">Context.unbindService()</a></code>断开。多个客户端可以绑定到一个服务。如果服务还未被启动，可用<code>bindService()</code>启动它。</p>
+</li>
+</ul>
+
+<p>
+The two modes are not entirely separate.  You can bind to a service that 
+was started with <code>startService()</code>.  For example, a background music
+service could be started by calling <code>startService()</code> with an Intent
+object that identifies the music to play.  Only later, possibly when the 
+user wants to exercise some control over the player or get information 
+about the current song, would an activity
+establish a connection to the service by calling <code>bindService()</code>.  
+In cases like this, <code>stopService()</code> 
+will not actually stop the service until the last binding is closed.
+</p>
+	<p>
+这两个方式不是完全分开的。您可以绑定到一个使用<code>startService()</code>启动的服务上。例如，一个后台的音乐播放服务可以调用<code>startService()</code>并传递一个包含识别要播放的音乐的意图来启动。片刻后，当&nbsp;&nbsp; 
+用户想对播放器进行控制或获取正在播放的音乐的信息&nbsp;&nbsp; 时，您可能就要需要一个活动调用<code>bindService()</code>来建立到这个服务的连接。像这个情况，<code>stopService()</code>不会真的停止服务，直到最后一个绑定解开。</p>
+
+<p>
+Like an activity, a service has lifecycle methods that you can implement
+to monitor changes in its state.  But they are fewer than the activity 
+methods — only three — and they are public, not protected:
+</p>
+	<p>
+像活动一样，服务也有您可以对其进行实现以监视服务状态的生命周期方法。但是比活动的少——只有三个——而且是公共的，而不是受保护的：</p>
+
+<p style="margin-left: 2em;"><code>void onCreate()</code>
+<br><code>void onStart(Intent <i>intent</i>)</code>
+<br><code>void onDestroy()</code></p>
+
+<p>
+By implementing these methods, you can monitor two nested loops of the
+service's lifecycle:
+</p>
+	<p>
+实现后，您可以监控服务的这两个生命周期嵌套循环：</p>
+
+<ul>
+<li>The <b>entire lifetime</b> of a service happens between the time
+<code><code><a href="../../reference/android/app/Service.html#onCreate%28%29">onCreate()</a></code></code> is called and
+the time <code><code><a href="../../reference/android/app/Service.html#onDestroy%28%29">onDestroy()</a></code></code> returns.  
+Like an activity, a service does its initial setup in <code>onCreate()</code>, 
+and releases all remaining resources in <code>onDestroy()</code>.  For example, 
+a music playback service could create the thread where the music will be played  
+in <code>onCreate()</code>, and then stop the thread in <code>onDestroy()</code>.——服务的整个存在时间是从<code><a href="../../reference/android/app/Service.html#onCreate%28%29">onCreate()</a></code>被调用到<code><a href="../../reference/android/app/Service.html#onDestroy%28%29">onDestroy()</a></code>完成。像活动一样，服务在<code>onCreate()</code>被调用时进行初始化设置，在<code>onDestroy()</code>中完成占有的资源的释放。例如，音乐播放服务会在<code>onCreate()</code>中为音乐的播放建立新的线程，然后在<code>onDestroy()</code>中结束线程。</li>
+
+<li><p>The <b>active lifetime</b> of a service begins with a call to 
+<code><code><a href="../../reference/android/app/Service.html#onStart%28android.content.Intent,%20int%29">onStart()</a></code></code>.  This method 
+is handed the Intent object that was passed to <code>startService()</code>.
+The music service would open the Intent to discover which music to 
+play, and begin the playback.——服务的动作时间是从<code><a href="../../reference/android/app/Service.html#onStart%28android.content.Intent,%20int%29">onStart()</a></code>的调用开始的。传递给<code>startService()</code>的Intent对象又被传递给这个方法。音乐播放服务会打开这个意图找到要播放哪个歌曲，然后开始播放。</p>
+
+<p>
+There's no equivalent callback for when the service stops — no
+<code>onStop()</code> method.
+</p>
+<p>
+服务没有像活动的停止时的回调方法——就是没有<code>onStop()</code>方法。</p></li>
+</ul>
+
+<p>
+The <code>onCreate()</code> and <code>onDestroy()</code> methods are called for all
+services, whether they're started by 
+<code><code><a href="../../reference/android/content/Context.html#startService%28android.content.Intent%29">Context.startService()</a></code></code>
+or 
+<code><code><a href="../../reference/android/content/Context.html#bindService%28android.content.Intent,%20android.content.ServiceConnection,%20int%29">Context.bindService()</a></code></code>.
+However, <code>onStart()</code> is called only for services started by <code>startService()</code>.
+</p>
+	<p>
+无论服务是否由<code><a href="../../reference/android/content/Context.html#startService%28android.content.Intent%29">Context.startService()</a></code>或<code><a href="../../reference/android/content/Context.html#bindService%28android.content.Intent,%20android.content.ServiceConnection,%20int%29">Context.bindService()</a></code>启动，<code>onCreate()</code>和<code>onDestroy()</code>方法都会被调用。但是，系统只会为由<code>startService()</code>启动的服务调用<code>onStart()</code>。</p>
+
+<p>
+If a service permits others to
+bind to it, there are additional callback methods for it to implement:
+</p>
+	<p>
+如果服务允许别人绑定到他，您还需要实现以下几个回调方法：</p>
+
+<p style="margin-left: 2em;"><code>IBinder onBind(Intent <i>intent</i>)</code>
+<br><code>boolean onUnbind(Intent <i>intent</i>)</code>
+<br><code>void onRebind(Intent <i>intent</i>)</code></p>
+
+<p>
+The <code><code><a href="../../reference/android/app/Service.html#onBind%28android.content.Intent%29">onBind()</a></code></code> callback is passed 
+the Intent object that was passed to <code>bindService</code> and 
+<code><code><a href="../../reference/android/app/Service.html#onUnbind%28android.content.Intent%29">onUnbind()</a></code></code> is handed
+the intent that was passed to <code>unbindService()</code>.   
+If the service permits the binding, <code>onBind()</code> 
+returns the communications channel that clients use to interact with the service. 
+The <code>onUnbind()</code> method can ask for 
+<code><code><a href="../../reference/android/app/Service.html#onRebind%28android.content.Intent%29">onRebind()</a></code></code>
+to be called if a new client connects to the service.
+</p>
+	<p>
+<code><a href="../../reference/android/app/Service.html#onBind%28android.content.Intent%29">onBind()</a></code>方法获得传递给<code>bindService</code>的Intent对象，<code><a href="../../reference/android/app/Service.html#onUnbind%28android.content.Intent%29">onUnbind()</a></code>方法获得传递<code>unbindService()</code>给的Intent对象如果服务允许绑定，<code>onBind()</code>返回客户端用以和服务交互的信道。<code>onUnbind()</code>方法可以在新的客户连接到服务时让系统调用<code><a href="../../reference/android/app/Service.html#onRebind%28android.content.Intent%29">onRebind()</a></code>。</p>
+
+<p>
+The following diagram illustrates the callback methods for a service.  
+Although, it separates services that are created via <code>startService</code>
+from those created by <code>bindService()</code>, keep in mind that any service,
+no matter how it's started, can potentially allow clients to bind to it,
+so any service may receive <code>onBind()</code> and <code>onUnbind()</code> calls.
+</p>
+	<p>
+下面的图表演示了服务的回调方法。虽然，使用<code>startService</code>和<code>bindService()</code>开启的服务稍有不同，但是请记住，所有服务，无论是怎么启动的，一般都会允许服务绑定到他，因此所有的服务都有可能收到<code>onBind()</code>和<code>onUnbind()</code>调用。</p>
+
+<p style="margin-left: 2em;"><img src="../../images/service_lifecycle.png" alt="State diagram for Service callbacks."><img style="width: 558px; height: 544px;" alt="服务回调方法及状态图表" src="../../images/service_lifecycleTr.png"></p>
+
+
+<h3 id="broadlife">Broadcast receiver lifecycle——广播接收器生命周期</h3>
+
+<p>
+A broadcast receiver has single callback method:
+</p>
+	<p>
+广播接收器只有一个回调方法：&nbsp;</p>
+
+<p style="margin-left: 2em;"><code>void onReceive(Context <i>curContext</i>, Intent <i>broadcastMsg</i>)</code></p>
+
+<p>
+When a broadcast message arrives for the receiver, Android calls its 
+<code><code><a href="../../reference/android/content/BroadcastReceiver.html#onReceive%28android.content.Context,%20android.content.Intent%29">onReceive()</a></code></code> 
+method and passes it the Intent object containing the message.  The broadcast 
+receiver is considered to be active only while it is executing this method.  
+When <code>onReceive()</code> returns, it is inactive.
+</p>
+	<p>
+广播消息到达接收器时，Android 调用他的<code><code></code></code><a href="../../reference/android/content/BroadcastReceiver.html#onReceive%28android.content.Context,%20android.content.Intent%29">onReceive()</a>方法并且将一个包含有广播信息的Intent对象传递给这个方法。我们认为广播接收器只有在执行这个方法时是被激活的。<code>onReceive()</code>方法完成之后，他就不再活动。<br>
+</p>
+
+<p>
+A process with an active broadcast receiver is protected from being killed. 
+But a process with only inactive components can be killed by the system at 
+any time, when the memory it consumes is needed by other processes.<br>
+一个承载着激活的广播接收者的进程是不会被结束的。但是只有不活动的接收者组件的进程可能被系统&nbsp; 在别的进程需要他所占用的内存时&nbsp; 随时结束。<br>
+
+</p>
+
+<p>
+This presents a problem when the response to a broadcast message is time 
+consuming and, therefore, something that should be done in a separate thread, 
+away from the main thread where other components of the user interface run.
+If <code>onReceive()</code> spawns the thread and then returns, the entire process,
+including the new thread, is judged to be inactive (unless other application 
+components are active in the process), putting it in jeopardy of being killed.  
+The solution to this problem is for <code>onReceive()</code> to start a service 
+and let the service do the job, so the
+system knows that there is still active work being done in the process.<br>
+当对广播信息的响应是一个耗时的事，然后，因此应该单独给他一个线程运行，而不是在其他组件所在的与用户交互的线程中时，问题就出现了。如果创建了新的线
+程然后在新线程中运行，整个进程，包括新线程&nbsp;
+就都被认为是不活动的了（除非进程中有其他活动的应用程序组件），而且有被结束的危险。解决的方法是，让启动一个服务，然后让服务做这个耗时的事，然后系
+统就知道了进程中还有活动的正在做的事。<br>
+
+</p>
+
+<p>
+The next section has more on the vulnerability of processes to being killed.<br>
+下一节讲了更多有关进程被结束的容易程度。<br>
+
+</p>
+
+
+<h3 id="proclife">Processes and lifecycles——进程和生命周期</h3>
+
+<p>The Android system tries to maintain an application process for as
+long as possible, but eventually it will need to remove old processes when
+memory runs low.  To determine which processes to keep and which to kill, 
+Android places each process into an "importance hierarchy" based on the 
+components running in it and the state of those components.  Processes 
+with the lowest importance are eliminated first, then those with the next
+lowest, and so on.  There are five levels in the hierarchy.  The following 
+list presents them in order of importance:<br>
+Android系统试图将应用程序的进程保持最长的时间，但是最终当内存不足时，还是需要将不用的进程结束掉。为了判断哪些进程该结束，哪些不该，
+Android将每个进程按照当中运行的组件和组件的状态&nbsp;
+排放到一个“重要程度排行表”中。最不重要的最先结束，然后是次不重要的，依此类推。“重要程度排行表”中有五层重要程度。下面的表按重要程度顺序列出了他们：<br>
+
+</p>
+
+<ol>
+
+  <li>A <b>foreground process</b> is one that is required for
+what the user is currently doing.  A process is considered to be 
+in the foreground if any of the following conditions hold:——前台进程是需要获取用户正在做得事情的进程。进程有下列情况的，即认定为前台进程：
+
+<ul>
+<li>It is running an activity that the user is interacting with 
+(the Activity object's <code><code><a href="../../reference/android/app/Activity.html#onResume%28%29">onResume()</a></code></code> method has been called).——正在运行一个用户正与之交互的活动（即活动的<code><code></code></code><a href="../../reference/android/app/Activity.html#onResume%28%29">onResume()</a>方法被调用了）</li>
+
+<li><p>It hosts a service that's bound 
+to the activity that the user is interacting with.——承载了一个&nbsp;&nbsp; 用户正在与之交互的活动所属的&nbsp;&nbsp; 服务。</p></li>
+
+<li><p>It has a <code><a href="../../reference/android/app/Service.html">Service</a></code> object that's executing
+one of its lifecycle callbacks (<code><code><a href="../../reference/android/app/Service.html#onCreate%28%29">onCreate()</a></code></code>, <code><code><a href="../../reference/android/app/Service.html#onStart%28android.content.Intent,%20int%29">onStart()</a></code></code>, 
+or <code><code><a href="../../reference/android/app/Service.html#onDestroy%28%29">onDestroy()</a></code></code>).——承载着一个正在执行其生命周期回调方法（<code><code></code></code><a href="../../reference/android/app/Service.html#onCreate%28%29">onCreate()</a>，<code><code></code></code><a href="../../reference/android/app/Service.html#onStart%28android.content.Intent,%20int%29">onStart()</a>或<code><code></code></code><a href="../../reference/android/app/Service.html#onDestroy%28%29">onDestroy()</a>）的<code></code><a href="../../reference/android/app/Service.html">Service</a>对象。</p></li>
+
+<li><p>It has a <code><a href="../../reference/android/content/BroadcastReceiver.html">BroadcastReceiver</a></code> object that's 
+executing its <code><code><a href="../../reference/android/content/BroadcastReceiver.html#onReceive%28android.content.Context,%20android.content.Intent%29">onReceive()</a></code></code> method.——承载了一个正在运行其<code><code></code></code><a href="../../reference/android/content/BroadcastReceiver.html#onReceive%28android.content.Context,%20android.content.Intent%29">onReceive()</a>方法的<code><a href="../../reference/android/content/BroadcastReceiver.html">BroadcastReceiver</a></code>对象。</p></li>
+</ul>
+
+    <p>Only a few foreground processes will exist at any given time.
+They are killed only as a last resort — if memory is so low that they
+cannot all continue to run. Generally, at that point, the device has
+reached a memory paging state, so killing some foreground processes is
+required to keep the user interface
+responsive.——任一时刻只会有很少的前台进程存在。结束他们是没有办法的办法——只有当内存不足到他们都没法运行了。通常情况下，到了这种状
+况，设备就到了内存分页状态，结束一些前台进程是为了保持用户界面的响应。
+</p>
+  </li>
+
+
+<li><p>A <b>visible process</b> is one that doesn't have any foreground
+components, but still can affect what the user sees on screen.  
+A process is considered to be visible if either of the following conditions 
+holds:——可见进程是没有任何前台组件，但是依旧可以被用户看见的进程。进程有下列情况之一的，即认定为前台进程：</p>
+
+<ul>
+<li>It hosts an activity that is not in the foreground, but is still visible 
+to the user (its <code><code><a href="../../reference/android/app/Activity.html#onPause%28%29">onPause()</a></code></code> 
+method has been called).  This may occur, for example, if the foreground 
+activity is a dialog that allows the previous activity to be seen behind it.——承载着不在前台的活动，但是活动依旧能被用户看到（活动的<code><code></code></code><a href="../../reference/android/app/Activity.html#onPause%28%29">onPause()</a>方法被调用了）。例如当前台活动是一个没有完全盖住旧一个活动对话框时这种情况就可能发生。</li>
+
+<li><p>It hosts a service that's bound to a visible activity.——承载了一个属于可见活动的服务。</p></li>
+</ul>
+
+<p>
+A visible process is considered extremely important and will not be killed 
+unless doing so is required to keep all foreground processes running.——可见进程也是极为重要的，除非结束可见进程是为了保持前台进程的运行，否则可见进程是不会被结束的。</p></li>
+
+<li><p>A <b>service process</b> is one that is running a service that 
+has been started with the 
+    <code><code><a href="../../reference/android/content/Context.html#startService%28android.content.Intent%29">startService()</a></code></code>
+method and that does not fall into either of the two higher categories.  
+Although service processes are not directly tied to anything the 
+user sees, they are generally doing things that the user cares about (such 
+as playing an mp3 in the background or downloading  data on the network), 
+so the system keeps them running unless there's not enough 
+memory to retain them along with all foreground and visible processes.——服务进程是&nbsp;&nbsp; 运行着一个由<code><code></code></code><a href="../../reference/android/content/Context.html#startService%28android.content.Intent%29">startService()</a>方法启动的并且不在前两种所述情况中的服务的&nbsp;&nbsp; 进程。虽然服务进程不与任何用户可见部分直接相连，但他们通常是在做一些用户关心的事（例如在后台播放音乐或从网上下载数据），所以除非内存不足以盛放前台和可见进程，系统是不会结束服务进程的。</p></li>
+
+<li><p>A <b>background process</b> is one holding an activity
+that's not currently visible to the user  (the Activity object's
+<code><code><a href="../../reference/android/app/Activity.html#onStop%28%29">onStop()</a></code></code> method has been called).  
+These processes have no direct impact on the user experience, and can be killed 
+at any time to reclaim memory for a foreground, visible, or service process.  
+Usually there are many background processes running, so they are kept in an 
+LRU (least recently used) list to ensure that the process with the activity that 
+was most recently seen by the user is the last to be killed.
+If an activity implements its lifecycle methods correctly, and captures its current 
+state, killing its process will not have a deleterious effect on the user experience.——后台进程是承载目前用户不可见的活动（Activity的<code><code></code></code><a href="../../reference/android/app/Activity.html#onStop%28%29">onStop()</a>方
+法被调用后）的进程。后台进程不直接影响用户体验，而且随时可以结束以回收供前台进程、可见进程和服务进程使用。通常同一时间会有很多正在运行的后台进
+程，因此他们被存放在LRU（最近使用过的）列表中以保证最后含有用户最后使用的活动的进程是最后被结束的。如果活动正确地实现了其生命周期方法截获了当
+前状态，那么结束他所在进程不会对用户体验有坏的影响。</p></li>
+
+<li><p>An <b>empty process</b> is one that doesn't hold any active
+application
+components. The only reason to keep such a process around is as a cache
+to
+improve startup time the next time a component needs to run in it. The
+system often kills these processes in order to balance overall system
+resources between process caches and the underlying kernel
+caches.——空进程是不包含任何活动的进程。保留空进程的唯一原因是作为缓存以提升组件下次使需要用他的开始速度。系统经常会结束这样的进程以平衡
+&nbsp;&nbsp; 在进程缓存和底层内核缓存之间的&nbsp;&nbsp; 整体系统资源。</p></li>
+
+</ol>
+
+<p>
+Android ranks a process at the highest level it can, based upon the
+importance of the components currently active in the process.  For example, 
+if a process hosts a service and a visible activity, the process will be 
+ranked as a visible process, not a service process.<br>
+Android依据在进程中正在活动的组件的重要程度&nbsp;&nbsp; 将进程排在他能处在的最高级。例如，如果一个进程承载了一个服务和一个可见进程，那么此进程就被排为可见进程，而不是服务进程。
+</p>
+
+<p>
+In addition, a process's ranking may be increased because other processes are
+dependent on it.  A process that is serving another process can never be 
+ranked lower than the process it is serving.  For example, if a content 
+provider in process A is serving a client in process B, or if a service in 
+process A is bound to a component in process B, process A will always be 
+considered at least as important as process B.<br>
+另外，如果有其他进程依赖于此进程，那此进程的排位会上升。一个正服务于其他进程 的
+进程的排位不会低于他服务于的进程的排位。例如，进程A中的一个内容提供者正在为一个进程B中的客户服务，或者如果进程A中的服务属于进程B的一个组件，
+那么认为进程A至少与B重要性相同。<br>
+
+</p> 
+
+<p>
+Because a process running a service is ranked higher than one with background
+activities, an activity that initiates a long-running operation might do
+well to start a service for that operation, rather than simply spawn a thread
+— particularly if the operation will likely outlast the activity.  
+Examples of this are playing music in the background 
+and uploading a picture taken by the camera to a web site.  Using a service
+guarantees that the operation will have at least "service process" priority,
+regardless of what happens to the activity.  As noted in the 
+<a href="#broadlife">Broadcast receiver lifecycle</a> section earlier, this
+is the same reason that broadcast receivers should employ services rather
+than simply put time-consuming operations in a thread.<br>
+因为运行着服务的进程排位比运行着后台活动的进程高，因此相比于只是简单的新建一个线程进行耗时的操作——特别是进行可能会超过活动生命时间的操作，新建
+一个服务进行那项操作使您更好的选择。例如在后台播放音乐和拍照后将照片上传到网上。使用服务确保了操作会持续“服务进程”那么长的时间，不管活动发生了
+什么。就像上边<a href="fundamentals.html#broadlife">Broadcast receiver lifecycle</a>章节提到的那样，这也是广播服务器应该借助一个服务进行耗时的操作，而不是将其简单地放到新的线程中。</p></div>
+
+  <a href="#top" style="float: right;">↑ Go to top</a>
+  
+  </div>
+
+<div id="footer">
+
+
+  <div id="copyright">
+    
+  Except as noted, this content is licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0</a>. 
+  For details and restrictions, see the <a href="../../license.html">
+  Content License</a>.
+  </div>
+  <div id="build_info">
+    
+  Android 2.0.1&nbsp;r1 - 24 Nov 2009 18:21
+
+  </div>
+
+  <div id="footerlinks">
+    
+  <p>
+    <a href="http://www.android.com/terms.html">Site Terms of Service</a> -
+    <a href="http://www.android.com/privacy.html">Privacy Policy</a> -
+    <a href="http://www.android.com/branding.html">Brand Guidelines</a>
+  </p>
+  </div>
+
+</div> <!-- end footer -->
+
+</div><!-- end doc-content -->
+
+</div> <!-- end body-content --> 
+
+<script type="text/javascript">
+init(); /* initialize android-developer-docs.js */
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-5831155-1");
+pageTracker._trackPageview();
+</script>
+
+</body></html>

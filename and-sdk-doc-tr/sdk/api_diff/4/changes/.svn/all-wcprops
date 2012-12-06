@@ -1,0 +1,767 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes
+END
+android.app.LauncherActivity.html
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.app.LauncherActivity.html
+END
+classes_index_additions.html
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/classes_index_additions.html
+END
+android.provider.MediaStore.Audio.Media.html
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.provider.MediaStore.Audio.Media.html
+END
+android.content.pm.ConfigurationInfo.html
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.content.pm.ConfigurationInfo.html
+END
+android.content.pm.PackageManager.html
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.content.pm.PackageManager.html
+END
+pkg_android.content.html
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/pkg_android.content.html
+END
+jdiff_help.html
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/jdiff_help.html
+END
+android.view.ViewConfiguration.html
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.view.ViewConfiguration.html
+END
+android.net.wifi.WifiManager.html
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.net.wifi.WifiManager.html
+END
+android.telephony.gsm.SmsMessage.MessageClass.html
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.telephony.gsm.SmsMessage.MessageClass.html
+END
+fields_index_additions.html
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/fields_index_additions.html
+END
+pkg_android.os.html
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/pkg_android.os.html
+END
+android.widget.AutoCompleteTextView.html
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.widget.AutoCompleteTextView.html
+END
+packages_index_additions.html
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/packages_index_additions.html
+END
+changes-summary.html
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/changes-summary.html
+END
+android.telephony.gsm.SmsManager.html
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.telephony.gsm.SmsManager.html
+END
+java.util.concurrent.TimeUnit.html
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/java.util.concurrent.TimeUnit.html
+END
+android.widget.TabWidget.html
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.widget.TabWidget.html
+END
+android.util.TypedValue.html
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.util.TypedValue.html
+END
+methods_index_all.html
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/methods_index_all.html
+END
+android.graphics.BitmapFactory.html
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.graphics.BitmapFactory.html
+END
+constructors_index_changes.html
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/constructors_index_changes.html
+END
+android.telephony.TelephonyManager.html
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.telephony.TelephonyManager.html
+END
+methods_index_additions.html
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/methods_index_additions.html
+END
+android.provider.Settings.System.html
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.provider.Settings.System.html
+END
+jdiff_statistics.html
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/jdiff_statistics.html
+END
+android.widget.PopupWindow.html
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.widget.PopupWindow.html
+END
+constructors_index_additions.html
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/constructors_index_additions.html
+END
+android.provider.Settings.Secure.html
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.provider.Settings.Secure.html
+END
+pkg_android.app.html
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/pkg_android.app.html
+END
+android.view.View.html
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.view.View.html
+END
+alldiffs_index_all.html
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/alldiffs_index_all.html
+END
+pkg_android.view.animation.html
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/pkg_android.view.animation.html
+END
+pkg_android.provider.html
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/pkg_android.provider.html
+END
+android.content.pm.ActivityInfo.html
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.content.pm.ActivityInfo.html
+END
+android.location.Address.html
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.location.Address.html
+END
+pkg_android.hardware.html
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/pkg_android.hardware.html
+END
+android.hardware.SensorManager.html
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.hardware.SensorManager.html
+END
+android.view.Surface.html
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.view.Surface.html
+END
+android.widget.CheckedTextView.html
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.widget.CheckedTextView.html
+END
+android.content.res.Configuration.html
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.content.res.Configuration.html
+END
+android.Manifest.permission_group.html
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.Manifest.permission_group.html
+END
+android.content.Intent.html
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.content.Intent.html
+END
+android.telephony.gsm.SmsMessage.SubmitPdu.html
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.telephony.gsm.SmsMessage.SubmitPdu.html
+END
+android.app.SearchManager.html
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.app.SearchManager.html
+END
+android.util.Config.html
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.util.Config.html
+END
+pkg_android.opengl.html
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/pkg_android.opengl.html
+END
+constructors_index_removals.html
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/constructors_index_removals.html
+END
+android.widget.ListView.html
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.widget.ListView.html
+END
+android.media.ToneGenerator.html
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.media.ToneGenerator.html
+END
+android.graphics.drawable.BitmapDrawable.html
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.graphics.drawable.BitmapDrawable.html
+END
+android.content.ContextWrapper.html
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.content.ContextWrapper.html
+END
+android.content.ContentProvider.html
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.content.ContentProvider.html
+END
+android.graphics.Typeface.html
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.graphics.Typeface.html
+END
+android.graphics.drawable.AnimationDrawable.html
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.graphics.drawable.AnimationDrawable.html
+END
+pkg_android.content.res.html
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/pkg_android.content.res.html
+END
+methods_index_changes.html
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/methods_index_changes.html
+END
+android.test.mock.MockContext.html
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.test.mock.MockContext.html
+END
+android.widget.TabHost.TabSpec.html
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.widget.TabHost.TabSpec.html
+END
+constructors_index_all.html
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/constructors_index_all.html
+END
+android.view.Window.Callback.html
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.view.Window.Callback.html
+END
+android.app.Activity.html
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.app.Activity.html
+END
+android.content.ComponentName.html
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.content.ComponentName.html
+END
+pkg_android.inputmethodservice.html
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/pkg_android.inputmethodservice.html
+END
+fields_index_removals.html
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/fields_index_removals.html
+END
+android.graphics.drawable.NinePatchDrawable.html
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.graphics.drawable.NinePatchDrawable.html
+END
+classes_index_all.html
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/classes_index_all.html
+END
+android.Manifest.permission.html
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.Manifest.permission.html
+END
+packages_index_removals.html
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/packages_index_removals.html
+END
+java.util.concurrent.locks.AbstractQueuedSynchronizer.html
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/java.util.concurrent.locks.AbstractQueuedSynchronizer.html
+END
+fields_index_changes.html
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/fields_index_changes.html
+END
+android.util.DisplayMetrics.html
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.util.DisplayMetrics.html
+END
+android.graphics.Canvas.html
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.graphics.Canvas.html
+END
+android.media.AudioManager.html
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.media.AudioManager.html
+END
+android.graphics.Bitmap.html
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.graphics.Bitmap.html
+END
+classes_index_removals.html
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/classes_index_removals.html
+END
+pkg_android.util.html
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/pkg_android.util.html
+END
+packages_index_changes.html
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/packages_index_changes.html
+END
+pkg_android.media.html
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/pkg_android.media.html
+END
+android.media.MediaRecorder.html
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.media.MediaRecorder.html
+END
+pkg_android.content.pm.html
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/pkg_android.content.pm.html
+END
+android.R.style.html
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.R.style.html
+END
+android.provider.MediaStore.Audio.Genres.Members.html
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.provider.MediaStore.Audio.Genres.Members.html
+END
+alldiffs_index_removals.html
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/alldiffs_index_removals.html
+END
+android.media.MediaRecorder.AudioSource.html
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.media.MediaRecorder.AudioSource.html
+END
+android.graphics.NinePatch.html
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.graphics.NinePatch.html
+END
+android.R.attr.html
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.R.attr.html
+END
+android.R.drawable.html
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.R.drawable.html
+END
+pkg_android.text.style.html
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/pkg_android.text.style.html
+END
+android.os.RemoteCallbackList.html
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.os.RemoteCallbackList.html
+END
+android.app.PendingIntent.html
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.app.PendingIntent.html
+END
+android.app.LauncherActivity.ListItem.html
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.app.LauncherActivity.ListItem.html
+END
+android.content.pm.ProviderInfo.html
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.content.pm.ProviderInfo.html
+END
+android.test.AndroidTestCase.html
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.test.AndroidTestCase.html
+END
+classes_index_changes.html
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/classes_index_changes.html
+END
+pkg_java.util.concurrent.html
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/pkg_java.util.concurrent.html
+END
+android.graphics.drawable.Drawable.html
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.graphics.drawable.Drawable.html
+END
+android.content.pm.ApplicationInfo.html
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.content.pm.ApplicationInfo.html
+END
+fields_index_all.html
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/fields_index_all.html
+END
+pkg_android.test.mock.html
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/pkg_android.test.mock.html
+END
+pkg_android.location.html
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/pkg_android.location.html
+END
+pkg_java.util.concurrent.locks.html
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/pkg_java.util.concurrent.locks.html
+END
+pkg_android.view.html
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/pkg_android.view.html
+END
+packages_index_all.html
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/packages_index_all.html
+END
+android.view.VelocityTracker.html
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.view.VelocityTracker.html
+END
+pkg_android.widget.html
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/pkg_android.widget.html
+END
+pkg_android.net.wifi.html
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/pkg_android.net.wifi.html
+END
+android.text.style.ImageSpan.html
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.text.style.ImageSpan.html
+END
+pkg_android.telephony.gsm.html
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/pkg_android.telephony.gsm.html
+END
+android.graphics.BitmapFactory.Options.html
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.graphics.BitmapFactory.Options.html
+END
+android.content.Context.html
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.content.Context.html
+END
+pkg_android.graphics.html
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/pkg_android.graphics.html
+END
+pkg_android.html
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/pkg_android.html
+END
+android.telephony.gsm.SmsMessage.html
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.telephony.gsm.SmsMessage.html
+END
+android.os.Build.VERSION.html
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.os.Build.VERSION.html
+END
+android.test.mock.MockPackageManager.html
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.test.mock.MockPackageManager.html
+END
+pkg_android.telephony.html
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/pkg_android.telephony.html
+END
+jdiff_topleftframe.html
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/jdiff_topleftframe.html
+END
+android.inputmethodservice.KeyboardView.html
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.inputmethodservice.KeyboardView.html
+END
+android.app.Dialog.html
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.app.Dialog.html
+END
+android.os.Build.html
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.os.Build.html
+END
+pkg_android.test.html
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/pkg_android.test.html
+END
+pkg_android.graphics.drawable.html
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/pkg_android.graphics.drawable.html
+END
+methods_index_removals.html
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/methods_index_removals.html
+END
+alldiffs_index_changes.html
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/alldiffs_index_changes.html
+END
+android.R.anim.html
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/android.R.anim.html
+END
+alldiffs_index_additions.html
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/and-sdk-doc-tr/!svn/ver/12/sdk/api_diff/4/changes/alldiffs_index_additions.html
+END

@@ -1,0 +1,724 @@
+欢迎使用Android(1.5)中文文档-应用程序法则这是 Google 对 
+http://android.toolib.cn/guide/topics/fundamentals.php 的缓存。 这是该网页在 2010年1月3日 
+15:38:16 GMT 的快照。 当前页在此期间可能已经更改。 了解详情
+
+纯文字版本突出显示以下搜索字词： method can called if new service 这些搜索字词仅在指向此网页的链接中出现： onunbind 
+ask onrebind client connects  
+ 
+  首页 
+  SDK 
+  开发向导 
+  API文档 
+  博客（英文） 
+  社区 
+工具屋网站 
+   
+        
+
+  Android基础
+    Android是什么？ 
+  框架主题
+    应用程序法则 
+    用户界面
+      声明布局 
+      创建菜单 
+      公共布局对象 
+      用AdapterView绑定数据 
+      处理UI事件 
+      应用样式和主题 
+      构建定制组建 
+      Android如何绘制试图 
+    资源和资产
+      资源及国际化 
+      既存资源类型 
+    意图和意图过滤器 
+    数据存储 
+    内容提供者 
+    安全和许可 
+    AndroidManifest.xml 文件
+      <action> 
+      <activity> 
+      <activity-alias> 
+      <application> 
+      <category> 
+      <data> 
+      <grant-uri-permission> 
+      <instrumentation> 
+      <intent-filter> 
+      <manifest> 
+      <meta-data> 
+      <permission> 
+      <permission-group> 
+      <permission-tree> 
+      <provider> 
+      <receiver> 
+      <service> 
+      <uses-configuration> 
+      <uses-library> 
+      <uses-permission> 
+      <uses-sdk> 
+    图像
+      二维图像 
+      OpenGL三维图像 
+    声音和视频 
+    位置和地图 
+  开发
+    在Eclipse中使用ADT 
+    使用其他IDE 
+    在设备上 
+    调试任务 
+    工具
+      aapt 
+      adb 
+      android 
+      aidl 
+      AVDs 
+      ddms 
+      dx 
+      绘制 9-Patch 
+      模拟器 
+      层次观察器 
+      mksdcard 
+      Monkey 
+      sqlite3 
+      Traceview 
+  发布
+    应用程序的签名 
+    应用程序的版本 
+    准备发布 
+    发布你的应用程序 
+  最好的做法
+    性能的设计 
+    响应的设计 
+    平滑过渡的设计 
+  教程和示例
+    Hello World 
+    Hello Views 
+    记事本教程 
+    示例代码» 
+  附录
+    支持的媒体类型 
+    意图列表：Google应用程序 
+    词汇表 
+    FAQ 
+  
+应用程序法则
+关键类
+  活动 
+  服务 
+  广播接收器 
+  内容提供者 
+  意图 
+本文档内容
+  应用程序组件 
+    激活组件：意图 
+    停止组件 
+    清单文件 
+    意图过滤器 
+  活动和任务 
+    关系和新任务 
+    运行模式 
+    堆的清除 
+    任务的启动 
+  进程和线程 
+    进程 
+    线程 
+    远程过程调用 
+    线程安全方法 
+  组件的生命周期 
+    活动的生命周期 
+    服务的生命周期 
+    广播接收器的生命周期 
+    进程和生命周期 
+Android应用程序是用Java编程语言编写的。编译后的Java代码 —包括应用程序需要的任何数据和资源— 
+被aapt工具封装到Android包中，使用.apk后缀的包文件。该文件是发布和安装到移动设备的媒介；它是用户下载到他们的设备上的文件。在一个.apk文件中的所有代码就是一个应用程序。 
+
+大多数情况下，每个Android 应用程序运行于自己的空间中： 
+  默认情况下，每个应用程序运行于自己的 Linux 进程中。 Android 
+  会在应用程序的任意代码被执行时启动进程，在不需要该进程并且其它应用程序需要系统资源时停止该进程。 
+  每个进程有它自己的Java 虚拟机(VM)，所以应用程序代码运行于与其他所有应用程序隔绝的环境中。 
+  默认每个应用程序被赋予一个不重复的 Linux用户ID。权限被设为只有该用户可以看到应用程序的文件，就是只对应用程序自己可见。—虽然有办法是其他程序可见。 
+在需要看到彼此的文件时，让两个用户共享一个相同的用户ID，是可能的。为了保护系统资源，具有相同ID的应用程序可以安排在同一个Linux进程中运行，共享同一个虚拟机。 
+
+应用程序组件
+Android的一个核心特性是，一个应用程序可以使用其它应用程序的元素（那些应用程序可以提供的）。例如，你的应用程序需要显示一个图片的滚动列表，另外一个应用程序开发了适合的滚动组件并且允许其它应用程序使用它，那么你可以调用该组件来完成显示工作，不用自己再开发了。你的应用程序不需要合并代码或者链接到该程序。只是简单的在需要的时候启动其他应用程序的那部分即可。 
+
+为了使该特性可用，系统必须能够在应用程序的任何一部分需要执行时启动应用程序进程，并实例化其Java对象。也就是说，不象其它系统上的应用程序，Android应用程序没有单一的入口点（比如说，没有main()函数）。它只实例化和运行必要的组件。有四种类型的组件： 
+
+  活动 
+  活动 
+  为用户提供有焦点的可视用户界面。例如，活动可以提供一个可供用户选择的菜单项目一览，或者带有图像的标题。一个文本消息应用程序，可以有一个活动用于显示发送消息的联系人列表，另一个活动用于书写要发送的消息，其它的活动用于显示旧的消息或者修改设置。虽然由它们构成了用户界面，但是活动是彼此独立的。每个都作为实现了基类 
+  Activity的子类。 
+  应用程序可以由一个活动构成，或者象刚刚提到的文本消息应用程序一样，可以包含多个活动。活动什么样、有多少，依赖于不同的应用程序及其设计。典型的应用程序会包含一个标记为应用程序启动时，首先呈现给用户的活动。从一个活动迁移到另一个，可以通过当前活动启动另一个活动来完成。 
+
+  每个活动会被赋予一个缺省的绘制窗口。典型的窗口是覆盖整个屏幕的，但它可以比屏幕小并且浮在其它窗口上方。一个活动也可以使用附加的窗口 — 
+  例如，在活动的中，请求用户响应的弹出对话框，或者当用户在屏幕上选择了一个特别的项目时，向用户呈现一个含有重要信息的窗口。 
+  窗口的可视内容是由层次结构的视图提供的— 从基类 
+  View派生的对象。每个视图控制着窗口中的一部分矩形区域。父视图容纳并组织其子视图的布局。叶视图（那些最底层的视图）在矩形中绘制内容，它们在该空间直接控制并响应用户的动作。就是说，视图是活动与用户交互的地方。例如，视图可以显示一幅图像，当用户碰了图像时执行一个动作。Android有一些现成的视图可以使用 
+  —包括按钮、文本框、滚动条、菜单项、复选框等等。 
+  在活动的窗口中是通过函数 Activity.setContentView() 
+  设置视图的。内容视图是位于层次的根部的视图对象。（关于视图及其层次的详细信息，参见用户界面） 
+  服务 
+  服务没有可视用户界面，而是在后台无限期的运行。例如，服务可以在用户做其它事情时播放背景音乐，或者从网络上取得数据，或者做计算工作，然后返回活动需要的结果。每个服务都扩展自Service基类。 
+
+  最好的例子是媒体播放器根据播放列表来播放音乐。播放器会有一个或多个活动，允许用户选择和播放音乐。音乐播放本身当然不能由活动来完成，因为用户会希望在他离开播放器去做其它事情时，仍然可以让音乐继续播放。为了保持音乐播放，活动可以启动一个服务在后台运行。系统将保持音乐播放服务的执行，即使启动它的活动已经不在屏幕上了。 
+
+  连接（绑定）到一个正在运行的服务（如果它没有运行的话，就启动它）是可能的。连接上之后，你就可以通过服务提供的接口与它通信了。对于音乐服务，接口可能允许用户暂停、恢复、停止和重新开始播放。 
+
+  象活动一样，其它组件、服务也在应用程序进程的主线程中运行。为了不阻断其它组件或用户界面，耗时的任务（比如播放音乐）经常会切换到其它线程。参见后面的进程和线程。 
+
+  广播接收器 
+  广播接收器 是一个不做什么实质性工作的组件，只是接收广播通知并对其作出反应。系统代码中有很多广播源 — 
+  例如，通知时区变更、电池电量低、选择了一个图片或者用户更改了语言选项。应用程序也可以初始化广播， 
+  —例如，让其它应用程序知道，数据已经下载到设备并可以使用了。 
+  应用程序可以有任意数量的广播接收器，分别对有用的通知作出反应。所有的广播接收器都扩展自 BroadcastReceiver基类。 
+  广播接收器不显示用户界面。它们可以启动活动来响应受到的信息，或者使用 NotificationManager来通知用户。通知可以通过多种方式引起用户的注意 
+  — 背光闪烁、振动、播放音乐等等。典型地是在状态栏显示一个特定图标，用户可以打开它来取得信息。 
+  内容提供者 
+  内容提供者生成一个提供给其它应用程序，可访问的数据集合。数据可以存储在文件系统中、SQLite 数据库中或者其它可以使用的任何形式。内容提供者通过扩展 
+  ContentProvider基类，实现一套标准的方法，以使其它应用程序可以取得和存储它控制的类型的数据。不过应用程序并不调用这些方法。它们使用 
+  ContentResolver对象来调用。 ContentResolver可以与任何内容提供者交互，它与提供者一起来管理复杂的进程间的通信。 
+  关于内容提供者的更多信息，参见文档 内容提供者 
+当有请求需要由应用程序的部分组件处理时， Android负责确保组件所属应用程序进程的运行，需要时会启动该进程；并保证组件的实例可用，在需要时创建实例。 
+激活组件：意图
+内容提供者在被ContentResolver请求时激活。另外三个组件— 活动、服务和广播接收者— 通过叫做意图的异步的消息激活。意图是一个 Intent 
+对象，它保持着信息的内容。对于活动和服务，它指明请求的动作，指定动作需要的数据的URI和其它内容。例如，它可以对活动发出一个请求，要求显示一幅图像或者让用户编辑一些文本。对于广播接收者，意图对象指明广播的动作。例如，它可以对感兴趣的接收者发出快门被按下的消息。 
+
+还有其它方法来激活各种组件： 
+  活动可以通过传递一个意图对象到 Context.startActivity() 或 
+  Activity.startActivityForResult()来启动（或执行新的动作）。做出响应的活动可以通过调用 
+  getIntent()方法取得使其运行的意图。 Android调用活动的 onNewIntent()方法传递任何之后的意图。 
+  一个活动经常启动另一个。如果它想得到它启动的活动的结果，它可以调用 startActivityForResult()来代替 
+  startActivity()。例如，你启动了一个活动，让用户选择一幅照片，就需要它返回的选中的照片。结果通过调用活动时传入 
+  onActivityResult()方法的意图返回。 
+  通过传递意图对象到 Context.startService()来启动服务（或者给正在运行的服务新的指令）。 Android调用服务的 
+  onStart()方法，并传给它意图对象。
+  同样的，可以将意图传递给 Context.bindService()来建立调用组件和目标服务之间的连接。服务会在 
+  onBind()被调用时收到意图对象。（如果服务没有运行 bindService()会启动它。） 
+  例如，活动可以与刚才提到的音乐播放服务建立连接，以便是用户（通过用户界面）可以控制播放。活动将调用 
+  bindService()来设置连接，之后调用定义的方法来控制播放。 
+  后面的章节，远程过程调用 有关于绑定服务的更详细的介绍。 
+  应用程序可以初始化一个广播，通过传递一个意图对象到象 Context.sendBroadcast()、 
+  Context.sendOrderedBroadcast()、和 Context.sendStickyBroadcast()的方法，并传入需要的变量。 
+  Android传送意图到所有对它赶兴趣的广播接收者，通过调用它们的 onReceive()方法。
+关于意图的更多信息，参见另外的文章 意图和意图过滤器。 
+停止组件
+内容提供者只有在响应ContentResolver的请求时激活。广播接收者只有在它对广播的消息作出响应时激活。因此它们不需要显式的停止它们的组件。 
+与之对应的，活动提供用户界面。它们在与用户的长期会话中，保持运行，无论空闲时还是会话中。与活动类似，服务也可以长时间保持运行。因此，Android有按顺序停止活动和服务的方法： 
+
+  活动可以通过调用它的 finish()方法来停止。一个活动可以停止另一个活动（由它通过， 
+  startActivityForResult()启动的），通过调用finishActivity()方法。 
+  服务可以通过调用它的 stopSelf()方法或Context.stopService() 方法来停止它。 
+组件也可能被系统停止，当它们不再使用时、或者Android为了活跃组件的运行，必须回收内存时。后面的组件生命周期将讨论它的可能性及各种情况的详细介绍。 
+清单文件
+在Android可以启动应用程序组件之前，它必须知道该组件的存在。因此，应用程序在清单文件中声明它们的组件，该文件包含在Android包中， .apk 
+文件还包含应用程序代码、文件和资源。 
+清单文件是结构化的XML文件，对于所有应用程序，文件名均为AndroidManifest.xml。它除了声明应用程序组件外，还做一些额外工作，比如指出应用程序需要链接的库（除了Android默认的库）、标明应用程序被授予的权限。 
+
+但是，清单文件的主要任务是报告Android应用程序的组成部分。例如，活动可以如下那样声明： 
+<?xml version="1.0" encoding="utf-8"?>
+<manifest . . . >
+<application . . . >
+    <activity android:name="com.example.project.FreneticActivity"
+              android:icon="@drawable/small_pic.png"
+              android:label="@string/freneticLabel"
+              . . .  >
+    </activity>
+    . . .
+</application>
+</manifest><activity>元素的 name属性命名实现了活动的 Activity子类。 icon和 
+label属性，指出代表活动、呈现给用户的包含图标和标签的资源文件。 
+其它组件也许以类似的方式声明— <service>元素用于服务， <receiver>元素用于广播接收者， 
+<provider>元素用于内容提供者。活动、服务和内容提供者如果不在清单文件中声明的话，对系统是不可见的，因此永远不会运行。广播接收者可以在清单文件中声明，也可以通过代码（作为 
+BroadcastReceiver对象）动态生成，并通过调用 Context.registerReceiver()注册到系统中。 
+关于如何组织你的应用程序的清单文件，参见 AndroidManifest.xml 文件。 
+意图过滤器
+意图对象可以精确的指定目标组件名。如果指定了，Android将会找到该组件（基于清单文件中的声明），并激活它。但是，如果目标不是精确的名称， 
+Android就必须定位到最适合的组件来响应意图。它将意图对象与意图过滤器的可能的目标作比较。组件的意图过滤器，可以通知Android关于该组件可处理的多种意图。象其它的组件的基本信息一样，他们也在清单文件中声明。这里是对前一个例子的扩展，为活动增加了两个意图过滤器： 
+
+<?xml version="1.0" encoding="utf-8"?>
+<manifest . . . >
+    <application . . . >
+        <activity android:name="com.example.project.FreneticActivity"
+                  android:icon="@drawable/small_pic.png"
+                  android:label="@string/freneticLabel"
+                  . . .  >
+            <intent-filter . . . >
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter . . . >
+                <action android:name="com.example.project.BOUNCE" />
+                <data android:type="image/jpeg" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        . . .
+    </application>
+</manifest>例子中的第一个过滤器 — 动作" android.intent.action.MAIN" 和分类" 
+android.intent.category.LAUNCHER"的组合 — 
+这是一个普通的例子。它标记该活动可以显示在应用程序启动器（列出用户可以在设备上启动的应用程序的画面）中。也就是说，该活动是应用程序的入口点，当用户从启动器运行应用程序时看到的第一个活动。 
+
+第二个过滤器声明了一个动作，该活动可以处理特殊类型的数据。 
+组件可以有很多过滤器，每一个声明一种不同的能力。如果它没有任何过滤器，就只能通过提供了组件的精确名的意图来启动。 
+对于通过代码创建和注册的广播接收者，意图过滤器直接作为 IntentFilter 对象实例化。所有其它过滤器都通过清单文件设置。 
+关于意图过滤器的更多信息，参见文档 意图和意图过滤器。 
+活动和任务
+前面提到过，一个活动可以启动另一个活动，包括属于其它应用程序的活动。例如，你可能想让用户显示某个地方的地图。已经有一个活动可以完成它，那么你的应用程序要做的，只是传递包含必要信息的意图对象到 
+startActivity()中。地图查看器将会显示它。当用户按下回退键时，你的活动将再次出现在屏幕上。 
+对于用户来说，地图查看器就象是该应用程序的一部分，即使它定义于其它应用程序，运行于那个应用程序的进程。 
+Android通过将两个活动归入同一个任务task来维护用户体验。简单的说，任务就是用户认为的＂应用程序＂。它就是被安排在堆中的、有关联的一组活动。根活动是堆中用于启动任务的活动， 
+— 一般来说，它是用户在应用程序启动器中选择的活动。堆顶部的活动是当前运行的活动 — 
+具有焦点，并对用户的动作作出反应。当启动另一个活动时，新活动被压入堆中；成为当前活动。前面的活动保留在堆中。当用户按下回退键时，当前活动弹出堆，前一个活动恢复为当前活动。 
+
+堆保存这些对象，如果一个任务包含两个以上的同一个活动子类的实例 —比如多个地图查看器— 每个实例在堆中有各自的入口。活动在堆中不会被重新排列，只是压入和弹出。 
+任务是活动的堆，不是一个类或清单文件的一个元素。因此，无法为任务中的某个独立的活动赋值。对于一个任务整体，值是赋给它的根活动的。比如下一节会谈到的＂任务中的关系＂；值是通过设到任务的根活动中的关系取得的。 
+
+任务中的所有活动作为一个整体移动。整个任务（整个活动堆）可以被带到前台或送到后台。比如，当前任务的堆中有四个活动 
+—有三个在当前活动下面。用户按下HOME键、打开应用程序启动器、选择一个新的应用程序（实际上就是一个任务）。当前任务转为后台运行，新任务的根活动被显示出来。过了一会儿，用户返回了HOME，并选择了之前的应用程序（前一个任务）。堆中包含四个活动的任务转为前台。当用户按下回退键时，并不显示刚刚离开的活动（前一个任务的根活动）。而是堆顶部的活动被移除，显示堆中的前一个活动。 
+
+该行为是活动和任务的缺省行为。有办法修改这些行为。活动与任务结合、任务中活动的行为，由启动活动时设置到意图对象中的标志，和清单文件中活动对应的 
+<activity>元素的属性来控制。请求方和应答方对该行为都有发言权。 
+主要的意图标志如下： 
+FLAG_ACTIVITY_NEW_TASK 
+FLAG_ACTIVITY_CLEAR_TOP 
+FLAG_ACTIVITY_RESET_TASK_IF_NEEDED 
+FLAG_ACTIVITY_SINGLE_TOP
+主要的 <activity>属性如下： 
+taskAffinity 
+launchMode 
+allowTaskReparenting 
+clearTaskOnLaunch 
+alwaysRetainTaskState 
+finishOnTaskLaunch
+下一节介绍这些标志和属性的用处、如何交互和它们应该如何使用。 
+关系和新任务
+默认情况下，应用程序中的所有活动之间都有关系— 因为它们有共同点，就是都属于同一个任务。但是可以使用<activity> 
+元素的taskAffinity属性来为活动设置单独的关系。属于不同应用程序的活动可以共享相同的关系，同一应用程序中的活动也可以拥有不同的关系。关系在两种情况下发挥作用：当意图对象包含FLAG_ACTIVITY_NEW_TASK标志来启动活动时、和活动的 
+allowTaskReparenting属性的值为＂true＂时。 
+  FLAG_ACTIVITY_NEW_TASK标志 
+  如前所述，新的活动默认运行于调用 startActivity()的活动的任务中。它被放入与调用者相同的堆中。如果传递给 
+  startActivity()的意图对象包含 
+  FLAG_ACTIVITY_NEW_TASK标志，系统将为该新活动寻找不同的任务。看到该标志就会想到它表示新任务。不过它有可能不是。如果有既存的任务与该新活动有相同的关系，该活动会被并入该任务。如果没有这样的任务，则开始一个新任务。 
+
+  allowTaskReparenting属性 
+  如果一个活动的 allowTaskReparenting属性被设成了＂ 
+  true＂，则它可以从启动它的任务移动到与它具有相同关系的前台任务中。例如，一个报告选定地点的天气状况的活动，属于某个旅行应用程序的一部分。它与同一应用程序的其它活动具有相同的关系（默认关系），并且它允许重置从属关系。你的一个活动启动了天气报告程序，那么它与你的活动属于同一个任务。当旅行应用程序接下来运行时，天气报告程序会被重新指定为在旅行应用程序的任务中显示信息。 
+
+如果一个.apk 文件包含两个以上的＂应用程序＂（以用户的角度），你应该为每个活动集合准备不同的关系。 
+运行模式
+<activity> 元素的 launchMode属性可以接受四种运行模式： 
+＂ standard＂（缺省模式） 
+＂singleTop＂ 
+＂singleTask＂ 
+＂singleInstance＂
+各模式间的差别有如下四点： 
+  对意图做出反应的活动在哪个任务中运行 对于＂standard＂和＂ singleTop＂模式，它就是发出意图的任务（调用 
+  startActivity()的任务） — 除非意图对象中包含 FLAG_ACTIVITY_NEW_TASK标志。这种情况下，象前一节 
+  关系和新任务中讲的一样，会选择不同的任务。 
+  对应的＂singleTask ＂和＂ singleInstance＂模式标记该活动总是作为任务的根。它们定义的任务永远不会在其它任务中运行。 
+  是否可以运行活动的多个实例。＂standard＂或＂ singleTop 
+  ＂模式的活动可以实例化多次。它们可以属于多个任务，一个任务中也可以存在多个相同活动的实例。 
+  对应的＂singleTask ＂和＂singleInstance” 
+  模式的活动被限制为只能拥有一个实例。当这样的活动是任务的根活动时，该限制意味着，在该设备上不会同时存在两个以上的相同任务的实例。 
+  实例是否允许其任务中存在其它活动。＂singleInstance 
+  ＂模式的活动作为其任务中唯一的活动，如果它启动其它活动，那么被启动的活动会被分配到其它任务中运行，忽略其运行模式 — 就象在意图中指定了 
+  FLAG_ACTIVITY_NEW_TASK标志一样。所有的其它方面，＂singleInstance＂模式与＂singleTask＂模式相同。
+  另外三种模式允许一个任务中存在多个活动。＂ singleTask＂活动总是作为任务的根活动，但它可以在自己的任务中运行其它活动。＂ standard＂和＂ 
+  singleTop＂的活动可以在堆的任何位置上运行。 
+  为了处理新意图是否运行类的新实例。对于默认的＂ standard ＂模式，响应每个新意图都会创建新的实例。每个实例只响应一个意图。对于＂ 
+  singleTop＂模式，如果它位于目标任务的活动堆的顶层，既存的类的实例将会重用，来处理新的意图。如果它不在顶层，将不会被重用。而是创建一个新的实例，压入堆中，来处理新的意图。 
+
+  例如，假设一个任务的活动堆中包含根活动A、活动B、活动C、和顶层活动D，堆中的内容为A-B-C-D。在收到一个活动D的意图时。如果D是默认的＂standard＂运行模式，类的新实例将会运行，堆变成了A- 
+  B-C-D-D。可是，如果D的运行模式是" singleTop"，既存实例会处理新意图（因为它在堆的顶部），堆保持为A-B-C-D。 
+  另一种情况，如果到达的是B的意图，无论B的模式是"standard"还是" singleTop "，一个B的新实例都会被创建 
+  （因为B不在堆的顶部），堆变成了A-B-C-D-B。 
+  如上所述，对于" singleTask"或" singleInstance"的活动，不会出现多于一个实例的情况。所以，该实例会处理新的意图。" 
+  singleInstance"活动总是位于堆的顶层（因为它是任务的唯一活动），因此它总是会响应意图。在堆中，"singleTask 
+  "活动可能有也可能没有其它活动在它的上面。如果有的话，它将不能处理意图，意图将被丢掉。（虽然意图被丢掉了，但是该任务也会象正常处理意图一样被带到前台。） 
+当既存的活动被要求处理新意图时，意图对象通过调用 onNewIntent()传入活动。（被调用的活动可以通过调用 getIntent()取得。） 
+注意，当创建一个新实例来处理活动时，用户可以按回退键返回前一个状态（前一个活动）。但是，当活动的一个既存的实例来处理新意图时，用户不能通过按回退键返回收到新意图前的状态。 
+
+更多关于运行模式的信息，参见 <activity>元素。 
+堆的清除
+如果用户离开任务时间较长，系统会清除任务中根活动以外的所有活动。当用户再次返回时，只能看到最初的活动。这样做的原因是，一段时间之后用户可能不关心之前做了什么，而是返回该任务做一些新的事情。 
+
+这是默认情况。有一些活动属性可以用于控制和修改这些行为： 
+  alwaysRetainTaskState属性 
+  如果任务的根活动的该属性被设为" true"，上述默认行为不会发生。任务会保留堆中的所有活动，即使过了很长时间。 
+  clearTaskOnLaunch属性 
+  如果任务的根活动的该属性被设为" true"，当用户离开任务再返回时，堆将清除到只剩任务的根活动。换句话说，它与 
+  alwaysRetainTaskState完全相反。用户总是返回到任务的初始状态，即使离开一瞬间。 
+  finishOnTaskLaunch属性 
+  该属性与 clearTaskOnLaunch类似，但它的操作对象是单独的活动、而不是整个任务。并且它可以应用与任何活动，包括根活动。当它被设为"true 
+  "时，活动只保留当前状态。如果用户离开后再返回任务，它将不再存在。 
+有其它办法可以强制从堆中清除活动。如果意图对象包含 
+FLAG_ACTIVITY_CLEAR_TOP标志，并且目标任务中包含可以处理意图的活动的实例，则该实例上层的活动都会被清除，以使它处于堆的顶层，来响应意图。如果活动本身的运行模式是" 
+standard"，则它也会被从堆中清除，并运行新实例来处理收到的意图。这是因为运行模式为" standard "的活动总是创建新实例来响应新的意图。 
+FLAG_ACTIVITY_CLEAR_TOP经常与 
+FLAG_ACTIVITY_NEW_TASK一起使用。当同时使用时，意味着在其它任务中找到既存活动，并使其可以响应意图。 
+任务的启动
+通过为活动指定一个动作为“ android.intent.action.MAIN”、分类为“ android.intent.category.LAUNCHER 
+”的意图过滤器，可以将活动设为任务的入口。（前面的意图过滤器一节中有这种过滤器的例子。）这种过滤器会在应用程序启动器中显示一个图标和标签，让用户可以启动一个任务或者返回已运行的任务。 
+
+第二个能力比较重要：用户必须能在离开任务后还可以回到该任务。正因为如此，会导致初始化新任务的两种运行模式，“singleTask” 
+和“singleInstance”，只有在活动具有 MAIN和 
+LAUNCHER过滤器时才可以使用。想象一下，如果没有上述过滤器的话会是什么情况：意图启动了一个“singleTask”的活动，初始化了一个新任务，用户用户在该任务上操作了一段时间。之后用户按下了HOME键，这时该任务被挡在了主屏幕的后面。因为它没有出现在应用程序启动器中，因此用户无法返回该任务。 
+
+它与启动带时带有FLAG_ACTIVITY_NEW_TASK标志有些许不同。如果该标志导致启动了新的任务，并且用户按下了HOME键，离开了该任务。则必须有办法使用户通过某种途径回到该任务。一些活动（比如提示管理器）总是在其它的任务中启动活动，从不在自己的任务中启动。因此，其总是将 
+FLAG_ACTIVITY_NEW_TASK标志放入意图，传给startActivity()。如果你的活动可以由外部活动来调用，你可以使用该标志。注意，一定要保证用户可以返回其启动的任务。则必须有办法使用户通过某种途径回到该任务。 
+
+在不想让用户返回活动时，可以将<activity>的元素finishOnTaskLaunch 设为“true”。参见前面的堆的清除。 
+进程和线程
+当应用程序的第一个组件需要运行时，Android会为其启动一个包含一个线程的Linux进程。默认情况下，该应用程序的所有组件都会在该进程的该线程中运行。 
+然而，你可以使组件运行于其它进程，或者为任何进程启动一个线程。 
+进程
+进程是由清单文件控制的，组件运行的地方。组件元素 — <activity>、<service>、 <receiver>和<provider> — 
+都有一个process属性，用于指定组件在哪个进程中运行。这些属性可以设为每个组件有其独立的进程，也可以设成一些组件共享一个进程，其它的独占一个进程。也可以设置成，不同应用程序的组件在同一进程中运行 
+— 只要这些应用程序是由同一个作者签名并共享同一个Linux用户ID。 <application> 也有一个process属性用于设置应用到所有组件的默认值。 
+所有的组件都在指定的进程的主线程中运行，系统调用该线程中的组件。不同的线程不会创建不同的实例。因此，响应用户动作的方法比如View.onKeyDown() 
+以及后面的组件生命周期 
+中讨论的生命周期消息，总是只在进程的主线程中发生。这意味着，由系统调用的组件不应该长时间运行或阻断其它操作（比如网络操作、循环运算），因为这将阻碍进程中其它组件的运行。象下面的 
+线程中讨论的那样，你可以为耗时的操作分配单独的线程。 
+当更贴近用户的进程需要内存，并且内存不足时，Android可以在某一时点停止某个进程的执行。进程中的应用程序组件也被消毁。当它们再次运行时，进程重新启动这些组件。 
+
+当决定哪个进程被终止时，Android评估它们对用户的重要度。例如，与包含用户可见的活动的进程相比，包含用户不可见的活动的进程更容易被终止。因此，决定是否终止一个进程的执行，依赖于运行于该进程的组件的状态。这些状态作为组件生命周期一节的主题。 
+
+线程
+虽然你可以限制你的应用程序只在一个进程中执行，也会有需要其它线程来做一些后台处理。因为用户界面应该总是能够快速响应用户的动作，因此运行活动的线程不能同时运行象网络下载这样的耗时的操作。任何不能立即完成的操作都应该在不用的线程中执行。 
+
+线程是在代码中，使用标准JavaThread 对象创建的。 Android提供了一些方便的工具来管理线程 —Looper 用于在线程中执行消息循环、 
+Handler 用于处理消息、HandlerThread 用于设置一个带有消息循环的线程。 
+远程过程调用
+Android拥有轻量级的远程调用机制 (RPC) — 方法在本地调用，在远程执行(在其它进程中)，结果返回给调用者。 
+这意味着将方法调用及其附带的数据分解为操作系统可以理解的形式，将其由本地进程和地址空间传送到远程进程和地址空间中，在远程重新装配并执行该调用。返回值沿着相反的方向传递。Android提供了实现该机制的所有代码，因此你只需要关注于如何定义和实现该RPC接口本身。 
+
+RPC接口只能包含方法。所有的方法都是同步执行的（本地方法被阻断，直到远程方法结束），即使没有返回值。 
+简而言之，该机制的流程如下：你由使用简单的IDL（接口定义语言）定义要实现的RPC接口。根据接口的定义， aidl 
+工具生成本地和远程进程必要的Java接口的定义。它包含下图所示的两个内部类： 
+ 
+内部类中包含管理你用IDL生成的远程过程调用需要的所有代码。两个内部类都实现了IBinder 接口。其中一个在本地由系统内部使用，写代码时可以忽略它。另一个叫做 
+Stub，扩展自Binder 类。作为对执行IPC调用的内部代码补充，它包含你在RPC接口中声明的方法。象图中说明的那样，你应该继承Stub来实现这些方法。 
+一般远程过程由服务来管理（因为服务可以通知系统关于进程和它连接的其它进程的信息）。它既有aidl。服务的客户端只有由aidl生成的接口文件。 
+接下来是服务和其客户端是如何建立连接的： 
+  服务的客户端（为位于本地）应该实现onServiceConnected() 和onServiceDisconnected() 
+  方法，这样它们就可以在成功与远程服务建立或断开连接后收到消息。它们应该调用bindService() 来设置连接。 
+  服务的onBind() 方法应该被实现用作根据收到的意图（传入bindService()的意图），决定接受或拒绝连接。 
+  如果连接被接受，它返回一个Stub的子类。如果服务接受了连接，Android调用客户端的onServiceConnected() 
+  方法并传入一个IBinder对象，由服务管理的Stub子类的代理。通过该代理，客户端可以调用远程服务。 
+上述简单的描述忽略了一些RPC机制的细节。更多信息参见用AIDL设计远程接口和IBinder 类的描述。 
+线程安全方法
+一些情况下，你实现的方法可能被一个以上的线程调用，因此它必须是线程安全的。 
+这对于可以远程调用的方法，这是完全正确的—比如前一节讨论的RPC机制。当从IBinder的同一进程调用IBinder中实现的方法时，该方法将在掉调用者的线程中执行。然而，当该调用来自另一个进程时，该方法执行的线程是从由Android维护与IBinder处于相同进程的进程池中选择的；它不会在进程的主线程中执行。例如，服务的进程的主线程中的onBind() 
+方法被调用，onBind()返回的对象（比如实现了RPC方法的Stub子类）中实现的方法会在池中的线程中被调用。因为服务可以有一个以上的客户端，所以同时可以有一个以上的线程在执行同一个IBinder方法。因此，IBinder的方法必须是线程安全的。 
+
+同样，内容提供者可以接受来自其它进程的数据请求。虽然ContentResolver和ContentProvider类隐藏了如何管理进程间通信的细节，但是相应这些请求的ContentProvider方法— 
+query()、 insert()、 delete()、 update()和 getType() 
+—是从内容提供者进程的线程池中被调用的。因为这些方法可以同时从多个线程中调用，所以它们也必须是线程安全的。 
+组件生命周期
+应用程序组件具有生命周期—从Android生成它们用于响应一个意图开始，到实例被销毁为止。在这期间，它们可能有时处于激活状态，有时处于非激活状态，以及活动对用户是否可见。本节讨论活动、服务和广播接受器的生命周期—包括它们生存期间的状态、通知状态变化的方法、以及这些状态对实例的销毁和所在进程是否被中止的可能的影响。 
+
+活动的生命周期
+活动有三种状态：
+  激活状态或者运行状态，当它在屏幕的前台显示时（在当前活动堆的顶层）。就是具有用户操作焦点的活动。 
+  暂停状态，如果活动已经失去焦点、但是对用户依然可见。就是说另外的活动在它上面，但是它是透明的或者没有占满整个屏幕，通过它还可以看到暂停的活动。暂停的活动处于完全的生存状态（它维护着所有的状态和成员信息，保持着属于它的窗口管理器）。但是当系统内存极低时会被杀调。 
+
+  停止状态，如果它被其它活动完全遮挡。它仍然保持着所有的状态和成员信息。然而它对用户不可见，因此窗口被隐藏，当其它地方需要内存时，它将被系统杀掉。 
+如果活动处于暂停或停止状态，系统可以通知它结束运行（调用的它的 
+finish()方法），或者简单的杀掉进程。当它再次呈现给用户时，它必须重新启动并恢复到之前的状态。 
+当活动的状态发生变化时，系统通过调用如下保护方法来通知该变化： 
+void onCreate(Bundle savedInstanceState) 
+void onStart() 
+void onRestart() 
+void onResume() 
+void onPause() 
+void onStop() 
+void onDestroy()
+这些方法都是钩子，你可以重写它们，在状态变化时做一些适当的工作。所有的活动必须实现 onCreate() 
+，当对象首次实例化时做一些初始设置。很多活动会实现onPause() ，用于提交数据和准备结束与用户的交互。 
+调用父类
+任何活动实现的生命周期方法都应该首先调用父类的该方法。例如： 
+protected void onPause() {
+    super.onPause();
+    . . .
+}这七个方法定义了活动的整个生命周期。实现它们，你可以监视三层嵌套的循环： 
+  活动的整个生命周期从第一个调用onCreate() 
+  开始，直到最后调用onDestroy()为止。活动在onCreate()中做所有“全局“状态的设置，在onDestroy()中释放所有剩余的资源。例如，如果有一个线程在后台从网络上下载数据，它可能在onCreate()中创建该进程，在 
+  onDestroy()中停止该进程。 
+  The visible lifetime of an activity happens between a call to onStart() until 
+  a corresponding call to onStop(). During this time, the user can see the 
+  activity on-screen, though it may not be in the foreground and interacting 
+  with the user. Between these two methods, you can maintain resources that are 
+  needed to show the activity to the user. For example, you can register a 
+  BroadcastReceiver in onStart() to monitor for changes that impact your UI, and 
+  unregister it in onStop() when the user can no longer see what you are 
+  displaying. The onStart() and onStop() methods can be called multiple times, 
+  as the activity alternates between being visible and hidden to the user.
+  The foreground lifetime of an activity happens between a call to onResume() 
+  until a corresponding call to onPause(). During this time, the activity is in 
+  front of all other activities on screen and is interacting with the user. An 
+  activity can frequently transition between the resumed and paused states — for 
+  example, onPause() is called when the device goes to sleep or when a new 
+  activity is started, onResume() is called when an activity result or a new 
+  intent is delivered. Therefore, the code in these two methods should be fairly 
+  lightweight.
+The following diagram illustrates these loops and the paths an activity may take 
+between states. The colored ovals are major states the activity can be in. The 
+square rectangles represent the callback methods you can implement to perform 
+operations when the activity transitions between states. 
+
+The following table describes each of these methods in more detail and locates 
+it within the activity's overall lifecycle: 
+      MethodDescriptionKillable?Next
+      onCreate()Called when the activity is first created. This is where you 
+      should do all of your normal static set up — create views, bind data to 
+      lists, and so on. This method is passed a Bundle object containing the 
+      activity's previous state, if that state was captured (see Saving Activity 
+      State, later). 
+      Always followed by onStart().NoonStart()
+          onRestart()Called after the activity has been stopped, just prior to 
+      it being started again. 
+      Always followed by onStart()NoonStart()
+      onStart()Called just before the activity becomes visible to the user. 
+      Followed by onResume() if the activity comes to the foreground, or 
+      onStop() if it becomes hidden.NoonResume() 
+      or
+      onStop()
+          onResume()Called just before the activity starts interacting with the 
+      user. At this point the activity is at the top of the activity stack, with 
+      user input going to it. 
+      Always followed by onPause().NoonPause()
+      onPause()Called when the system is about to start resuming another 
+      activity. This method is typically used to commit unsaved changes to 
+      persistent data, stop animations and other things that may be consuming 
+      CPU, and so on. It should do whatever it does very quickly, because the 
+      next activity will not be resumed until it returns. 
+      Followed either by onResume() if the activity returns back to the front, 
+      or by onStop() if it becomes invisible to the user.YesonResume() 
+      or
+      onStop()
+      onStop()Called when the activity is no longer visible to the user. This 
+      may happen because it is being destroyed, or because another activity 
+      (either an existing one or a new one) has been resumed and is covering it. 
+
+      Followed either by onRestart() if the activity is coming back to interact 
+      with the user, or by onDestroy() if this activity is going 
+      away.YesonRestart() 
+      or
+      onDestroy()
+      onDestroy()Called before the activity is destroyed. This is the final call 
+      that the activity will receive. It could be called either because the 
+      activity is finishing (someone called finish() on it), or because the 
+      system is temporarily destroying this instance of the activity to save 
+      space. You can distinguish between these two scenarios with the 
+      isFinishing() method.Yesnothing
+
+Note the Killable column in the table above. It indicates whether or not the 
+system can kill the process hosting the activity at any time after the method 
+returns, without executing another line of the activity's code. Three methods 
+(onPause(), onStop(), and onDestroy()) are marked "Yes." Because onPause() is 
+the first of the three, it's the only one that's guaranteed to be called before 
+the process is killed — onStop() and onDestroy() may not be. Therefore, you 
+should use onPause() to write any persistent data (such as user edits) to 
+storage. 
+Methods that are marked "No" in the Killable column protect the process hosting 
+the activity from being killed from the moment they are called. Thus an activity 
+is in a killable state, for example, from the time onPause() returns to the time 
+onResume() is called. It will not again be killable until onPause() again 
+returns. 
+As noted in a later section, Processes and lifecycle, an activity that's not 
+technically "killable" by this definition might still be killed by the system — 
+but that would happen only in extreme and dire circumstances when there is no 
+other recourse. 
+Saving activity state
+When the system, rather than the user, shuts down an activity to conserve 
+memory, the user may expect to return to the activity and find it in its 
+previous state. 
+To capture that state before the activity is killed, you can implement an 
+onSaveInstanceState() method for the activity. Android calls this method before 
+making the activity vulnerable to being destroyed — that is, before onPause() is 
+called. It passes the method a Bundle object where you can record the dynamic 
+state of the activity as name-value pairs. When the activity is again started, 
+the Bundle is passed both to onCreate() and to a method that's called after 
+onStart(), onRestoreInstanceState(), so that either or both of them can recreate 
+the captured state. 
+Unlike onPause() and the other methods discussed earlier, onSaveInstanceState() 
+and onRestoreInstanceState() are not lifecycle methods. They are not always 
+called. For example, Android calls onSaveInstanceState() before the activity 
+becomes vulnerable to being destroyed by the system, but does not bother calling 
+it when the instance is actually being destroyed by a user action (such as 
+pressing the BACK key). In that case, the user won't expect to return to the 
+activity, so there's no reason to save its state. 
+Because onSaveInstanceState() is not always called, you should use it only to 
+record the transient state of the activity, not to store persistent data. Use 
+onPause() for that purpose instead. 
+Coordinating activities
+When one activity starts another, they both experience lifecycle transitions. 
+One pauses and may stop, while the other starts up. On occasion, you may need to 
+coordinate these activities, one with the other. 
+The order of lifecycle callbacks is well defined, particularly when the two 
+activities are in the same process: 
+  The current activity's onPause() method is called. 
+  Next, the starting activity's onCreate(), onStart(), and onResume() methods 
+  are called in sequence. 
+  Then, if the starting activity is no longer visible on screen, its onStop() 
+  method is called. 
+Service lifecycle
+A service can be used in two ways: 
+  It can be started and allowed to run until someone stops it or it stops 
+  itself. In this mode, it's started by calling Context.startService() and 
+  stopped by calling Context.stopService(). It can stop itself by calling 
+  Service.stopSelf() or Service.stopSelfResult(). Only one stopService() call is 
+  needed to stop the service, no matter how many times startService() was 
+  called. 
+  It can be operated programmatically using an interface that it defines and 
+  exports. Clients establish a connection to the Service object and use that 
+  connection to call into the service. The connection is established by calling 
+  Context.bindService(), and is closed by calling Context.unbindService(). 
+  Multiple clients can bind to the same service. If the service has not already 
+  been launched, bindService() can optionally launch it. 
+The two modes are not entirely separate. You can bind to a service that was 
+started with startService(). For example, a background music service could be 
+started by calling startService() with an Intent object that identifies the 
+music to play. Only later, possibly when the user wants to exercise some control 
+over the player or get information about the current song, would an activity 
+establish a connection to the service by calling bindService(). In cases like 
+this, stopService() will not actually stop the service until the last binding is 
+closed. 
+Like an activity, a service has lifecycle methods that you can implement to 
+monitor changes in its state. But they are fewer than the activity methods — 
+only three — and they are public, not protected: 
+void onCreate() 
+void onStart(Intent intent) 
+void onDestroy()
+By implementing these methods, you can monitor two nested loops of the service's 
+lifecycle: 
+  The entire lifetime of a service happens between the time onCreate() is called 
+  and the time onDestroy() returns. Like an activity, a service does its initial 
+  setup in onCreate(), and releases all remaining resources in onDestroy(). For 
+  example, a music playback service could create the thread where the music will 
+  be played in onCreate(), and then stop the thread in onDestroy(). 
+  The active lifetime of a service begins with a call to onStart(). This method 
+  is handed the Intent object that was passed to startService(). The music 
+  service would open the Intent to discover which music to play, and begin the 
+  playback.
+  There's no equivalent callback for when the service stops — no onStop() 
+  method. 
+The onCreate() and onDestroy() methods are called for all services, whether 
+they're started by Context.startService() or Context.bindService(). However, 
+onStart() is called only for services started by startService(). 
+If a service permits others to bind to it, there are additional callback methods 
+for it to implement: 
+IBinder onBind(Intent intent) 
+boolean onUnbind(Intent intent) 
+void onRebind(Intent intent)
+The onBind() callback is passed the Intent object that was passed to bindService 
+and onUnbind() is handed the intent that was passed to unbindService(). If the 
+service permits the binding, onBind() returns the communications channel that 
+clients use to interact with the service. The onUnbind() method can ask for 
+onRebind() to be called if a new client connects to the service. 
+The following diagram illustrates the callback methods for a service. Although, 
+it separates services that are created via startService from those created by 
+bindService(), keep in mind that any service, no matter how it's started, can 
+potentially allow clients to bind to it, so any service may receive onBind() and 
+onUnbind() calls. 
+
+Broadcast receiver lifecycle
+A broadcast receiver has single callback method: 
+void onReceive(Context curContext, Intent broadcastMsg)
+When a broadcast message arrives for the receiver, Android calls its onReceive() 
+method and passes it the Intent object containing the message. The broadcast 
+receiver is considered to be active only while it is executing this method. When 
+onReceive() returns, it is inactive. 
+A process with an active broadcast receiver is protected from being killed. But 
+a process with only inactive components can be killed by the system at any time, 
+when the memory it consumes is needed by other processes. 
+This presents a problem when the response to a broadcast message is time 
+consuming and, therefore, something that should be done in a separate thread, 
+away from the main thread where other components of the user interface run. If 
+onReceive() spawns the thread and then returns, the entire process, including 
+the new thread, is judged to be inactive (unless other application components 
+are active in the process), putting it in jeopardy of being killed. The solution 
+to this problem is for onReceive() to start a service and let the service do the 
+job, so the system knows that there is still active work being done in the 
+process. 
+The next section has more on the vulnerability of processes to being killed. 
+Processes and lifecycles
+The Android system tries to maintain an application process for as long as 
+possible, but eventually it will need to remove old processes when memory runs 
+low. To determine which processes to keep and which to kill, Android places each 
+process into an "importance hierarchy" based on the components running in it and 
+the state of those components. Processes with the lowest importance are 
+eliminated first, then those with the next lowest, and so on. There are five 
+levels in the hierarchy. The following list presents them in order of 
+importance: 
+  A foreground process is one that is required for what the user is currently 
+  doing. A process is considered to be in the foreground if any of the following 
+  conditions hold: 
+    It is running an activity that the user is interacting with (the Activity 
+    object's onResume() method has been called). 
+    It hosts a service that's bound to the activity that the user is interacting 
+    with.
+    It has a Service object that's executing one of its lifecycle callbacks 
+    (onCreate(), onStart(), or onDestroy()).
+    It has a BroadcastReceiver object that's executing its onReceive() method.
+  Only a few foreground processes will exist at any given time. They are killed 
+  only as a last resort — if memory is so low that they cannot all continue to 
+  run. Generally, at that point, the device has reached a memory paging state, 
+  so killing some foreground processes is required to keep the user interface 
+  responsive. 
+  A visible process is one that doesn't have any foreground components, but 
+  still can affect what the user sees on screen. A process is considered to be 
+  visible if either of the following conditions holds:
+    It hosts an activity that is not in the foreground, but is still visible to 
+    the user (its onPause() method has been called). This may occur, for 
+    example, if the foreground activity is a dialog that allows the previous 
+    activity to be seen behind it. 
+    It hosts a service that's bound to a visible activity.
+  A visible process is considered extremely important and will not be killed 
+  unless doing so is required to keep all foreground processes running. 
+  A service process is one that is running a service that has been started with 
+  the startService() method and that does not fall into either of the two higher 
+  categories. Although service processes are not directly tied to anything the 
+  user sees, they are generally doing things that the user cares about (such as 
+  playing an mp3 in the background or downloading data on the network), so the 
+  system keeps them running unless there's not enough memory to retain them 
+  along with all foreground and visible processes. 
+  A background process is one holding an activity that's not currently visible 
+  to the user (the Activity object's onStop() method has been called). These 
+  processes have no direct impact on the user experience, and can be killed at 
+  any time to reclaim memory for a foreground, visible, or service process. 
+  Usually there are many background processes running, so they are kept in an 
+  LRU (least recently used) list to ensure that the process with the activity 
+  that was most recently seen by the user is the last to be killed. If an 
+  activity implements its lifecycle methods correctly, and captures its current 
+  state, killing its process will not have a deleterious effect on the user 
+  experience. 
+  An empty process is one that doesn't hold any active application components. 
+  The only reason to keep such a process around is as a cache to improve startup 
+  time the next time a component needs to run in it. The system often kills 
+  these processes in order to balance overall system resources between process 
+  caches and the underlying kernel caches.
+Android ranks a process at the highest level it can, based upon the importance 
+of the components currently active in the process. For example, if a process 
+hosts a service and a visible activity, the process will be ranked as a visible 
+process, not a service process. 
+In addition, a process's ranking may be increased because other processes are 
+dependent on it. A process that is serving another process can never be ranked 
+lower than the process it is serving. For example, if a content provider in 
+process A is serving a client in process B, or if a service in process A is 
+bound to a component in process B, process A will always be considered at least 
+as important as process B. 
+Because a process running a service is ranked higher than one with background 
+activities, an activity that initiates a long-running operation might do well to 
+start a service for that operation, rather than simply spawn a thread — 
+particularly if the operation will likely outlast the activity. Examples of this 
+are playing music in the background and uploading a picture taken by the camera 
+to a web site. Using a service guarantees that the operation will have at least 
+"service process" priority, regardless of what happens to the activity. As noted 
+in the Broadcast receiver lifecycle section earlier, this is the same reason 
+that broadcast receivers should employ services rather than simply put 
+time-consuming operations in a thread. 
+↑ Go to top 
+除非另外注明，本文档基于 Creative Commons Attribution 2.5。限制及详细信息，参见 许可证内容。 
+服务条款 - 隐私策略 - 关于商标 

@@ -1,0 +1,1019 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="shortcut icon" type="image/x-icon" href="../../../favicon.ico"><title>User Interface | Android Developers</title>
+
+<link href="../../../assets/android-developer-docs-devguide.css" rel="stylesheet" type="text/css">
+<script src="../../../assets/search_autocomplete.js" type="text/javascript"></script>
+<script src="../../../assets/jquery-resizable.min.js" type="text/javascript"></script>
+<script src="../../../assets/android-developer-docs.js" type="text/javascript"></script>
+<script type="text/javascript">
+  setToRoot("../../../");
+</script>
+
+  <style type="text/css">
+    html,body{overflow:auto;}
+    #body-content{position:relative; top:0;}
+    #doc-content{overflow:visible;border-left:3px solid #666;}
+    #side-nav{padding:0;}
+    #side-nav .toggle-list ul {display:block;}
+    #resize-packages-nav{border-bottom:3px solid #666;}
+  </style></head><noscript></noscript><body class="gc-documentation">
+
+  <div id="header">
+      <div id="headerLeft">
+          <a href="../../../index.html" tabindex="-1"><img src="../../../assets/images/bg_logo.png" alt="Android Developers"></a>
+          <ul id="header-tabs" class="guide">
+    
+	<li id="home-link"><a href="../../../offline.html">
+	
+		<span class="en">Home</span>
+		<span style="display: none;" class="de">Startseite</span>
+		<span style="display: none;" class="es"></span>
+		<span style="display: none;" class="fr"></span>
+		<span style="display: none;" class="it"></span>
+    <span style="display: none;" class="ja">ホーム</span>
+		<span style="display: none;" class="zh-CN">主页</span>
+		<span style="display: none;" class="zh-TW">首頁</span>
+	
+	</a></li>
+	<li id="sdk-link"><a href="../../../sdk/index.html">
+		<span class="en">SDK</span>
+	</a></li>
+	<li id="guide-link"><a href="../../../guide/index.html" onclick="return loadLast('guide')">
+	
+		<span class="en">Dev Guide</span>
+		<span style="display: none;" class="de">Handbuch</span>
+		<span style="display: none;" class="es">Guía</span>
+		<span style="display: none;" class="fr">Guide</span>
+		<span style="display: none;" class="it">Guida</span>
+    <span style="display: none;" class="ja">開発ガイド</span>
+		<span style="display: none;" class="zh-CN">开发人员指南</span>
+		<span style="display: none;" class="zh-TW">開發指南</span>
+	
+	</a></li>
+	<li id="reference-link"><a href="../../../reference/packages.html" onclick="return loadLast('reference')">
+	
+		<span class="en">Reference</span>
+		<span style="display: none;" class="de">Referenz</span>
+		<span style="display: none;" class="es">Referencia</span>
+		<span style="display: none;" class="fr">Référence</span>
+		<span style="display: none;" class="it">Riferimento</span>
+    <span style="display: none;" class="ja">リファレンス</span>
+		<span style="display: none;" class="zh-CN">参考</span>
+		<span style="display: none;" class="zh-TW">參考資料</span>
+	
+	</a></li>
+	<li><a href="http://android-developers.blogspot.com" onclick="return requestAppendHL(this.href)">
+	
+		<span class="en">Blog</span>
+		<span style="display: none;" class="de"></span>
+		<span style="display: none;" class="es"></span>
+		<span style="display: none;" class="fr"></span>
+		<span style="display: none;" class="it"></span>
+    <span style="display: none;" class="ja">ブログ</span>
+		<span style="display: none;" class="zh-CN">博客</span>
+		<span style="display: none;" class="zh-TW">網誌</span>
+	
+	</a></li>
+	<li id="videos-link"><a href="../../../videos/index.html" onclick="return loadLast('videos')">
+	
+		<span class="en">Videos</span>
+		<span style="display: none;" class="de"></span>
+		<span style="display: none;" class="es"></span>
+		<span style="display: none;" class="fr"></span>
+		<span style="display: none;" class="it"></span>
+    <span style="display: none;" class="ja">ビデオ</span>
+		<span style="display: none;" class="zh-CN"></span>
+		<span style="display: none;" class="zh-TW"></span>
+	
+	</a></li>
+	<li id="community-link"><a href="../../../community/index.html">
+	
+		<span class="en">Community</span>
+		<span style="display: none;" class="de"></span>
+		<span style="display: none;" class="es">Comunidad</span>
+		<span style="display: none;" class="fr">Communauté</span>
+		<span style="display: none;" class="it"></span>
+    <span style="display: none;" class="ja">コミュニティ</span>
+		<span style="display: none;" class="zh-CN">社区</span>
+		<span style="display: none;" class="zh-TW">社群</span>
+	
+	</a></li>
+     
+</ul>
+     
+      </div>
+      <div id="headerRight">
+          <div id="headerLinks">
+          
+          <a href="http://www.android.com">Android.com</a>
+          </div>
+  <div id="search">
+      <div id="searchForm">
+          <form accept-charset="utf-8" class="gsc-search-box" onsubmit="return submit_search()">
+            <table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody>
+                <tr>
+                  <td class="gsc-input">
+                    <input id="search_autocomplete" class="gsc-input" size="33" autocomplete="off" title="search developer docs" name="q" value="search developer docs" onfocus="search_focus_changed(this, true)" onblur="search_focus_changed(this, false)" onkeydown="return search_changed(event, true, '../../../')" onkeyup="return search_changed(event, false, '../../../')" type="text">
+                  <div id="search_filtered_div" class="no-display">
+                      <table id="search_filtered" cellspacing="0">
+                      </table>
+                  </div>
+                  </td>
+                  <td class="gsc-search-button">
+                    <input value="Search" title="search" id="search-button" class="gsc-search-button" type="submit">
+                  </td>
+                  <td class="gsc-clear-button">
+                    <div title="clear results" class="gsc-clear-button">&nbsp;</div>
+                  <br>
+</td>
+                </tr></tbody>
+              </table>
+          </form>
+      </div><!-- searchForm -->
+  </div><!-- search -->
+      </div><!-- headerRight -->
+      <script type="text/javascript">
+        <!--  
+        changeTabLang(getLangPref());
+        //-->
+      </script>
+  </div><!-- header -->
+
+  <div class="g-section g-tpl-240" id="body-content">
+    <div class="g-unit g-first side-nav-resizable" id="side-nav">
+      <div id="devdoc-nav">
+<ul>
+
+  <li>
+    <h2><span class="en">Android Basics</span>
+        <span class="de" style="display: none;">Einführung in Android</span>
+        <span class="es" style="display: none;">Información básica sobre Android</span>
+        <span class="fr" style="display: none;">Présentation d'Android</span>
+        <span class="it" style="display: none;">Nozioni di base su Android</span>
+        <span class="ja" style="display: none;">Android の基本</span>
+        <span class="zh-CN" style="display: none;">Android 基础知识</span>
+        <span class="zh-TW" style="display: none;">Android 簡介</span>
+    </h2>
+    <ul>
+      <li><a href="../../../guide/basics/what-is-android.html">
+        <span class="en">What Is Android?</span>
+        <span class="de" style="display: none;">Was ist Android?</span>
+        <span class="es" style="display: none;">¿Qué es Android?</span>
+        <span class="fr" style="display: none;">Qu'est-ce qu'Android&nbsp;?</span>
+        <span class="it" style="display: none;">Che cos'è Android?</span>
+        <span class="ja" style="display: none;">Android とは</span>
+        <span class="zh-CN" style="display: none;">Android 是什么？</span>
+        <span class="zh-TW" style="display: none;">什麼是 Android？</span>
+          </a></li>
+
+  <!--  <li><a style="color:gray;">The Android SDK</a></li> -->
+  <!--  <li><a style="color:gray;">Walkthrough for Developers</a></li> -->
+      <!-- quick overview of what it's like to develop on Android -->
+    </ul>
+  </li>
+  
+  <li>
+    <h2>
+      <span class="en">Framework Topics</span>
+      <span class="de" style="display: none;">Framework-Themen</span>
+      <span class="es" style="display: none;">Temas sobre el framework</span>
+      <span class="fr" style="display: none;">Thèmes relatifs au framework</span>
+      <span class="it" style="display: none;">Argomenti relativi al framework</span>
+      <span class="ja" style="display: none;">フレームワーク トピック</span>
+      <span class="zh-CN" style="display: none;">框架主题</span>
+      <span class="zh-TW" style="display: none;">架構主題</span>
+    </h2>
+    <ul>
+      <li><a href="../../../guide/topics/fundamentals.html">
+            <span class="en">Application Fundamentals</span>
+            <span class="de" style="display: none;">Anwendungsgrundlagen</span>
+            <span class="es" style="display: none;">Fundamentos de las aplicaciones</span>
+            <span class="fr" style="display: none;">Principes de base des applications</span>
+            <span class="it" style="display: none;">Concetti fondamentali sulle applicazioni</span>
+            <span class="ja" style="display: none;">開発の基礎</span>
+            <span class="zh-CN" style="display: none;">应用程序基础</span>
+            <span class="zh-TW" style="display: none;">應用程式基本原理</span>
+
+          </a></li>
+    </ul>
+    <ul>
+      <li class="toggle-list">
+        <div><a href="../../../guide/topics/ui/index.html">
+               <span class="en">User Interface</span>
+             </a></div>
+        <ul>
+          <li><a href="../../../guide/topics/ui/declaring-layout.html">
+               <span class="en">Declaring Layout</span> 
+              </a></li>
+          <li><a href="../../../guide/topics/ui/menus.html">
+               <span class="en">Creating Menus</span> 
+              </a></li>
+          <li><a href="../../../guide/topics/ui/dialogs.html">
+                <span class="en">Creating Dialogs</span> 
+              </a></li>
+          <li><a href="../../../guide/topics/ui/ui-events.html">
+                <span class="en">Handling UI Events</span> 
+              </a></li>
+          <li><a href="../../../guide/topics/ui/notifiers/index.html">
+                <span class="en">Notifying the User</span> 
+              </a></li>
+          <li><a href="../../../guide/topics/ui/themes.html">
+                <span class="en">Applying Styles and Themes</span> 
+              </a></li>
+          <li><a href="../../../guide/topics/ui/custom-components.html">
+                <span class="en">Building Custom Components</span> 
+              </a></li>
+          <li><a href="../../../guide/topics/ui/binding.html">
+                <span class="en">Binding to Data with AdapterView</span> 
+              </a></li>
+          <li><a href="../../../guide/topics/ui/layout-objects.html">
+                <span class="en">Common Layout Objects</span> 
+              </a></li>
+          <li><a href="../../../guide/topics/ui/how-android-draws.html">
+                <span class="en">How Android Draws Views</span> 
+              </a></li>
+        </ul>
+      </li>
+      <li class="toggle-list">
+        <div><a href="../../../guide/topics/resources/index.html">
+               <span class="en">Resources and Assets</span> 
+             </a></div>
+        <ul>
+          <li><a href="../../../guide/topics/resources/resources-i18n.html">
+                <span class="en">Resources and I18n</span>
+              </a></li>
+          <li><a href="../../../guide/topics/resources/available-resources.html">
+                <span class="en">Available Resource Types</span>
+              </a></li>
+          <li><a href="../../../guide/topics/resources/localization.html">
+                <span class="en">Localization</span>
+              </a></li>
+        </ul>
+      </li>
+      <li><a href="../../../guide/topics/intents/intents-filters.html">
+            <span class="en">Intents and Intent Filters</span>
+          </a></li>
+      <li><a href="../../../guide/topics/data/data-storage.html">
+            <span class="en">Data Storage</span>
+          </a></li>
+      <li><a href="../../../guide/topics/providers/content-providers.html">
+            <span class="en">Content Providers</span>
+          </a></li>
+      <li><a href="../../../guide/topics/security/security.html">
+            <span class="en">Security and Permissions</span>
+          </a></li>
+  <!--  <li><a style="color:gray;">Processes and Threads</a></li> -->
+  <!--  <li><a style="color:gray;">Interprocess Communication</a></li> -->
+      <li class="toggle-list">
+        <div><a href="../../../guide/topics/manifest/manifest-intro.html">
+               <span class="en">The AndroidManifest.xml File</span>
+             </a></div>
+        <ul>
+          <li><a href="../../../guide/topics/manifest/action-element.html">&lt;action&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/activity-element.html">&lt;activity&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/activity-alias-element.html">&lt;activity-alias&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/application-element.html">&lt;application&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/category-element.html">&lt;category&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/data-element.html">&lt;data&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/grant-uri-permission-element.html">&lt;grant-uri-permission&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/instrumentation-element.html">&lt;instrumentation&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/intent-filter-element.html">&lt;intent-filter&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/manifest-element.html">&lt;manifest&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/meta-data-element.html">&lt;meta-data&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/path-permission-element.html">&lt;path-permission&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/permission-element.html">&lt;permission&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/permission-group-element.html">&lt;permission-group&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/permission-tree-element.html">&lt;permission-tree&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/provider-element.html">&lt;provider&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/receiver-element.html">&lt;receiver&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/service-element.html">&lt;service&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/supports-screens-element.html">&lt;supports-screens&gt;</a></li>  <!-- ##api level 4## -->
+          <li><a href="../../../guide/topics/manifest/uses-configuration-element.html">&lt;uses-configuration&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/uses-feature-element.html">&lt;uses-feature&gt;</a></li> <!-- ##api level 4## -->
+          <li><a href="../../../guide/topics/manifest/uses-library-element.html">&lt;uses-library&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/uses-permission-element.html">&lt;uses-permission&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/uses-sdk-element.html">&lt;uses-sdk&gt;</a></li>
+        </ul>
+      </li>
+    </ul>
+    <ul>
+      <li class="toggle-list">
+        <div><a href="../../../guide/topics/graphics/index.html">
+               <span class="en">Graphics</span>
+             </a></div>
+        <ul>
+          <li><a href="../../../guide/topics/graphics/2d-graphics.html">
+                <span class="en">2D Graphics</span>
+              </a></li>
+          <li><a href="../../../guide/topics/graphics/opengl.html">
+                <span class="en">3D with OpenGL</span>
+              </a></li>
+        </ul>
+      </li>
+      <li><a href="../../../guide/topics/media/index.html">
+            <span class="en">Audio and Video</span>
+          </a></li>
+  <!--<li class="toggle-list">
+        <div><a style="color:gray;">Sensors</a></div>
+          <ul>
+            <li><a style="color:gray;">Camera</a></li>
+            <li><a style="color:gray;">Compass</a></li>
+            <li><a style="color:gray;">Accelerometer</a></li>
+          </ul>
+      </li> -->
+      <li><a href="../../../guide/topics/location/index.html">
+            <span class="en">Location and Maps</span>
+          </a></li>
+  <!--<li class="toggle-list">
+        <div><a style="color:gray;">Wireless Controls</a></div>
+          <ul>
+            <li><a style="color:gray;">Wi-Fi</a></li>
+            <li><a style="color:gray;">Bluetooth</a></li>
+          </ul>
+      </li> -->
+  <!--<li><a style="color:gray;">Localization</a></li>  -->
+      <li><a href="../../../guide/topics/appwidgets/index.html">
+            <span class="en">App Widgets</span>
+          </a></li>
+    </ul>
+  </li>
+  
+  <li>
+    <h2><span class="en">Developing</span>
+               <span class="de" style="display: none;">Entwicklung</span>
+               <span class="es" style="display: none;">Desarrollo</span>
+               <span class="fr" style="display: none;">Développement</span>
+               <span class="it" style="display: none;">Sviluppo</span>
+               <span class="ja" style="display: none;">開発</span>
+               <span class="zh-CN" style="display: none;">开发</span>
+               <span class="zh-TW" style="display: none;">開發</span>
+    </h2>
+    <ul>
+  <!--<li><a href="">Developing for Android</a></li>
+      signing, upgrading, selecting a package name, select device profile, touch, trackball, dpad available, etc. -->
+      <li><a href="../../../guide/developing/eclipse-adt.html">
+            <span class="en">In Eclipse, with ADT</span> 
+            <span class="de" style="display: none;">In Eclipse, mit ADT</span>
+            <span class="es" style="display: none;">En Eclipse, con ADT</span>
+            <span class="fr" style="display: none;">Sous Eclipse, à l'aide du plugin ADT</span>
+            <span class="it" style="display: none;">In Eclipse, con ADT</span>
+            <span class="ja" style="display: none;">Eclipse 内で ADT を使用</span>
+            <span class="zh-CN" style="display: none;">利用 ADT 在 Eclipse 中开发</span>
+            <span class="zh-TW" style="display: none;">在加裝 ADT 工具的 Eclipse 環境中</span>
+          </a></li>
+      <li><a href="../../../guide/developing/other-ide.html">
+            <span class="en">In Other IDEs</span>
+            <span class="de" style="display: none;">In anderen IDEs</span>
+            <span class="es" style="display: none;">En otros entornos</span>
+            <span class="fr" style="display: none;">Sous d'autres environnements</span>
+            <span class="it" style="display: none;">In altri IDE</span>
+            <span class="ja" style="display: none;">その他の統合開発環境</span>
+            <span class="zh-CN" style="display: none;">在其他 IDE 中开发</span>
+            <span class="zh-TW" style="display: none;">在其他開發環境中</span>
+          </a></li>
+      <li><a href="../../../guide/developing/device.html">
+            <span class="en">On a Device</span>
+          </a></li>
+      <li><a href="../../../guide/developing/debug-tasks.html">
+            <span class="en">Debugging Tasks</span>
+          </a></li>
+      <li class="toggle-list">
+        <div><a href="../../../guide/developing/tools/index.html">
+            <span class="en">Tools</span>
+          </a></div>
+        <ul>
+      		<li><a href="../../../guide/developing/tools/aapt.html">aapt</a></li>
+      		<li><a href="../../../guide/developing/tools/adb.html">adb</a></li>
+      		<li><a href="../../../guide/developing/tools/othertools.html#android">android</a></li>
+      <!--<li><a href="../../../guide/developing/tools/adt.html">ADT Plugin</a></li>-->
+      		<li><a href="../../../guide/developing/tools/aidl.html">aidl</a></li>
+      		<li><a href="../../../guide/developing/tools/avd.html">AVDs</a></li>
+      		<li><a href="../../../guide/developing/tools/ddms.html">ddms</a></li>
+      		<li><a href="../../../guide/developing/tools/othertools.html#dx">dx</a></li>
+      		<li><a href="../../../guide/developing/tools/draw9patch.html">Draw 9-Patch</a></li>
+      		<li><a href="../../../guide/developing/tools/emulator.html">Emulator</a></li>
+      		<li><a href="../../../guide/developing/tools/hierarchy-viewer.html">Hierarchy Viewer</a></li>
+      		<li><a href="../../../guide/developing/tools/layoutopt.html">layoutopt</a></li>
+      		<li><a href="../../../guide/developing/tools/othertools.html#mksdcard">mksdcard</a></li>
+      		<li><a href="../../../guide/developing/tools/monkey.html">Monkey</a></li>
+      		<li><a href="../../../guide/developing/tools/adb.html#sqlite">sqlite3</a></li>
+      		<li><a href="../../../guide/developing/tools/traceview.html">Traceview</a></li>
+      		<li><a href="../../../guide/developing/tools/zipalign.html">zipalign</a></li>
+    	  </ul>
+  	  </li>
+  <!--<li><a href="../../../guide/developing/instrumentation/index.html">Instrumentation</a></li>
+      <li><a style="color:gray;">JUnit</a></li> -->
+    </ul>
+  </li>
+  
+  <li>
+    <h2><span class="en">Publishing</span>
+        <span class="de" style="display: none;">Veröffentlichung</span>
+        <span class="es" style="display: none;">Publicación</span>
+        <span class="fr" style="display: none;">Publication</span>
+        <span class="it" style="display: none;">Pubblicazione</span>
+        <span class="ja" style="display: none;">公開</span>
+        <span class="zh-CN" style="display: none;">发布</span>
+        <span class="zh-TW" style="display: none;">發佈</span>
+    </h2>
+    <ul>
+      <li><a href="../../../guide/publishing/app-signing.html">
+            <span class="en">Signing Your Applications</span>
+            <span class="de" style="display: none;">Signieren Ihrer Anwendungen</span>
+            <span class="es" style="display: none;">Firma de aplicaciones</span>
+            <span class="fr" style="display: none;">Attribution de votre signature <br>à vos applications</span>
+            <span class="it" style="display: none;">Firma delle applicazioni</span>
+            <span class="ja" style="display: none;">アプリケーションへの署名</span>
+            <span class="zh-CN" style="display: none;">应用程序签名</span>
+            <span class="zh-TW" style="display: none;">簽署應用程式</span>
+          </a></li>
+      <li><a href="../../../guide/publishing/versioning.html">
+            <span class="en">Versioning Your Applications</span>
+            <span class="de" style="display: none;">Versionsverwaltung für Ihre <br>Anwendungen</span>
+            <span class="es" style="display: none;">Versiones de las aplicaciones</span>
+            <span class="fr" style="display: none;">Attribution d'une version à vos applications</span>
+            <span class="it" style="display: none;">Controllo versioni delle applicazioni</span>
+            <span class="ja" style="display: none;">アプリケーションのバージョニング</span>
+            <span class="zh-CN" style="display: none;">应用程序版本控制</span>
+            <span class="zh-TW" style="display: none;">應用程式版本設定</span>
+          </a></li>
+      <li><a href="../../../guide/publishing/preparing.html">
+            <span class="en">Preparing to Publish</span>
+            <span class="de" style="display: none;">Vorbereitung auf die Veröffentlichung</span>
+            <span class="es" style="display: none;">Publicación de aplicaciones</span>
+            <span class="fr" style="display: none;">Préparation à la publication</span>
+            <span class="it" style="display: none;">Preparativi per la pubblicazione</span>
+            <span class="ja" style="display: none;">公開の準備</span>
+            <span class="zh-CN" style="display: none;">准备发布</span>
+            <span class="zh-TW" style="display: none;">準備發佈</span>
+          </a></li>
+      <li><a href="../../../guide/publishing/publishing.html">
+            <span class="en">Publishing Your Applications</span>
+          </a></li>
+    </ul>
+  </li>
+  
+  <li>
+    <h2><span class="en">Best Practices</span>
+               <span class="de" style="display: none;">Bewährte Verfahren</span>
+               <span class="es" style="display: none;">Prácticas recomendadas</span>
+               <span class="fr" style="display: none;">Meilleures pratiques</span>
+               <span class="it" style="display: none;">Best practice</span>
+               <span class="ja" style="display: none;">ベスト プラクティス</span>
+               <span class="zh-CN" style="display: none;">最佳实践</span>
+               <span class="zh-TW" style="display: none;">最佳實務</span>
+    </h2>
+    <ul>
+      <li><a href="../../../guide/practices/screens_support.html">
+            <span class="en">Supporting Multiple Screens</span>
+          </a></li>
+      <li class="toggle-list">
+        <div><a href="../../../guide/practices/ui_guidelines/index.html">
+               <span class="en">UI Guidelines</span>
+             </a></div>
+        <ul>
+          <li><a href="../../../guide/practices/ui_guidelines/icon_design.html">
+                <span class="en">Icon Design</span>
+              </a></li>
+          <li><a href="../../../guide/practices/ui_guidelines/widget_design.html">
+                <span class="en">App Widget Design</span>
+              </a></li>
+          <li><a href="../../../guide/practices/ui_guidelines/activity_task_design.html">
+                <span class="en">Activity and Task Design</span>
+              </a></li>
+          <li><a href="../../../guide/practices/ui_guidelines/menu_design.html">
+                <span class="en">Menu Design</span>
+              </a></li>
+        </ul>
+      </li>
+      </ul>
+      <ul>
+      <li><a href="../../../guide/practices/design/performance.html">
+            <span class="en">Designing for Performance</span>
+          </a></li>
+      <li><a href="../../../guide/practices/design/responsiveness.html">
+            <span class="en">Designing for Responsiveness</span>
+          </a></li>
+      <li><a href="../../../guide/practices/design/seamlessness.html">
+            <span class="en">Designing for Seamlessness</span>
+          </a></li>
+    </ul>
+  </li>
+  
+  <li>
+    <h2><span class="en">Tutorials and Sample Code</span>
+               <span class="de" style="display: none;">Lernprogramme und Beispielcode</span>
+               <span class="es" style="display: none;">Tutoriales y código de ejemplo</span>
+               <span class="fr" style="display: none;">Didacticiels et exemple de code</span>
+               <span class="it" style="display: none;">Esercitazioni e codice di esempio</span>
+               <span class="ja" style="display: none;">チュートリアルとサンプル コード</span>
+               <span class="zh-CN" style="display: none;">辅导手册和示例代码</span>
+               <span class="zh-TW" style="display: none;">教學課程與程式碼範例</span>
+    </h2>
+    <ul>
+      <li><a href="../../../guide/tutorials/hello-world.html">
+            <span class="en">Hello World</span>
+          </a></li>
+      <li><a href="../../../guide/tutorials/views/index.html">
+            <span class="en">Hello Views</span>
+          </a></li>
+      <li><a href="../../../guide/tutorials/localization/index.html">
+            <span class="en">Hello Localization</span>
+          </a></li>
+      <li><a href="../../../guide/tutorials/notepad/index.html">
+            <span class="en">Notepad Tutorial</span>
+          </a></li>
+    </ul>
+    <ul>
+      <li class="toggle-list">
+        <div><a href="../../../guide/samples/index.html">
+               <span class="en">Sample Code</span>
+             </a></div>
+        <ul>
+          <li><a href="../../../guide/samples/ApiDemos/index.html">
+                <span class="en">API Demos</span>
+              </a></li>
+          <li><a href="../../../guide/samples/Home/index.html">
+                <span class="en">Home</span>
+              </a></li>
+          <li><a href="../../../guide/samples/JetBoy/index.html">
+                <span class="en">JetBoy</span>
+              </a></li>
+          <li><a href="../../../guide/samples/LunarLander/index.html">
+                <span class="en">Lunar Lander</span>
+              </a></li>
+          <li><a href="../../../guide/samples/NotePad/index.html">
+                <span class="en">Note Pad</span>
+              </a></li>
+          <li><a href="../../../guide/samples/SearchableDictionary/index.html">
+                <span class="en">Searchable Dictionary</span>
+              </a></li>
+          <li><a href="../../../guide/samples/Snake/index.html">
+                <span class="en">Snake</span>
+              </a></li>
+          <li><a href="../../../guide/samples/SoftKeyboard/index.html">
+                <span class="en">Soft Keyboard</span>
+              </a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  
+
+  <li>
+    <h2><span class="en">Appendix</span>
+               <span class="de" style="display: none;">Anhang</span>
+               <span class="es" style="display: none;">Apéndice</span>
+               <span class="fr" style="display: none;">Annexes</span>
+               <span class="it" style="display: none;">Appendice</span>
+               <span class="ja" style="display: none;">付録</span>
+               <span class="zh-CN" style="display: none;">附录</span>
+               <span class="zh-TW" style="display: none;">附錄</span>
+    </h2>
+    <ul>
+      <li><a href="../../../guide/appendix/api-levels.html">
+            <span class="en">Android API Levels</span>
+          </a></li>
+      <li><a href="../../../guide/appendix/media-formats.html">
+            <span class="en">Supported Media Formats</span>
+          </a></li>
+      <li><a href="../../../guide/appendix/g-app-intents.html">
+            <span class="en">Intents List: Google Apps</span>
+          </a></li>
+      <li><a href="../../../guide/appendix/glossary.html">
+            <span class="en">Glossary</span>
+          </a></li>
+      <li><a href="../../../guide/appendix/faq/index.html">
+            <span class="en">FAQ</span>
+          </a></li>
+    </ul>
+  </li>
+
+</ul>
+
+<script type="text/javascript">
+<!--
+    buildToggleLists();
+    changeNavLang(getLangPref());
+//-->
+</script>
+
+      </div>
+    </div> <!-- end side-nav -->
+    <script>
+      addLoadEvent(function() {
+        scrollIntoView("devdoc-nav");
+        });
+    </script>
+
+
+
+
+<div class="g-unit" id="doc-content"><a name="top"></a>
+
+<div id="jd-header" class="guide-header">
+  <span class="crumb">
+    &nbsp;
+    
+  </span>
+<h1>User Interface——用户界面</h1>
+</div>
+
+  <div id="jd-content">
+
+
+    <div class="jd-descr">
+    <div id="qv-wrapper">
+<div id="qv">
+
+  <h2>Key classes——关键类</h2>
+  <ol>
+    <li><code><a href="../../../reference/android/view/View.html">View</a></code></li>
+    <li><code><a href="../../../reference/android/view/ViewGroup.html">ViewGroup</a></code></li>
+    <li><code><a href="../../../reference/android/widget/package-summary.html">Widget classes</a></code></li>
+  </ol>
+
+  <h2>In this document——在这篇文档中</h2>
+  <ol>
+    <li><a href="#ViewHierarchy">View Hierarchy——可视窗层</a></li>
+    <li><a href="#Layout">Layout——布局</a></li>
+    <li><a href="#Widgets">Widgets——桌面小插件</a></li>
+    <li><a href="#Events">UI Events——UI事件</a></li>
+    <li><a href="#Menus">Menus——菜单</a></li>
+    <li><a href="#Advanced">Advanced Topics——进阶话题</a>
+      <ol>
+        <li><a href="#Adapters">Adapters——</a></li>
+        <li><a href="#StylesAndThemes">Styles and Themes——风格和主题</a></li>
+      </ol>
+    </li>
+  </ol>
+</div>
+</div>
+
+<p>In an Android application, the user interface is built using <code><a href="../../../reference/android/view/View.html">View</a></code> and 
+<code><a href="../../../reference/android/view/ViewGroup.html">ViewGroup</a></code> objects. There are many types of views and view groups, each of which 
+is a descendant of the <code><a href="../../../reference/android/view/View.html">View</a></code> class.<br>
+在一个Android应用程序中，用户界面是由<code><a href="../../../reference/android/view/View.html">View</a></code>和<code><a href="../../../reference/android/view/ViewGroup.html">ViewGroup</a></code>对象构成的。可视窗和可视窗组有很多种类型，他们都是由<code><a href="../../../reference/android/view/View.html">View</a></code>类继承来的。<br>
+</p>
+
+<p>View objects are the basic units of user interface expression on the Android platform. 
+The View class serves as the base for subclasses called "widgets," which offer fully implemented
+UI objects, like text fields and buttons. The ViewGroup class serves as the base for subclasses called "layouts,"
+which offer different kinds of layout architecture, like linear, tabular and relative.<br>
+View对象是在Android平台上用户界面进行表达的基本单位。View类是叫做“控件”的子类的基本类，“控件“提供了完整的UI对象
+的实现，想文本输入框和按钮。ViewGroup类是”布局“子类的基类，”布局“提供了多种布局结构，像线型布局，表单布局，相对位置布局。<br>
+</p>
+
+<p>A View object is a data structure whose properties store the layout parameters and content for a specific 
+rectangular area of the screen. A View object handles its own measurement, layout, drawing, focus change, 
+scrolling, and key/gesture interactions for the rectangular area of the screen in which it resides. As an
+object in the user interface, a View is also a point of interaction for the user and the receiver
+of the interaction events.<br>
+View对象是一个数据结构，数据结构的属性
+存储了布局参数，内容储存了指定的屏幕的一块矩形区域。View对象控制自己所在的矩形屏幕的尺寸，布局，窗口绘制，用户关注的改变，屏幕滚动，还有按键
+/手势的交互。作为用户界面中的对象，View对象还是用户动作事件和事件相应之间的连接点。<br>
+</p>
+
+
+<h2 id="ViewHierarchy">View Hierarchy——可视窗的层级</h2>
+
+<p>On the Android platform, you define an Activity's UI using a hierarchy of View and ViewGroup nodes, 
+as shown in the diagram below. This hierarchy tree can be as simple or complex as you need it to be, and you 
+can build it up using Android's set of predefined widgets and layouts, or with custom Views that you 
+create yourself.<br>
+在Android平台上，您用一层组的View和ViewGroup节点来定义活动的UI界面，就像下面图中所示。层级树可以随您的需要简单或复杂，而且您可以使用Android已经定义好的控件的布局或您自己设计的View类来建造层级树。<br>
+</p>
+
+<img src="../../../images/viewgroup.png" alt="" align="middle" height="211" width="312">
+
+<p>
+In order to attach the view hierarchy tree to the screen for rendering, your Activity must call the
+<code><code><a href="../../../reference/android/app/Activity.html#setContentView%28int%29">setContentView()</a></code></code> 
+method and pass a reference to the root node object. The Android system
+receives this reference and uses it to invalidate, measure, and draw the tree. The root node of the hierarchy requests 
+that its child nodes draw themselves — in turn, each view group node is responsible for calling 
+upon each of its own child views to draw themselves.
+The children may request a size and location within the parent, but the parent object has the final 
+decision on where how big each child can be.  Android parses 
+the elements of your layout in-order (from the top of the hierarchy tree), instantiating the Views and 
+adding them to their parent(s). Because these are drawn in-order, if there are elements that
+overlap positions, the last one to be drawn will lie on top of others previously drawn to that space.</p>
+	<p>
+您的Activity必须调用<code><a href="../../../reference/android/app/Activity.html#setContentView%28int%29">setContentView()</a></code>方法来将层级树和屏幕显示连接并进行调整，调用时您需要处在根节点的对象的引用传给方法。Android系统接收那个引用，然后使用它对层级树进行作废处理、测量、然后对树进行显示。根节点依次要求他的子节点将他们自己绘制出来，每一个可视窗组对象节点职责是要求他的子节点绘制各自。子可视窗会在父可视窗中请求一块可视窗的大小和位置，但是父可视窗有大小和位置的最终决定权。Android依次（从层级树根节点向下）解析您的布局中的元素，将View实例化，将他们加入父可视窗中。因为是顺序绘制的，因此，在重叠的部分，后一次绘制的会出现在上一次绘制的之上。</p>
+
+<p>For a more detailed discussion on how view hierarchies are measured
+and drawn, read <a href="how-android-draws.html">How Android Draws Views</a>.</p>
+	<p>层级树是如何测量和绘制的，请参见<a href="how-android-draws.html">How Android Draws Views</a>。</p>
+
+
+<h2 id="Layout">Layout——布局</h2>
+
+<p>The most common way to define your layout and express the view hierarchy is with an XML layout file.
+XML offers a human-readable structure for the layout, much like HTML. Each element in XML is 
+either a View or ViewGroup object (or descendent thereof). View objects are leaves in the tree, 
+ViewGroup objects are branches in the tree (see the View Hierarchy figure above).</p>
+	<p>
+	最常见的定义布局表现层级树的方法是使用XML布局配置文件。XML配置文件为布局提供了一种人类可读懂的结构形式，很像HTML。XML中的每个元素都是View对象或ViewGroup对象（或者是有他们衍生出来的类对象）。元素树中最子的元素是View对象，View对象归在ViewGroup对象下（参看上边可视窗层级图展现的结构）。</p>
+<p>The name of an XML element
+is respective to the Java class that it represents. So a <code>&lt;TextView&gt;</code> element creates
+a <code><a href="../../../reference/android/widget/TextView.html">TextView</a></code> in your UI, and a <code>&lt;LinearLayout&gt;</code> element creates
+a <code><a href="../../../reference/android/widget/LinearLayout.html">LinearLayout</a></code> view group. When you load a layout resource, 
+the Android system initializes these run-time objects, corresponding to the elements in your layout.</p>
+	<p>XML的元素的名字视他代表的Java类而定。所以一个<code>&lt;TextView&gt;</code>元素就会在您的UI中创建一个<code><a href="../../../reference/android/widget/TextView.html">TextView</a></code>对象，一个<code>&lt;LinearLayout&gt;</code>元素就会在您的UI中创建一个 <code><a href="../../../reference/android/widget/LinearLayout.html">LinearLayout</a></code>可视窗组。当您加载一个布局文件资源时，Android系统会初始化这些运行时对象，与布局文件中的元素进行对应。</p>
+
+<p>For example, a simple vertical layout with a text view and a button looks like this:</p>
+	<p>例如，一个简单的带有文本阅读和一个按钮的垂直布局结构：</p>
+<pre>&lt;?xml version="1.0" encoding="utf-8"?&gt;<br>&lt;LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"<br>              android:layout_width="fill_parent" <br>              android:layout_height="fill_parent"<br>              android:orientation="vertical" &gt;<br>    &lt;TextView android:id="@+id/text"<br>              android:layout_width="wrap_content"<br>              android:layout_height="wrap_content"<br>              android:text="Hello, I am a TextView" /&gt;<br>    &lt;Button android:id="@+id/button"<br>            android:layout_width="wrap_content"<br>            android:layout_height="wrap_content"<br>            android:text="Hello, I am a Button" /&gt;<br>&lt;/LinearLayout&gt;<br></pre>
+
+<p>Notice that the LinearLayout element contains both the TextView and the Button. You can nest
+another LinearLayout (or other type of view group) inside here, to lengthen the view hierarchy and create a more
+complex layout.</p>
+	<p>注意，LinearLayout 元素包含了TextView和Button。您可以在这里面嵌套其他的LinearLayout 
+	（或其他类型的可视窗组），来增长层级树，创建一个更加复杂的布局。</p>
+
+<p>For more on building a UI layout, read <a href="declaring-layout.html">Declaring Layout</a>.
+
+</p>
+	<p>更多有关创建UI布局，请阅读<a href="declaring-layout.html">Declaring Layout</a>。</p><div class="sidebox-wrapper">
+<div class="sidebox-inner">
+  <p><b>Tip:</b> You can also draw View and ViewGroups objects in Java code, 
+  using the <code><code><a href="../../../reference/android/view/ViewGroup.html#addView%28android.view.View%29">addView(View)</a></code></code> methods 
+  to dynamically insert new View and ViewGroup objects.</p>
+	<p><strong>小贴士：</strong>您也可以使用Java代码进行View和ViewGroup的绘制，使用<code><a href="../../../reference/android/view/ViewGroup.html#addView%28android.view.View%29">addView(View)</a></code>方法动态的插入新View和ViewGroup对象。</p>
+</div>
+</div>
+
+<p>There are a variety of ways in which you can layout your views. Using more and different kinds of view groups,
+you can structure child views and view groups in an infinite number of ways.
+Some pre-defined view groups offered by Android (called layouts) include LinearLayout, RelativeLayout,
+TableLayout, GridLayout and others. Each offers a unique set of layout parameters that are used to define the
+positions of child views and layout structure.</p>
+	<p>有很多种方法可以对您的可视窗进行布局。通过使用&nbsp;&nbsp; 更多的和不同的&nbsp;&nbsp; 
+	种类的可视窗组，您可以有无数种方法构造子可视窗和可视窗组。Android提供了一些已经定义好的可视窗组（叫做自带布局），包括LinearLayout（线型布局）， 
+	RelativeLayout（相关布局）， TableLayout（表单布局）， 
+	GridLayout（网格布局）等等。每一个都提供了独特的一系列用以定义子可视窗位置和布局结构的布局参数。</p>
+<p>To learn about some of the different kinds of view groups used for a layout, 
+read <a href="layout-objects.html">Common Layout Objects</a>.</p>
+	<p>用于布局的各种可视窗组的详细信息，请阅读<a href="layout-objects.html">Common Layout Objects</a>。</p>
+
+
+<h2 id="Widgets">Widgets——控件</h2>
+
+<p>A widget is a View object that serves as an interface for interaction with the user. 
+Android provides a set of fully implemented 
+widgets, like buttons, checkboxes, and text-entry fields, so you can quickly build your UI. 
+Some widgets provided by Android are more complex, like a date picker, a clock, and zoom controls.
+But you're not limited to the kinds of widgets provided by the Android platform. If you'd
+like to do something more customized and create your own actionable elements, you can, by defining your own 
+View object or by extending and combining existing widgets.</p>
+	<p>控件是一种View对象，他是与用户进行交互的&nbsp; 接点&nbsp; 
+	。Android提供了一系列已经完全实现的控件，像按钮，多选列表，文本输入框等，用这些您就可以快速的构建您的UI了。有些Android提供的控件要更复杂一些，像时间输入对话框，钟表，放大/缩小控制。但是您能使用的控件不是限制在Android平台提供的控件内的。如果您想自由发挥，您可以通过定义自己的View对象来实现更个性化的可动作的元素，自己的View可以继承并扩展 
+	或是 结合&nbsp;&nbsp; 已有的控件。</p>
+<p>Read more in <a href="custom-components.html">Building Custom Components</a>.</p>
+	<p>更多信息请阅读<a href="custom-components.html">Building Custom Components</a>。</p>
+
+<p>For a list of the widgets provided by Android, see the <code><a href="../../../reference/android/widget/package-summary.html">android.widget</a></code> package.</p>
+	<p>Android提供的控件的列表，请参见<code><a href="../../../reference/android/widget/package-summary.html">android.widget</a></code>包的信息。</p>
+
+
+<h2 id="Events">UI Events——UI事件</h2>
+
+<p>Once you've added some Views/widgets to the UI, you probably want to know about the 
+user's interaction with them, so you can perform actions. To be informed of UI events, you need to 
+do one of two things:</p>
+	<p>当您将Views/widgets添加到UI中后，您可能会想要知道用户和他们之间得交互，因此，您需要做出响应。获得UI事件，您需要做：</p>
+<ul>
+  <li><strong>Define an event listener and register it with the View.</strong> More often than not,
+this is how you'll listen for events. The View class contains a collection of nested interfaces named
+On<em>&lt;something&gt;</em>Listener, each with a callback method called <code>On<em>&lt;something&gt;</em>()</code>.
+For example, <code><a href="../../../reference/android/view/View.OnClickListener.html">View.OnClickListener</a></code> (for handling "clicks" on a View),
+<code><a href="../../../reference/android/view/View.OnTouchListener.html">View.OnTouchListener</a></code> (for handling touch screen events in a View), and
+<code><a href="../../../reference/android/view/View.OnKeyListener.html">View.OnKeyListener</a></code> (for handling device key presses within a View). So if you want your View
+to be notified when it is "clicked" (such as when a button is selected), implement OnClickListener and define
+its <code>onClick()</code> callback method (where you perform the action upon click), and register it
+to the View with <code><code><a href="../../../reference/android/view/View.html#setOnClickListener%28android.view.View.OnClickListener%29">setOnClickListener()</a></code></code>.
+	<br>
+	<strong>定义一个事件监听器然后向View注册。</strong>这是用的最多的监听事件的方法。View类包含一系列嵌套其中的叫做On<em>&lt;要监听的动作&gt;</em>Listener 
+	的接口，每一个都有一个叫的<code>On<em>&lt;要监听的动作&gt;</em>()</code>回调方法。例如，<code><a href="../../../reference/android/view/View.OnClickListener.html">View.OnClickListener</a></code> 
+	（处理发生在View 上的“click”事件），<code><a href="../../../reference/android/view/View.OnTouchListener.html">View.OnTouchListener</a></code> (处理 View中的触摸屏幕的事件), and
+<code><a href="../../../reference/android/view/View.OnKeyListener.html">View.OnKeyListener</a></code> 
+	(处理发生在View内的按键事件)。因此，如果您想在您的活动在被&quot;clicked&quot;（例如用户点击View中的一个按钮）时得到通知，您就需要实现OnClickListener然后定义它的<code>onClick()</code>回调方法（即您在事件发生时做的响应），然后使用<code><a href="../../../reference/android/view/View.html#setOnClickListener%28android.view.View.OnClickListener%29">setOnClickListener()</a></code>向View注册。</li>
+  <li><strong>Override an existing callback method for the View.</strong> This is
+what you should do when you've implemented your own View class and want to listen for specific events 
+that occur within it. Example events you can handle include when the
+screen is touched (<code><code><a href="../../../reference/android/view/View.html#onTouchEvent%28android.view.MotionEvent%29">onTouchEvent()</a></code></code>), when
+the trackball is moved (<code><code><a href="../../../reference/android/view/View.html#onTrackballEvent%28android.view.MotionEvent%29">onTrackballEvent()</a></code></code>), 
+or when a key on the device is pressed (<code><code><a href="../../../reference/android/view/View.html#onKeyDown%28int,%20android.view.KeyEvent%29">onKeyDown()</a></code></code>). This allows you to define the default behavior for each event inside your custom View and determine
+whether the event should be passed on to some other child View. Again, these are callbacks to the View class,
+so your only chance to define them is when you 
+<a href="../../../guide/topics/ui/custom-components.html">build a custom component</a>.
+	<br>
+	<strong>为View重写已存在的回调方法。</strong>如果您想要监听发生在其中的特别的事件时，这是您实现您自己的View类之后要做的。可以这样操作的事件的例子包括屏幕被触摸（<code><a href="../../../reference/android/view/View.html#onTouchEvent%28android.view.MotionEvent%29">onTouchEvent()</a></code>），轨迹球移动（<code><a href="../../../reference/android/view/View.html#onTrackballEvent%28android.view.MotionEvent%29">onTrackballEvent()</a></code>），按键被按下（<code><a href="../../../reference/android/view/View.html#onKeyDown%28int,%20android.view.KeyEvent%29">onKeyDown()</a></code>）。这种方法允许您定义您的View响应事件的默认动作，还允许您决定事件是否会被传递给一些子View。还是那句话，这些都是View类的回调方法，因此，您只有在<a href="../../../guide/topics/ui/custom-components.html">build a custom component</a>时，您才能这样进行回调动作的定义。</li>
+</ul>
+
+<p>Continue reading about handling user interaction with Views in the <a href="ui-events.html">Handling UI Events</a>
+document.</p>
+	<p>继续阅读有关使用View响应用户交互的内容，参见<a href="ui-events.html">Handling UI Events</a>
+	document文档。</p>
+
+
+<h2 id="Menus">Menus——菜单</h2>
+
+<p>Application menus are another important part of an application's UI. Menus offers a reliable interface that reveals
+application functions and settings. The most common application menu is revealed by pressing
+the MENU key on the device. However, you can also add Context Menus, which may be revealed when the user presses
+and holds down on an item.</p>
+	<p>
+	应用程序的菜单是应用程序UI的另一重要部分。菜单提供了一种显现应用程序功能和设置的可靠接口。通常应用程序菜单使用设备上的MENU键调出。但是，您也可以添加环境菜单，就是当用户长按屏幕上某个项目时显现的菜单。</p>
+
+<p>Menus are also structured using a View hierarchy, but you don't define this structure yourself. Instead,
+you define the <code><code><a href="../../../reference/android/app/Activity.html#onCreateOptionsMenu%28android.view.Menu%29">onCreateOptionsMenu()</a></code></code> or 
+<code><code><a href="../../../reference/android/app/Activity.html#onCreateContextMenu%28android.view.ContextMenu,%20android.view.View,%20android.view.ContextMenu.ContextMenuInfo%29">onCreateContextMenu()</a></code></code> 
+callback methods for your Activity and declare the items that you want to include in your menu. 
+At the appropriate time, Android will automatically create the necessary View hierarchy for the menu and 
+draw each of your menu items in it.</p>
+	<p>菜单也是用View层级组织起来的，但不是由您自己定义结构的。而是，您定义活动的<code><a href="../../../reference/android/app/Activity.html#onCreateOptionsMenu%28android.view.Menu%29">onCreateOptionsMenu()</a></code>或<code><a href="../../../reference/android/app/Activity.html#onCreateContextMenu%28android.view.ContextMenu,%20android.view.View,%20android.view.ContextMenu.ContextMenuInfo%29">onCreateContextMenu()</a></code>回调方法然后声明您想要包含在菜单中的项目。在恰当的时候，Android会自动的为菜单创建必要的View层级然后将您的菜单项目绘制在其中。</p>
+
+<p>Menus also handle their own events, so there's no need to register event listeners on the items in your menu.
+When an item in your menu is selected, the <code><code><a href="../../../reference/android/app/Activity.html#onOptionsItemSelected%28android.view.MenuItem%29">onOptionsItemSelected()</a></code></code> or 
+<code><code><a href="../../../reference/android/app/Activity.html#onContextItemSelected%28android.view.MenuItem%29">onContextItemSelected()</a></code></code>
+method will be called by the framework.</p>
+	<p>菜单还自己控制其自己的事件，因此没有必要为您的菜单项目注册事件监听器。菜单中某项目被选中时，<code><a href="../../../reference/android/app/Activity.html#onOptionsItemSelected%28android.view.MenuItem%29">onOptionsItemSelected()</a></code>或<code><a href="../../../reference/android/app/Activity.html#onContextItemSelected%28android.view.MenuItem%29">onContextItemSelected()</a></code>方法会被系统调用。</p>
+
+<p>And just like your application layout, you have the option to declare the items for you menu in an XML file.</p>
+	<p>而且就像您的应用程序布局一样，您也可以选择在XML文件中定义您的菜单的项目。</p>
+
+<p>Read <a href="../../../guide/topics/ui/menus.html">Creating Menus</a> to learn more.</p>
+	<p>了解更多请阅读<a href="../../../guide/topics/ui/menus.html">Creating Menus</a>。</p>
+
+
+<h2 id="Advanced">Advanced Topics——进阶问题</h2>
+
+<p>Once you've grappled the fundamentals of creating a user interface, you can explore
+some advanced features for creating a more complex application interface.</p>
+	<p>当您掌握了创建一个用户界面的基本知识后，您可以探索一些创建更加复杂的应用程序界面的高级功能。</p>
+
+<h3 id="Adapters">Adapters——连接器</h3>
+
+<p>Sometimes you'll want to populate a view group with some information that can't be hard-coded, instead, 
+you want to bind your view to an external source of data. To do this, you use an AdapterView as
+your view group and each child View is initialized and populated with data from the Adapter.</p>
+	<p>有时您可能会想要向可视窗组中填充一些不能被“硬编码”的信息，就是说，您想要将您的可视窗绑定到外部的数据资源。这时，您需要使用一个 
+	AdapterView 作为您可视窗组，然后没一个子可视窗由Adapter的数据进行初始化和填充。</p>
+<p>The AdapterView object is an implementation of ViewGroup that determines its child views
+based on a given Adapter object. The Adapter acts like a courier between your data source (perhaps an
+array of external strings) and the AdapterView, which displays it. There are several implementations
+of the Adapter class, for specific tasks, such as the CursorAdapter for reading database data from a Cursor,
+or an ArrayAdapter for reading from an arbitrary array.<br>
+AdapterView对象是基于一个给定Adapter对象的&nbsp; ViewGroup（决定他的子可视窗）&nbsp;&nbsp; 
+的实现。Adapter扮演一个您的数据资源（可能是一系列的外部字符流）和对外部数据进行显示的AdapterView之间的信使的角色。对每种特殊任务都有不同的Adapter类的实现，像&nbsp;&nbsp; 
+从Cursor中读取数据库数据使用CursorAdapter ，使用 ArrayAdapter来从任意数组中读取数据。</p>
+<p>To learn more about using an Adapter to populate your views, read 
+<a href="binding.html">Binding to Data with AdapterView</a>.<br>
+更多有关使用Adapter填充您的可视窗，请阅读 
+<a href="binding.html">Binding to Data with AdapterView</a>。</p>
+
+
+<h3 id="StylesAndThemes">Styles and Themes——样式和主题</h3>
+
+<p>Perhaps you're not satisfied with the look of the standard widgets. To revise them, you can create some 
+of your own styles and themes.<br>
+可能您对标准的控件的外观不满意。您可以创建一些您自己的样式和主题对默认外观进行修改。</p>
+
+<ul>
+  <li>A style is a set of one or more formatting attributes that you can apply as a unit to individual elements 
+in your layout. For example, you could define a style that specifies a certain text size and color, then 
+apply it to only specific View elements.<br>
+	样式是一系列的 
+	一个或多个可以作为单元用到您布局中的单独的元素的格式属性。例如，您可以定义一个制指定了某种文字大小和颜色的样式，然后，将他只用到指定的View元素中。</li>
+  <li>A theme is a set of one or more formatting attributes that you can apply as a unit to all activities in 
+an application, or just a single activity. For example, you could define a theme that sets specific colors for 
+the window frame and the panel background, and sets text sizes and colors for menus. This theme can then be 
+applied to specific activities or the entire application.<br>
+	主题是一系列的 一个或多个可以作为一个单元用到应用程序的一个或所有活动的格式属性。例如，您可以定义一个&nbsp; 
+	为窗口框和面板背景设定特殊颜色，又设定了菜单的颜色和文字大小&nbsp;&nbsp;&nbsp; 
+	的主题。这个主题可以被用到特定的活动或整个应用程序中的活动。</li>
+</ul>
+
+<p>Styles and themes are resources. Android provides some default style and theme resources that you can use, 
+or you can declare your own custom style and theme resources.<br>
+样式和主题都是资源文件。Android提供了一些默认的样式和主题资源供您使用，您也可以声明个性化的样式和主题资源。</p>
+<p>Learn more about using styles and themes in the
+<a href="themes.html">Applying Styles and Themes</a> document.<br>
+学习更多有关样式和主题知识，参见<a href="themes.html">Applying Styles and Themes</a>文档。</p>
+
+    </div>
+
+  <a href="#top" style="float: right;">↑ Go to top</a>
+  
+  </div>
+
+<div id="footer">
+
+
+  <div id="copyright">
+    
+  Except as noted, this content is licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0</a>. 
+  For details and restrictions, see the <a href="../../../license.html">
+  Content License</a>.
+  </div>
+  <div id="build_info">
+    
+  Android 2.0.1&nbsp;r1 - 24 Nov 2009 18:21
+
+  </div>
+
+  <div id="footerlinks">
+    
+  <p>
+    <a href="http://www.android.com/terms.html">Site Terms of Service</a> -
+    <a href="http://www.android.com/privacy.html">Privacy Policy</a> -
+    <a href="http://www.android.com/branding.html">Brand Guidelines</a>
+  </p>
+  </div>
+
+</div> <!-- end footer -->
+
+</div><!-- end doc-content -->
+
+</div> <!-- end body-content --> 
+
+<script type="text/javascript">
+init(); /* initialize android-developer-docs.js */
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-5831155-1");
+pageTracker._trackPageview();
+</script>
+
+</body></html>

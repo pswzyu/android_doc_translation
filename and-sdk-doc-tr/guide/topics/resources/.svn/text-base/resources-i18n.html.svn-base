@@ -1,0 +1,1713 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="shortcut icon" type="image/x-icon" href="../../../favicon.ico" />
+<title>Resources and Internationalization | Android Developers</title>
+<link href="../../../assets/android-developer-docs-devguide.css" rel="stylesheet" type="text/css" />
+<script src="../../../assets/search_autocomplete.js" type="text/javascript"></script>
+<script src="../../../assets/jquery-resizable.min.js" type="text/javascript"></script>
+<script src="../../../assets/android-developer-docs.js" type="text/javascript"></script>
+<script type="text/javascript">
+  setToRoot("../../../");
+</script>
+<noscript>
+  <style type="text/css">
+    html,body{overflow:auto;}
+    #body-content{position:relative; top:0;}
+    #doc-content{overflow:visible;border-left:3px solid #666;}
+    #side-nav{padding:0;}
+    #side-nav .toggle-list ul {display:block;}
+    #resize-packages-nav{border-bottom:3px solid #666;}
+  </style>
+</noscript>
+</head>
+
+<body class="gc-documentation">
+
+  <div id="header">
+      <div id="headerLeft">
+          <a href="../../../index.html" tabindex="-1"><img
+              src="../../../assets/images/bg_logo.png" alt="Android Developers" /></a>
+          <ul id="header-tabs" class="guide">
+    
+	<li id="home-link"><a href="../../../offline.html">
+	
+		<span class="en">Home</span>
+		<span style="display:none" class="de">Startseite</span>
+		<span style="display:none" class="es"></span>
+		<span style="display:none" class="fr"></span>
+		<span style="display:none" class="it"></span>
+    <span style="display:none" class="ja">ホーム</span>
+		<span style="display:none" class="zh-CN">主页</span>
+		<span style="display:none" class="zh-TW">首頁</span>
+	
+	</a></li>
+	<li id="sdk-link"><a href="../../../sdk/index.html">
+		<span class="en">SDK</span>
+	</a></li>
+	<li id="guide-link"><a href="../../../guide/index.html" onClick="return loadLast('guide')">
+	
+		<span class="en">Dev Guide</span>
+		<span style="display:none" class="de">Handbuch</span>
+		<span style="display:none" class="es">Guía</span>
+		<span style="display:none" class="fr">Guide</span>
+		<span style="display:none" class="it">Guida</span>
+    <span style="display:none" class="ja">開発ガイド</span>
+		<span style="display:none" class="zh-CN">开发人员指南</span>
+		<span style="display:none" class="zh-TW">開發指南</span>
+	
+	</a></li>
+	<li id="reference-link"><a href="../../../reference/packages.html" onClick="return loadLast('reference')">
+	
+		<span class="en">Reference</span>
+		<span style="display:none" class="de">Referenz</span>
+		<span style="display:none" class="es">Referencia</span>
+		<span style="display:none" class="fr">Référence</span>
+		<span style="display:none" class="it">Riferimento</span>
+    <span style="display:none" class="ja">リファレンス</span>
+		<span style="display:none" class="zh-CN">参考</span>
+		<span style="display:none" class="zh-TW">參考資料</span>
+	
+	</a></li>
+	<li><a href="http://android-developers.blogspot.com" onClick="return requestAppendHL(this.href)">
+	
+		<span class="en">Blog</span>
+		<span style="display:none" class="de"></span>
+		<span style="display:none" class="es"></span>
+		<span style="display:none" class="fr"></span>
+		<span style="display:none" class="it"></span>
+    <span style="display:none" class="ja">ブログ</span>
+		<span style="display:none" class="zh-CN">博客</span>
+		<span style="display:none" class="zh-TW">網誌</span>
+	
+	</a></li>
+	<li id="videos-link"><a href="../../../videos/index.html" onClick="return loadLast('videos')">
+	
+		<span class="en">Videos</span>
+		<span style="display:none" class="de"></span>
+		<span style="display:none" class="es"></span>
+		<span style="display:none" class="fr"></span>
+		<span style="display:none" class="it"></span>
+    <span style="display:none" class="ja">ビデオ</span>
+		<span style="display:none" class="zh-CN"></span>
+		<span style="display:none" class="zh-TW"></span>
+	
+	</a></li>
+	<li id="community-link"><a href="../../../community/index.html">
+	
+		<span class="en">Community</span>
+		<span style="display:none" class="de"></span>
+		<span style="display:none" class="es">Comunidad</span>
+		<span style="display:none" class="fr">Communauté</span>
+		<span style="display:none" class="it"></span>
+    <span style="display:none" class="ja">コミュニティ</span>
+		<span style="display:none" class="zh-CN">社区</span>
+		<span style="display:none" class="zh-TW">社群</span>
+	
+	</a></li>
+     
+</ul>
+     
+      </div>
+      <div id="headerRight">
+          <div id="headerLinks">
+          
+          <a href="http://www.android.com">Android.com</a>
+          </div>
+  <div id="search" >
+      <div id="searchForm">
+          <form accept-charset="utf-8" class="gsc-search-box" 
+                onsubmit="return submit_search()">
+            <table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody>
+                <tr>
+                  <td class="gsc-input">
+                    <input id="search_autocomplete" class="gsc-input" type="text" size="33" autocomplete="off"
+                      title="search developer docs" name="q"
+                      value="search developer docs"
+                      onFocus="search_focus_changed(this, true)"
+                      onBlur="search_focus_changed(this, false)"
+                      onkeydown="return search_changed(event, true, '../../../')"
+                      onkeyup="return search_changed(event, false, '../../../')" />
+                  <div id="search_filtered_div" class="no-display">
+                      <table id="search_filtered" cellspacing=0>
+                      </table>
+                  </div>
+                  </td>
+                  <td class="gsc-search-button">
+                    <input type="submit" value="Search" title="search" id="search-button" class="gsc-search-button" />
+                  </td>
+                  <td class="gsc-clear-button">
+                    <div title="clear results" class="gsc-clear-button">&nbsp;</div>
+                  </td>
+                </tr></tbody>
+              </table>
+          </form>
+      </div><!-- searchForm -->
+  </div><!-- search -->
+      </div><!-- headerRight -->
+      <script type="text/javascript">
+        <!--  
+        changeTabLang(getLangPref());
+        //-->
+      </script>
+  </div><!-- header -->
+
+  <div class="g-section g-tpl-240" id="body-content">
+    <div class="g-unit g-first side-nav-resizable" id="side-nav">
+      <div id="devdoc-nav">
+<ul>
+
+  <li>
+    <h2><span class="en">Android Basics</span>
+        <span class="de" style="display:none">Einführung in Android</span>
+        <span class="es" style="display:none">Información básica sobre Android</span>
+        <span class="fr" style="display:none">Présentation d'Android</span>
+        <span class="it" style="display:none">Nozioni di base su Android</span>
+        <span class="ja" style="display:none">Android の基本</span>
+        <span class="zh-CN" style="display:none">Android 基础知识</span>
+        <span class="zh-TW" style="display:none">Android 簡介</span>
+    </h2>
+    <ul>
+      <li><a href="../../../guide/basics/what-is-android.html">
+        <span class="en">What Is Android?</span>
+        <span class="de" style="display:none">Was ist Android?</span>
+        <span class="es" style="display:none">¿Qué es Android?</span>
+        <span class="fr" style="display:none">Qu'est-ce qu'Android&nbsp;?</span>
+        <span class="it" style="display:none">Che cos'è Android?</span>
+        <span class="ja" style="display:none">Android とは</span>
+        <span class="zh-CN" style="display:none">Android 是什么？</span>
+        <span class="zh-TW" style="display:none">什麼是 Android？</span>
+          </a></li>
+
+  <!--  <li><a style="color:gray;">The Android SDK</a></li> -->
+  <!--  <li><a style="color:gray;">Walkthrough for Developers</a></li> -->
+      <!-- quick overview of what it's like to develop on Android -->
+    </ul>
+  </li>
+  
+  <li>
+    <h2>
+      <span class="en">Framework Topics</span>
+      <span class="de" style="display:none">Framework-Themen</span>
+      <span class="es" style="display:none">Temas sobre el framework</span>
+      <span class="fr" style="display:none">Thèmes relatifs au framework</span>
+      <span class="it" style="display:none">Argomenti relativi al framework</span>
+      <span class="ja" style="display:none">フレームワーク トピック</span>
+      <span class="zh-CN" style="display:none">框架主题</span>
+      <span class="zh-TW" style="display:none">架構主題</span>
+    </h2>
+    <ul>
+      <li><a href="../../../guide/topics/fundamentals.html">
+            <span class="en">Application Fundamentals</span>
+            <span class="de" style="display:none">Anwendungsgrundlagen</span>
+            <span class="es" style="display:none">Fundamentos de las aplicaciones</span>
+            <span class="fr" style="display:none">Principes de base des applications</span>
+            <span class="it" style="display:none">Concetti fondamentali sulle applicazioni</span>
+            <span class="ja" style="display:none">開発の基礎</span>
+            <span class="zh-CN" style="display:none">应用程序基础</span>
+            <span class="zh-TW" style="display:none">應用程式基本原理</span>
+
+          </a></li>
+    </ul>
+    <ul>
+      <li class="toggle-list">
+        <div><a href="../../../guide/topics/ui/index.html">
+               <span class="en">User Interface</span>
+             </a></div>
+        <ul>
+          <li><a href="../../../guide/topics/ui/declaring-layout.html">
+               <span class="en">Declaring Layout</span> 
+              </a></li>
+          <li><a href="../../../guide/topics/ui/menus.html">
+               <span class="en">Creating Menus</span> 
+              </a></li>
+          <li><a href="../../../guide/topics/ui/dialogs.html">
+                <span class="en">Creating Dialogs</span> 
+              </a></li>
+          <li><a href="../../../guide/topics/ui/ui-events.html">
+                <span class="en">Handling UI Events</span> 
+              </a></li>
+          <li><a href="../../../guide/topics/ui/notifiers/index.html">
+                <span class="en">Notifying the User</span> 
+              </a></li>
+          <li><a href="../../../guide/topics/ui/themes.html">
+                <span class="en">Applying Styles and Themes</span> 
+              </a></li>
+          <li><a href="../../../guide/topics/ui/custom-components.html">
+                <span class="en">Building Custom Components</span> 
+              </a></li>
+          <li><a href="../../../guide/topics/ui/binding.html">
+                <span class="en">Binding to Data with AdapterView</span> 
+              </a></li>
+          <li><a href="../../../guide/topics/ui/layout-objects.html">
+                <span class="en">Common Layout Objects</span> 
+              </a></li>
+          <li><a href="../../../guide/topics/ui/how-android-draws.html">
+                <span class="en">How Android Draws Views</span> 
+              </a></li>
+        </ul>
+      </li>
+      <li class="toggle-list">
+        <div><a href="../../../guide/topics/resources/index.html">
+               <span class="en">Resources and Assets</span> 
+             </a></div>
+        <ul>
+          <li><a href="../../../guide/topics/resources/resources-i18n.html">
+                <span class="en">Resources and I18n</span>
+              </a></li>
+          <li><a href="../../../guide/topics/resources/available-resources.html">
+                <span class="en">Available Resource Types</span>
+              </a></li>
+          <li><a href="../../../guide/topics/resources/localization.html">
+                <span class="en">Localization</span>
+              </a></li>
+        </ul>
+      </li>
+      <li><a href="../../../guide/topics/intents/intents-filters.html">
+            <span class="en">Intents and Intent Filters</span>
+          </a></li>
+      <li><a href="../../../guide/topics/data/data-storage.html">
+            <span class="en">Data Storage</span>
+          </a></li>
+      <li><a href="../../../guide/topics/providers/content-providers.html">
+            <span class="en">Content Providers</span>
+          </a></li>
+      <li><a href="../../../guide/topics/security/security.html">
+            <span class="en">Security and Permissions</span>
+          </a></li>
+  <!--  <li><a style="color:gray;">Processes and Threads</a></li> -->
+  <!--  <li><a style="color:gray;">Interprocess Communication</a></li> -->
+      <li class="toggle-list">
+        <div><a href="../../../guide/topics/manifest/manifest-intro.html">
+               <span class="en">The AndroidManifest.xml File</span>
+             </a></div>
+        <ul>
+          <li><a href="../../../guide/topics/manifest/action-element.html">&lt;action&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/activity-element.html">&lt;activity&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/activity-alias-element.html">&lt;activity-alias&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/application-element.html">&lt;application&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/category-element.html">&lt;category&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/data-element.html">&lt;data&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/grant-uri-permission-element.html">&lt;grant-uri-permission&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/instrumentation-element.html">&lt;instrumentation&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/intent-filter-element.html">&lt;intent-filter&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/manifest-element.html">&lt;manifest&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/meta-data-element.html">&lt;meta-data&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/path-permission-element.html">&lt;path-permission&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/permission-element.html">&lt;permission&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/permission-group-element.html">&lt;permission-group&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/permission-tree-element.html">&lt;permission-tree&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/provider-element.html">&lt;provider&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/receiver-element.html">&lt;receiver&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/service-element.html">&lt;service&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/supports-screens-element.html">&lt;supports-screens&gt;</a></li>  <!-- ##api level 4## -->
+          <li><a href="../../../guide/topics/manifest/uses-configuration-element.html">&lt;uses-configuration&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/uses-feature-element.html">&lt;uses-feature&gt;</a></li> <!-- ##api level 4## -->
+          <li><a href="../../../guide/topics/manifest/uses-library-element.html">&lt;uses-library&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/uses-permission-element.html">&lt;uses-permission&gt;</a></li>
+          <li><a href="../../../guide/topics/manifest/uses-sdk-element.html">&lt;uses-sdk&gt;</a></li>
+        </ul>
+      </li>
+    </ul>
+    <ul>
+      <li class="toggle-list">
+        <div><a href="../../../guide/topics/graphics/index.html">
+               <span class="en">Graphics</span>
+             </a></div>
+        <ul>
+          <li><a href="../../../guide/topics/graphics/2d-graphics.html">
+                <span class="en">2D Graphics</span>
+              </a></li>
+          <li><a href="../../../guide/topics/graphics/opengl.html">
+                <span class="en">3D with OpenGL</span>
+              </a></li>
+        </ul>
+      </li>
+      <li><a href="../../../guide/topics/media/index.html">
+            <span class="en">Audio and Video</span>
+          </a></li>
+  <!--<li class="toggle-list">
+        <div><a style="color:gray;">Sensors</a></div>
+          <ul>
+            <li><a style="color:gray;">Camera</a></li>
+            <li><a style="color:gray;">Compass</a></li>
+            <li><a style="color:gray;">Accelerometer</a></li>
+          </ul>
+      </li> -->
+      <li><a href="../../../guide/topics/location/index.html">
+            <span class="en">Location and Maps</span>
+          </a></li>
+  <!--<li class="toggle-list">
+        <div><a style="color:gray;">Wireless Controls</a></div>
+          <ul>
+            <li><a style="color:gray;">Wi-Fi</a></li>
+            <li><a style="color:gray;">Bluetooth</a></li>
+          </ul>
+      </li> -->
+  <!--<li><a style="color:gray;">Localization</a></li>  -->
+      <li><a href="../../../guide/topics/appwidgets/index.html">
+            <span class="en">App Widgets</span>
+          </a></li>
+    </ul>
+  </li>
+  
+  <li>
+    <h2><span class="en">Developing</span>
+               <span class="de" style="display:none">Entwicklung</span>
+               <span class="es" style="display:none">Desarrollo</span>
+               <span class="fr" style="display:none">Développement</span>
+               <span class="it" style="display:none">Sviluppo</span>
+               <span class="ja" style="display:none">開発</span>
+               <span class="zh-CN" style="display:none">开发</span>
+               <span class="zh-TW" style="display:none">開發</span>
+    </h2>
+    <ul>
+  <!--<li><a href="">Developing for Android</a></li>
+      signing, upgrading, selecting a package name, select device profile, touch, trackball, dpad available, etc. -->
+      <li><a href="../../../guide/developing/eclipse-adt.html">
+            <span class="en">In Eclipse, with ADT</span> 
+            <span class="de" style="display:none">In Eclipse, mit ADT</span>
+            <span class="es" style="display:none">En Eclipse, con ADT</span>
+            <span class="fr" style="display:none">Sous Eclipse, à l'aide du plugin ADT</span>
+            <span class="it" style="display:none">In Eclipse, con ADT</span>
+            <span class="ja" style="display:none">Eclipse 内で ADT を使用</span>
+            <span class="zh-CN" style="display:none">利用 ADT 在 Eclipse 中开发</span>
+            <span class="zh-TW" style="display:none">在加裝 ADT 工具的 Eclipse 環境中</span>
+          </a></li>
+      <li><a href="../../../guide/developing/other-ide.html">
+            <span class="en">In Other IDEs</span>
+            <span class="de" style="display:none">In anderen IDEs</span>
+            <span class="es" style="display:none">En otros entornos</span>
+            <span class="fr" style="display:none">Sous d'autres environnements</span>
+            <span class="it" style="display:none">In altri IDE</span>
+            <span class="ja" style="display:none">その他の統合開発環境</span>
+            <span class="zh-CN" style="display:none">在其他 IDE 中开发</span>
+            <span class="zh-TW" style="display:none">在其他開發環境中</span>
+          </a></li>
+      <li><a href="../../../guide/developing/device.html">
+            <span class="en">On a Device</span>
+          </a></li>
+      <li><a href="../../../guide/developing/debug-tasks.html">
+            <span class="en">Debugging Tasks</span>
+          </a></li>
+      <li class="toggle-list">
+        <div><a href="../../../guide/developing/tools/index.html">
+            <span class="en">Tools</span>
+          </a></div>
+        <ul>
+      		<li><a href="../../../guide/developing/tools/aapt.html">aapt</a></li>
+      		<li><a href="../../../guide/developing/tools/adb.html">adb</a></li>
+      		<li><a href="../../../guide/developing/tools/othertools.html#android">android</a></li>
+      <!--<li><a href="../../../guide/developing/tools/adt.html">ADT Plugin</a></li>-->
+      		<li><a href="../../../guide/developing/tools/aidl.html">aidl</a></li>
+      		<li><a href="../../../guide/developing/tools/avd.html">AVDs</a></li>
+      		<li><a href="../../../guide/developing/tools/ddms.html">ddms</a></li>
+      		<li><a href="../../../guide/developing/tools/othertools.html#dx">dx</a></li>
+      		<li><a href="../../../guide/developing/tools/draw9patch.html">Draw 9-Patch</a></li>
+      		<li><a href="../../../guide/developing/tools/emulator.html">Emulator</a></li>
+      		<li><a href="../../../guide/developing/tools/hierarchy-viewer.html">Hierarchy Viewer</a></li>
+      		<li><a href="../../../guide/developing/tools/layoutopt.html">layoutopt</a></li>
+      		<li><a href="../../../guide/developing/tools/othertools.html#mksdcard">mksdcard</a></li>
+      		<li><a href="../../../guide/developing/tools/monkey.html">Monkey</a></li>
+      		<li><a href="../../../guide/developing/tools/adb.html#sqlite">sqlite3</a></li>
+      		<li><a href="../../../guide/developing/tools/traceview.html" >Traceview</a></li>
+      		<li><a href="../../../guide/developing/tools/zipalign.html" >zipalign</a></li>
+    	  </ul>
+  	  </li>
+  <!--<li><a href="../../../guide/developing/instrumentation/index.html">Instrumentation</a></li>
+      <li><a style="color:gray;">JUnit</a></li> -->
+    </ul>
+  </li>
+  
+  <li>
+    <h2><span class="en">Publishing</span>
+        <span class="de" style="display:none">Veröffentlichung</span>
+        <span class="es" style="display:none">Publicación</span>
+        <span class="fr" style="display:none">Publication</span>
+        <span class="it" style="display:none">Pubblicazione</span>
+        <span class="ja" style="display:none">公開</span>
+        <span class="zh-CN" style="display:none">发布</span>
+        <span class="zh-TW" style="display:none">發佈</span>
+    </h2>
+    <ul>
+      <li><a href="../../../guide/publishing/app-signing.html">
+            <span class="en">Signing Your Applications</span>
+            <span class="de" style="display:none">Signieren Ihrer Anwendungen</span>
+            <span class="es" style="display:none">Firma de aplicaciones</span>
+            <span class="fr" style="display:none">Attribution de votre signature <br />à vos applications</span>
+            <span class="it" style="display:none">Firma delle applicazioni</span>
+            <span class="ja" style="display:none">アプリケーションへの署名</span>
+            <span class="zh-CN" style="display:none">应用程序签名</span>
+            <span class="zh-TW" style="display:none">簽署應用程式</span>
+          </a></li>
+      <li><a href="../../../guide/publishing/versioning.html">
+            <span class="en">Versioning Your Applications</span>
+            <span class="de" style="display:none">Versionsverwaltung für Ihre <br />Anwendungen</span>
+            <span class="es" style="display:none">Versiones de las aplicaciones</span>
+            <span class="fr" style="display:none">Attribution d'une version à vos applications</span>
+            <span class="it" style="display:none">Controllo versioni delle applicazioni</span>
+            <span class="ja" style="display:none">アプリケーションのバージョニング</span>
+            <span class="zh-CN" style="display:none">应用程序版本控制</span>
+            <span class="zh-TW" style="display:none">應用程式版本設定</span>
+          </a></li>
+      <li><a href="../../../guide/publishing/preparing.html">
+            <span class="en">Preparing to Publish</span>
+            <span class="de" style="display:none">Vorbereitung auf die Veröffentlichung</span>
+            <span class="es" style="display:none">Publicación de aplicaciones</span>
+            <span class="fr" style="display:none">Préparation à la publication</span>
+            <span class="it" style="display:none">Preparativi per la pubblicazione</span>
+            <span class="ja" style="display:none">公開の準備</span>
+            <span class="zh-CN" style="display:none">准备发布</span>
+            <span class="zh-TW" style="display:none">準備發佈</span>
+          </a></li>
+      <li><a href="../../../guide/publishing/publishing.html">
+            <span class="en">Publishing Your Applications</span>
+          </a></li>
+    </ul>
+  </li>
+  
+  <li>
+    <h2><span class="en">Best Practices</span>
+               <span class="de" style="display:none">Bewährte Verfahren</span>
+               <span class="es" style="display:none">Prácticas recomendadas</span>
+               <span class="fr" style="display:none">Meilleures pratiques</span>
+               <span class="it" style="display:none">Best practice</span>
+               <span class="ja" style="display:none">ベスト プラクティス</span>
+               <span class="zh-CN" style="display:none">最佳实践</span>
+               <span class="zh-TW" style="display:none">最佳實務</span>
+    </h2>
+    <ul>
+      <li><a href="../../../guide/practices/screens_support.html">
+            <span class="en">Supporting Multiple Screens</span>
+          </a></li>
+      <li class="toggle-list">
+        <div><a href="../../../guide/practices/ui_guidelines/index.html">
+               <span class="en">UI Guidelines</span>
+             </a></div>
+        <ul>
+          <li><a href="../../../guide/practices/ui_guidelines/icon_design.html">
+                <span class="en">Icon Design</span>
+              </a></li>
+          <li><a href="../../../guide/practices/ui_guidelines/widget_design.html">
+                <span class="en">App Widget Design</span>
+              </a></li>
+          <li><a href="../../../guide/practices/ui_guidelines/activity_task_design.html">
+                <span class="en">Activity and Task Design</span>
+              </a></li>
+          <li><a href="../../../guide/practices/ui_guidelines/menu_design.html">
+                <span class="en">Menu Design</span>
+              </a></li>
+        </ul>
+      </li>
+      </ul>
+      <ul>
+      <li><a href="../../../guide/practices/design/performance.html">
+            <span class="en">Designing for Performance</span>
+          </a></li>
+      <li><a href="../../../guide/practices/design/responsiveness.html">
+            <span class="en">Designing for Responsiveness</span>
+          </a></li>
+      <li><a href="../../../guide/practices/design/seamlessness.html">
+            <span class="en">Designing for Seamlessness</span>
+          </a></li>
+    </ul>
+  </li>
+  
+  <li>
+    <h2><span class="en">Tutorials and Sample Code</span>
+               <span class="de" style="display:none">Lernprogramme und Beispielcode</span>
+               <span class="es" style="display:none">Tutoriales y código de ejemplo</span>
+               <span class="fr" style="display:none">Didacticiels et exemple de code</span>
+               <span class="it" style="display:none">Esercitazioni e codice di esempio</span>
+               <span class="ja" style="display:none">チュートリアルとサンプル コード</span>
+               <span class="zh-CN" style="display:none">辅导手册和示例代码</span>
+               <span class="zh-TW" style="display:none">教學課程與程式碼範例</span>
+    </h2>
+    <ul>
+      <li><a href="../../../guide/tutorials/hello-world.html">
+            <span class="en">Hello World</span>
+          </a></li>
+      <li><a href="../../../guide/tutorials/views/index.html">
+            <span class="en">Hello Views</span>
+          </a></li>
+      <li><a href="../../../guide/tutorials/localization/index.html">
+            <span class="en">Hello Localization</span>
+          </a></li>
+      <li><a href="../../../guide/tutorials/notepad/index.html">
+            <span class="en">Notepad Tutorial</span>
+          </a></li>
+    </ul>
+    <ul>
+      <li class="toggle-list">
+        <div><a href="../../../guide/samples/index.html">
+               <span class="en">Sample Code</span>
+             </a></div>
+        <ul>
+          <li><a href="../../../guide/samples/ApiDemos/index.html">
+                <span class="en">API Demos</span>
+              </a></li>
+          <li><a href="../../../guide/samples/Home/index.html">
+                <span class="en">Home</span>
+              </a></li>
+          <li><a href="../../../guide/samples/JetBoy/index.html">
+                <span class="en">JetBoy</span>
+              </a></li>
+          <li><a href="../../../guide/samples/LunarLander/index.html">
+                <span class="en">Lunar Lander</span>
+              </a></li>
+          <li><a href="../../../guide/samples/NotePad/index.html">
+                <span class="en">Note Pad</span>
+              </a></li>
+          <li><a href="../../../guide/samples/SearchableDictionary/index.html">
+                <span class="en">Searchable Dictionary</span>
+              </a></li>
+          <li><a href="../../../guide/samples/Snake/index.html">
+                <span class="en">Snake</span>
+              </a></li>
+          <li><a href="../../../guide/samples/SoftKeyboard/index.html">
+                <span class="en">Soft Keyboard</span>
+              </a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  
+
+  <li>
+    <h2><span class="en">Appendix</span>
+               <span class="de" style="display:none">Anhang</span>
+               <span class="es" style="display:none">Apéndice</span>
+               <span class="fr" style="display:none">Annexes</span>
+               <span class="it" style="display:none">Appendice</span>
+               <span class="ja" style="display:none">付録</span>
+               <span class="zh-CN" style="display:none">附录</span>
+               <span class="zh-TW" style="display:none">附錄</span>
+    </h2>
+    <ul>
+      <li><a href="../../../guide/appendix/api-levels.html">
+            <span class="en">Android API Levels</span>
+          </a></li>
+      <li><a href="../../../guide/appendix/media-formats.html">
+            <span class="en">Supported Media Formats</span>
+          </a></li>
+      <li><a href="../../../guide/appendix/g-app-intents.html">
+            <span class="en">Intents List: Google Apps</span>
+          </a></li>
+      <li><a href="../../../guide/appendix/glossary.html">
+            <span class="en">Glossary</span>
+          </a></li>
+      <li><a href="../../../guide/appendix/faq/index.html">
+            <span class="en">FAQ</span>
+          </a></li>
+    </ul>
+  </li>
+
+</ul>
+
+<script type="text/javascript">
+<!--
+    buildToggleLists();
+    changeNavLang(getLangPref());
+//-->
+</script>
+
+      </div>
+    </div> <!-- end side-nav -->
+    <script>
+      addLoadEvent(function() {
+        scrollIntoView("devdoc-nav");
+        });
+    </script>
+
+
+
+
+<div class="g-unit" id="doc-content"><a name="top"></a>
+
+<div id="jd-header" class="guide-header">
+  <span class="crumb">
+    
+      <a href="index.html">Resources and Assets</a> >
+    
+  </span>
+<h1 style="width: 370px">Resources and Internationalization——资源和国际化</h1>
+</div>
+
+  <div id="jd-content">
+
+
+    <div class="jd-descr">
+    <div id="qv-wrapper">
+<div id="qv">
+
+  <h2>Key classes——关键类</h2>
+  <ol>
+    <li><code><a href="../../../reference/android/content/res/Resources.html">Resources</a>——资源</code></li>
+  </ol>
+
+  <h2>In this document——这篇文档中</h2>
+  <ol>
+    <li><a href="#intro">Introduction</a>——介绍</li>
+    <li><a href="#CreatingResources">Creating Resources</a>——创建资源</li>
+    <li><a href="#UsingResources">Using Resources</a>
+      ——使用资源<ol>
+        <li><a href="#ResourcesInCode">Using Resources in Code</a>——在代码中使用资源</li>
+        <li><a href="#ReferencesToResources">References to Resources</a>——对资源的引用</li>
+        <li><a href="#ReferencesToThemeAttributes">References to Theme Attributes</a>——对主题参数的引用</li>
+        <li><a href="#UsingSystemResources">Using System Resources</a>——使用系统资源</li>
+      </ol>
+    </li>
+    <li><a href="#AlternateResources">Alternate Resources</a>——调整资源</li>
+    <li><a href="#ResourcesTerminology">Terminology</a>——术语</li>
+    <li><a href="#i18n">Internationalization (I18N)</a>——国际化</li>
+  </ol>
+</div>
+</div>
+
+<p>Resources are external files (that is, non-code files) that are used by
+your code and compiled into your application at build time. Android
+supports a number of different kinds of resource files, including XML,
+PNG, and JPEG files. The XML files have very different formats depending
+on what they describe. This document describes what kinds of files are
+supported, and the syntax or format of each.<br>
+资源是代码中使用到的外部文件（就是说，不是代码文件），在应用程序构建期编译到程序中。Android支持很多种类的资源文件，包括XML，PNG和JPEG文件。XML文件根据描述的东西又有不同格式。这篇文档描述了支持的文件格式，还有支持的格式的语法或格式。</p>
+<p>Resources are externalized from source code, and XML files are compiled into
+a binary, fast loading format for efficiency reasons. Strings, likewise, are compressed
+into a more efficient storage form. It is for these reasons that we have these
+different resource types in the Android platform.<br>
+资源在源代码外部，XML文件时编译到二进制的，因为需要高效快速的载入。字符串，同样的，被压缩成更高效的存储方式。因为同样的原因，在Android平台上有不同种的资源类型。</p>
+
+<p>This is a fairly technically dense document, and together with the
+<a href="available-resources.html">Available Resources</a>
+document, they cover a lot of information about resources. It is not necessary
+to know this document by heart to use Android, but rather to know that the
+information is here when you need it.<br>
+这篇文档技术很密集，同<a href="available-resources.html">Available Resources</a>文档一起，覆盖了很多有关资源的信息。使用Android不用十分认真的学习将这篇文档，但是当你需要使用这些信息时你最好能想起来它们在这。</p>
+
+<a name="intro"></a>
+<h2>Introduction——介绍</h2>
+
+<p>This topic includes a terminology list associated with resources, and a series
+    of examples of using resources in code. For a complete guide to the supported 
+    Android resource types, see 
+    <a href="available-resources.html">Available Resources</a>.
+    <br>
+下面文档包含了有关资源的术语表，还有一系列使用资源的代码的例子。完整的Android支持的资源类型的指南，请参见<a href="available-resources.html">Available Resources</a>。</p>
+<p>The Android resource system keeps track of all non-code
+    assets associated with an application.  You use the
+    <code><a href="../../../reference/android/content/res/Resources.html">Resources</a></code> class to access your
+    application's resources; the Resources instance associated with your
+    application can generally be found through
+    <code><a href="../../../reference/android/content/Context.html#getResources()">Context.getResources()</a></code>.<br>
+Android资源系统跟踪所有与应用程序非代码的部分。您可以使用<code><a href="../../../reference/android/content/res/Resources.html">Resources</a></code>类连接您的应用程序资源；与您的应用程序关联的<code><a href="../../../reference/android/content/res/Resources.html">Resources</a></code>实例可以由<code><a href="../../../reference/android/content/Context.html#getResources()">Context.getResources()</a></code>获得。</p>
+<p>An application's resources are compiled into the application
+binary at build time for you by the build system.  To use a resource,
+you must install it correctly in the source tree and build your
+application.  As part of the build process, symbols for each
+of the resources are generated that you can use in your source
+code -- this allows the compiler to verify that your application code matches
+up with the resources you defined.<br>
+应用程序的资源由构建系统在构建起编译成二进制部分放到您的应用程序中。使用资源，您必须正确的将其放置到文件夹下，然后构建您的应用程序。作为构建程序的一步，构建系统会确认每个资源的符号能被源代码正常使用——这就让编译器确认您的应用程序的代码与您定义的资源相符。</p>
+
+<p>The rest of this section is organized as a tutorial on how to
+use resources in an application.<br>
+这篇文档的最后是一个如何在应用程序中使用资源的指南。</p>
+
+<a name="CreatingResources" id="CreatingResources"></a>
+<h2>Creating Resources——创建资源</h2>
+
+<p>Android supports string, bitmap, and many other types of resource. The syntax and format
+of each, and where they're stored, depends upon the type of object. In
+general, though, you create resources from three types of files: XML files
+(everything but bitmaps and raw), bitmap files(for images) and Raw files (anything
+else, for example sound files, etc.). In fact, there are two different types of
+XML file as well, those that get compiled as-is into the package, and those that
+are used to generate resources by aapt. Here is a list of each
+resource type, the format of the file, a description of the file, and details
+of any XML files. <br>
+Android支持 
+字符串，位图，还有很多其他种类的资源。每种资源的语法和格式，它们存储在什么位置，决定于对象的类型。虽然总体来说，您创建三种类型的文件：XML文件（除了位图和原始文件的所有文件），位图文件（图片）还有原始文件（其他的所有文件，例如，声音文件等）。事实上有两种XML文件，依原样打包的 
+还有用来使用aapt产生资源的。文档提供了每种资源类型，文件格式，文件的描述，XML文件细节的表格。</p>
+
+<p>You will create and store your resource files under the appropriate
+subdirectory under the <code>res/</code> directory in your project. Android
+has a resource compiler (aapt) that compiles resources according to which
+subfolder they are in, and the format of the file. Table 1 shows a list of the file
+types for each resource. See the 
+<a href="available-resources.html">Available Resources</a> for
+descriptions of each type of object, the syntax, and the format or syntax of
+the containing file.<br>
+创建后您应将资源文件放在您的工程的 <code>res/</code>文件夹的正确的子文件夹下。Android有一个资源编译器（aapt）根据他们所在的子文件夹和文件格式对资源进行编译。表1列出了每种资源的文件类型。文档中有每种对象类型的描述，语法，包含文件的格式。</p>
+<p class="caption">Table 1——表1</p>
+<table width="100%" border="1">
+    <tr>
+        <th scope="col">Directory——文件夹</th>
+        <th scope="col">Resource Types ——资源类型</th>
+    </tr>
+    <tr>
+        <td><code>res/anim/</code></td>
+        <td>XML files that are compiled into 
+        <a href="available-resources.html#animationdrawable">frame by
+        frame animation</a> or 
+        <a href="available-resources.html#tweenedanimation">tweened
+        animation</a> objects <br>
+		编译为<a href="available-resources.html#animationdrawable">frame by
+        frame animation</a>或 
+        <a href="available-resources.html#tweenedanimation">tweened
+        animation</a>的XML文件</td>
+    </tr>
+    <tr>
+        <td><code>res/drawable/</code></td>
+        <td><p>.png, .9.png, .jpg files that are compiled into the following
+                Drawable resource subtypes:<br>
+		编译为下列可绘制子资源类型的.png, .9.png, .jpg文件</p>
+            <ul class="nolist">
+                <li><a href="available-resources.html#imagefileresources">bitmap files</a>——位图文件</li>
+                <li><a href="available-resources.html#ninepatch">9-patches (resizable bitmaps)</a>——可变尺寸的位图</li>
+            </ul>
+            <p>To get a resource of this type, use <code>mContext.getResources().getDrawable(R.drawable.<em>imageId</em>)<br>
+			获得一个这种类型的资源，使用mContext.getResources().getDrawable(R.drawable.<em>imageId</em>)</code></p>
+            <p class="note"><strong>Note:</strong> Image resources placed in here may 
+              be automatically optimized with lossless image compression by the 
+              <a href="../../../guide/developing/tools/aapt.html">aapt</a> tool. For example, a true-color PNG 
+              that does not require more than 256 colors may be converted to an 8-bit PNG with a color palette.
+              This will result in an image of equal quality but which requires less memory. So be aware that the
+              image binaries placed in this directory can change during the build. If you plan on reading
+              an image as a bit stream in order to convert it to a bitmap, put your images in the 
+              <code>res/raw/</code> folder instead, where they will not be optimized.<br>
+			<strong>注意：</strong>放在这里的图像资源可能会被<a href="../../../guide/developing/tools/aapt.html">aapt</a>工具自动转换为低损耗的图像格式。例如。一个真彩色的PNG图片实际没有大于256色的需要，他就会被转换为8位的调色板。图品的效果没有变但是会使用更少的内存。所以放在这个文件夹中的图片可能会在构建期发生变化。如果您需要以位流形式读取一个图片然后转换为位图，请将您的图片放到<code>res/raw/</code>文件夹，这个文件夹中的文件不会改变。</p>
+        </td>
+    </tr>
+    <tr>
+        <td><code>res/layout/</code></td>
+        <td>XML files that are compiled into screen layouts (or part of a screen).
+            See <a href="../../../guide/topics/ui/declaring-layout.html">Declaring Layout</a>.<br>
+		编译为屏幕布局（或屏幕的一部分）的XML文件。参见<a href="../../../guide/topics/ui/declaring-layout.html">Declaring Layout</a>。</td>
+    </tr>
+    <tr>
+        <td><code>res/values/</code></td>
+        <td><p>XML files that can be compiled into many kinds of resource.<br>
+		能被编译为多种资源的XML文件。</p>
+            <p class="note"><strong>Note:</strong> Unlike the other res/ folders, this one
+            can hold any number of files that hold descriptions of resources to create
+            rather than the resources themselves. The XML element types control
+            where these resources are placed under the R class.<br>
+			<strong>注意：</strong>不像其他res/ 
+			的文件夹，这个文件夹可以放任意数量的产生其他资源的描述性文件。XML元素类型控制这些资源放在R类的哪个地方。</p>
+            <p>While the files can be named anything, these are
+                the typical files in this folder (the convention is to name
+                the file after the type of elements defined within):<br>
+			文件可以任意命名，下面是典型的命名（惯例是将其命名为其中定义的元素类型）</p>
+            <ul>
+                <li><strong>arrays.xml</strong> to define arrays </li>  
+                <!-- TODO: add section on arrays -->
+                <br>
+				定义数组<li><strong>colors.xml</strong> to define <a href="available-resources.html#colordrawableresources">color
+                        drawables</a> and <a  href="#colorvals">color string values</a>.
+                        Use <code>Resources.getDrawable()</code> and
+                        <code>Resources.getColor(), respectively,</code>
+                to get these resources.<br>
+				定义<a href="available-resources.html#colordrawableresources">color
+                        drawables</a>和<a  href="#colorvals">color string values</a>。对应的使用<code>Resources.getDrawable()</code>和<code>Resources.getColor()</code>，获得这些资源。</li>
+                <li><strong>dimens.xml</strong> to define <a href="available-resources.html#dimension">dimension value</a>. Use <code>Resources.getDimension()</code> to get
+                these resources.<br>
+				定义<a href="available-resources.html#dimension">dimension value</a>。使用<code>Resources.getDimension()</code>获得这些资源。</li>
+                <li><strong>strings.xml</strong> to define <a href="available-resources.html#stringresources">string</a> values (use either         
+                <code>Resources.getString</code> or preferably <code>Resources.getText()</code>
+                to get
+                these resources. <code>getText()</code> will retain any rich text styling
+                which is usually desirable for UI strings.<br>
+				定义<a href="available-resources.html#stringresources">string</a>值（根据您的喜好使用<code>Resources.getString</code>或<code>Resources.getText()</code>获得这些资源。<code>getText()</code>会保持富文本格式，经常使用在UI字符串中）</li>
+                <li><strong>styles.xml</strong> to define <a href="available-resources.html#stylesandthemes">style</a> objects.<br>
+				定义<a href="available-resources.html#stylesandthemes">style</a>对象。</li>
+            </ul></td>
+    </tr>
+    <tr>
+        <td><code>res/xml/</code></td>
+        <td>Arbitrary XML files that are compiled and can be read at run time by
+            calling <code><a href="../../../reference/android/content/res/Resources.html#getXml(int)">Resources.getXML()</a></code>.<br>
+		任意已编译并可在运行时用<code><a href="../../../reference/android/content/res/Resources.html#getXml(int)">Resources.getXML()</a></code>读取的XML文件。</td>
+    </tr>
+    <tr>
+        <td><code>res/raw/</code></td>
+        <td>Arbitrary files to copy directly to the device. They are added uncompiled
+            to the compressed file that your application build produces. To use these
+            resources in your application, call <code><a href="../../../reference/android/content/res/Resources.html#openRawResource(int)">Resources.openRawResource()</a></code> with the resource ID, which is R.raw.<em>somefilename</em>.<br>
+		任意要直接复制到设备的文件。应用程序构建时向压缩文件添加这个文件夹下文件不会编译。在您的应用程序中使用这些资源，调用<code><a href="../../../reference/android/content/res/Resources.html#openRawResource(int)">Resources.openRawResource()</a></code>传入资源ID，比如 
+		R.raw.<em>somefilename</em>。</td>
+    </tr>
+</table>
+<p>Resources are compiled into the final APK file. Android creates a wrapper class,
+    called R, that you can use to refer to these resources in your code. R contains subclasses
+    named according to the path and file name of the source file<br>
+资源会编译放入最终的APK文件。Android创建一个包裹类，叫做R，您可以在代码中使用这个类来引用资源。R包含了根据资源文件路径和文件名的子类。</p>
+<a name="colorvals" id="colorvals"></a>
+<h3>Global Resource Notes——全局资源注意事项</h3>
+<ul>
+    <li>Several resources allow you to define colors. Android accepts color values
+        written in various web-style formats -- a hexadecimal constant in any of the
+        following forms: #RGB, #ARGB, #RRGGBB, #AARRGGBB. <br>
+	几个资源允许您定义颜色。Android支持多种网页格式颜色写法——一个下列格式中任一种的十六进制常数：#RGB, #ARGB, #RRGGBB, 
+	#AARRGGBB。</li>
+    <li>All color values support setting an alpha channel value, where the first
+        two hexadecimal numbers specify the transparency. Zero in the alpha channel
+        means transparent. The default value is opaque. <br>
+	所有的颜色值支持alpha通道设置，前两个十六进制值指定了透明性。零意为完全透明。默认的值是不透明。</li>
+</ul>
+<a name="UsingResources" id="UsingResources"></a>
+<h2>Using Resources ——使用资源</h2>
+<p>This section describes how to use the resources you've created. It includes the
+    following topics:<br>
+这一节讲述了如何使用您创建的资源。包含下面几个话题：</p>
+<ul>
+    <li><a href="#ResourcesInCode">Using resources in code</a>&nbsp;- How to call
+        resources in your code to instantiate them. <br>
+	&nbsp;——如何在代码中对它们进行实例化。</li>
+    <li><a href="#ReferencesToResources">Referring to resources from other resources</a> &nbsp;-
+        You can reference resources from other resources. This lets you reuse common 
+        resource values inside resources. <br>
+	——您可以从其他的资源引用这个资源。这使得您可以重用资源中的共用部分值。</li>
+    <li><a href="#AlternateResources">Supporting Alternate Resources for Alternate
+            Configurations</a> - You can specify different resources
+            to load, depending on the language or display configuration of the host
+            hardware. <br>
+	——您可以根据语言或硬件的显示设置指定加载不同的资源。</li>
+</ul>
+<p>At compile time, Android generates a class named R that contains resource identifiers
+    to all the resources in your program. This class contains several subclasses,
+    one for each type of resource supported by Android, and for which you provided
+    a resource file. Each class contains one or more identifiers for the compiled resources,
+    that you use in your code to load the resource. Here is a small resource file
+    that contains string, layout (screens or parts of screens), and image resources.<br>
+在编译时候，Android生成一个名叫R的类，包含了您的程序中所有的资源的标识。这个类包含了多个子类，每个子类是Android支持的资源类型，还有您提供的资源文件的子类。每个子类包含了一个或多个编译了的资源的标识，代码可以用这个标识加载资源。下面是一个包含了字符串，布局（整个或部分屏幕），和图像的小的资源文件。</p>
+<p class="note"><strong>Note:</strong> the R class is an auto-generated file and is not
+designed to be edited by hand. It will be automatically re-created as needed when
+the resources are updated.<br>
+<strong>注意：</strong>R类是一个自动生成的文件，而且设计初衷也没有希望您手动修改。他在需要的时候，即资源更新的时候自动重新创建。</p>
+<pre class="prettyprint">package com.android.samples;
+public final class R {
+    public static final class string {
+        public static final int greeting=0x0204000e;
+        public static final int start_button_text=0x02040001;
+        public static final int submit_button_text=0x02040008;
+        public static final int main_screen_title=0x0204000a;
+    };
+    public static final class layout {
+        public static final int start_screen=0x02070000;
+        public static final int new_user_pane=0x02070001;
+        public static final int select_user_list=0x02070002;
+
+    };
+    public static final class drawable {
+        public static final int company_logo=0x02020005;
+        public static final int smiling_cat=0x02020006;
+        public static final int yellow_fade_background=0x02020007;
+        public static final int stretch_button_1=0x02020008;
+
+    };
+};
+</pre>
+<a name="ResourcesInCode" id="ResourcesInCode"></a>
+<h3>Using Resources in Code ——在代码中使用资源</h3>
+
+<p>Using resources in code is just a matter of knowing the full resource ID
+and what type of object your resource has been compiled into. Here is the
+syntax for referring to a resource:<br>
+在代码中使用资源只是知道完整的资源ID还有您的资源被编译为什么资源类型这么简单。下面是引用资源的语法示例：</p>
+<p><code>R.<em>resource_type</em>.<em>resource_name</em></code></p>
+<p>or<br>
+或者</p>
+<p><code>android.R.<em>resource_type</em>.<em>resource_name</em></code></p>
+
+<p>Where <code>resource_type</code> is the R subclass that holds a specific type
+of resource. <code>resource_name</code> is the <em>name</em> attribute for resources
+defined in XML files, or the file name (without the extension) for resources
+defined by other file types. Each type of resource will be added to a specific
+R subclass, depending on the type of resource it is; to learn which R subclass
+hosts your compiled resource type, consult the 
+<a href="available-resources.html">Available Resources</a> document. Resources compiled by your own application can
+be referred to without a package name (simply as
+<code>R.<em>resource_type</em>.<em>resource_name</em></code>). Android contains
+a number of standard resources, such as screen styles and button backgrounds. To
+refer to these in code, you must qualify them with <code>android</code>, as in
+<code>android.R.drawable.button_background</code>.<br>
+<code>resource_type</code>的地方是放着指定资源类型的R子类。<code>resource_name</code>是资源在XML文件中定义的<em>name</em>属性，或者是其他文件类型的资源的文件名（不带扩展名）。每种类型资源会根据类型添加到相应的R子类；哪个子类放哪个类型的资源，参见<a href="available-resources.html">Available Resources</a>文档。您自己的应用程序中的编译好的资源可以不用包名引用（就是<code>R.<em>resource_type</em>.<em>resource_name</em></code>）。Android包含了很多标准资源，比如屏幕风格和按钮背景。在代码中引用它们，您必须加上<code>android</code>进行引用，例如<code>android.R.drawable.button_background</code>。</p>
+
+<p>Here are some good and bad examples of using compiled resources in code:<br>
+下面是使用资源的正确和错误的例子：</p>
+
+<pre class="prettyprint">// Load a background for the current screen from a drawable resource.
+this.getWindow().setBackgroundDrawableResource(R.drawable.my_background_image);
+
+// WRONG Sending a string resource reference into a 
+// method that expects a string.
+this.getWindow().setTitle(R.string.main_title);
+
+// RIGHT Need to get the title from the Resources wrapper.
+this.getWindow().setTitle(Resources.getText(R.string.main_title));
+
+// Load a custom layout for the current screen.
+setContentView(R.layout.main_screen);
+
+// Set a slide in animation for a ViewFlipper object.
+mFlipper.setInAnimation(AnimationUtils.loadAnimation(this, 
+        R.anim.hyperspace_in));
+
+// Set the text on a TextView object.
+TextView msgTextView = (TextView)findViewByID(R.id.msg);
+msgTextView.setText(R.string.hello_message); </pre>
+
+<a name="ReferencesToResources" id="ReferencesToResources"></a>
+<h3>References to Resources——引用资源</h3>
+
+<p>A value supplied in an attribute (or resource) can also be a reference to
+a resource.  This is often used in layout files to supply strings (so they
+can be localized) and images (which exist in another file), though a reference
+can be any resource type including colors and integers.<br>
+一个属性（或资源）中的值可以被其他资源引用。引用的可以是任何资源类型，包括颜色和整数，这个功能经常用在布局文件支持字符串（这样可以根据地区变化）和图片（存在于其他文件）。</p>
+
+<p>For example, if we have 
+<a href="available-resources.html#colordrawableresources">color 
+resources</a>, we can write a layout file that sets the text color size to be
+the value contained in one of those resources:<br>
+例如，如果我们有一个<a href="available-resources.html#colordrawableresources">color 
+resources</a>，然后我们可以写一个将文字颜色设定为<a href="available-resources.html#colordrawableresources">color 
+resources</a>中的某个值的布局文件：</p>
+
+<pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;EditText id=&quot;text&quot;
+    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:layout_width=&quot;fill_parent&quot; android:layout_height=&quot;fill_parent&quot;
+    <strong>android:textColor=&quot;&#64;color/opaque_red&quot;</strong>
+    android:text=&quot;Hello, World!&quot; /&gt;
+</pre>
+
+<p>Note here the use of the '@' prefix to introduce a resource reference -- the
+text following that is the name of a resource in the form
+of <code>@[package:]type/name</code>.  In this case we didn't need to specify
+the package because we are referencing a resource in our own package.  To
+reference a system resource, you would need to write:<br>
+注意资源引用中“@”前缀的使用——“@”之后的文字是<code>@[package:]type/name</code>形式的资源的名字。上边例子中我们不需要指定包因为我们引用的是想同包的资源。引用一个系统资源，您需要这样写：</p>
+
+<pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;EditText id=&quot;text&quot;
+    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:layout_width=&quot;fill_parent&quot; android:layout_height=&quot;fill_parent&quot;
+    android:textColor=&quot;&#64;<strong>android:</strong>color/opaque_red&quot;
+    android:text=&quot;Hello, World!&quot; /&gt;
+</pre>
+
+<p>As another example, you should always use resource references when supplying
+strings in a layout file so that they can be localized:<br>
+另一个例子，您应该在布局的字符串处使用资源引用，这样字符串可以随地区进行语言适应。</p>
+
+<pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;EditText id=&quot;text&quot;
+    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:layout_width=&quot;fill_parent&quot; android:layout_height=&quot;fill_parent&quot;
+    android:textColor=&quot;&#64;android:color/opaque_red&quot;
+    android:text=&quot;&#64;string/hello_world&quot; /&gt;
+</pre>
+
+<p>This facility can also be used to create references between resources.
+For example, we can create new drawable resources that are aliases for
+existing images:<br>
+这种方法也可用来创建资源之间的引用。例如，我们可以创建一个新的连接到已有图片的可绘资源。</p>
+
+<pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;resources&gt;
+    &lt;drawable id=&quot;my_background&quot;&gt;&#64;android:drawable/theme2_background&lt;/drawable&gt;
+&lt;/resources&gt;
+</pre>
+
+<a name="ReferencesToThemeAttributes"></a>
+<h3>References to Theme Attributes——引用主题参数</h3>
+
+<p>Another kind of resource value allows you to reference the value of an
+attribute in the current theme.  This attribute reference can <em>only</em>
+be used in style resources and XML attributes; it allows you to customize the
+look of UI elements by changing them to standard variations supplied by the
+current theme, instead of supplying more concrete values.<br>
+另一种资源值允许您引用当前主题的参数值。这种参数引用 <em>只能&nbsp; </em>
+用在风格资源和XML参数；他允许您通过改变当前主题支持的标准的可变项自定义UI元素的外观，而不是支持更多的选项。</p>
+
+<p>As an example, we can use this in our layout to set the text color to
+one of the standard colors defined in the base system theme:<br>
+下面是一个例子，我们可以将它用在我们的布局中将文字颜色设定为某种系统定义的基本的标准颜色：</p>
+
+<pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;EditText id=&quot;text&quot;
+    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:layout_width=&quot;fill_parent&quot; android:layout_height=&quot;fill_parent&quot;
+    <strong>android:textColor=&quot;?android:textDisabledColor&quot;</strong>
+    android:text=&quot;&#64;string/hello_world&quot; /&gt;
+</pre>
+
+<p>Note that this is very similar to a resource reference, except we are using
+an '?' prefix instead of '@'.  When you use this markup, you are supplying
+the name of an attribute resource that will be looked up in the theme --
+because the resource tool knows that an attribute resource is expected,
+you do not need to explicitly state the type (which would be
+<code>?android:attr/android:textDisabledColor</code>).<br>
+注意这很向资源的引用，只是我们使用的是 “？”前缀而不是“@”。当您使用 “？” 
+时，意为您使用的是在主题中的参数资源——因为资源工具知道后边跟的是参数资源，这样您就不需要指明类型（如果指明类型是<code>?android:attr/android:textDisabledColor</code>）。</p>
+
+<p>Other than using this resource identifier to find the value in the
+theme instead of raw resources, the name syntax is identical to the '@' format:
+<code>?[namespace:]type/name</code> with the type here being optional.<br>
+除了使用资源的标识符寻找在主题而不是原始文件中寻找值，名字的语法是与“@”的相同的：<code>?[namespace:]type/name</code>&nbsp; 
+type处是可选的。</p>
+
+<a name="UsingSystemResources"></a>
+<h3>Using System Resources——使用系统资源</h3>
+
+<p>Many resources included with the system are available to applications.
+All such resources are defined under the class "android.R".  For example,
+you can display the standard application icon in a screen with the following
+code:<br>
+很多系统自带的资源都可以被应用程序使用。这样的资源定义在&quot;android.R&quot;类下。例如，您可以使用下列边的代码显示标准的应用程序的图标。</p>
+
+<pre class="prettyprint">
+public class MyActivity extends Activity
+{
+    public void onStart() 
+    {
+        requestScreenFeatures(FEATURE_BADGE_IMAGE);
+
+        super.onStart();
+
+        setBadgeResource(android.R.drawable.sym_def_app_icon);
+    }
+}
+</pre>
+
+<p>In a similar way, this code will apply to your screen the standard
+"green background" visual treatment defined by the system:<br>
+同样的，下面的代码会将屏幕设置为系统的“绿色背景”效果：</p>
+
+<pre class="prettyprint">
+public class MyActivity extends Activity
+{
+    public void onStart() 
+    {
+        super.onStart();
+
+        setTheme(android.R.style.Theme_Black);//执行效果是黑色背景，为什么叫“绿色背景”原因不明
+    }
+}
+</pre>
+
+<a name="AlternateResources" id="AlternateResources"></a>
+<h2>Alternate Resources (for alternate languages and configurations)——自适应资源（自适应的语言和设定）</h2>
+
+<p>You can supply different resources for your application to use depending on the UI
+language or hardware configuration on the device. Note that although you can
+include different string, layout, and other resources, the SDK does not expose
+methods to let you specify which alternate resource set to load. Android
+detects the proper set for the hardware and location, and loads them as
+appropriate. Users can select alternate language settings using the settings
+panel on the device. <br>
+您可以让您的应用程序根据UI语言或设备上的硬件设定自动的使用不同资源。注意，尽管您可以支持不同的字符串，布局，和其他资源，但SDK没有提供让您指定加载哪个资源的方法。Android自动检测硬件条件和地理位置，然后加载合适的自适应资源。用户可以在设备上的语言设定面板上调整语言设定。</p>
+<p>To include alternate resources, create parallel resource folders with
+qualifiers appended to the folder names, indicating the configuration it
+applies to (language, screen orientation, and so on). For example, here is a
+project that holds one string resource file for English, and another for
+French:<br>
+要包含自适应资源，您需要创建并列的几个文件夹，并加上修饰代码，表明适用的环境（语言，屏幕方向，等等）。例如，下面是一个包含了英、法两种语言字符串文件的工程：</p>
+
+<pre>
+MyApp/
+    res/
+        values-en/
+            strings.xml
+        values-fr/
+            strings.xml
+</pre>
+
+<p>Android supports several types of qualifiers, with various values for each.
+Append these to the end of the resource folder name, separated by dashes. You
+can add multiple qualifiers to each folder name, but they must appear in the
+order they are listed here. For example, a folder containing drawable
+resources for a fully specified configuration would look like this:<br>
+Android支持几种修饰限定，每种有一个修饰代码。将修饰代码添加到资源文件名称的后边，使用“-”隔开。每个文件名都可以使用多重修饰，但是必须按照下边所示顺序。例如，下面是包含可绘资源的文件夹，这个可绘资源使用了所有的修饰：</p>
+
+<pre>
+MyApp/
+    res/
+        drawable-en-rUS-large-long-port-mdpi-finger-keysexposed-qwerty-navexposed-dpad-480x320/
+</pre>
+
+<p>More typically, you will only specify a few specific configuration options. You may drop any of the values from the
+complete list, as long as the remaining values are still in the same
+order:<br>
+比较典型的是只指明几个设定选项。您可以去掉上边完整修饰中的任几个，但是保证剩下的还是按照上边所示顺序，例如：</p>
+
+<pre>
+MyApp/
+    res/
+        drawable-en-rUS-finger/
+        drawable-port/
+        drawable-port-mdpi/
+        drawable-qwerty/
+</pre>
+<p>Table 2 lists the valid folder-name qualifiers, in order of precedence. Qualifiers that are listed higher in the table take precedence over those listed lower, as described in <a href="#best-match">How Android finds the best matching directory</a>. 
+<br>
+表2列出合法的文件夹名修饰，按照优先级（即匹配顺序）排列。排在上边的修饰优先加高于下边的，具体描述在<a href="#best-match">How Android finds the best matching directory</a>中。</p>
+<p class="caption" id="table2">Table 2</p>
+<table border="1">
+    <tr>
+        <th> Qualifier ——修饰</th>
+        <th> Values ——值</th>
+    </tr>
+    <tr>
+      <td>MCC and MNC<br>
+		移动电话国家码和移动电话网络码</td>
+      <td><p>The mobile country code optionally followed by mobile network code
+      from the SIM in the device. For example
+      <code>mcc310</code> (U.S. on any carrier);
+      <code>mcc310-mnc004</code> (U.S., Verizon brand);
+      <code>mcc208-mnc00</code> (France, Orange brand);
+      <code>mcc234-mnc00</code> (U.K., BT brand).
+        <br>
+		设备上SIM卡中的移动电话国家码和可选的移动电话网络码。例如，<code>mcc310</code>（任何可能的美国移动运营商）；<code>mcc310-mnc004</code>（美国Verizon通信）；<code>mcc208-mnc00</code>（法国Orange通信）；<code>mcc234-mnc00</code>（英联邦BT通信）。</p><p>
+        If the device uses a radio connection  (GSM phone), the MCC will come
+        from the SIM, and the MNC will come from the  network to which the
+        device is attached. You might sometimes use the MCC alone, for example
+        to include country-specific legal resources in your application. If
+        your application specifies resources for a MCC/MNC  combination, those
+        resources can only be used if both the MCC and the MNC match. <br>
+		如果设备开启手机信号连接（GSM手机），MCC可以从SIM卡中获得，MNC会从手机连接到的网络中获得。您有时可以单独使用MCC，例如向应用程序中加入某国特定的法律信息的资源。如果您的应用程序资源需要MCC/MNC的组合，那么这些资源只有在MCC和MNC都匹配的情况下才会使用。</p></td>
+    </tr>
+    <tr>
+        <td>Language and region<br>
+		区域和语言</td>
+        <td><p>The two letter <a href="http://www.loc.gov/standards/iso639-2/php/code_list.php">ISO
+                639-1</a> language code optionally followed by a two letter
+                <a href="http://www.iso.org/iso/en/prods-services/iso3166ma/02iso-3166-code-lists/list-en1.html">ISO
+                3166-1-alpha-2</a> region code (preceded by lowercase &quot;r&quot;). For example 
+                <code>fr</code>, <code>en-rUS</code>, <code>fr-rFR</code>, <code>es-rES</code>.
+          <br>
+		两个字母的<a href="http://www.loc.gov/standards/iso639-2/php/code_list.php">ISO
+                639-1</a>语言代码加上可选的两个字母的
+                <a href="http://www.iso.org/iso/en/prods-services/iso3166ma/02iso-3166-code-lists/list-en1.html">ISO
+                3166-1-alpha-2</a>地区代码（前面加上小写字母“r”）。例如，<code>fr</code>, <code>en-rUS</code>, <code>fr-rFR</code>, <code>es-rES</code>。</p><p>
+          The codes are <em>not</em> case-sensitive; the r prefix is used to
+          distinguish the region portion.
+          You cannot specify a region alone, but you can specify a language alone,
+          for example <code>en</code>, <code>fr</code>, <code>es</code>.<br>
+			代码是大小写 <em>不</em> 敏感的；r前缀是为了区别地区代码部分。您不能只指定地区代码，但是您可以只指定语言代码，例如<code>en</code>, <code>fr</code>, <code>es</code>。</p> </td>
+    </tr>
+    <tr>
+        <td>Screen dimensions<br>
+		屏幕尺寸</td>
+        <td><p><code>small</code>, <code>normal</code>, <code>large</code>
+        </p><p>
+        Specify that the resource is for a particular class of screen.
+        The meanings of these are:<br>
+		指定资源用于某种类型的屏幕。上述三种值意为：<br>
+		</p>
+        <ul>
+        <li> <b>Normal screens</b> are based on the traditional Android HVGA
+        medium density screen.  A screen is considered to be normal if it is
+        at least this size (independent of density) and not large.  Examples
+        of such screens a WQVGA low density, HVGA medium density, WVGA
+        high density.
+        <br>
+		<strong>普通屏幕 </strong>是指与传统的Android HVGA 
+		中等密度水平的屏幕大小相近的屏幕。屏幕如果差不多是这个大小（决定于显示密度）而又不是很大，就认为是普通屏幕，例如，WQVGA低密度屏幕，HVGA中密度屏幕，WVGA高密度屏幕。<li> <b>Small screens</b> are based on the space available on a
+        QVGA low density screen.  Considering a portrait HVGA display, this has
+        the same available width but less height -- it is 3:4 vs. HVGA's
+        2:3 aspect ratio.  Examples are QVGA low density and VGA high
+        density.
+        <br>
+		<strong>小屏幕 </strong>
+		是指QVGA低密度屏幕大小相近的屏幕。他是HVGA屏幕的一半，HVGA屏幕可以认为是两个QVGA屏幕宽方向的排放，QVGA宽高比是3：4，HVGA是2：3。小屏幕的例子是QVGA低密度屏幕和VGA高密度屏幕。<li> <b>Large screens</b> are based on the space available on a
+        VGA medium density screen.  Such a screen has significantly more
+        available space in both width and height than an HVGA display.
+        Examples are VGA and WVGA medium density screens.
+        <br>
+		<strong>大屏幕 </strong>
+		是指与VGA中等密度屏幕大小相近的屏幕这样的屏幕显然宽高都比HVGA大。这样的屏幕有VGA和WVGA中等密度屏幕等。</td>
+    </tr>
+    <tr>
+        <td>Wider/taller screens<br>
+		宽/高 屏</td>
+        <td><p><code>long</code>, <code>notlong</code>
+        </p><p>
+        Specify that the resource is for a taller/wider than traditional screen. 
+		This is based purely on the aspect ration of the screen: QVGA, HVGA, and 
+		VGA are notlong; WQVGA, WVGA, FWVGA are long. Note that long may mean 
+		either wide or tall, depending on the current orientation.<br>
+		指定这个资源用在比传统屏幕宽（或高）的屏幕环境下。<code>long</code>, <code>notlong</code>仅取决于屏幕宽高比：QVGA, 
+		HVGA, and VGA是notlong；WQVGA, WVGA, FWVGA是long。</p>
+        </td>
+    </tr>
+    <tr>
+        <td>Screen orientation<br>
+		屏幕方向</td>
+        <td><p><code>port</code>, <code>land</code>, <code>square</code>
+        </p><p>
+        Specifies that the resource is for a screen that is tall (port)
+        or wide (land); square is not currently used.<br>
+		指明资源用在竖向（port）或是横向（land）；square目前还没有使用。</p>
+        </td>
+    </tr>
+    <tr>
+        <td>Screen pixel density<br>
+		屏幕像素密度</td>
+        <td><p><code>ldpi</code>, <code>mdpi</code>, <code>hdpi</code>, <code>nodpi</code>
+        </p><p>
+         Specifies the screen density the resource is defined for.  The medium
+         density of traditional HVGA screens (mdpi) is defined to be approximately
+         160dpi; low density (ldpi) is 120, and high density (hdpi) is 240.  There
+         is thus a 4:3 scaling factor between each density, so a 9x9 bitmap
+         in ldpi would be 12x12 is mdpi and 16x16 in hdpi.  The special
+         <code>nodpi</code> density can be used with bitmap resources to prevent
+         them from being scaled at load time to match the device density.
+        <br>
+			指定资源对应的屏幕像素密度。传统的HVGA屏幕的中等密度（mdpi）定义为大概160dpi；低密度（ldpi）是120，高密度（hdpi）是240。因此每个相邻密度等级之间就有4：3的换算关系。9x9的ldpi位图在mdpi中调整为12x12，hdpi中是16x16。<code>nodpi</code>值的意思是位图不需要在加载的时候随设备显示密度进行大小调整。</p><p>
+         When Android selects which resource files to use,
+         it handles screen density  differently than the other qualifiers.
+         In step 1 of <a href="#best-match">How Android finds the best
+         matching directory</a> (below), screen density is always considered to
+         be a match. In step 4, if the qualifier being considered is screen
+         density, Android will select the best final match at that point,
+         without any need to move on to step 5.
+         <br>
+			当Android选择使用哪个资源文件时，对屏幕像素密度修饰的匹配处理与其他修饰不同。在<a href="#best-match">How Android finds the best
+         matching directory</a>（在下边）的第1步，屏幕像素密度总是认为是匹配的。在第4步，如果是像素密度修饰，Android会在此时确定适合的文件，而不会进行第5步。<br>
+         </p><p>
+         You can also specify explicit densities like <code>92dpi</code>
+         or <code>108dpi</code>, but these are not fully supported by the
+         system so should not be used.
+         <br>
+			您也可以指定明确的密度，比如<code>92dpi</code>或<code>108dpi</code>，但是这样指定不是完全被系统支持，因此不常使用。</p>
+         </td>
+    </tr>
+    <tr>
+        <td>Touchscreen type<br>
+		触摸屏类型</td>
+        <td><code>notouch</code>, <code>stylus</code>, <code>finger</code></td>
+    </tr>
+    <tr>
+        <td>Whether the keyboard is available to the user<br>
+		是否有可用的键盘</td>
+        <td><p><code>keysexposed</code>, <code>keyshidden</code>, <code>keyssoft</code>
+        </p><p>
+          If your application has specific resources that should only be used with a soft keyboard, use the <code>keyssoft</code> value. If no <code>keyssoft</code> resources are available (only <code>keysexposed</code> and <code>keyshidden</code>) and the device  shows a soft keyboard,  the system will use <code>keysexposed</code> resources.<br>
+			如果您的应用程序指明只能使用屏幕软键盘，您就要使用<code>keyssoft</code>值。如果没有可用的<code>keyssoft</code>资源（只有<code>keysexposed</code>和<code>keyshidden</code>），然后设备显示了软键盘，系统会自动使用<code>keysexposed</code>资源。</p> </td>
+    </tr>
+    <tr>
+        <td>Primary text input method<br>
+		主要文本输入方法</td>
+        <td><code>nokeys</code>, <code>qwerty</code>, <code>12key</code> </td>
+    </tr>
+    <tr>
+        <td>Whether the navigation keys are available to the user<br>
+		是否有可用的导航按键</td>
+        <td><p><code>navexposed</code>, <code>navhidden</code>
+        </p><p>
+          If the hardware's navigation keys are currently available to
+          the user, the navexposed resources will be used; if they are not
+          available (such as behind a closed lid), navhidden will be used.<br>
+			如果硬件的导航键当前可以使用，系统会使用navexposed资源；如果当前不能使用（比如在合上的盖子之下），navhidden资源会被使用。</p></td>
+    </tr>
+    <tr>
+        <td>Primary non-touchscreen<br />
+            navigation method<br>
+		主要的非屏幕触摸导航方式</td>
+        <td><code>nonav</code>, <code>dpad</code>, <code>trackball</code>, <code>wheel</code> </td>
+    </tr>
+    <tr>
+        <td>Screen dimensions<br>
+		屏幕分辨率</td>
+        <td><code>320x240</code>, <code>640x480</code>, etc. The larger dimension
+            must be specified first.  This configuration is deprecated and
+            should not be used; use instead screen dimension, wider/taller
+            screens, and screen orientation described above.<br>
+		<code>320x240</code>, <code>640x480</code>等等。大的分辨率必须在前面声明。这个修饰不推荐使用；最好换用上边讲过的screen 
+		dimension, wider/taller screens和screen orientation。</td>
+    </tr>
+    <tr>
+      <td>SDK version<br>
+		SDK版本</td>
+      <td>The SDK version supported by the device, for example <code>v3</code>. The Android 1.0 SDK is <code>v1, </code> the 1.1 SDK is <code>v2</code>, and the 1.5 SDK is <code>v3</code>.<br>
+		设备上支持的SDK版本，例如：<code>v3</code>。Android 1.0 SDK是<code>v1</code>，1.1 SDK是 <code>v2</code>，1.5 
+		SDK是<code>v3</code>。</td>
+    </tr>
+    <tr>
+      <td>(Minor version)<br>
+		（最低支持版本）</td>
+      <td>(You cannot currently specify minor version. It is always set to 0.)<br>
+		（您目前还不能指定这个值。这个值被被设定为0。）</td>
+  </tr>
+</table>
+
+<p>This list does not include device-specific parameters such as carrier,
+branding, device/hardware, or manufacturer. Everything that an application
+needs to know about the device that it is running on is encoded via the
+resource qualifiers in the table above.<br>
+表格没有包含对设备本身指定的修饰代码，比如经销商，品牌，设备/硬件，或者生产商。所有一个应用程序所要对其运行设备需要的信息都在上表中。</p>
+
+<p>All resource directories, qualified and unqualified, live under the <code>res/</code> folder. Here are some  guidelines on qualified resource directory names:<br>
+所有的资源文件夹，加修饰与否都在<code>res/</code>文件夹下。下面是修饰资源文件夹的几点注意事项：</p>
+
+<ul>
+    <li>You can specify multiple qualifiers, separated by dashes. For example, <code>drawable-en-rUS-land</code> will apply to US-English
+    devices in landscape orientation. <br>
+	您可以使用多重修饰符号，使用横线隔开。例如，<code>drawable-en-rUS-land</code>会使用在设备的横屏环境。</li>
+    <li>The qualifiers must  be in the order listed in <a href="#table2">Table 2</a> above. For example:
+      <br>
+	修饰符号必须遵循上方<a href="#table2">Table 2</a> 中所列顺序。例如：<ul>
+        <li>Correct 正确: <code>values-mcc460-nokeys/</code></li>
+        <li>Incorrect 错误: <code>values-nokeys-mcc460/</code></li>
+      </ul>
+    </li>
+    <li>Values are case-insensitive.  The resource compiler converts folder names
+    to lower case before processing to avoid problems in case-insensitive
+    file systems.  On case-sensitive file systems, you should keep all names
+    lower-case or at least use a consistent case to protect your future
+    sanity when trying to find a resource file.<br>
+	表中值一栏的修饰符号是大小写不敏感的。资源编译器进行编译前为避免在大小写敏感的文件系统产生错误，将文件夹名全都转换成小写。在大小写敏感的文件系统中，您应该一直使用小写或者使用自己习惯的命名方式，避免在连接资源文件时发生错误。</li>
+    <li>Only one value for each qualifier type is supported. For example, if you want to use exactly the same drawable files for Spain and France, you will need two  resource directories, such as <code>drawable-rES/</code> and <code>drawable-rFR/</code>, containing identical files. You cannot 
+        have a directory named <code>drawable-rES-rFR/</code>. <br>
+	一种修饰方面只能有一个修饰代码出现。例如，如果您想要在西班牙和法国使用完全一样的图片，那您需要创建分别包含这个图片的两个资源文件夹，比如<code>drawable-rES/</code>和<code>drawable-rFR/</code>。您不能创建像这样的文件夹：<code>drawable-rES-rFR/</code>。</li>
+    <li>Qualified directories cannot be nested. For example, you cannot have <code>res/drawable/drawable-en</code>. 
+	<br>
+	修饰的文件夹不能嵌套。例如，您不能这样创建文件夹 <code>res/drawable/drawable-en</code>。</li>
+</ul>
+
+<h3>How resources are referenced in code——如何从代码中引用资源</h3>
+<p>All resources will be referenced in code or resource reference syntax by
+    their simple, undecorated names. So if a resource were named this:<br>
+所有的资源无论在代码还是资源中引用都应使用原始的未修饰的名字。因此如果一个资源是这样的：<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code>MyApp/res/drawable-port-mdpi/myimage.png</code><br />
+  It would be referenced as this:<br>
+那么应该这样引用：<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code>R.drawable.myimage</code> (code&nbsp; 
+在代码中引用)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code>&#064;drawable/myimage</code> (XML&nbsp; 
+在其他资源中引用)</p>
+<p>If several drawable directories are available, Android will select one of them (as described below) and load  <code>myimage.png</code> from it.<br>
+如果有几个drawable文件夹（包括修饰的），Android会自动从中选择（选择方式见下）合适的然后从中加载<code>myimage.png</code>。</p>
+<h3 id="best-match">How Android finds the best matching directory 
+——Android如何寻找最合适的文件夹</h3>
+
+<p>Android will pick which of the various underlying resource files should be
+used at runtime, depending on the current configuration of the device.
+The example used here assumes the following device configuration:<br>
+Android 会根据设备的设定决定运行期加载哪个资源文件。以下边这个设备的配置为例：</p>
+<blockquote>
+  <p>Locale 位置= <code>en-GB</code><br>
+  Screen orientation 屏幕方向= <code>port</code><br>
+  Screen pixel density 屏幕像素密度= <code>mdpi</code><br>
+    Touchscreen type 触摸屏类型= <code>notouch</code><br>
+    Primary text input method 主文本输入方式= <code>12key</code><br>
+  </p>
+</blockquote>
+<p>Here is how  Android  makes the selection: <br>
+下面是Android选择的过程：</p>
+<ol>
+    <li>
+            Eliminate  resource files that contradict the 
+            device configuration. For example, assume that the following resource directories are available for drawables. The <code>drawable-fr-rCA/</code> directory will be eliminated, because it contradicts the locale of the device.<br>
+			排除明显不符设备配置的资源文件。例如，假设有下列的可绘对象的文件夹。<code>drawable-fr-rCA/</code>会被排除，因为明显和设备位置不符。<br>
+<pre>MyApp/res/drawable/
+MyApp/res/drawable-en/
+<strike>MyApp/res/drawable-fr-rCA/</strike>
+MyApp/res/drawable-en-port/
+MyApp/res/drawable-en-notouch-12key/
+MyApp/res/drawable-port-ldpi/
+MyApp/res/drawable-port-notouch-12key</pre>
+      <strong>Exception: </strong>Screen pixel density is the one qualifier that is not used to eliminate files. Even though the screen density of the device is medium dpi, <code>drawable-port-ldpi/</code> is not  eliminated from the list, because every screen density is considered to be a 
+        match at this point.<br>
+			<strong>例外：</strong>屏幕像素修饰不符此时不会作为排除理由。即使屏幕的像素密度是中dpi，但是<code>drawable-port-ldpi/</code>不会排除，因为此时每个屏幕像素密度都认为是相符的。</li>
+    <li>From <a href="#table2">Table 2</a>, pick the   highest-precedence qualifier that remains in the list. (Start with MCC, then move down through the list.) 
+	<br>
+	从<a href="#table2">Table 2</a>中拿出表中剩下的最高优先级的修饰项。（从MCC开始然后按表顺序向下。）</li>
+  <li>Do any of the available resource directories include this qualifier?  </li>
+  <br>
+	剩下的资源文件夹名字中有这个修饰项吗？<ul>
+    <li>If No, return to step 2 and look at the next qualifier listed in Table 2. In our example, the answer is &quot;no&quot; until we reach Language.<br>
+	如果没有，从表2中去掉此修饰项，回到第2步。在这个例子中，直到语言修饰项都是没有。</li>
+    <li>If Yes, move on to step 4.<br>
+	如果有，进行第4步。</li>
+  </ul>
+  <li>Eliminate resource directories that do not include this qualifier. In our example, we eliminate all the directories that do not include a language qualifier. </li>
+  <br>
+	去除没有这个修饰项的资源文件夹。在这个例子中，去掉所有没有语言修饰的文件夹。<pre><strike>MyApp/res/drawable/</strike>
+MyApp/res/drawable-en/
+MyApp/res/drawable-en-port/
+MyApp/res/drawable-en-notouch-12key/
+<strike>MyApp/res/drawable-port-ldpi/</strike>
+<strike>MyApp/res/drawable-port-notouch-12key</strike></pre>
+  <strong>Exception:</strong> If the qualifier in question  is screen pixel density, Android will select the option that most closely matches the device, and the selection process will be complete. In general, Android will prefer scaling down a larger original image to scaling  up a smaller original image.<br>
+	<strong>例外：</strong>如果第3步中跳转至此的判断问题是“剩下的资源文件名字中有屏幕像素密度的修饰吗”，Android会选择和设备最相近的选项，然后向下进行。一般的，Android会选择将大的原始图像缩小以适应设备，而不是选择小的图像进行放大。<br></li>
+
+<li>Go back and repeat steps 2, 3, and 4 until only one choice remains. In the example, screen orientation is the next qualifier in the table for which we have any matches.
+    Eliminate resources that do not specify a screen orientation. <br>
+返回重复第2，3，4步直到只剩一个选择。在这个例子中，屏幕方向是表中的下一个有多个选择的修饰项。去掉没有这个修饰项的文件夹。</p>
+    <pre><strike>MyApp/res/drawable-en/</strike>
+MyApp/res/drawable-en-port/
+<strike>MyApp/res/drawable-en-notouch-12key/</strike></pre>
+  Only one choice remains, so that's it. When drawables are called for in this
+  example application, the Android system will load resources from the
+  <code>MyApp/res/drawable-en-port/</code> directory.  In addition, if the
+  resource being loaded is a bitmap, it will be scaled up so that its supplied
+  low density matches the device's medium density.
+<br>
+现在就只剩下一个文件夹了，这个就是要选择的文件夹。就这个例子来说，当有对可绘对象的连接时，Android会提供<code>MyApp/res/drawable-en-port/</code>文件夹中的可绘对象。而且，如果加载的是位图资源，而且是低dpi的话，系统会将其放大以适应设备的中dpi屏幕。</ol>
+<p class="note"><strong>Tip:</strong> The <em>precedence</em> of the qualifiers is more important than the number of qualifiers that exactly match the device. For example, in step 4 above, the last choice on the list includes three qualifiers that exactly match the device (orientation, touchscreen type, and input method), while <code>drawable-en</code> has only one parameter that matches (language). However, language has a higher precedence, so <code>drawable-port-notouch-12key</code> is out.<br>
+<strong>提示：</strong>符合的修饰项的<em>优先级 </em>
+比符合的修饰项的数量更重要。例如，上边讲述的第4步，最后一个文件夹有三个修饰项与设备完全相符（屏幕方向，触摸屏类型，输入方式），<code>drawable-en</code>只有一个（语言）。但是因为语言的优先级高，所以排除了<code>drawable-port-notouch-12key</code>。</p>
+<p>This flowchart summarizes how Android selects resource directories to load.<br>
+下边的流程图总结了Android如何选择加载的资源文件。</p>
+<p><img src="../../../images/resources/res-selection-flowchart.png" alt="resource-selection" width="461" height="471" style="margin:15px"><img src="../../../images/resources/res-selection-flowchartTr.png" alt="资源选择流程图" width="461" height="471"></p>
+<h3>Terminology——术语</h3>
+<p>The resource system brings a number of different pieces together to
+form the final complete resource functionality.  To help understand the
+overall system, here are some brief definitions of the core concepts and
+components you will encounter in using it:<br>
+Android的非代码系统是将一系列不同的部分联合起来组成了完整的非代码资源使用功能。为了使您更好的了解整个系统，下面是您将会遇到的重要的核心概念和组件的简单定义：</p>
+
+<p><strong>Asset</strong>: A single blob of data associated with an application. This
+includes object files compiled from the Java source code, graphics (such as PNG
+images), XML files, etc. These files are organized in a directory hierarchy
+that, during final packaging of the application, is bundled together into a
+single ZIP file.<br>
+<strong>杂项：</strong>与应用程序相关的一系列数据文件。包括从Java源文件编译而来的目标文件，图像（比如PNG格式的图像），XML文件等等。它们被放到统一的文件夹中，在应用程序的最后打包过程中打包进一个ZIP文件。</p>
+
+<p><strong>aapt</strong>: Android Asset Packaging Tool. The tool that generates the 
+final ZIP file of application assets.  In addition to collecting raw assets 
+together, it also parses resource definitions into binary asset data.<br>
+<strong>aapt：</strong>Android杂项打包工具。生成最后的杂项ZIP文件。除了将原始的杂项文件打包，他也能将资源定义解析为二进制杂项数据文件。</p>
+
+<p><strong>Resource Table</strong>: A special asset that aapt generates for you,
+describing all of the resources contained in an application/package.
+This file is accessed for you by the Resources class; it is not touched
+directly by applications.<br>
+<strong>资源列表：</strong>aapt生成的一个特殊的杂项文件，描述了应用程序/包中的所有资源。这个文件使用Resource类，而不是直接供应用程序使用。</p>
+
+<p><strong>Resource</strong>: An entry in the Resource Table describing a single
+named value.  Broadly, there are two types of resources: primitives and
+bags.<br>
+<strong>资源：</strong>资源列表中描述一个名字值的入口。广义来说，有两种资源：原始资源和包。</p>
+
+<p><strong>Resource Identifier</strong>: In the Resource Table all resources are
+identified by a unique integer number.  In source code (resource descriptions,
+XML files, Java source code) you can use symbolic names that stand as constants for
+the actual resource identifier integer.<br>
+<strong>资源标识符：</strong>在资源列表中所有资源都是用一个唯一的整数值标识。在代码中（此指资源声明，XML文件，Java源代码）您可以使用资源的名称代替实际标记资源的整数。</p>
+
+<p><strong>Primitive Resource</strong>: All primitive resources can be written as a
+simple string, using formatting to describe a variety of primitive types
+included in the resource system: integers, colors, strings, references to
+other resources, etc.  Complex resources, such as bitmaps and XML
+describes, are stored as a primitive string resource whose value is the path
+of the underlying Asset holding its actual data.<br>
+<strong>原始资源：</strong>所有的原始资源都可以写作简单的字符串，使用定义格式描述资源系统中的多种原始类型：整数，颜色，字符串，引用其他资源，等等。复杂的资源，比如位图和XML描述文件，都是作为字符串原始资源存储的，字符串值是实际存储数据的杂项文件的路径。</p>
+
+<p><strong>Bag Resource</strong>: A special kind of resource entry that, instead of a
+simple string, holds an arbitrary list of name/value pairs.  Each name is
+itself a resource identifier, and each value can hold
+the same kinds of string formatted data as a normal resource.  Bags also
+support inheritance: a bag can inherit the values from another bag, selectively
+replacing or extending them to generate its own contents.<br>
+<strong>包资源：</strong>一种特殊的资源入口，不是简单的字符串，而是包含了一个名/值对的随机列表。每个名自己是资源的标识符，每个值可以放相同种类的字符串格式的数据作为资源。包支持继承：包可以继承其他包的值，可以替换已有的值或继承后对其进行扩充。</p>
+
+<p><strong>Kind</strong>: The resource kind is a way to organize resource identifiers
+for various purposes.  For example, drawable resources are used to
+instantiate Drawable objects, so their data is a primitive resource containing
+either a color constant or string path to a bitmap or XML asset.  Other
+common resource kinds are string (localized string primitives), color
+(color primitives), layout (a string path to an XML asset describing a view
+layout), and style (a bag resource describing user interface attributes).
+There is also a standard "attr" resource kind, which defines the resource
+identifiers to be used for naming bag items and XML attributes<br>
+<strong>种类：</strong>资源的种类是组织不同目的资源标识符的一种手段。例如，图形资源用于创建Drawable对象，因此他们的数据是包含颜色常数或包含位图或XML杂项的路径的字符串。其他的通用资源类型是字符串（本地化的字符串原始资源），颜色（颜色原始资源），布局（描述可视框布局的XML杂项的路径的字符串），和风格（描述用户界面参数的包资源）。还有一种标准的“attr”资源类型，定义了用以为包元素或XML参数命名的资源标识符。</p>
+
+<p><strong>Style</strong>: The name of the resource kind containing bags that are used
+to supply a set of user interface attributes.  For example, a TextView class may
+be given a style resource that defines its text size, color, and alignment.
+In a layout XML file, you associate a style with a bag using the "style"
+attribute, whose value is the name of the style resource.</p>
+
+<p><strong>Style Class</strong>: Specifies a related set of attribute resources.
+This data is not placed in the resource table itself, but used to generate
+constants in the source code that make it easier for you to retrieve values out of
+a style resource and/or XML tag's attributes.  For example, the
+Android platform defines a "View" style class that
+contains all of the standard view attributes: padding, visibility,
+background, etc.; when View is inflated it uses this style class to
+retrieve those values from the XML file (at which point style and theme
+information is applied as approriate) and load them into its instance.</p>
+
+<p><strong>Configuration</strong>: For any particular resource identifier, there may be
+multiple different available values depending on the current configuration.
+The configuration includes the locale (language and country), screen
+orientation, etc.  The current configuration is used to
+select which resource values are in effect when the resource table is
+loaded.</p>
+
+<p><strong>Theme</strong>: A standard style resource that supplies global
+attribute values for a particular context.  For example, when writing an
+Activity the application developer can select a standard theme to use, such
+as the Theme.White or Theme.Black styles; this style supplies information
+such as the screen background image/color, default text color, button style,
+text editor style, text size, etc.  When inflating a layout resource, most
+values for widgets (the text color, selector, background) if not explicitly
+set will come from the current theme; style and attribute
+values supplied in the layout can also assign their value from explicitly
+named values in the theme attributes if desired.</p>
+
+<p><strong>Overlay</strong>: A resource table that does not define a new set of resources,
+but instead replaces the values of resources that are in another resource table.
+Like a configuration, this is applied at load time
+to the resource data; it can add new configuration values (for example
+strings in a new locale), replace existing values (for example change
+the standard white background image to a "Hello Kitty" background image),
+and modify resource bags (for example change the font size of the Theme.White
+style to have an 18 pt font size).  This is the facility that allows the
+user to select between different global appearances of their device, or
+download files with new appearances.</p>
+
+<h2>Resource Reference——资源索引参考</h2>
+<p>The <a href="available-resources.html">Available Resources</a>
+document provides a detailed list of the various types of resource and how to use them
+from within the Java source code, or from other references.<br>
+<a href="available-resources.html">Available Resources</a>文档提供了各种类型的资源及如何从Java代码或其他引用使用它们的详细列表。</p>
+
+<a name="i18n" id="i18n"></a>
+<h2>Internationalization and Localization——国际化和本地化</h2>
+<p class="note"><strong>Coming Soon:</strong> Internationalization and Localization are
+critical, but are also not quite ready yet in the current SDK. As the
+SDK matures, this section will contain information on the Internationalization
+and Localization features of the Android platform. In the meantime, it is a good
+idea to start by externalizing all strings, and practicing good structure in
+creating and using resources.<br>
+<strong>未完成：</strong>国际化和本地化是非常重要的，但是当前版本的SDK还未完成对其的支持。随着SDK的成熟，这一节会添加Android平台国际化和本地化的信息的内容。同时，您可以将所有字符串放在外部的资源并为他们合理创建文件夹（使用上边讲到的修饰）完成国际化和本地化的需要。</p>
+
+    </div>
+
+  <a href="#top" style="float:right">&uarr; Go to top</a>
+  
+    <p><a href="index.html">&larr; Back to Resources and Assets</a></p>
+  
+  </div>
+
+<div id="footer">
+
+
+  <div id="copyright">
+    
+  Except as noted, this content is licensed under <a
+  href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0</a>. 
+  For details and restrictions, see the <a href="../../../license.html">
+  Content License</a>.
+  </div>
+  <div id="build_info">
+    
+  Android 2.0.1&nbsp;r1 - 24 Nov 2009 18:21
+
+  </div>
+
+  <div id="footerlinks">
+    
+  <p>
+    <a href="http://www.android.com/terms.html">Site Terms of Service</a> -
+    <a href="http://www.android.com/privacy.html">Privacy Policy</a> -
+    <a href="http://www.android.com/branding.html">Brand Guidelines</a>
+  </p>
+  </div>
+
+</div> <!-- end footer -->
+
+</div><!-- end doc-content -->
+
+</div> <!-- end body-content --> 
+
+<script type="text/javascript">
+init(); /* initialize android-developer-docs.js */
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-5831155-1");
+pageTracker._trackPageview();
+</script>
+
+</body>
+</html>
+
+
+

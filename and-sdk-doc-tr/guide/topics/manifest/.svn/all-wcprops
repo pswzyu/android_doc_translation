@@ -1,0 +1,155 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svnroot/and-sdk-doc-tr/!svn/ver/5/guide/topics/manifest
+END
+permission-tree-element.html
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/and-sdk-doc-tr/!svn/ver/5/guide/topics/manifest/permission-tree-element.html
+END
+permission-element.html
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/and-sdk-doc-tr/!svn/ver/5/guide/topics/manifest/permission-element.html
+END
+provider-element.html
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/and-sdk-doc-tr/!svn/ver/5/guide/topics/manifest/provider-element.html
+END
+activity-element.html
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/and-sdk-doc-tr/!svn/ver/5/guide/topics/manifest/activity-element.html
+END
+meta-data-element.html
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/and-sdk-doc-tr/!svn/ver/5/guide/topics/manifest/meta-data-element.html
+END
+grant-uri-permission-element.html
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/and-sdk-doc-tr/!svn/ver/5/guide/topics/manifest/grant-uri-permission-element.html
+END
+uses-sdk-element.html
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/and-sdk-doc-tr/!svn/ver/5/guide/topics/manifest/uses-sdk-element.html
+END
+supports-screens-element.html
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/and-sdk-doc-tr/!svn/ver/5/guide/topics/manifest/supports-screens-element.html
+END
+service-element.html
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/and-sdk-doc-tr/!svn/ver/5/guide/topics/manifest/service-element.html
+END
+instrumentation-element.html
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/and-sdk-doc-tr/!svn/ver/5/guide/topics/manifest/instrumentation-element.html
+END
+application-element.html
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/and-sdk-doc-tr/!svn/ver/5/guide/topics/manifest/application-element.html
+END
+receiver-element.html
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/and-sdk-doc-tr/!svn/ver/5/guide/topics/manifest/receiver-element.html
+END
+uses-permission-element.html
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/and-sdk-doc-tr/!svn/ver/5/guide/topics/manifest/uses-permission-element.html
+END
+manifest-element.html
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/and-sdk-doc-tr/!svn/ver/5/guide/topics/manifest/manifest-element.html
+END
+manifest-intro.html
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/and-sdk-doc-tr/!svn/ver/5/guide/topics/manifest/manifest-intro.html
+END
+uses-feature-element.html
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/and-sdk-doc-tr/!svn/ver/5/guide/topics/manifest/uses-feature-element.html
+END
+data-element.html
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/and-sdk-doc-tr/!svn/ver/5/guide/topics/manifest/data-element.html
+END
+category-element.html
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/and-sdk-doc-tr/!svn/ver/5/guide/topics/manifest/category-element.html
+END
+action-element.html
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/and-sdk-doc-tr/!svn/ver/5/guide/topics/manifest/action-element.html
+END
+uses-library-element.html
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/and-sdk-doc-tr/!svn/ver/5/guide/topics/manifest/uses-library-element.html
+END
+permission-group-element.html
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/and-sdk-doc-tr/!svn/ver/5/guide/topics/manifest/permission-group-element.html
+END
+path-permission-element.html
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/and-sdk-doc-tr/!svn/ver/5/guide/topics/manifest/path-permission-element.html
+END
+activity-alias-element.html
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/and-sdk-doc-tr/!svn/ver/5/guide/topics/manifest/activity-alias-element.html
+END
+intent-filter-element.html
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/and-sdk-doc-tr/!svn/ver/5/guide/topics/manifest/intent-filter-element.html
+END
+uses-configuration-element.html
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/and-sdk-doc-tr/!svn/ver/5/guide/topics/manifest/uses-configuration-element.html
+END

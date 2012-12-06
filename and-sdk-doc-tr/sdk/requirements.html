@@ -1,0 +1,477 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="shortcut icon" type="image/x-icon" href="../favicon.ico"><title>System Requirements | Android Developers</title>
+
+<link href="../assets/android-developer-docs-devguide.css" rel="stylesheet" type="text/css">
+<script src="../assets/search_autocomplete.js" type="text/javascript"></script>
+<script src="../assets/jquery-resizable.min.js" type="text/javascript"></script>
+<script src="../assets/android-developer-docs.js" type="text/javascript"></script>
+<script type="text/javascript">
+  setToRoot("../");
+</script>
+
+  <style type="text/css">
+    html,body{overflow:auto;}
+    #body-content{position:relative; top:0;}
+    #doc-content{overflow:visible;border-left:3px solid #666;}
+    #side-nav{padding:0;}
+    #side-nav .toggle-list ul {display:block;}
+    #resize-packages-nav{border-bottom:3px solid #666;}
+  </style></head><noscript></noscript><body class="gc-documentation">
+
+  <div id="header">
+      <div id="headerLeft">
+          <a href="../index.html" tabindex="-1"><img src="../assets/images/bg_logo.png" alt="Android Developers"></a>
+          <ul id="header-tabs" class="sdk">
+    
+	<li id="home-link"><a href="../offline.html">
+	
+		<span class="en">Home</span>
+		<span style="display: none;" class="de">Startseite</span>
+		<span style="display: none;" class="es"></span>
+		<span style="display: none;" class="fr"></span>
+		<span style="display: none;" class="it"></span>
+    <span style="display: none;" class="ja">ホーム</span>
+		<span style="display: none;" class="zh-CN">主页</span>
+		<span style="display: none;" class="zh-TW">首頁</span>
+	
+	</a></li>
+	<li id="sdk-link"><a href="../sdk/index.html">
+		<span class="en">SDK</span>
+	</a></li>
+	<li id="guide-link"><a href="../guide/index.html" onclick="return loadLast('guide')">
+	
+		<span class="en">Dev Guide</span>
+		<span style="display: none;" class="de">Handbuch</span>
+		<span style="display: none;" class="es">Guía</span>
+		<span style="display: none;" class="fr">Guide</span>
+		<span style="display: none;" class="it">Guida</span>
+    <span style="display: none;" class="ja">開発ガイド</span>
+		<span style="display: none;" class="zh-CN">开发人员指南</span>
+		<span style="display: none;" class="zh-TW">開發指南</span>
+	
+	</a></li>
+	<li id="reference-link"><a href="../reference/packages.html" onclick="return loadLast('reference')">
+	
+		<span class="en">Reference</span>
+		<span style="display: none;" class="de">Referenz</span>
+		<span style="display: none;" class="es">Referencia</span>
+		<span style="display: none;" class="fr">Référence</span>
+		<span style="display: none;" class="it">Riferimento</span>
+    <span style="display: none;" class="ja">リファレンス</span>
+		<span style="display: none;" class="zh-CN">参考</span>
+		<span style="display: none;" class="zh-TW">參考資料</span>
+	
+	</a></li>
+	<li><a href="http://android-developers.blogspot.com" onclick="return requestAppendHL(this.href)">
+	
+		<span class="en">Blog</span>
+		<span style="display: none;" class="de"></span>
+		<span style="display: none;" class="es"></span>
+		<span style="display: none;" class="fr"></span>
+		<span style="display: none;" class="it"></span>
+    <span style="display: none;" class="ja">ブログ</span>
+		<span style="display: none;" class="zh-CN">博客</span>
+		<span style="display: none;" class="zh-TW">網誌</span>
+	
+	</a></li>
+	<li id="videos-link"><a href="../videos/index.html" onclick="return loadLast('videos')">
+	
+		<span class="en">Videos</span>
+		<span style="display: none;" class="de"></span>
+		<span style="display: none;" class="es"></span>
+		<span style="display: none;" class="fr"></span>
+		<span style="display: none;" class="it"></span>
+    <span style="display: none;" class="ja">ビデオ</span>
+		<span style="display: none;" class="zh-CN"></span>
+		<span style="display: none;" class="zh-TW"></span>
+	
+	</a></li>
+	<li id="community-link"><a href="../community/index.html">
+	
+		<span class="en">Community</span>
+		<span style="display: none;" class="de"></span>
+		<span style="display: none;" class="es">Comunidad</span>
+		<span style="display: none;" class="fr">Communauté</span>
+		<span style="display: none;" class="it"></span>
+    <span style="display: none;" class="ja">コミュニティ</span>
+		<span style="display: none;" class="zh-CN">社区</span>
+		<span style="display: none;" class="zh-TW">社群</span>
+	
+	</a></li>
+     
+</ul>
+     
+      </div>
+      <div id="headerRight">
+          <div id="headerLinks">
+          
+          <a href="http://www.android.com">Android.com</a>
+          </div>
+  <div id="search">
+      <div id="searchForm">
+          <form accept-charset="utf-8" class="gsc-search-box" onsubmit="return submit_search()">
+            <table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody>
+                <tr>
+                  <td class="gsc-input">
+                    <input id="search_autocomplete" class="gsc-input" size="33" autocomplete="off" title="search developer docs" name="q" value="search developer docs" onfocus="search_focus_changed(this, true)" onblur="search_focus_changed(this, false)" onkeydown="return search_changed(event, true, '../')" onkeyup="return search_changed(event, false, '../')" type="text">
+                  <div id="search_filtered_div" class="no-display">
+                      <table id="search_filtered" cellspacing="0">
+                      </table>
+                  </div>
+                  </td>
+                  <td class="gsc-search-button">
+                    <input value="Search" title="search" id="search-button" class="gsc-search-button" type="submit">
+                  </td>
+                  <td class="gsc-clear-button">
+                    <div title="clear results" class="gsc-clear-button">&nbsp;</div>
+                  <br>
+</td>
+                </tr></tbody>
+              </table>
+          </form>
+      </div><!-- searchForm -->
+  </div><!-- search -->
+      </div><!-- headerRight -->
+      <script type="text/javascript">
+        <!--  
+        changeTabLang(getLangPref());
+        //-->
+      </script>
+  </div><!-- header -->
+
+  <div class="g-section g-tpl-240" id="body-content">
+    <div class="g-unit g-first not-resizable" id="side-nav">
+      <div id="devdoc-nav">
+<ul>
+  <li>
+    
+    <h2>
+      <span class="en">Downloadable SDK Components——可下载的SDK组件</span></h2>
+    <h2>
+      <span style="display: none;" class="de"></span>
+      <span style="display: none;" class="es"></span>
+      <span style="display: none;" class="fr"></span>
+      <span style="display: none;" class="it"></span>
+      <span style="display: none;" class="ja"></span>
+      <span style="display: none;" class="zh-CN"></span>
+      <span style="display: none;" class="zh-TW"></span>
+    </h2>
+
+    <ul>
+      <li><a href="../sdk/adding-components.html">
+      <span class="en">Adding SDK Components——添加SDK组件</span><span class="en"><a href="adding-components.html"><span class="en">——添加SDK组件</span></a></span><span class="en"><a href="adding-components.html"><span class="en">——添加SDK组件</span></a></span>
+      <span style="display: none;" class="de"></span>
+      <span style="display: none;" class="es"></span>
+      <span style="display: none;" class="fr"></span>
+      <span style="display: none;" class="it"></span>
+      <span style="display: none;" class="ja"></span>
+      <span style="display: none;" class="zh-CN"></span>
+      <span style="display: none;" class="zh-TW"></span></a>
+      </li>
+    </ul>
+    <ul>
+      <li><a href="../sdk/android-2.0.1.html">Android 2.0.1
+        Platform</a> <span class="new">new!</span>
+      </li>
+      <li><a href="../sdk/android-1.6.html">Android 1.6 
+        Platform</a> <span class="new">new!</span></li>
+      <li><a href="../sdk/android-1.5.html">Android 1.5 Platform</a></li>
+      <li class="toggle-list">
+        <div><a href="#" onclick="toggle(this.parentNode.parentNode,true); return false;">Older Platforms</a></div>
+        <ul> 
+          <li><a href="../sdk/android-2.0.html">Android 2.0
+            Platform</a>
+          </li>
+          <li><a href="../sdk/android-1.1.html">Android 1.1 Platform</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <ul>
+      <li><a href="../sdk/tools-notes.html">SDK Tools, r4</a>
+      <span class="new">new!</span>
+      </li>
+      <li><a href="../sdk/win-usb.html">USB Driver for
+Windows, r2</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+      <h2>
+      <span class="en">ADT Plugin for Eclipse</span>
+      <span style="display: none;" class="de"></span>
+      <span style="display: none;" class="es"></span>
+      <span style="display: none;" class="fr"></span>
+      <span style="display: none;" class="it"></span>
+      <span style="display: none;" class="ja"></span>
+      <span style="display: none;" class="zh-CN"></span>
+      <span style="display: none;" class="zh-TW"></span>
+      </h2>
+    <ul>
+      <li><a href="../sdk/eclipse-adt.html">Installing and Updating
+      <span style="display: none;" class="de"></span>
+      <span style="display: none;" class="es"></span>
+      <span style="display: none;" class="fr"></span>
+      <span style="display: none;" class="it"></span>
+      <span style="display: none;" class="ja"></span>
+      <span style="display: none;" class="zh-CN"></span>
+      <span style="display: none;" class="zh-TW"></span></a>
+      </li>
+      <li><a href="../sdk/adt-notes.html">ADT 0.9.5 
+          <span class="new">new!</span></a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h2><span class="en">Native Development Tools</span>
+      <span style="display: none;" class="de"></span>
+      <span style="display: none;" class="es"></span>
+      <span style="display: none;" class="fr"></span>
+      <span style="display: none;" class="it"></span>
+      <span style="display: none;" class="ja"></span>
+      <span style="display: none;" class="zh-CN"></span>
+      <span style="display: none;" class="zh-TW"></span>
+    </h2>
+    <ul>
+      <li><a href="../sdk/ndk/1.6_r1/index.html">Android 1.6 NDK, r1</a></li>
+    </ul>
+  </li>
+  <li>
+    <h2>
+      <span class="en">More Information</span>
+      <span style="display: none;" class="de"></span>
+      <span style="display: none;" class="es"></span>
+      <span style="display: none;" class="fr"></span>
+      <span style="display: none;" class="it"></span>
+      <span style="display: none;" class="ja"></span>
+      <span style="display: none;" class="zh-CN"></span>
+      <span style="display: none;" class="zh-TW"></span>
+    </h2>
+    <ul>
+      <li><a href="../sdk/requirements.html">SDK System Requirements</a></li>
+      <li><a href="../sdk/terms.html">SDK Terms and Conditions</a></li>
+      <li><a href="../sdk/RELEASENOTES.html">SDK Release
+            Notes</a></li>
+      <li><a href="../sdk/older_releases.html">SDK
+            Archives</a></li>
+
+    </ul>
+  </li>
+
+</ul>
+
+<script type="text/javascript">
+<!--
+    buildToggleLists();
+    changeNavLang(getLangPref());
+//-->
+</script>
+
+
+      </div>
+    </div> <!-- end side-nav -->
+
+
+
+
+<div class="g-unit" id="doc-content"><a name="top"></a>
+
+<div id="jd-header" class="guide-header">
+  <span class="crumb">
+    &nbsp;
+    
+  </span>
+<h1>System Requirements——系统要求</h1>
+</div>
+
+  <div id="jd-content">
+
+
+    <div class="jd-descr">
+    <p>The sections below describe the system and software requirements for developing 
+Android applications using the Android Development Tools, revision 3.<br>
+下面的章节介绍了使用第三版Android开发工具开发Android程序的系统和软件要求。<br>
+ </p>
+
+<h3>Supported Operating Systems——支持的操作系统</h3>
+<ul>
+  <li>Windows XP (32-bit) or Vista (32- or 64-bit)——Windows XP (32位) 或 Vista (32位或64位)</li><li>Mac OS X 10.4.8 or later (x86 only)——Mac OS X 10.4.8 或更高 (仅支持x86平台)</li>
+  <li>Linux (tested on Linux Ubuntu Hardy Heron)——Linux(Linux Ubuntu Hardy Heron上测试通过)
+    <ul>
+      <li>64-bit distributions must be capable of running 32-bit applications. 
+      For information about how to add support for 32-bit applications, see
+      the <a href="installing.html#troublehooting">Ubuntu Linux
+installation notes</a>.&nbsp;&nbsp;&nbsp;&nbsp; 如果您使用64位版本的，则请确定它支持32位的程序，关于如何添加32位程序的支持，请参见<a href="installing.html#troublehooting">Ubuntu Linux
+installation notes</a>。<br>
+</li>
+    </ul>
+  </li>
+</ul>
+
+<h3>Supported Development Environments——支持的开发环境</h3>
+<ul>
+  <li>Eclipse IDE——Eclipse集成开发环境
+    <ul>
+      <li><a href="http://www.eclipse.org/downloads/">Eclipse</a> 3.4 (Ganymede) or 3.5 (Galileo)
+        <ul>
+        <li>Note: Eclipse 3.3 has not been tested with the latest version of 
+ADT and support can no longer be guaranteed. We suggest you upgrade to Eclipse
+3.4 or 3.5.&nbsp;&nbsp;&nbsp;&nbsp; 注意：我们没有使用Eclipse3.3测试最新版本的ADT插件，不保证可用。我们建议您升级到3.4或3.5版。<br>
+</li>
+        <li>Recommended Eclipse IDE packages: Eclipse IDE for Java EE
+Developers, Eclipse IDE for Java Developers, Eclipse for RCP/Plug-in
+Developers, or Eclipse Classic (3.5.1+)&nbsp;&nbsp;&nbsp;&nbsp; 推荐的Eclipse开发环境包：Eclipse IDE for Java EE
+Developers, Eclipse IDE for Java Developers, Eclipse for RCP/Plug-in
+Developers, or Eclipse Classic (3.5.1+)&nbsp;</li>
+        <li>Eclipse <a href="http://www.eclipse.org/jdt">JDT</a> plugin
+(included in most Eclipse IDE packages)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Eclipse <a href="http://www.eclipse.org/jdt">JDT</a> 插件（多数Eclipse包中已包含）<br>
+ </li>
+        </ul>
+      </li>     
+      <li><a href="http://java.sun.com/javase/downloads/index.jsp">JDK 5 or JDK 6</a> (JRE alone is not sufficient)——<a href="http://java.sun.com/javase/downloads/index.jsp">JDK 5 or JDK 6</a> (只有JRE是不够的)</li>
+      <li><a href="eclipse-adt.html">Android Development Tools
+plugin</a> (optional)——<a href="eclipse-adt.html">Android Development Tools
+plugin</a> (可选)</li>
+      <li><strong>Not</strong> compatible with Gnu Compiler for Java (gcj)——不支持Gnu Compiler for Java (gcj)</li>
+    </ul>
+  </li>
+  <li>Other development environments or IDEs——其他开发环境
+    <ul>
+      <li><a href="http://java.sun.com/javase/downloads/index.jsp">JDK 5 or JDK 6</a> (JRE alone is not sufficient)——<a href="http://java.sun.com/javase/downloads/index.jsp">JDK 5 or JDK 6</a> (仅有JRE是不够的)</li>
+      <li><a href="http://ant.apache.org/">Apache Ant</a> 1.6.5 or later for Linux and Mac, 1.7 or later for Windows——Linux和Mac上1.6.5及以上，或Windows上1.7及以上的&nbsp;&nbsp; <a href="http://ant.apache.org/">Apache Ant</a></li>
+      <li><strong>Not</strong> compatible with Gnu Compiler for Java (gcj)——不支持Gnu Compiler for Java (gcj)</li>
+    </ul>
+  </li>
+</ul>
+
+<p class="note"><strong>Note:</strong> If JDK is already installed on
+your development computer, please take a moment to make sure that it
+meets the version requirements listed above. In
+particular, note that some Linux distributions may include JDK 1.4 or
+Gnu Compiler for Java, both of which are not supported for Android
+development.<br>
+1<strong>ot注意：</strong>2如果在您的开发用计算机上已经安装了JDK，则请确认版本符合上面的要求。 特别的，有些Linux发行版可能已经带了JDK 1.4或GCJ，这两者都是不被支持的。<br>
+ </p>
+
+<h3>Hardware requirements——硬件要求</h3>
+<ul>
+  <li>For the base SDK package, at least 600MB of available disk
+space. For each platform downloaded into the SDK, an additional 100MB
+is needed.&nbsp;&nbsp;&nbsp;&nbsp;
+基本的SDK包需要至少600MB的可用磁盘空间。每个平台组件都需要约100MB的额外空间。<br>
+ </li>
+</ul>
+
+
+    </div>
+
+  <a href="#top" style="float: right;">↑ Go to top</a>
+  
+  </div>
+
+<div id="footer">
+
+
+  <div id="copyright">
+    
+  Except as noted, this content is 
+  licensed under <a href="http://creativecommons.org/licenses/by/2.5/">
+  Creative Commons Attribution 2.5</a>. For details and 
+  restrictions, see the <a href="../license.html">Content 
+  License</a>.
+  </div>
+
+  <div id="footerlinks">
+    
+  <p>
+    <a href="http://www.android.com/terms.html">Site Terms of Service</a> -
+    <a href="http://www.android.com/privacy.html">Privacy Policy</a> -
+    <a href="http://www.android.com/branding.html">Brand Guidelines</a>
+  </p>
+  </div>
+
+</div> <!-- end footer -->
+
+</div><!-- end doc-content -->
+
+</div> <!-- end body-content --> 
+
+<script type="text/javascript">
+init(); /* initialize android-developer-docs.js */
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-5831155-1");
+pageTracker._trackPageview();
+</script>
+
+</body></html>

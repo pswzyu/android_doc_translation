@@ -1,0 +1,611 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="shortcut icon" type="image/x-icon" href="../favicon.ico" />
+<title>USB Driver for Windows | Android Developers</title>
+<link href="../assets/android-developer-docs-devguide.css" rel="stylesheet" type="text/css" />
+<script src="../assets/search_autocomplete.js" type="text/javascript"></script>
+<script src="../assets/jquery-resizable.min.js" type="text/javascript"></script>
+<script src="../assets/android-developer-docs.js" type="text/javascript"></script>
+<script type="text/javascript">
+  setToRoot("../");
+</script>
+<noscript>
+  <style type="text/css">
+    html,body{overflow:auto;}
+    #body-content{position:relative; top:0;}
+    #doc-content{overflow:visible;border-left:3px solid #666;}
+    #side-nav{padding:0;}
+    #side-nav .toggle-list ul {display:block;}
+    #resize-packages-nav{border-bottom:3px solid #666;}
+  </style>
+</noscript>
+</head>
+
+<body class="gc-documentation">
+
+  <div id="header">
+      <div id="headerLeft">
+          <a href="../index.html" tabindex="-1"><img
+              src="../assets/images/bg_logo.png" alt="Android Developers" /></a>
+          <ul id="header-tabs" class="sdk">
+    
+	<li id="home-link"><a href="../offline.html">
+	
+		<span class="en">Home</span>
+		<span style="display:none" class="de">Startseite</span>
+		<span style="display:none" class="es"></span>
+		<span style="display:none" class="fr"></span>
+		<span style="display:none" class="it"></span>
+    <span style="display:none" class="ja">ホーム</span>
+		<span style="display:none" class="zh-CN">主页</span>
+		<span style="display:none" class="zh-TW">首頁</span>
+	
+	</a></li>
+	<li id="sdk-link"><a href="../sdk/index.html">
+		<span class="en">SDK</span>
+	</a></li>
+	<li id="guide-link"><a href="../guide/index.html" onClick="return loadLast('guide')">
+	
+		<span class="en">Dev Guide</span>
+		<span style="display:none" class="de">Handbuch</span>
+		<span style="display:none" class="es">Guía</span>
+		<span style="display:none" class="fr">Guide</span>
+		<span style="display:none" class="it">Guida</span>
+    <span style="display:none" class="ja">開発ガイド</span>
+		<span style="display:none" class="zh-CN">开发人员指南</span>
+		<span style="display:none" class="zh-TW">開發指南</span>
+	
+	</a></li>
+	<li id="reference-link"><a href="../reference/packages.html" onClick="return loadLast('reference')">
+	
+		<span class="en">Reference</span>
+		<span style="display:none" class="de">Referenz</span>
+		<span style="display:none" class="es">Referencia</span>
+		<span style="display:none" class="fr">Référence</span>
+		<span style="display:none" class="it">Riferimento</span>
+    <span style="display:none" class="ja">リファレンス</span>
+		<span style="display:none" class="zh-CN">参考</span>
+		<span style="display:none" class="zh-TW">參考資料</span>
+	
+	</a></li>
+	<li><a href="http://android-developers.blogspot.com" onClick="return requestAppendHL(this.href)">
+	
+		<span class="en">Blog</span>
+		<span style="display:none" class="de"></span>
+		<span style="display:none" class="es"></span>
+		<span style="display:none" class="fr"></span>
+		<span style="display:none" class="it"></span>
+    <span style="display:none" class="ja">ブログ</span>
+		<span style="display:none" class="zh-CN">博客</span>
+		<span style="display:none" class="zh-TW">網誌</span>
+	
+	</a></li>
+	<li id="videos-link"><a href="../videos/index.html" onClick="return loadLast('videos')">
+	
+		<span class="en">Videos</span>
+		<span style="display:none" class="de"></span>
+		<span style="display:none" class="es"></span>
+		<span style="display:none" class="fr"></span>
+		<span style="display:none" class="it"></span>
+    <span style="display:none" class="ja">ビデオ</span>
+		<span style="display:none" class="zh-CN"></span>
+		<span style="display:none" class="zh-TW"></span>
+	
+	</a></li>
+	<li id="community-link"><a href="../community/index.html">
+	
+		<span class="en">Community</span>
+		<span style="display:none" class="de"></span>
+		<span style="display:none" class="es">Comunidad</span>
+		<span style="display:none" class="fr">Communauté</span>
+		<span style="display:none" class="it"></span>
+    <span style="display:none" class="ja">コミュニティ</span>
+		<span style="display:none" class="zh-CN">社区</span>
+		<span style="display:none" class="zh-TW">社群</span>
+	
+	</a></li>
+     
+</ul>
+     
+      </div>
+      <div id="headerRight">
+          <div id="headerLinks">
+          
+          <a href="http://www.android.com">Android.com</a>
+          </div>
+  <div id="search" >
+      <div id="searchForm">
+          <form accept-charset="utf-8" class="gsc-search-box" 
+                onsubmit="return submit_search()">
+            <table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody>
+                <tr>
+                  <td class="gsc-input">
+                    <input id="search_autocomplete" class="gsc-input" type="text" size="33" autocomplete="off"
+                      title="search developer docs" name="q"
+                      value="search developer docs"
+                      onFocus="search_focus_changed(this, true)"
+                      onBlur="search_focus_changed(this, false)"
+                      onkeydown="return search_changed(event, true, '../')"
+                      onkeyup="return search_changed(event, false, '../')" />
+                  <div id="search_filtered_div" class="no-display">
+                      <table id="search_filtered" cellspacing=0>
+                      </table>
+                  </div>
+                  </td>
+                  <td class="gsc-search-button">
+                    <input type="submit" value="Search" title="search" id="search-button" class="gsc-search-button" />
+                  </td>
+                  <td class="gsc-clear-button">
+                    <div title="clear results" class="gsc-clear-button">&nbsp;</div>
+                  </td>
+                </tr></tbody>
+              </table>
+          </form>
+      </div><!-- searchForm -->
+  </div><!-- search -->
+      </div><!-- headerRight -->
+      <script type="text/javascript">
+        <!--  
+        changeTabLang(getLangPref());
+        //-->
+      </script>
+  </div><!-- header -->
+
+  <div class="g-section g-tpl-240" id="body-content">
+    <div class="g-unit g-first not-resizable" id="side-nav">
+      <div id="devdoc-nav">
+<ul>
+  <li>
+    <h2>
+      <span class="en">Downloadable SDK Components</span>
+      <span style="display:none" class="de"></span>
+      <span style="display:none" class="es"></span>
+      <span style="display:none" class="fr"></span>
+      <span style="display:none" class="it"></span>
+      <span style="display:none" class="ja"></span>
+      <span style="display:none" class="zh-CN"></span>
+      <span style="display:none" class="zh-TW"></span>
+    </h2>
+    <ul>
+      <li><a href="../sdk/adding-components.html">
+      <span class="en">Adding SDK Components</span>
+      <span style="display:none" class="de"></span>
+      <span style="display:none" class="es"></span>
+      <span style="display:none" class="fr"></span>
+      <span style="display:none" class="it"></span>
+      <span style="display:none" class="ja"></span>
+      <span style="display:none" class="zh-CN"></span>
+      <span style="display:none" class="zh-TW"></span></a>
+      </li>
+    </ul>
+    <ul>
+      <li><a href="../sdk/android-2.0.1.html">Android 2.0.1
+        Platform</a> <span class="new">new!</span>
+      </li>
+      <li><a href="../sdk/android-1.6.html">Android 1.6 
+        Platform</a> <span class="new">new!</span></li>
+      <li><a href="../sdk/android-1.5.html">Android 1.5 Platform</a></li>
+      <li class="toggle-list">
+        <div><a href="#" onclick="toggle(this.parentNode.parentNode,true); return false;">Older Platforms</a></div>
+        <ul> 
+          <li><a href="../sdk/android-2.0.html">Android 2.0
+            Platform</a>
+          </li>
+          <li><a href="../sdk/android-1.1.html">Android 1.1 Platform</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <ul>
+      <li><a href="../sdk/tools-notes.html">SDK Tools, r4</a>
+      <span class="new">new!</span>
+      </li>
+      <li><a href="../sdk/win-usb.html">USB Driver for
+Windows, r2</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+      <h2>
+      <span class="en">ADT Plugin for Eclipse</span>
+      <span style="display:none" class="de"></span>
+      <span style="display:none" class="es"></span>
+      <span style="display:none" class="fr"></span>
+      <span style="display:none" class="it"></span>
+      <span style="display:none" class="ja"></span>
+      <span style="display:none" class="zh-CN"></span>
+      <span style="display:none" class="zh-TW"></span>
+      </h2>
+    <ul>
+      <li><a href="../sdk/eclipse-adt.html">Installing and Updating
+      <span style="display:none" class="de"></span>
+      <span style="display:none" class="es"></span>
+      <span style="display:none" class="fr"></span>
+      <span style="display:none" class="it"></span>
+      <span style="display:none" class="ja"></span>
+      <span style="display:none" class="zh-CN"></span>
+      <span style="display:none" class="zh-TW"></span></a>
+      </li>
+      <li><a href="../sdk/adt-notes.html">ADT 0.9.5 
+          <span class="new">new!</span></a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h2><span class="en">Native Development Tools</span>
+      <span style="display:none" class="de"></span>
+      <span style="display:none" class="es"></span>
+      <span style="display:none" class="fr"></span>
+      <span style="display:none" class="it"></span>
+      <span style="display:none" class="ja"></span>
+      <span style="display:none" class="zh-CN"></span>
+      <span style="display:none" class="zh-TW"></span>
+    </h2>
+    <ul>
+      <li><a href="../sdk/ndk/1.6_r1/index.html">Android 1.6 NDK, r1</a></li>
+    </ul>
+  </li>
+  <li>
+    <h2>
+      <span class="en">More Information</span>
+      <span style="display:none" class="de"></span>
+      <span style="display:none" class="es"></span>
+      <span style="display:none" class="fr"></span>
+      <span style="display:none" class="it"></span>
+      <span style="display:none" class="ja"></span>
+      <span style="display:none" class="zh-CN"></span>
+      <span style="display:none" class="zh-TW"></span>
+    </h2>
+    <ul>
+      <li><a href="../sdk/requirements.html">SDK System Requirements</a></li>
+      <li><a href="../sdk/terms.html">SDK Terms and Conditions</a></li>
+      <li><a href="../sdk/RELEASENOTES.html">SDK Release
+            Notes</a></li>
+      <li><a href="../sdk/older_releases.html">SDK
+            Archives</a></li>
+
+    </ul>
+  </li>
+
+</ul>
+
+<script type="text/javascript">
+<!--
+    buildToggleLists();
+    changeNavLang(getLangPref());
+//-->
+</script>
+
+
+      </div>
+    </div> <!-- end side-nav -->
+
+
+
+
+<div class="g-unit" id="doc-content"><a name="top"></a>
+
+<div id="jd-header" class="guide-header">
+  <span class="crumb">
+    &nbsp;
+    
+  </span>
+<h1>USB Driver for Windows</h1>
+</div>
+
+  <div id="jd-content">
+
+
+    <div class="jd-descr">
+    <div id="qv-wrapper">
+<div id="qv">
+  <h2>In this document</h2>
+  <ol>
+    <li><a href="#RevisionNotes">Revision Notes</a></li>
+    <li><a href="#WinUsbDriver">Installing the USB Driver for Windows</a></li>
+  </ol>
+  <h2>See also</h2>
+  <ol>
+    <li><a
+    href="../guide/developing/device.html">Developing on a
+    Device</a></li>
+    <li><a
+    href="adding-components.html">Adding SDK Components</a></li>
+  </ol>
+</div>
+</div>
+
+<p>The USB driver for Windows is a downloadable component for the
+Android SDK. If you are developing on Windows and would like to
+connect an Android-powered device to test your applications, then you will need
+to install the USB driver.</p>
+
+<p>This document provides information about the latest version of the
+USB driver and a guide to installing the driver on your development
+computer.</p>
+
+<p class="note"><strong>Note:</strong>
+If you're developing on Mac OS X or Linux, then you do not need to install a
+USB driver. Refer to <a
+href="../guide/developing/device.html#setting-up">Setting up a
+Device</a> to start development with a device.</p>
+
+<h2 id="RevisionNotes">Revision Notes</h2>
+
+<h4>Revision 2</h4>
+<p>Adds support for the Verizon Droid (or similar hardware on
+other carriers). Released November 2009.</p>
+
+<h4>Revision 1</h4>
+<p>This was the initial release of the WinUsb-based driver, with support
+for the T-Mobile G1 and myTouch 3G (and similar devices).</p>
+
+<h2 id="WinUsbDriver">Installing the USB Driver for Windows</h2>
+
+<div class="sidebox-wrapper">
+<div class="sidebox-inner">
+  <p>The USB driver for Windows provides support for the following
+Android-powered
+devices:</p>
+  <ul>
+    <li>T-Mobile G1* / ADP1</li>
+    <li>T-Mobile myTouch 3G* / Google Ion</li>
+    <li>Verizon Droid*</li>
+  </ul>
+  <p>* <em>Or similar hardware on other carriers</em></p>
+  <p>Any additional devices will require Windows drivers provided by
+the hardware manufacturer.</p>
+</div>
+</div>
+
+<p>Before you perform the installation below, you must have the USB
+driver saved to your development computer. To get the USB driver, use
+the AVD and SDK Manager included with the SDK Tools to download the USB driver
+as an SDK component. For more information, read <a
+href="adding-components.html">Adding SDK Components</a>.</p>
+
+<p>Once you have the USB driver saved to your computer, select the
+appropriate procedure below, based on your operating system and whether you're
+installing for the first time or upgrading.</p>
+
+<p>If you are connecting an Android-powered
+device to your computer for the first time, follow the below procedure to
+"Perform a fresh installation." If you have installed one of the older
+USB drivers and would like to upgrade to the latest version, follow the
+procedure to "Upgrade an existing driver."</p>
+
+<p>Once you've completed the USB driver installation,
+please see <a
+href="../guide/developing/device.html">Developing on a Device</a> for
+other important information about using an Android-powered device for
+development.</p>
+
+<ol class="nolist">
+  <li><strong>Windows Vista:</strong>
+    <ol class="nolist">
+      <li><a href="#VistaFreshInstall">Perform a fresh installation</a></li>
+      <li><a href="#VistaUprade">Upgrade an existing driver</a></li>
+    </ol>
+  </li>
+  <li><strong>Windows XP:</strong>
+    <ol class="nolist">
+      <li><a href="#XPFreshInstall">Perform a fresh installation</a></li>
+      <li><a href="#XPUpgrade">Upgrade an existing driver</a></li>
+    </ol>
+  </li>
+</ol>
+
+
+<p class="caution"><strong>Caution:</strong>
+You may make changes to <code>android_winusb.inf</code> file found inside
+<code>usb_driver\</code> (for example, to add support for other devices),
+however, this will lead to security warnings when you install or upgrade the
+driver. Making any other changes to the driver files may break the installation
+process.</p>
+
+<h3 id="VistaFreshInstall">Windows Vista: Perform a fresh installation</h3>
+
+<p>To install the Android USB driver on Windows Vista for the first time:</p>
+
+<ol>
+  <li>Connect your Android-powered device to your computer's USB port. Windows
+  will detect the device and launch the Found New Hardware wizard.</li>
+  <li>Select "Locate and install driver software."</li>
+  <li>Select "Don't search online."</li>
+  <li>Select "I don't have the disk. Show me other options."</li>
+  <li>Select "Browse my computer for driver software."</li>
+  <li>Click "Browse..." and locate the folder where you copied the
+    installation package. As long as you specified the exact location of the 
+    installation package, you may leave "Include subfolders" checked or
+  unchecked&mdash;it doesn't matter.</li>
+  <li>Click "Next." Vista may prompt you to confirm the privilege elevation
+  required for driver installation. Confirm it.</li>
+  <li>When Vista asks if you'd like to install the Google ADB Interface device,
+  click "Install" to install the driver.</li>
+</ol>
+
+
+<h3 id="VistaUpgrade">Windows Vista: Upgrade an existing driver</h3>
+
+<p>To upgrade an existing Android USB driver on Windows Vista with the new
+driver:</p>
+
+<ol>
+  <li>Connect your Android-powered device to your computer's USB port.</li>
+  <li>Right-click on "Computer" from your desktop or Windows Explorer,
+    and select "Manage."</li>
+  <li>Select "Device Manager" in the left pane of the Computer Management
+  window.</li>
+  <li>Locate and expand "ADB Interface" in the right pane.</li>
+  <li>Right-click on "HTC Dream Composite ADB Interface", and select "Update
+  Driver Software..."</li>
+  <li>When Vista starts updating the driver, a prompt will ask how you want to
+  search for the driver
+    software. Select "Browse my computer for driver software."</li>
+  <li>Click "Browse..." and locate the folder where you copied the
+    installation package. As long as you specified the exact location of the 
+    installation package, you may leave "Include subfolders" checked or
+    unchecked&mdash;it doesn't matter.</li>
+  <li>Click "Next." Vista may prompt you to confirm the privilege elevation
+  required for driver installation. Confirm it.</li>
+  <li>When Vista asks if you'd like to install the Google ADB Interface device,
+  click "Install" to install the driver.</li>
+</ol>
+
+
+<h3 id="XPFreshInstall">Windows XP: Perform a fresh installation</h3>
+
+<p>To install the Android USB driver on Windows XP for the first time:</p>
+
+<ol>
+  <li>Connect your Android-powered device to your computer's USB port. Windows 
+    will detect the device and launch the Hardware Update Wizard.</li>
+  <li>Select "Install from a list or specific location" and click
+    "Next."</li>
+  <li>Select "Search for the best driver in these locations"; un-check "Search
+    removable media"; and check "Include this location in the search."</li>
+  <li>Click "Browse..." and locate the folder where you copied the installation 
+    package.</li>
+  <li>Click "Next" to install the driver.</li>
+</ol>
+
+
+<h3 id="XPUpgrade">Windows XP: Upgrade an existing driver</h3>
+
+<p>To upgrade an existing Android USB driver on Windows XP with the new
+driver:</p>
+
+<ol>
+  <li>Connect your Android-powered device to your computer's USB port.</li>
+  <li>Right-click on "My Computer" from your desktop or Windows Explorer,
+    and select "Manage."</li>
+  <li>Select "Device Manager" in the left pane of the Computer Management
+  window.</li>
+  <li>Locate and expand "Android Phone" in the right pane.</li>
+  <li>Right-click "Android Composite ADB Interface" and select "Update
+  Driver..."
+    This will launch the Hardware Update Wizard.</li>
+  <li>Select "Install from a list or specific location" and click
+    "Next."</li>
+  <li>Select "Search for the best driver in these locations"; un-check "Search
+    removable media"; and check "Include this location in the search."</li>
+  <li>Click "Browse..." and locate the folder where you copied the installation 
+    package.</li>
+  <li>Click "Next" to install the driver.</li>
+</ol>
+  
+
+    </div>
+
+  <a href="#top" style="float:right">&uarr; Go to top</a>
+  
+  </div>
+
+<div id="footer">
+
+
+  <div id="copyright">
+    
+  Except as noted, this content is 
+  licensed under <a href="http://creativecommons.org/licenses/by/2.5/">
+  Creative Commons Attribution 2.5</a>. For details and 
+  restrictions, see the <a href="../license.html">Content 
+  License</a>.
+  </div>
+
+  <div id="footerlinks">
+    
+  <p>
+    <a href="http://www.android.com/terms.html">Site Terms of Service</a> -
+    <a href="http://www.android.com/privacy.html">Privacy Policy</a> -
+    <a href="http://www.android.com/branding.html">Brand Guidelines</a>
+  </p>
+  </div>
+
+</div> <!-- end footer -->
+
+</div><!-- end doc-content -->
+
+</div> <!-- end body-content --> 
+
+<script type="text/javascript">
+init(); /* initialize android-developer-docs.js */
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-5831155-1");
+pageTracker._trackPageview();
+</script>
+
+</body>
+</html>
+
+
+

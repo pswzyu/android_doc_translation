@@ -1,0 +1,917 @@
+10
+
+dir
+0
+https://and-sdk-doc-tr.svn.sourceforge.net/svnroot/and-sdk-doc-tr/sdk/api_diff/4/changes
+https://and-sdk-doc-tr.svn.sourceforge.net/svnroot/and-sdk-doc-tr
+add
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+24301c66-6d43-40e4-a346-040bbf5395a3
+
+android.app.LauncherActivity.html
+file
+
+
+
+add
+
+classes_index_additions.html
+file
+
+
+
+add
+
+android.provider.MediaStore.Audio.Media.html
+file
+
+
+
+add
+
+android.content.pm.ConfigurationInfo.html
+file
+
+
+
+add
+
+android.content.pm.PackageManager.html
+file
+
+
+
+add
+
+pkg_android.content.html
+file
+
+
+
+add
+
+jdiff_help.html
+file
+
+
+
+add
+
+android.net.wifi.WifiManager.html
+file
+
+
+
+add
+
+android.telephony.gsm.SmsMessage.MessageClass.html
+file
+
+
+
+add
+
+android.view.ViewConfiguration.html
+file
+
+
+
+add
+
+fields_index_additions.html
+file
+
+
+
+add
+
+pkg_android.os.html
+file
+
+
+
+add
+
+android.widget.AutoCompleteTextView.html
+file
+
+
+
+add
+
+packages_index_additions.html
+file
+
+
+
+add
+
+changes-summary.html
+file
+
+
+
+add
+
+android.telephony.gsm.SmsManager.html
+file
+
+
+
+add
+
+java.util.concurrent.TimeUnit.html
+file
+
+
+
+add
+
+android.widget.TabWidget.html
+file
+
+
+
+add
+
+android.util.TypedValue.html
+file
+
+
+
+add
+
+android.graphics.BitmapFactory.html
+file
+
+
+
+add
+
+methods_index_all.html
+file
+
+
+
+add
+
+constructors_index_changes.html
+file
+
+
+
+add
+
+android.telephony.TelephonyManager.html
+file
+
+
+
+add
+
+methods_index_additions.html
+file
+
+
+
+add
+
+android.provider.Settings.System.html
+file
+
+
+
+add
+
+android.widget.PopupWindow.html
+file
+
+
+
+add
+
+jdiff_statistics.html
+file
+
+
+
+add
+
+constructors_index_additions.html
+file
+
+
+
+add
+
+android.provider.Settings.Secure.html
+file
+
+
+
+add
+
+pkg_android.app.html
+file
+
+
+
+add
+
+android.view.View.html
+file
+
+
+
+add
+
+alldiffs_index_all.html
+file
+
+
+
+add
+
+pkg_android.view.animation.html
+file
+
+
+
+add
+
+pkg_android.provider.html
+file
+
+
+
+add
+
+android.content.pm.ActivityInfo.html
+file
+
+
+
+add
+
+android.location.Address.html
+file
+
+
+
+add
+
+pkg_android.hardware.html
+file
+
+
+
+add
+
+android.hardware.SensorManager.html
+file
+
+
+
+add
+
+android.view.Surface.html
+file
+
+
+
+add
+
+android.content.res.Configuration.html
+file
+
+
+
+add
+
+android.widget.CheckedTextView.html
+file
+
+
+
+add
+
+android.Manifest.permission_group.html
+file
+
+
+
+add
+
+android.content.Intent.html
+file
+
+
+
+add
+
+android.telephony.gsm.SmsMessage.SubmitPdu.html
+file
+
+
+
+add
+
+android.app.SearchManager.html
+file
+
+
+
+add
+
+android.util.Config.html
+file
+
+
+
+add
+
+pkg_android.opengl.html
+file
+
+
+
+add
+
+android.widget.ListView.html
+file
+
+
+
+add
+
+constructors_index_removals.html
+file
+
+
+
+add
+
+android.media.ToneGenerator.html
+file
+
+
+
+add
+
+android.graphics.drawable.BitmapDrawable.html
+file
+
+
+
+add
+
+android.content.ContextWrapper.html
+file
+
+
+
+add
+
+android.content.ContentProvider.html
+file
+
+
+
+add
+
+android.graphics.Typeface.html
+file
+
+
+
+add
+
+android.graphics.drawable.AnimationDrawable.html
+file
+
+
+
+add
+
+pkg_android.content.res.html
+file
+
+
+
+add
+
+methods_index_changes.html
+file
+
+
+
+add
+
+android.test.mock.MockContext.html
+file
+
+
+
+add
+
+android.widget.TabHost.TabSpec.html
+file
+
+
+
+add
+
+constructors_index_all.html
+file
+
+
+
+add
+
+android.view.Window.Callback.html
+file
+
+
+
+add
+
+android.app.Activity.html
+file
+
+
+
+add
+
+android.content.ComponentName.html
+file
+
+
+
+add
+
+pkg_android.inputmethodservice.html
+file
+
+
+
+add
+
+fields_index_removals.html
+file
+
+
+
+add
+
+android.graphics.drawable.NinePatchDrawable.html
+file
+
+
+
+add
+
+android.Manifest.permission.html
+file
+
+
+
+add
+
+classes_index_all.html
+file
+
+
+
+add
+
+packages_index_removals.html
+file
+
+
+
+add
+
+java.util.concurrent.locks.AbstractQueuedSynchronizer.html
+file
+
+
+
+add
+
+fields_index_changes.html
+file
+
+
+
+add
+
+android.util.DisplayMetrics.html
+file
+
+
+
+add
+
+android.graphics.Canvas.html
+file
+
+
+
+add
+
+android.media.AudioManager.html
+file
+
+
+
+add
+
+android.graphics.Bitmap.html
+file
+
+
+
+add
+
+classes_index_removals.html
+file
+
+
+
+add
+
+pkg_android.util.html
+file
+
+
+
+add
+
+packages_index_changes.html
+file
+
+
+
+add
+
+pkg_android.media.html
+file
+
+
+
+add
+
+android.media.MediaRecorder.html
+file
+
+
+
+add
+
+pkg_android.content.pm.html
+file
+
+
+
+add
+
+android.R.style.html
+file
+
+
+
+add
+
+android.provider.MediaStore.Audio.Genres.Members.html
+file
+
+
+
+add
+
+android.media.MediaRecorder.AudioSource.html
+file
+
+
+
+add
+
+alldiffs_index_removals.html
+file
+
+
+
+add
+
+android.graphics.NinePatch.html
+file
+
+
+
+add
+
+android.R.attr.html
+file
+
+
+
+add
+
+android.R.drawable.html
+file
+
+
+
+add
+
+pkg_android.text.style.html
+file
+
+
+
+add
+
+android.os.RemoteCallbackList.html
+file
+
+
+
+add
+
+android.app.PendingIntent.html
+file
+
+
+
+add
+
+android.app.LauncherActivity.ListItem.html
+file
+
+
+
+add
+
+android.content.pm.ProviderInfo.html
+file
+
+
+
+add
+
+android.test.AndroidTestCase.html
+file
+
+
+
+add
+
+classes_index_changes.html
+file
+
+
+
+add
+
+pkg_java.util.concurrent.html
+file
+
+
+
+add
+
+android.graphics.drawable.Drawable.html
+file
+
+
+
+add
+
+android.content.pm.ApplicationInfo.html
+file
+
+
+
+add
+
+fields_index_all.html
+file
+
+
+
+add
+
+pkg_android.test.mock.html
+file
+
+
+
+add
+
+pkg_android.location.html
+file
+
+
+
+add
+
+pkg_java.util.concurrent.locks.html
+file
+
+
+
+add
+
+pkg_android.view.html
+file
+
+
+
+add
+
+packages_index_all.html
+file
+
+
+
+add
+
+android.view.VelocityTracker.html
+file
+
+
+
+add
+
+pkg_android.widget.html
+file
+
+
+
+add
+
+pkg_android.net.wifi.html
+file
+
+
+
+add
+
+android.text.style.ImageSpan.html
+file
+
+
+
+add
+
+pkg_android.telephony.gsm.html
+file
+
+
+
+add
+
+android.content.Context.html
+file
+
+
+
+add
+
+android.graphics.BitmapFactory.Options.html
+file
+
+
+
+add
+
+pkg_android.graphics.html
+file
+
+
+
+add
+
+pkg_android.html
+file
+
+
+
+add
+
+android.telephony.gsm.SmsMessage.html
+file
+
+
+
+add
+
+android.os.Build.VERSION.html
+file
+
+
+
+add
+
+android.test.mock.MockPackageManager.html
+file
+
+
+
+add
+
+pkg_android.telephony.html
+file
+
+
+
+add
+
+jdiff_topleftframe.html
+file
+
+
+
+add
+
+android.inputmethodservice.KeyboardView.html
+file
+
+
+
+add
+
+android.app.Dialog.html
+file
+
+
+
+add
+
+android.os.Build.html
+file
+
+
+
+add
+
+pkg_android.test.html
+file
+
+
+
+add
+
+pkg_android.graphics.drawable.html
+file
+
+
+
+add
+
+methods_index_removals.html
+file
+
+
+
+add
+
+android.R.anim.html
+file
+
+
+
+add
+
+alldiffs_index_changes.html
+file
+
+
+
+add
+
+alldiffs_index_additions.html
+file
+
+
+
+add
+
